@@ -2273,7 +2273,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 os.execute('rm -rf Drox.lua')
-download('https://raw.githubusercontent.com/Drox-TeAm/Drox/master/Drox.lua','Drox.lua')
+download('https://raw.githubusercontent.com/Rasul-Muntazar/Drox/master/Drox.lua','Drox.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙تم تحديث السورس * ',"md",true)  
 end
 if text == '『 تعطيل الاذاعه 』' or text == 'تعطيل الاذاعه' then
@@ -11070,7 +11070,7 @@ local CmdStart = '*\n᥀︙أهلآ بك في بوت '..(Redis:get(TheDrox.."Dro
 '\n᥀︙اضف البوت الى مجموعتك'..
 '\n᥀︙ارفعه ادمن {مشرف}'..
 '\n᥀︙ارسل كلمة { تفعيل } ليتم تفعيل المجموعه'..
-'\n᥀︙مطور البوت ← {'..UserSudo..'}*'
+'\n᥀︙مطور البوت ← { '..UserSudo..' }*'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {

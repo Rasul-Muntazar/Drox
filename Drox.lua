@@ -5923,7 +5923,7 @@ Creat = " "..ban.first_name.." "
 else
 Creat = " مالك الكروب \n"
 end
-local T = '*᥀︙ مالك المجموعة :*['..ban.first_name..'](tg://user?id='..ban.id..')**'
+local T = '*᥀︙ مالك المجموعة : *['..ban.first_name..'](tg://user?id='..ban.id..')**'
 if photo.total_count > 0 then
 keyboard = {} 
 keyboard.inline_keyboard = {

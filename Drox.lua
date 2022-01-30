@@ -1570,7 +1570,7 @@ data = {
 {text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
 },
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url='https://t.me/DroxTeAm'},
+{text = 'Source Drox', url='https://t.me/DroxTeAm'},
 },
 }
 }
@@ -1610,7 +1610,6 @@ Redis:del(Drox.."Drox1:Set:Rd"..IdUser..":"..ChatId)
 Redis:del(Drox.."Drox:Set:Manager:rd"..IdUser..":"..ChatId)
 Redis:del(Drox.."Drox:Set:Rd"..IdUser..":"..ChatId)
 LuaTele.editMessageText(ChatId,Msg_id,"*᥀︙تم الغاء الامر*", 'md')
-end
 end
 end
 if text and text:match("^(.*)$") then

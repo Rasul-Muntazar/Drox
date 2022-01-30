@@ -1547,34 +1547,69 @@ return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ رد للمدير 
 end  
 end
 if text and text:match("^(.*)$") then
-if Redis:get(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true" then
-Redis:set(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true1")
-Redis:set(TheDrox.."Drox:Text:Manager"..msg.sender.user_id..":"..msg_chat_id, text)
-Redis:del(TheDrox.."Drox:Add:Rd:Manager:Gif"..text..msg_chat_id)   
-Redis:del(TheDrox.."Drox:Add:Rd:Manager:Vico"..text..msg_chat_id)   
-Redis:del(TheDrox.."Drox:Add:Rd:Manager:Stekrs"..text..msg_chat_id)     
-Redis:del(TheDrox.."Drox:Add:Rd:Manager:Text"..text..msg_chat_id)   
-Redis:del(TheDrox.."Drox:Add:Rd:Manager:Photo"..text..msg_chat_id)
-Redis:del(TheDrox.."Drox:Add:Rd:Manager:Video"..text..msg_chat_id)
-Redis:del(TheDrox.."Drox:Add:Rd:Manager:File"..text..msg_chat_id)
-Redis:del(TheDrox.."Drox:Add:Rd:Manager:video_note"..text..msg_chat_id)
-Redis:del(TheDrox.."Drox:Add:Rd:Manager:Audio"..text..msg_chat_id)
-Redis:sadd(TheDrox.."Drox:List:Manager"..msg_chat_id.."", text)
+if Redis:get(Drox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true" then
+Redis:set(Drox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true1")
+Redis:set(Drox.."Drox:Text:Manager"..msg.sender.user_id..":"..msg_chat_id, text)
+Redis:del(Drox.."Drox:Add:Rd:Manager:Gif"..text..msg_chat_id)   
+Redis:del(Drox.."Drox:Add:Rd:Manager:Vico"..text..msg_chat_id)   
+Redis:del(Drox.."Drox:Add:Rd:Manager:Stekrs"..text..msg_chat_id)     
+Redis:del(Drox.."Drox:Add:Rd:Manager:Text"..text..msg_chat_id)   
+Redis:del(Drox.."Drox:Add:Rd:Manager:Photo"..text..msg_chat_id)
+Redis:del(Drox.."Drox:Add:Rd:Manager:Video"..text..msg_chat_id)
+Redis:del(Drox.."Drox:Add:Rd:Manager:File"..text..msg_chat_id)
+Redis:del(Drox.."Drox:Add:Rd:Manager:video_note"..text..msg_chat_id)
+Redis:del(Drox.."Drox:Add:Rd:Manager:Audio"..text..msg_chat_id)
+Redis:sadd(Drox.."Drox:List:Manager"..msg_chat_id.."", text)
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '- تغيير الرد', data = msg.sender.user_id..'/chengreplyg'},
+},
+{
+{text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
+},
+{
+{text = 'Source Drox', url='https://t.me/DroxTeAm },
+},
+}
+}
 LuaTele.sendText(msg_chat_id,msg_id,[[
-᥀︙ارسل لي الرد سواء كان 
+↯|ارسل لي الرد سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-᥀︙يمكنك اضافة الى النص •
-— — — — — — — — —
- `#username` ↬ معرف المستخدم
- `#msgs` ↬ عدد الرسائل
- `#name` ↬ اسم المستخدم
- `#id` ↬ ايدي المستخدم
- `#stast` ↬ رتبة المستخدم
- `#edit` ↬ عدد السحكات
+↯|يمكنك اضافة الى النص • 
+••━━━━━••Drox••━━━━━••
+ #username ↬ معرف المستخدم
+ #msgs ↬ عدد الرسائل
+ #name ↬ اسم المستخدم
+ #id ↬ ايدي المستخدم
+ #stast ↬ رتبة المستخدم
+ #edit ↬ عدد السحكات
 
-]],"md",true)  
+]],"md",true, false, false, false, reply_markup)
 return false
+end
+end
+
+
+if Text and Text:match('(%d+)/chengreplygg') then
+local listYt = Text:match('(%d+)/chengreplygg')
+if tonumber(listYt) == tonumber(IdUser) then
+Redis:set(Drox.."Drox1:Set:Rd"..IdUser..":"..ChatId, "true")
+LuaTele.editMessageText(ChatId,Msg_id,"• ارسل لي الرد الان", 'md', true)
+end
+end
+
+
+if Text and Text:match('(%d+)/delamrredis') then
+local listYt = Text:match('(%d+)/delamrredis')
+if tonumber(listYt) == tonumber(IdUser) then
+Redis:del(Drox.."Drox:Redis:Id:Group"..ChatId..""..IdUser) 
+Redis:del(Drox.."Drox1:Set:Rd"..IdUser..":"..ChatId)
+Redis:del(Drox.."Drox:Set:Manager:rd"..IdUser..":"..ChatId)
+Redis:del(Drox.."Drox:Set:Rd"..IdUser..":"..ChatId)
+LuaTele.editMessageText(ChatId,Msg_id,"• تم الغاء الامر", 'md')
 end
 end
 if text and text:match("^(.*)$") then

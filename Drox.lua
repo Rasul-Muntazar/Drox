@@ -1547,69 +1547,34 @@ return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ رد للمدير 
 end  
 end
 if text and text:match("^(.*)$") then
-if Redis:get(Drox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true" then
-Redis:set(Drox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true1")
-Redis:set(Drox.."Drox:Text:Manager"..msg.sender.user_id..":"..msg_chat_id, text)
-Redis:del(Drox.."Drox:Add:Rd:Manager:Gif"..text..msg_chat_id)   
-Redis:del(Drox.."Drox:Add:Rd:Manager:Vico"..text..msg_chat_id)   
-Redis:del(Drox.."Drox:Add:Rd:Manager:Stekrs"..text..msg_chat_id)     
-Redis:del(Drox.."Drox:Add:Rd:Manager:Text"..text..msg_chat_id)   
-Redis:del(Drox.."Drox:Add:Rd:Manager:Photo"..text..msg_chat_id)
-Redis:del(Drox.."Drox:Add:Rd:Manager:Video"..text..msg_chat_id)
-Redis:del(Drox.."Drox:Add:Rd:Manager:File"..text..msg_chat_id)
-Redis:del(Drox.."Drox:Add:Rd:Manager:video_note"..text..msg_chat_id)
-Redis:del(Drox.."Drox:Add:Rd:Manager:Audio"..text..msg_chat_id)
-Redis:sadd(Drox.."Drox:List:Manager"..msg_chat_id.."", text)
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '- تغيير الرد', data = msg.sender.user_id..'/chengreplyg'},
-},
-{
-{text = '- الغاء الامر', data = msg.sender.user_id..'/delamrredis'},
-},
-{
-{text = 'Source Drox', url='https://t.me/DroxTeAm },
-},
-}
-}
+if Redis:get(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true" then
+Redis:set(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true1")
+Redis:set(TheDrox.."Drox:Text:Manager"..msg.sender.user_id..":"..msg_chat_id, text)
+Redis:del(TheDrox.."Drox:Add:Rd:Manager:Gif"..text..msg_chat_id)   
+Redis:del(TheDrox.."Drox:Add:Rd:Manager:Vico"..text..msg_chat_id)   
+Redis:del(TheDrox.."Drox:Add:Rd:Manager:Stekrs"..text..msg_chat_id)     
+Redis:del(TheDrox.."Drox:Add:Rd:Manager:Text"..text..msg_chat_id)   
+Redis:del(TheDrox.."Drox:Add:Rd:Manager:Photo"..text..msg_chat_id)
+Redis:del(TheDrox.."Drox:Add:Rd:Manager:Video"..text..msg_chat_id)
+Redis:del(TheDrox.."Drox:Add:Rd:Manager:File"..text..msg_chat_id)
+Redis:del(TheDrox.."Drox:Add:Rd:Manager:video_note"..text..msg_chat_id)
+Redis:del(TheDrox.."Drox:Add:Rd:Manager:Audio"..text..msg_chat_id)
+Redis:sadd(TheDrox.."Drox:List:Manager"..msg_chat_id.."", text)
 LuaTele.sendText(msg_chat_id,msg_id,[[
-↯|ارسل لي الرد سواء كان 
+᥀︙ارسل لي الرد سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-↯|يمكنك اضافة الى النص • 
-••━━━━━••Drox••━━━━━••
- #username ↬ معرف المستخدم
- #msgs ↬ عدد الرسائل
- #name ↬ اسم المستخدم
- #id ↬ ايدي المستخدم
- #stast ↬ رتبة المستخدم
- #edit ↬ عدد السحكات
+᥀︙يمكنك اضافة الى النص •
+— — — — — — — — —
+ `#username` ↬ معرف المستخدم
+ `#msgs` ↬ عدد الرسائل
+ `#name` ↬ اسم المستخدم
+ `#id` ↬ ايدي المستخدم
+ `#stast` ↬ رتبة المستخدم
+ `#edit` ↬ عدد السحكات
 
-]],"md",true, false, false, false, reply_markup)
+]],"md",true)  
 return false
-end
-end
-
-
-if Text and Text:match('(%d+)/chengreplygg') then
-local listYt = Text:match('(%d+)/chengreplygg')
-if tonumber(listYt) == tonumber(IdUser) then
-Redis:set(Drox.."Drox1:Set:Rd"..IdUser..":"..ChatId, "true")
-LuaTele.editMessageText(ChatId,Msg_id,"• ارسل لي الرد الان", 'md', true)
-end
-end
-
-
-if Text and Text:match('(%d+)/delamrredis') then
-local listYt = Text:match('(%d+)/delamrredis')
-if tonumber(listYt) == tonumber(IdUser) then
-Redis:del(Drox.."Drox:Redis:Id:Group"..ChatId..""..IdUser) 
-Redis:del(Drox.."Drox1:Set:Rd"..IdUser..":"..ChatId)
-Redis:del(Drox.."Drox:Set:Manager:rd"..IdUser..":"..ChatId)
-Redis:del(Drox.."Drox:Set:Rd"..IdUser..":"..ChatId)
-LuaTele.editMessageText(ChatId,Msg_id,"• تم الغاء الامر", 'md')
 end
 end
 if text and text:match("^(.*)$") then
@@ -7629,23 +7594,31 @@ Redis:del(TheDrox.."Drox:Group:Link"..msg_chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم مسح الرابط ","md",true)             
 end
 if text == "الرابط" then
-if not Redis:get(TheDrox.."Drox:Status:Link"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل جلب الرابط من قبل الادمنيه","md",true)
+if not database:get(Drox.."Status:Link"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ تم تعطيل جلب الرابط من قبل الادمنيه","md",true)
 end 
 local Get_Chat = LuaTele.getChat(msg_chat_id)
-local GetLink = Redis:get(TheDrox.."Drox:Group:Link"..msg_chat_id) 
+local GetLink = database:get(Drox.."Group:Link"..msg_chat_id) 
 if GetLink then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {{text =Get_Chat.title, url = GetLink}, },}}
-return LuaTele.sendText(msg_chat_id, msg_id, "᥀︙ Link Group : \n["..Get_Chat.title.. ']('..GetLink..')', 'md', true, false, false, false, reply_markup)
-else
-local LinkGroup = LuaTele.generateChatInviteLink(msg_chat_id,'taha',tonumber(msg.date+86400),100,false)
+return LuaTele.sendText(msg_chat_id, msg_id, "᥀︙Link Group : \n["..Get_Chat.title.. ']('..GetLink..')', 'md', true, false, false, false, reply_markup)
+else 
+local LinkGroup = LuaTele.generateChatInviteLink(msg_chat_id,'Hussain',tonumber(msg.date+86400),0,true)
 if LinkGroup.code == 3 then
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙لا استطيع جلب الرابط بسبب ليس لدي صلاحيه دعوه مستخدمين من خلال الرابط ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ لا استطيع جلب الرابط بسبب ليس لدي صلاحيه دعوه مستخدمين من خلال الرابط ","md",true)
 end
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text = Get_Chat.title, url = LinkGroup.invite_link},},}}
-return LuaTele.sendText(msg_chat_id, msg_id, "᥀︙ Link Group : \n["..Get_Chat.title.. ']('..LinkGroup.invite_link..')', 'md', true, false, false, false, reply_markup)
+zh = https.request('http://api.telegram.org/bot'..Token..'/getchat?chat_id='..msg_chat_id..'')
+zx = JSON.decode(zh)
+local tt = "᥀︙Link Group : \n["..Get_Chat.title.. ']('..LinkGroup.invite_link..')'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = Get_Chat.title, url=LinkGroup.invite_link},
+},
+}
+local rep = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg.chat_id.."&reply_to_message_id="..rep.."&photo=t.me/"..zx.result.username.."&caption="..URL.escape(tt).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
 

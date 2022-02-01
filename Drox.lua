@@ -4344,7 +4344,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Status:Reply"..msg_chat_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,*"᥀︙تم تفعيل ردود المدير*","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم تفعيل ردود المدير*","md",true)
 end
 if TextMsg == 'ردود المطور' then
 if not msg.Managers then

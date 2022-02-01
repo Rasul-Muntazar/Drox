@@ -1452,14 +1452,14 @@ if text and Redis:get(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg
 Redis:set(TheDrox.."Drox:Command:Reids:Group:New"..msg_chat_id,text)
 Redis:del(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg.sender.user_id)
 Redis:set(TheDrox.."Drox:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id,"true1") 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الامر الجديد ليتم وضعه مكان القديم","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الامر الجديد ليتم وضعه مكان القديم*","md",true)  
 end
 if text and Redis:get(TheDrox.."Drox:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id) == "true1" then
 local NewCmd = Redis:get(TheDrox.."Drox:Command:Reids:Group:New"..msg_chat_id)
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..text,NewCmd)
 Redis:sadd(TheDrox.."Drox:Command:List:Group"..msg_chat_id,text)
 Redis:del(TheDrox.."Drox:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ الامر باسم ← { "..text..' }',"md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ الامر باسم ←* { "..text..' }',"md",true)
 end
 if Redis:get(TheDrox.."Drox:Set:Link"..msg_chat_id..""..msg.sender.user_id) then
 if text == "الغاء" then
@@ -1590,7 +1590,7 @@ Redis:del(TheDrox.."Drox:Add:Rd:Manager:Audio"..text..msg_chat_id)
 Redis:del(TheDrox.."Drox:Add:Rd:Manager:video_note"..text..msg_chat_id)
 Redis:del(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id)
 Redis:srem(TheDrox.."Drox:List:Manager"..msg_chat_id.."", text)
-LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حذف الرد من ردود المدير ","md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حذف الرد من ردود المدير*","md",true)  
 return false
 end
 end
@@ -9217,7 +9217,7 @@ Redis:del(TheDrox.."Drox:Add:Rd:Manager:video_note"..v..msg_chat_id)
 Redis:del(TheDrox.."Drox:Add:Rd:Manager:Audio"..v..msg_chat_id)
 Redis:del(TheDrox.."Drox:List:Manager"..msg_chat_id)
 end
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم مسح قائمه ردود المدير","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم مسح قائمه ردود المدير*","md",true)  
 end
 if text == ("ردود المدير") then
 if not msg.Managers then

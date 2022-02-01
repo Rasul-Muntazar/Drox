@@ -4437,7 +4437,7 @@ if Redis:get(TheDrox.."Drox1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id) == "
 Redis:set(TheDrox.."Drox1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id, "true1")
 Redis:set(TheDrox.."Drox1:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id, text)
 Redis:sadd(TheDrox.."Drox1:List:Rd:Sudo"..msg.chat_id, text)
-return  LuaTele.sendText(msg_chat_id,msg_id, '\nارسل لي الكلمه الان ') 
+return  LuaTele.sendText(msg_chat_id,msg_id, '\n᥀︙ارسل لي الكلمه الان ') 
 end
 end
 if text and text:match("^(.*)$") then
@@ -4447,7 +4447,7 @@ Redis:del(TheDrox..'Drox1:Add:Rd:Sudo:Text1'..text..msg.chat_id)
 Redis:del(TheDrox..'Drox1:Add:Rd:Sudo:Text2'..text..msg.chat_id)
 Redis:del(TheDrox.."Drox1:Set:On"..msg.sender.user_id..":"..msg.chat_id)
 Redis:srem(TheDrox.."Drox1:List:Rd:Sudo"..msg.chat_id, text)
-return  LuaTele.sendText(msg_chat_id,msg_id,"تم حذف الرد من ردود المتعدده")
+return  LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حذف الرد من ردود المتعدده")
 end
 end
 if text == ("مسح الردود المتعدده") then    
@@ -4461,7 +4461,7 @@ Redis:del(TheDrox.."Drox1:Add:Rd:Sudo:Text1"..v..msg.chat_id)
 Redis:del(TheDrox.."Drox1:Add:Rd:Sudo:Text2"..v..msg.chat_id) 
 Redis:del(TheDrox.."Drox1:List:Rd:Sudo"..msg.chat_id)
 end
- LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حذف ردود المتعدده*")
+ LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حذف ردود المتعدده")
 end
 if text == ("الردود المتعدده") then    
 if not msg.Managers then
@@ -4474,7 +4474,7 @@ db = "رساله "
 text = text..""..k.." => {"..v.."} => {"..db.."}\n"
 end
 if #list == 0 then
-text = "*᥀︙لا توجد ردود متعدده*"
+text = "᥀︙لا توجد ردود متعدده"
 end
  LuaTele.sendText(msg_chat_id,msg_id,"["..text.."]")
 end
@@ -4483,14 +4483,14 @@ if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
 Redis:set(TheDrox.."Drox1:Set:Rd"..msg.sender.user_id..":"..msg.chat_id,true)
-return  LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الرد الذي اريد اضافته*")
+return  LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الرد الذي اريد اضافته")
 end
 if text == "حذف رد متعدد" then    
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
 Redis:set(TheDrox.."Drox1:Set:On"..msg.sender.user_id..":"..msg.chat_id,true)
-return  LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الكلمه لحذفها*")
+return  LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الكلمه لحذفها")
 end
 if text then  
 local test = Redis:get(TheDrox.."Drox1:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id)
@@ -4503,7 +4503,7 @@ text = text:gsub("`","")
 text = text:gsub("*","") 
 Redis:set(TheDrox.."Drox1:Add:Rd:Sudo:Text"..test..msg.chat_id, text)  
 end  
- LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ الرد الاول ارسل الرد الثاني*")
+ LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ الرد الاول ارسل الرد الثاني")
 return false  
 end  
 end
@@ -4518,7 +4518,7 @@ text = text:gsub("`","")
 text = text:gsub("*","") 
 Redis:set(TheDrox.."Drox1:Add:Rd:Sudo:Text1"..test..msg.chat_id, text)  
 end  
- LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ الرد الثاني ارسل الرد الثالث*")
+ LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ الرد الثاني ارسل الرد الثالث")
 return false  
 end  
 end
@@ -4533,7 +4533,7 @@ text = text:gsub("`","")
 text = text:gsub("*","") 
 Redis:set(TheDrox.."Drox1:Add:Rd:Sudo:Text2"..test..msg.chat_id, text)  
 end  
- LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ الرد*")
+ LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ الرد")
 return false  
 end  
 end
@@ -4553,7 +4553,7 @@ end
 end
 if text and text:match("^(.*)$") then
 if Redis:get(TheDrox.."Drox11:Set:Rd"..msg.sender.user_id..":"..msg.chat_id) == "true" then
- LuaTele.sendText(msg_chat_id,msg_id, '\nارسل لي الكلمه الان ')
+ LuaTele.sendText(msg_chat_id,msg_id, '\n᥀︙ارسل لي الكلمه الان ')
 Redis:set(TheDrox.."Drox11:Set:Rd"..msg.sender.user_id..":"..msg.chat_id, "true1")
 Redis:set(TheDrox.."Drox11:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id, text)
 Redis:sadd(TheDrox.."Drox11:List:Rd:Sudo", text)
@@ -4561,7 +4561,7 @@ return false end
 end
 if text and text:match("^(.*)$") then
 if Redis:get(TheDrox.."Drox11:Set:On"..msg.sender.user_id..":"..msg.chat_id) == "true" then
- LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حذف الرد من ردود المتعدده*")
+ LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حذف الرد من ردود المتعدده")
 Redis:del(TheDrox..'Drox11:Add:Rd:Sudo:Text'..text)
 Redis:del(TheDrox..'Drox11:Add:Rd:Sudo:Text1'..text)
 Redis:del(TheDrox..'Drox11:Add:Rd:Sudo:Text2'..text)
@@ -4581,7 +4581,7 @@ Redis:del(TheDrox.."Drox11:Add:Rd:Sudo:Text1"..v)
 Redis:del(TheDrox.."Drox11:Add:Rd:Sudo:Text2"..v)   
 Redis:del(TheDrox.."Drox11:List:Rd:Sudo")
 end
- LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حذف ردود المتعدده*")
+ LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حذف ردود المتعدده")
 end
 if text == ("الردود المتعدده عام") then
 if not msg.ControllerBot then 
@@ -4594,7 +4594,7 @@ db = "رساله "
 text = text..""..k.." => {"..v.."} => {"..db.."}\n"
 end
 if #list == 0 then
-text = "لا توجد ردود متعدده"
+text = "᥀︙لا توجد ردود متعدده"
 end
  LuaTele.sendText(msg_chat_id,msg_id,"["..text.."]")
 end
@@ -4610,7 +4610,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 Redis:set(TheDrox.."Drox11:Set:On"..msg.sender.user_id..":"..msg.chat_id,true)
-return  LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الكلمه لحذفها*")
+return  LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الكلمه لحذفها")
 end
 if text then  
 local test = Redis:get(TheDrox.."Drox11:Text:Sudo:Bot"..msg.sender.user_id..":"..msg.chat_id)
@@ -4623,7 +4623,7 @@ text = text:gsub("`","")
 text = text:gsub("*","") 
 Redis:set(TheDrox.."Drox11:Add:Rd:Sudo:Text"..test, text)  
 end  
- LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ الرد الاول ارسل الرد الثاني*")
+ LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ الرد الاول ارسل الرد الثاني")
 return false  
 end  
 end
@@ -4638,7 +4638,7 @@ text = text:gsub("`","")
 text = text:gsub("*","") 
 Redis:set(TheDrox.."Drox11:Add:Rd:Sudo:Text1"..test, text)  
 end  
- LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ الرد الثاني ارسل الرد الثالث*")
+ LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ الرد الثاني ارسل الرد الثالث")
 return false  
 end  
 end
@@ -4653,7 +4653,7 @@ text = text:gsub("`","")
 text = text:gsub("*","") 
 Redis:set(TheDrox.."Drox11:Add:Rd:Sudo:Text2"..test, text)  
 end  
- LuaTele.sendText(msg_chat_id,msg_id,"تم حفظ الرد")
+ LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ الرد")
 return false  
 end  
 end
@@ -8012,7 +8012,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg.sender.user_id,"true") 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙الان ارسل لي الامر القديم ...","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙الان ارسل لي الامر القديم ...*","md",true)
 end
 if text == "حذف امر" or text == "مسح امر" then 
 if not msg.Addictive then
@@ -8023,7 +8023,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Command:Reids:Group:Del"..msg_chat_id..":"..msg.sender.user_id,"true") 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الامر الذي قمت بوضعه مكان الامر القديم","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الامر الذي قمت بوضعه مكان الامر القديم*","md",true)
 end
 if text == "حذف الاوامر المضافه" or text == "مسح الاوامر المضافه" then 
 if not msg.Managers then
@@ -8038,7 +8038,7 @@ for k,v in pairs(list) do
 Redis:del(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..v)
 Redis:del(TheDrox.."Drox:Command:List:Group"..msg_chat_id)
 end
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم مسح جميع الاوامر التي تم اضافتها","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم مسح جميع الاوامر التي تم اضافتها*","md",true)
 end
 if text == "الاوامر المضافه" then
 if not msg.Managers then
@@ -8049,7 +8049,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:Command:List:Group"..msg_chat_id.."")
-Command = "᥀︙قائمه الاوامر المضافه  \n— — — — — — — — —\n"
+Command = "*᥀︙قائمه الاوامر المضافه* \n— — — — — — — — —\n"
 for k,v in pairs(list) do
 Commands = Redis:get(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..v)
 if Commands then 
@@ -8059,7 +8059,7 @@ Command = Command..""..k..": ("..v..") \n"
 end
 end
 if #list == 0 then
-Command = "᥀︙لا توجد اوامر اضافيه"
+Command = "*᥀︙لا توجد اوامر اضافيه*"
 end
 return LuaTele.sendText(msg_chat_id,msg_id,Command,"md",true)
 end
@@ -9265,7 +9265,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,true)
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الكلمه لاضافتها في ردود المدير ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الكلمه لاضافتها في ردود المدير*","md",true)  
 end
 if text == "حذف رد" then
 if not msg.Addictive then
@@ -9276,7 +9276,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true2")
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الكلمه لحذفها من ردود المدير","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الكلمه لحذفها من ردود المدير*","md",true)  
 end
 if text == ("مسح ردود المطور") then 
 if not msg.ControllerBot then 

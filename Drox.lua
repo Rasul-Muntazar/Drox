@@ -2890,6 +2890,116 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 '\n᥀︙تفاعله : '..TotalMsgT..
 '*',"md",true) 
 end
+if text == 'تغيير الايدي' or text == 'تغير الايدي' then
+if not msg.Originators then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*•︙هذا الامر يخص { '..Controller_Num(5)..' }* ',"md",true)  
+end
+local List = { 
+[[
+ ∵ USERNAME . #username
+ ∵ STAST . #stast
+ ∵ ID . #id
+ ∵ MSGS . #msgs
+]],
+[[
+• 🖤 | 𝑼𝑬𝑺 :  #username
+
+• 🖤 | 𝑺𝑻𝑨 : #stast
+
+• 🖤 | 𝑰𝑫 :  #id
+
+• 🖤 | 𝑴𝑺𝑮 : #msgs
+]],
+[[
+- UsEr🇺🇸 ꙰ #username
+- StA🇺🇸 ꙰   #msgs
+- MsGs🇺🇸 ꙰ #stast
+- ID🇺🇸 ꙰  #id
+]],
+[[
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+🇺🇸 - 𝚄𝚂𝙴𝚁 ⟿ #username 💘.
+🇺🇸 - 𝙼𝚂𝙶𝚂 ⟿  #msgs 💘.
+🇺🇸 - 𝙶𝙼𝙰𝚂 ⟿ #gmas 💘.
+🇺🇸 - 𝙸𝙳 𝚂𝚃𝙰 ⟿ #id 💘.  
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+]],
+[[
+☆•𝐮𝐬𝐞𝐫 : #username 𖣬  
+☆•𝐦𝐬𝐠  : #msgs 𖣬 
+☆•𝐬𝐭𝐚 : #stast 𖣬 
+☆•𝐢𝐝  : #id 𖣬
+]],
+[[
+ ∵ USERNAME . #username
+ ∵ STAST . #stast
+ ∵ ID . #id
+ ∵ MSGS . #msgs
+]],
+[[
+: 𝖴ِᥱ᥉ : #username .
+: Iَժ : #id .
+: Sƚِᥲ : #stast .
+: 𝖬⁪⁬⁮᥉َ𝗀 : #msgs .
+]],
+[[
+َ› Msgs : #msgs .🦇
+َ› ID : #id .🦇
+َ› Stast : #stast .🦇
+َ› UserName : #username .🦇
+]],
+[[
+☁️ . USERNAME . #username
+☁️ . STAST . #stast
+☁️ . ID . #id
+☁️ . MSGS . #msgs
+]],
+[[
+ . USERNAME . #username
+ . STAST . #stast
+ . ID . #id
+ . MSGS . #msgs
+]],
+[[
+  USERNAME . #username
+  STAST . #stast
+  ID . #id
+  MSGS . #msgs
+]],
+[[
+◜⛓️ِ𝗨َِS𝗘ِr #username 🕷 .  
+◜⛓️ِ𝗠ِsِG  #msgs   .
+◜⛓️ِ𝗦َ𝗧 #stast  .
+◜⛓️ِ𝗜ِd  #id 🕸 .
+]],
+[[
+ . USERNAME . #username
+ . STAST . #stast
+ . ID . #id
+ . MSGS . #msgs
+]],
+[[
+˛ 𝗎!𝗌 : #username ٰ⛓️ '.
+˛ 𝗆!𝗀 #msgs .
+˛ 𝗌!𝗍 : #stast .
+˛𝗂!𝖽 : #id ⛓️ '.
+]],
+[[
+َ› Msgs : #msgs .🦇
+َ› ID : #id .🦇
+َ› Stast : #stast .🦇
+َ› UserName : #username .🦇
+]],
+[[
+: 𝖴ِᥱ᥉ : #username .
+: Iَժ : #id .
+: Sƚِᥲ : #stast .
+: 𝖬⁪⁬⁮᥉َ𝗀 : #msgs .
+]]} 
+local Text_Rand = List[math.random(#List)] 
+Redis:set(TheDrox.."Drox:Set:Id:Group"..msg.chat_id,Text_Rand)
+return LuaTele.sendText(msg_chat_id,msg_id, '•︙تم التغيير ارسل ايدي لعرض الايدي الجديد',"md",true)  
+end
 if text == 'رتبتي' then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n᥀︙رتبتك هي : '..msg.Name_Controller,"md",true)  
 end
@@ -11056,7 +11166,6 @@ Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'سح','�
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
-
 return LuaTele.sendText(msg_chat_id,msg_id,[[*
 ᥀︙تم ترتيب الاوامر بالشكل التالي ~
 ᥀︙ ايدي - ا .
@@ -11079,7 +11188,6 @@ return LuaTele.sendText(msg_chat_id,msg_id,[[*
 ᥀︙ غنيلي - غ .
 *]],"md")
 end
-
 end -- GroupBot
 if chat_type(msg.chat_id) == "UserBot" then 
 if text == 'تحديث الملفات ᥀' or text == 'تحديث' then

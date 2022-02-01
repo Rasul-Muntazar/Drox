@@ -11056,6 +11056,7 @@ Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'سح','�
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
+
 return LuaTele.sendText(msg_chat_id,msg_id,[[*
 ᥀︙تم ترتيب الاوامر بالشكل التالي ~
 ᥀︙ ايدي - ا .
@@ -11078,6 +11079,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,[[*
 ᥀︙ غنيلي - غ .
 *]],"md")
 end
+
 end -- GroupBot
 if chat_type(msg.chat_id) == "UserBot" then 
 if text == 'تحديث الملفات ᥀' or text == 'تحديث' then

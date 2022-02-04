@@ -4699,7 +4699,7 @@ local list = Redis:smembers(TheDrox.."Drox:allM"..msg.chat_id)
 for k,v in pairs(list) do
 local Message = v
 if Message then
-t = "᥀︙تم مسح *"..k.."* من الوسائط الموجوده "
+t = "᥀︙تم مسح "..k.." من الوسائط الموجوده "
 LuaTele.deleteMessages(msg.chat_id,{[1]= Message})
 Redis:del(TheDrox.."Drox:allM"..msg.chat_id)
 end

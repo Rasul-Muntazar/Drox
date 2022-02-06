@@ -9730,7 +9730,7 @@ end
 end
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-photo = "https://t.me/Rasulm12/19"
+photo = "https://t.me/Rasulm12/20"
 local T =[[
 Welcome to Source : [˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .](https://t.me/DroxTeAm)
 ]]

@@ -125,7 +125,7 @@ Status = 0
 DevelopersQ = Redis:sismember(TheDrox.."Drox:DevelopersQ:Groups",UserId) 
 if UserId == 1214622341 then
 Status = true
-elseif UserId == 1214622341 then
+elseif UserId == 1553530032 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -151,8 +151,8 @@ Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,User
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1214622341 then
 Status = 'مبرمج السورس'
-elseif UserId == 1214622341 then
-Status = 'مطور السورس'
+elseif UserId == 1553530032 then
+Status = 'ححلوة السورس'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == TheDrox then
@@ -731,7 +731,7 @@ Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,User
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1214622341 then
 Status = true
-elseif UserId == 1214622341 then
+elseif UserId == 1553530032 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -770,7 +770,7 @@ Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,User
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1214622341 then
 Status = true
-elseif UserId == 1214622341 then
+elseif UserId == 1553530032 then
 Status = true
 elseif UserId == Sudo_Id then    
 Status = true
@@ -899,8 +899,8 @@ end
 if tonumber(msg.sender.user_id) == 1214622341 then
 msg.Name_Controller = 'مبرمج السورس '
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 1214622341 then
-msg.Name_Controller = 'مطور السورس '
+elseif tonumber(msg.sender.user_id) == 1553530032 then
+msg.Name_Controller = 'ححلوة السورس '
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
 msg.The_Controller = 1
@@ -4981,7 +4981,7 @@ end
 if Controller(msg_chat_id,UserId_Info.id) == 'مبرمج السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام『 "..Controller(msg_chat_id,UserId_Info.id).." 』*","md",true)  
 end
-if Controller(msg_chat_id,UserId_Info.id) == 'مطور السورس' then
+if Controller(msg_chat_id,UserId_Info.id) == 'ححلوة السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام『 "..Controller(msg_chat_id,UserId_Info.id).." 』*","md",true)  
 end
 if Redis:sismember(TheDrox.."Drox:ktmAll:Groups",UserId_Info.id) then
@@ -5454,7 +5454,7 @@ end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'مبرمج السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام『 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 』*","md",true)  
 end
-if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'مطور السورس' then
+if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'ححلوة السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام『 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 』*","md",true)  
 end
 if Redis:sismember(TheDrox.."Drox:ktmAll:Groups",Message_Reply.sender.user_id) then

@@ -4850,15 +4850,15 @@ return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل اطردني "
 end
 if TextMsg == 'صورتي' then
 Redis:del(TheDrox.."Drox:Status:photo"..msg_chat_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"◉ تم تعطيل صورتي ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ تم تعطيل صورتي ","md",true)
 end
 if TextMsg == 'قول' then
 Redis:del(TheDrox.."Drox:Status:kool"..msg_chat_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"◉ تم تعطيل امر قول ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ تم تعطيل امر قول ","md",true)
 end
 if TextMsg == 'جمالي' then
 Redis:del(TheDrox.."Drox:Status:gamle"..msg_chat_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"◉ تم تعطيل جمالي ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ تم تعطيل جمالي ","md",true)
 end
 if TextMsg == 'ردود السورس' then
 Redis:del(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) 
@@ -5927,7 +5927,42 @@ end
 LuaTele.setChatMemberStatus(msg.chat_id,UserId,'banned',0)
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"᥀︙تم طرده من المجموعه ").Reply,"md",true)  
 end
-
+if text == "نزلني" then
+if not Redis:get(Saidi.."Saidi:Status:remMe"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙امر نزلني تم تعطيله من قبل المدراء *","md",true)  
+end
+if The_ControllerAll(msg.sender.user_id) == true then
+Rink = 1
+elseif Redis:sismember(Saidi.."Saidi:DevelopersQ:Groups",msg.sender.user_id)  then
+Rink = 2
+elseif Redis:sismember(Saidi.."Saidi:Developers:Groups",msg.sender.user_id)  then
+Rink = 3
+elseif Redis:sismember(Saidi.."Saidi:TheBasicsQ:Group"..msg_chat_id, msg.sender.user_id) then
+Rink = 4
+elseif Redis:sismember(Saidi.."Saidi:TheBasics:Group"..msg_chat_id, msg.sender.user_id) then
+Rink = 5
+elseif Redis:sismember(Saidi.."Saidi:Originators:Group"..msg_chat_id, msg.sender.user_id) then
+Rink = 6
+elseif Redis:sismember(Saidi.."Saidi:Managers:Group"..msg_chat_id, msg.sender.user_id) then
+Rink = 7
+elseif Redis:sismember(Saidi.."Saidi:Addictive:Group"..msg_chat_id, msg.sender.user_id) then
+Rink = 8
+elseif Redis:sismember(Saidi.."Saidi:Distinguished:Group"..msg_chat_id, msg.sender.user_id) then
+Rink = 9
+else
+Rink = 10
+end
+if Rink == 10 then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ليس لديك رتب عزيزي *","md",true)  
+end
+if Rink <= 7  then
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙استطيع تنزيل الادمنيه والمميزين فقط","md",true) 
+else
+Redis:srem(Saidi.."Saidi:Addictive:Group"..msg_chat_id, msg.sender.user_id)
+Redis:srem(Saidi.."Saidi:Distinguished:Group"..msg_chat_id, msg.sender.user_id)
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تنزيلك من الادمنيه والمميزين ","md",true) 
+end
+end
 if text == "اطردني" or text == "طردني" then
 if not Redis:get(TheDrox.."Drox:Status:KickMe"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙امر اطردني تم تعطيله من قبل المدراء *","md",true)  

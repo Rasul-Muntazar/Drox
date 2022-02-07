@@ -5927,68 +5927,30 @@ end
 LuaTele.setChatMemberStatus(msg.chat_id,UserId,'banned',0)
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"᥀︙تم طرده من المجموعه ").Reply,"md",true)  
 end
-if text == "نزلني" then
-if not Redis:get(Drox.."Drox:Status:remMe"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙امر نزلني تم تعطيله من قبل المدراء *","md",true)  
+
+if text == "اطردني" or text == "طلعني" or text == "طردني" then 
+if not Redis:get(Drox.."Drox:Status:KickMe"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"* ᥀︙امر اطردني تم تعطيله من قبل المدراء *","md",true)  
 end
-if The_ControllerAll(msg.sender.user_id) == true then
-Rink = 1
-elseif Redis:sismember(Drox.."Drox:DevelopersQ:Groups",msg.sender.user_id)  then
-Rink = 2
-elseif Redis:sismember(Drox.."Drox:Developers:Groups",msg.sender.user_id)  then
-Rink = 3
-elseif Redis:sismember(Drox.."Drox:TheBasicsQ:Group"..msg_chat_id, msg.sender.user_id) then
-Rink = 4
-elseif Redis:sismember(Drox.."Drox:TheBasics:Group"..msg_chat_id, msg.sender.user_id) then
-Rink = 5
-elseif Redis:sismember(Drox.."Drox:Originators:Group"..msg_chat_id, msg.sender.user_id) then
-Rink = 6
-elseif Redis:sismember(Drox.."Drox:Managers:Group"..msg_chat_id, msg.sender.user_id) then
-Rink = 7
-elseif Redis:sismember(Drox.."Drox:Addictive:Group"..msg_chat_id, msg.sender.user_id) then
-Rink = 8
-elseif Redis:sismember(Drox.."Drox:Distinguished:Group"..msg_chat_id, msg.sender.user_id) then
-Rink = 9
-else
-Rink = 10
+if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n* ᥀︙عذرا لا تستطيع طرد『 "..Controller(msg_chat_id,Message_Reply.sender.user_id).." 』*","md",true)  
 end
-if Rink == 10 then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ليس لديك رتب عزيزي *","md",true)  
+if not msg.ControllerBot and not Redis:set(Drox.."Drox:LeftBot") then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙امر المغادره معطل من قبل الاساسي *',"md",true)  
 end
-if Rink <= 7  then
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙استطيع تنزيل الادمنيه والمميزين فقط","md",true) 
-else
-Redis:srem(Drox.."Drox:Addictive:Group"..msg_chat_id, msg.sender.user_id)
-Redis:srem(Drox.."Drox:Distinguished:Group"..msg_chat_id, msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تنزيلك من الادمنيه والمميزين ","md",true) 
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(Drox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(Drox..'Drox:Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
-end
-if text == "اطردني" or text == "طردني" then
-if not Redis:get(TheDrox.."Drox:Status:KickMe"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙امر اطردني تم تعطيله من قبل المدراء *","md",true)  
-end
-if msg.can_be_deleted_for_all_users == false then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
-end
-if GetInfoBot(msg).BanUser == false then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
-end
-if StatusCanOrNotCan(msg_chat_id,msg.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,msg.sender.user_id).." } *","md",true)  
-end
-local StatusMember = LuaTele.getChatMember(msg_chat_id,msg.sender.user_id).status.luatele
-if (StatusMember == "chatMemberStatusCreator") then
-KickMe = true
-elseif (StatusMember == "chatMemberStatusAdministrator") then
-KickMe = true
-else
-KickMe = false
-end
-if KickMe == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙عذرا لا استطيع طرد ادمنيه ومنشئين المجموعه*","md",true)    
-end
-LuaTele.setChatMemberStatus(msg.chat_id,msg.sender.user_id,'banned',0)
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم طردك من المجموعه بنائآ على طلبك").Reply,"md",true)  
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'تأكيد الامر', data = '/Exit'..msg_chat_id}, {text = 'الغاء الامر', data = msg.sender.user_id..'/survival'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙يرجاء تأكيد الأمر عزيزي*',"md",false, false, false, false, reply_markup)
 end
 
 if text == 'ادمنيه الكروب' then
@@ -10279,7 +10241,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'*⦁ يرجاء تأكيد الأمر عزيزي*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙يرجاء تأكيد الأمر عزيزي*',"md",false, false, false, false, reply_markup)
 end
 if text == 'تنظيف المشتركين' then
 if not msg.ControllerBot then 
@@ -13193,12 +13155,12 @@ end
 end
 if Text and Text:match('/Zxchq(.*)') then
 local UserId = Text:match('/Zxchq(.*)')
-LuaTele.answerCallbackQuery(data.id, "⦁ تم مغادره البوت من المجموعه", true)
+LuaTele.answerCallbackQuery(data.id, "᥀︙تم مغادره البوت من المجموعه", true)
 LuaTele.leaveChat(UserId)
 end
 if Text and Text:match('(%d+)/Redis') then
 local UserId = Text:match('(%d+)/Redis')
-LuaTele.answerCallbackQuery(data.id, "⦁ تم الغاء الامر بنجاح", true)
+LuaTele.answerCallbackQuery(data.id, "᥀︙تم الغاء الامر بنجاح", true)
 if tonumber(IdUser) == tonumber(UserId) then
 return LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
 end

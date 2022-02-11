@@ -6439,17 +6439,18 @@ Abs = math.random(2,140);
 local Text ='*᥀︙تم اختيار الاغنيه لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = "https://t.me/DroxTeAm"}
-},
+{{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .',url="t.me/DroxTeAm"}},
 }
-local MsgId = msg.id/2097152/0.5
-local MSGID = string.gsub(MsgId,'.0','')
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == "ميمز" or text == "ميمزز" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار الميمز لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .',url="t.me/DroxTeAm"}},
+}
 local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/MemzDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
@@ -6457,6 +6458,10 @@ end
 if text == "فلم" or text == "افلام" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار الفلم لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .',url="t.me/DroxTeAm"}},
+}
 local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/MoviesDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
@@ -6464,6 +6469,10 @@ end
 if text == "انمي" or text == "انميي" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار انمي لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .',url="t.me/DroxTeAm"}},
+}
 local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/AnimeDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
@@ -6472,6 +6481,10 @@ end
 if text == "صوره" or text == "صورة" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار صوره لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .',url="t.me/DroxTeAm"}},
+}
 local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/PhotosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
@@ -6479,6 +6492,10 @@ end
 if text == "متحركه" or text == "متحركة" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار متحركه لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .',url="t.me/DroxTeAm"}},
+}
 local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendanimation?chat_id=' .. msg.chat_id .. '&animation=https://t.me/GifDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
@@ -6486,6 +6503,10 @@ end
 if text == "ريمكس" or text == "ريماكس" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار ريمكس لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .',url="t.me/DroxTeAm"}},
+}
 local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RemixDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 

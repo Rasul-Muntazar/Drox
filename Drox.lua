@@ -2593,7 +2593,7 @@ data = {
 {text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'},
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'},
 },
 }
 }
@@ -2676,7 +2676,7 @@ data = {
 {text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'},
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'},
 },
 }
 }
@@ -9655,11 +9655,11 @@ else
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
 local ban = LuaTele.getUser(Sudo_Id)
-local T = '* ❲ 𝑫𝒆𝒗𝒆𝒍𝒐𝒑𝒆𝒓𝒔 𝑩𝒐𝒕 ❳\n— — — — — — — — —\n‹ : 𝑫𝒆𝒗 𝑵𝒂𝒎𝒆 : *['..ban.first_name..'](tg://user?id='..ban.id..')*\n*'
+local T = '* 𝘿𝙚𝙫 𝘽𝙤𝙩 \n— — — — — — — — —\n‹ : 𝘿𝙚𝙫 𝙉𝙖𝙢𝙚  : *['..ban.first_name..'](tg://user?id='..ban.id..')*\n*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = "https://t.me/DroxTeAm"}
+{text = '..ban.first_name..', url = "https://t.me/..UserSudo.."}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -9770,7 +9770,7 @@ data = {
 {text = 'اوامر القفل الفتح', data = msg.sender.user_id..'/NoNextSeting'}, {text = '  اوامر التعطيل التفعيل  ', data = msg.sender.user_id..'/listallAddorrem'}, 
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -9824,7 +9824,7 @@ data = {
 {text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -9844,7 +9844,7 @@ data = {
 {text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -9864,7 +9864,7 @@ data = {
 {text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -9884,7 +9884,7 @@ data = {
 {text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -9904,7 +9904,7 @@ data = {
 {text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -9918,7 +9918,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -12092,7 +12092,7 @@ data = {
 {text = 'القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -12150,7 +12150,7 @@ data = {
 {text = 'القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -12209,7 +12209,7 @@ data = {
 {text = 'القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -12262,7 +12262,7 @@ data = {
 {text = 'القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -12302,7 +12302,7 @@ data = {
 {text = 'القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -12357,7 +12357,7 @@ data = {
 {text = 'القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -12398,7 +12398,7 @@ data = {
 {text = 'القائمه الرئيسيه ', data = IdUser..'/helpall'},
 },
 {
-{text = '- قناة السورس', url = 't.me/DroxTeAm'}, 
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }

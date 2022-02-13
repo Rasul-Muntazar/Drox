@@ -2806,6 +2806,14 @@ return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photo
 '\n᥀︙تعديلاتك : '..TotalEdit..
 '\n᥀︙تفاعلك : '..TotalMsgT..
 '*', "md")
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'اضغط للمسح', data =IdUser..'/'.. 'delAmr'}, 
+},
+}
+}
 else
 return LuaTele.sendText(msg_chat_id,msg_id,
 '\n*᥀︙ايديك : '..UserId..
@@ -2815,6 +2823,14 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 '\n᥀︙تعديلاتك : '..TotalEdit..
 '\n᥀︙تفاعلك : '..TotalMsgT..
 '*',"md",true) 
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'اضغط للمسح', data =IdUser..'/'.. 'delAmr'}, 
+},
+}
+}
 end
 end
 else
@@ -2839,6 +2855,14 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 '\n᥀︙تعديلاتك : '..TotalEdit..
 '\n᥀︙تفاعلك : '..TotalMsgT..
 '*',"md",true) 
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'اضغط للمسح', data =IdUser..'/'.. 'delAmr'}, 
+},
+}
+}
 end
 end
 end
@@ -2863,6 +2887,14 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 '\n᥀︙تعديلاته : '..TotalEdit..
 '\n᥀︙تفاعله : '..TotalMsgT..
 '*',"md",true) 
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'اضغط للمسح', data =IdUser..'/'.. 'delAmr'}, 
+},
+}
+}
 end
 if text and text:match('^ايدي @(%S+)$') or text and text:match('^كشف @(%S+)$') then
 local UserName = text:match('^ايدي @(%S+)$') or text:match('^كشف @(%S+)$')
@@ -2889,6 +2921,14 @@ return LuaTele.sendText(msg_chat_id,msg_id,
 '\n᥀︙تعديلاته : '..TotalEdit..
 '\n᥀︙تفاعله : '..TotalMsgT..
 '*',"md",true) 
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'اضغط للمسح', data =IdUser..'/'.. 'delAmr'}, 
+},
+}
+}
 end
 if text == 'تغيير الايدي' or text == 'تغير الايدي' then
 if not msg.Originators then

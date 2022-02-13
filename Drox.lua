@@ -9918,7 +9918,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10204,21 +10204,21 @@ end
 if text == "بوت" then
 local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local BotName = {
-"*ههلا ؏ـمَݛʊ̤ وياك "..NamesBot*,
-"*كول حبي اني "..NamesBot.. "*",
-"*شكد تلح 😾*"
+"ههلا ؏ـمَݛʊ̤ وياك "..NamesBot,
+"كول حبي اني "..NamesBot.. "",
+"شكد تلح 😾"
 }
 return LuaTele.sendText(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md",true)   
 end
 if text == (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس") then
 local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local NameBots = {
-"*عمر "..NamesBot.. " شتريد؟*",
-"*أჂ̤ أჂ̤ هياتني اني*",
-"*موجود بس لتصيح*",
-"*لتــلح دا احجي ويه بنات دروكس بعدين اجاوبك*",
-"*راح نموت بكورونا ونته بعدك تصيح "..NamesBot*,
-'*يمعود والله نعسان*'
+"عمر "..NamesBot.. " شتريد؟",
+"أჂ̤ أჂ̤ هياتني اني",
+"موجود بس لتصيح",
+"لتــلح دا احجي ويه بنات دروكس بعدين اجاوبك",
+"راح نموت بكورونا ونته بعدك تصيح "..NamesBot,
+'يمعود والله نعسان'
 }
 return LuaTele.sendText(msg_chat_id,msg_id, NameBots[math.random(#NameBots)],"md",true)  
 end

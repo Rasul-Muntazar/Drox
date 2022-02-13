@@ -9918,7 +9918,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -9932,7 +9932,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -9948,7 +9948,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -9964,7 +9964,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -9981,7 +9981,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -9996,7 +9996,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10011,7 +10011,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10026,7 +10026,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10041,7 +10041,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10055,7 +10055,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10070,7 +10070,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10085,7 +10085,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10100,7 +10100,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10115,7 +10115,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10131,7 +10131,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10145,7 +10145,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }
@@ -10160,7 +10160,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
 }

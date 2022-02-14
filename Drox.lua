@@ -1464,13 +1464,13 @@ end
 if Redis:get(TheDrox.."Drox:Set:Link"..msg_chat_id..""..msg.sender.user_id) then
 if text == "الغاء" then
 Redis:del(TheDrox.."Drox:Set:Link"..msg_chat_id..""..msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"📥︙تم الغاء حفظ الرابط","md",true)         
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم الغاء حفظ الرابط","md",true)         
 end
 if text and text:match("(https://telegram.me/joinchat/%S+)") or text and text:match("(https://t.me/joinchat/%S+)") then     
 local LinkGroup = text:match("(https://telegram.me/joinchat/%S+)") or text:match("(https://t.me/joinchat/%S+)")   
 Redis:set(TheDrox.."Drox:Group:Link"..msg_chat_id,LinkGroup)
 Redis:del(TheDrox.."Drox:Set:Link"..msg_chat_id..""..msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"📥︙تم حفظ الرابط بنجاح","md",true)         
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ الرابط بنجاح","md",true)         
 end
 end 
 if Redis:get(TheDrox.."Tshake:Welcome:Group" .. msg_chat_id .. "" .. msg.sender.user_id) then 
@@ -4970,19 +4970,19 @@ if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n᥀︙ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
 if Controller(msg_chat_id,UserId_Info.id) == 'المطور الاساسي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام{ "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
 end
 if Controller(msg_chat_id,UserId_Info.id) == 'المطور الثانوي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام{ "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
 end
 if Controller(msg_chat_id,UserId_Info.id) == 'مبرمج السورس' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام{ "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
 end
 if Controller(msg_chat_id,UserId_Info.id) == 'مبرمج السورس' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام{ "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
 end
 if Controller(msg_chat_id,UserId_Info.id) == 'ححلوة السورس' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام{ "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
 end
 if Redis:sismember(TheDrox.."Drox:ktmAll:Groups",UserId_Info.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"᥀︙ تم كتمه عام من المجموعات مسبقا ").Reply,"md",true)  
@@ -5443,19 +5443,19 @@ if ban and ban.type and ban.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n᥀︙ عذرا لا تستطيع استخدام الامر على البوت ","md",true)  
 end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المطور الاساسي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام{ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
 end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'المطور الثانوي' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام{ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
 end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'مبرمج السورس' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام{ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
 end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'مبرمج السورس' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام{ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
 end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'ححلوة السورس' then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام{ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙ عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
 end
 if Redis:sismember(TheDrox.."Drox:ktmAll:Groups",Message_Reply.sender.user_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"᥀︙ تم كتمه عام من المجموعات مسبقا ").Reply,"md",true)  

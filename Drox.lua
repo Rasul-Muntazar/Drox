@@ -11143,7 +11143,7 @@ if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/uui9u'}, },}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
@@ -11154,16 +11154,36 @@ Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'ر�
 Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
 Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
 Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
+Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'مط','رفع مطور')
+Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تك','تنزيل الكل')
+Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
+Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','ردود المدير')
+Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'،،','مسح المكتومين')
+Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','اضف رد')
+Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'سح','مسح سحكاتي')
+Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
+Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
+Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
 return LuaTele.sendText(msg_chat_id,msg_id,[[*
-᥀︙تم ترتيب الاوامر بالشكل التالي :
-᥀︙ايدي - ا .
-᥀︙ مميز - م .
-᥀︙ ادمن - اد .
-᥀︙مدير - مد .
-᥀︙ منشى - من .
-᥀︙لمنشئ الاساسي - اس  .
-᥀︙تعطيل الايدي بالصوره - تعط .
-᥀︙تفعيل الايدي بالصوره - تفع .
+᥀︙تم ترتيب الاوامر بالشكل التالي ~
+᥀︙ ايدي - ا .
+᥀︙ رفع مميز - م .
+᥀︙رفع ادمن - اد .
+᥀︙ رفع مدير - مد . 
+᥀︙ رفع منشى - من . 
+᥀︙ رفع منشئ الاساسي - اس  .
+᥀︙ رفع مطور - مط .
+᥀︙رفع مطور ثانوي - ثانوي .
+᥀︙ تنزيل الكل - تك .
+᥀︙ تعطيل الايدي بالصوره - تعط .
+᥀︙ تفعيل الايدي بالصوره - تفع .
+᥀︙ الرابط - ر .
+᥀︙ ردود المدير - رر .
+᥀︙ مسح المكتومين - ،، .
+᥀︙ اضف رد - رد .
+᥀︙ مسح سحكاتي - سح .
+᥀︙ مسح رسائلي - رس .
+᥀︙ غنيلي - غ .
 *]],"md")
 end
 end -- GroupBot

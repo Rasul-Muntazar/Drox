@@ -11138,7 +11138,7 @@ else
 return LuaTele.sendText(msg_chat_id,msg_id, "᥀︙عدد الجواهر التي ربحتها *⇦ "..Num.." *","md",true)  
 end
 end
-if text == 'ترتيب الاوامر' then
+if text == 'ترتيب الاوامر' or text == 'ترتيب' then
 if not msg.Managers then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(6)..' }* ',"md",true)  
 end
@@ -11146,26 +11146,26 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تفع','تفعيل الايدي بالصوره')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ا','ايدي')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'م','رفع مميز')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'رفع ادمن')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'مط','رفع مطور')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تك','تنزيل الكل')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','ردود المدير')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'،،','مسح المكتومين')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','اضف رد')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'سح','مسح سحكاتي')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
-Redis:set(Drox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تفع','تفعيل الايدي بالصوره')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ا','ايدي')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'م','رفع مميز')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'رفع ادمن')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'مط','رفع مطور')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تك','تنزيل الكل')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','ردود المدير')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'،،','مسح المكتومين')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','اضف رد')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'سح','مسح سحكاتي')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
+Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
 return LuaTele.sendText(msg_chat_id,msg_id,[[*
-᥀︙تم ترتيب الاوامر بالشكل التالي ~
+᥀︙تم ترتيب الاوامر بالشكل التالي :
 ᥀︙ ايدي - ا .
 ᥀︙ رفع مميز - م .
 ᥀︙رفع ادمن - اد .

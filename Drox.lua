@@ -6116,18 +6116,26 @@ if y == true then
 LuaTele.sendText(msg_chat_id,msg_id,restricted,"md",true)  
 end
 end
-
-
-if text == "غادر" then 
-if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
+if text == "غادر" or text == "بوت غادر" or text == "مغادره" then 
+if not msg.Developers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(3)..' }* ',"md",true)  
+end
+if not msg.ControllerBot and not Redis:set(TheDrox.."Drox:LeftBot") then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙امر المغادره معطل من قبل الاساسي *',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
-LuaTele.sendText(msg_chat_id,msg_id,"*\n᥀︙تم مغادرة المجموعه بامر من المطور *","md",true)  
-local Left_Bot = LuaTele.leaveChat(msg.chat_id)
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'تأكيد الامر', data = '/Zxchq'..msg_chat_id}, {text = 'الغاء الامر', data = msg.sender.user_id..'/Redis'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙يرجاء تأكيد الأمر عزيزي*',"md",false, false, false, false, reply_markup)
 end
 if text == 'تاك للكل' then
 if not msg.Addictive then
@@ -12016,9 +12024,6 @@ data = {
 {text = 'اوامر مطورين', data = IdUser..'/help5'}, {text = 'الالعاب', data = IdUser..'/help6'}, 
 },
 {
-{text = 'القائمه الرئيسيه ', data = IdUser..'/helpall'},
-},
-{
 {text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
 },
 }
@@ -12774,12 +12779,18 @@ end
 LuaTele.answerCallbackQuery(data.id, "᥀︙تم قفل جميع الاوامر بنجاح  ", true)
 end
 end
-if Text and Text:match('/leftgroup@(.*)') then
-local UserId = Text:match('/leftgroup@(.*)')
+if Text and Text:match('/Zxchq(.*)') then
+local UserId = Text:match('/Zxchq(.*)')
 LuaTele.answerCallbackQuery(data.id, "᥀︙تم مغادره البوت من المجموعه", true)
 LuaTele.leaveChat(UserId)
 end
-
+if Text and Text:match('(%d+)/Redis') then
+local UserId = Text:match('(%d+)/Redis')
+LuaTele.answerCallbackQuery(data.id, "᥀︙تم الغاء الامر بنجاح", true)
+if tonumber(IdUser) == tonumber(UserId) then
+return LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+end
+end
 
 if Text and Text:match('(%d+)/groupNumseteng//(%d+)') then
 local UserId = {Text:match('(%d+)/groupNumseteng//(%d+)')}

@@ -2276,7 +2276,7 @@ if not msg.ControllerBot then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
 os.execute('rm -rf Drox.lua')
-download('https://raw.githubusercontent.com/SourceTheDrox/TheDrox/master/Drox.lua','Drox.lua')
+download('https://raw.githubusercontent.com/Rasul-Muntazar/Drox/master/Drox.lua','Drox.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙تم تحديث السورس * ',"md",true)  
 end
 if text == '{ تعطيل الاذاعه } ' or text == 'تعطيل الاذاعه' then
@@ -10003,7 +10003,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك �
 end
 print('Chat Id : '..msg_chat_id)
 print('User Id : '..msg_user_send_id)
-LuaTele.sendText(msg_chat_id,msg_id, "᥀︙ تم تحديث الملفات ♻","md",true)
+LuaTele.sendText(msg_chat_id,msg_id, "*᥀︙ تم تحديث الملفات*","md",true)
 dofile('Drox.lua')  
 end
 if text == "تغير اسم البوت" then 
@@ -10818,7 +10818,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك �
 end
 print('Chat Id : '..msg_chat_id)
 print('User Id : '..msg_user_send_id)
-LuaTele.sendText(msg_chat_id,msg_id, "᥀︙ تم تحديث الملفات ♻","md",true)
+LuaTele.sendText(msg_chat_id,msg_id, "*᥀︙ تم تحديث الملفات*","md",true)
 dofile('Drox.lua')  
 end
 if text == '/start' then

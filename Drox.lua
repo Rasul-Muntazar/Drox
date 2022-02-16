@@ -4680,12 +4680,12 @@ if msg.content.video_note or msg.content.document or msg.content.audio or msg.co
 Redis:sadd(TheDrox.."Drox:allM"..msg.chat_id, msg.id)
 if Redis:get(TheDrox.."Drox:Status:Del:Media"..msg.chat_id) then    
 local gmedia = Redis:scard(TheDrox.."Drox:allM"..msg.chat_id)  
-if gmedia >= 200 then
+if gmedia >= 50 then
 local liste = Redis:smembers(TheDrox.."Drox:allM"..msg.chat_id)
 for k,v in pairs(liste) do
 local Mesge = v
 if Mesge then
-t = "᥀︙تم مسح "..k.." من الوسائط تلقائيا\n᥀︙يمكنك تعطيل الميزه بستخدام الامر ( `تعطيل المسح التلقائي` )"
+t = "*᥀︙تم مسح "..k.." من الوسائط تلقائيا*\n᥀︙يمكنك تعطيل الميزه بستخدام الامر ( `تعطيل المسح التلقائي` )"
 LuaTele.deleteMessages(msg.chat_id,{[1]= Mesge})
 end
 end

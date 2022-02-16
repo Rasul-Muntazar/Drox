@@ -1443,7 +1443,7 @@ Redis:del(TheDrox.."Drox:Command:Reids:Group:New"..msg_chat_id)
 Redis:srem(TheDrox.."Drox:Command:List:Group"..msg_chat_id,text)
 LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم ازالة هاذا ← { "..text.." }","md",true)
 else
-LuaTele.sendText(msg_chat_id,msg_id,"᥀︙لا يوجد امر بهاذا الاسم","md",true)
+LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙لا يوجد امر بهاذا الاسم*","md",true)
 end
 Redis:del(TheDrox.."Drox:Command:Reids:Group:Del"..msg_chat_id..":"..msg.sender.user_id)
 return false
@@ -1452,7 +1452,7 @@ if text and Redis:get(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg
 Redis:set(TheDrox.."Drox:Command:Reids:Group:New"..msg_chat_id,text)
 Redis:del(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg.sender.user_id)
 Redis:set(TheDrox.."Drox:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id,"true1") 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الامر الجديد ليتم وضعه مكان القديم","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الامر الجديد ليتم وضعه مكان القديم*","md",true)  
 end
 if text and Redis:get(TheDrox.."Drox:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id) == "true1" then
 local NewCmd = Redis:get(TheDrox.."Drox:Command:Reids:Group:New"..msg_chat_id)
@@ -1543,7 +1543,7 @@ end
 print(idPhoto)
 Redis:set(TheDrox.."Drox:Add:Rd:Manager:Photo"..test..msg_chat_id, idPhoto)  
 end
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ رد للمدير بنجاح \n᥀︙ارسل ( *"..test.."* ) لرئية الرد","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ رد للمدير بنجاح \n᥀︙ارسل ( *"..test.."* ) لرئية الرد*","md",true)  
 end  
 end
 if text and text:match("^(.*)$") then
@@ -9761,7 +9761,7 @@ data = {
 {text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '‹ Drox 𝖳??𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }

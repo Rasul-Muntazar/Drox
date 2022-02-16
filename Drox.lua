@@ -4709,7 +4709,7 @@ Redis:del(TheDrox.."Drox:allM"..msg.chat_id)
 end
 end
 if #list == 0 then
-t = "᥀︙لا يوجد ميديا في المجموعه"
+t = "*᥀︙لا يوجد ميديا في المجموعه*"
 end
  LuaTele.sendText(msg_chat_id,msg_id, t)
 end

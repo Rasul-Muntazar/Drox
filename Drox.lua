@@ -1459,46 +1459,46 @@ local NewCmd = Redis:get(TheDrox.."Drox:Command:Reids:Group:New"..msg_chat_id)
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..text,NewCmd)
 Redis:sadd(TheDrox.."Drox:Command:List:Group"..msg_chat_id,text)
 Redis:del(TheDrox.."Drox:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ الامر باسم ← { "..text..' }',"md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ الامر باسم ← { *"..text..' }',"md",true)
 end
 if Redis:get(TheDrox.."Drox:Set:Link"..msg_chat_id..""..msg.sender.user_id) then
 if text == "الغاء" then
 Redis:del(TheDrox.."Drox:Set:Link"..msg_chat_id..""..msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"📥︙تم الغاء حفظ الرابط","md",true)         
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم الغاء حفظ الرابط*","md",true)         
 end
 if text and text:match("(https://telegram.me/joinchat/%S+)") or text and text:match("(https://t.me/joinchat/%S+)") then     
 local LinkGroup = text:match("(https://telegram.me/joinchat/%S+)") or text:match("(https://t.me/joinchat/%S+)")   
 Redis:set(TheDrox.."Drox:Group:Link"..msg_chat_id,LinkGroup)
 Redis:del(TheDrox.."Drox:Set:Link"..msg_chat_id..""..msg.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"📥︙تم حفظ الرابط بنجاح","md",true)         
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ الرابط بنجاح*","md",true)         
 end
 end 
 if Redis:get(TheDrox.."Tshake:Welcome:Group" .. msg_chat_id .. "" .. msg.sender.user_id) then 
 if text == "الغاء" then 
 Redis:del(TheDrox.."Tshake:Welcome:Group" .. msg_chat_id .. "" .. msg.sender.user_id)  
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم الغاء حفظ الترحيب","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم الغاء حفظ الترحيب*","md",true)   
 end 
 Redis:del(TheDrox.."Tshake:Welcome:Group" .. msg_chat_id .. "" .. msg.sender.user_id)  
 Redis:set(TheDrox.."Drox:Welcome:Group"..msg_chat_id,text) 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ ترحيب المجموعه","md",true)     
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ ترحيب المجموعه*","md",true)     
 end
 if Redis:get(TheDrox.."Drox:Set:Rules:" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
 if text == "الغاء" then 
 Redis:del(TheDrox.."Drox:Set:Rules:" .. msg_chat_id .. ":" .. msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم الغاء حفظ القوانين","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم الغاء حفظ القوانين*","md",true)   
 end 
 Redis:set(TheDrox.."Drox:Group:Rules" .. msg_chat_id,text) 
 Redis:del(TheDrox.."Drox:Set:Rules:" .. msg_chat_id .. ":" .. msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ قوانين المجموعه","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ قوانين المجموعه*","md",true)  
 end  
 if Redis:get(TheDrox.."Drox:Set:Description:" .. msg_chat_id .. ":" .. msg.sender.user_id) then 
 if text == "الغاء" then 
 Redis:del(TheDrox.."Drox:Set:Description:" .. msg_chat_id .. ":" .. msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم الغاء حفظ وصف المجموعه","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم الغاء حفظ وصف المجموعه*","md",true)   
 end 
 LuaTele.setChatDescription(msg_chat_id,text) 
 Redis:del(TheDrox.."Drox:Set:Description:" .. msg_chat_id .. ":" .. msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ وصف المجموعه","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ وصف المجموعه*","md",true)  
 end  
 if text or msg.content.video_note or msg.content.document or msg.content.audio or msg.content.video or msg.content.voice_note or msg.content.sticker or msg.content.animation or msg.content.photo then
 local test = Redis:get(TheDrox.."Drox:Text:Manager"..msg.sender.user_id..":"..msg_chat_id.."")
@@ -1543,7 +1543,7 @@ end
 print(idPhoto)
 Redis:set(TheDrox.."Drox:Add:Rd:Manager:Photo"..test..msg_chat_id, idPhoto)  
 end
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ رد للمدير بنجاح \n᥀︙ارسل ( "..test.." ) لرئية الرد","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ رد للمدير بنجاح \n᥀︙ارسل ( *"..test.."* ) لرئية الرد","md",true)  
 end  
 end
 if text and text:match("^(.*)$") then
@@ -1590,7 +1590,7 @@ Redis:del(TheDrox.."Drox:Add:Rd:Manager:Audio"..text..msg_chat_id)
 Redis:del(TheDrox.."Drox:Add:Rd:Manager:video_note"..text..msg_chat_id)
 Redis:del(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id)
 Redis:srem(TheDrox.."Drox:List:Manager"..msg_chat_id.."", text)
-LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حذف الرد من ردود المدير ","md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حذف الرد من ردود المدير *","md",true)  
 return false
 end
 end
@@ -4709,7 +4709,7 @@ Redis:del(TheDrox.."Drox:allM"..msg.chat_id)
 end
 end
 if #list == 0 then
-t = "*᥀︙لا يوجد ميديا في المجموعه*"
+t = "᥀︙لا يوجد ميديا في المجموعه"
 end
  LuaTele.sendText(msg_chat_id,msg_id, t)
 end
@@ -7947,7 +7947,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg.sender.user_id,"true") 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙الان ارسل لي الامر القديم ...","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙الان ارسل لي الامر القديم*","md",true)
 end
 if text == "حذف امر" or text == "مسح امر" then 
 if not msg.Addictive then
@@ -7958,7 +7958,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Command:Reids:Group:Del"..msg_chat_id..":"..msg.sender.user_id,"true") 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الامر الذي قمت بوضعه مكان الامر القديم","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الامر الذي قمت بوضعه مكان الامر القديم*","md",true)
 end
 if text == "حذف الاوامر المضافه" or text == "مسح الاوامر المضافه" then 
 if not msg.Managers then
@@ -7973,7 +7973,7 @@ for k,v in pairs(list) do
 Redis:del(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..v)
 Redis:del(TheDrox.."Drox:Command:List:Group"..msg_chat_id)
 end
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم مسح جميع الاوامر التي تم اضافتها","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم مسح جميع الاوامر التي تم اضافتها*","md",true)
 end
 if text == "الاوامر المضافه" then
 if not msg.Managers then
@@ -7984,7 +7984,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:Command:List:Group"..msg_chat_id.."")
-Command = "᥀︙قائمه الاوامر المضافه  \n— — — — — — — — —\n"
+Command = "*᥀︙قائمه الاوامر المضافه* \n— — — — — — — — —\n"
 for k,v in pairs(list) do
 Commands = Redis:get(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..v)
 if Commands then 
@@ -7994,7 +7994,7 @@ Command = Command..""..k..": ("..v..") \n"
 end
 end
 if #list == 0 then
-Command = "᥀︙لا توجد اوامر اضافيه"
+Command = "*᥀︙لا توجد اوامر اضافيه*"
 end
 return LuaTele.sendText(msg_chat_id,msg_id,Command,"md",true)
 end
@@ -9116,7 +9116,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,true)
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الكلمه لاضافتها في ردود المدير ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الكلمه لاضافتها في ردود المدير*","md",true)  
 end
 if text == "حذف رد" then
 if not msg.Addictive then
@@ -9127,7 +9127,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true2")
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الكلمه لحذفها من ردود المدير","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الكلمه لحذفها من ردود المدير*","md",true)  
 end
 if text == ("مسح ردود المطور") then 
 if not msg.ControllerBot then 
@@ -9761,7 +9761,7 @@ data = {
 {text = '{ قائمه الاوامر }', data = msg.sender.user_id..'/helpall'},
 },
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = '‹ Drox 𝖳??𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }

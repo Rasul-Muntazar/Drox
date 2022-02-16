@@ -1543,7 +1543,7 @@ end
 print(idPhoto)
 Redis:set(TheDrox.."Drox:Add:Rd:Manager:Photo"..test..msg_chat_id, idPhoto)  
 end
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ رد للمدير بنجاح \n᥀︙ارسل ( *"..test.."* ) لرئية الرد*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ رد للمدير بنجاح \n᥀︙ارسل ( *"..test.."* ) لرئية الرد","md",true)  
 end  
 end
 if text and text:match("^(.*)$") then
@@ -7687,7 +7687,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Set:Link"..msg_chat_id..""..msg.sender.user_id,120,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"📥︙ارسل رابط المجموعه او رابط قناة المجموعه","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل رابط المجموعه او رابط قناة المجموعه*","md",true)  
 end
 if text == "مسح الرابط" or text == "حذف الرابط" then
 if not msg.Addictive then
@@ -7698,11 +7698,11 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Group:Link"..msg_chat_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم مسح الرابط ","md",true)             
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم مسح الرابط*","md",true)             
 end
 if text == "الرابط" then
 if not Redis:get(TheDrox.."Drox:Status:Link"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل جلب الرابط من قبل الادمنيه","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم تعطيل جلب الرابط من قبل الادمنيه*","md",true)
 end 
 local Get_Chat = LuaTele.getChat(msg_chat_id)
 local GetLink = Redis:get(TheDrox.."Drox:Group:Link"..msg_chat_id) 
@@ -7713,11 +7713,11 @@ return LuaTele.sendText(msg_chat_id, msg_id, "᥀︙ Link Group : \n["..Get_Chat
 else
 local LinkGroup = LuaTele.generateChatInviteLink(msg_chat_id,'taha',tonumber(msg.date+86400),100,false)
 if LinkGroup.code == 3 then
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙لا استطيع جلب الرابط بسبب ليس لدي صلاحيه دعوه مستخدمين من خلال الرابط ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙لا استطيع جلب الرابط بسبب ليس لدي صلاحيه دعوه مستخدمين من خلال الرابط*","md",true)
 end
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {{text = Get_Chat.title, url = LinkGroup.invite_link},},}}
-return LuaTele.sendText(msg_chat_id, msg_id, "᥀︙ Link Group : \n["..Get_Chat.title.. ']('..LinkGroup.invite_link..')', 'md', true, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id, msg_id, "*᥀︙ Link Group :* \n["..Get_Chat.title.. ']('..LinkGroup.invite_link..')', 'md', true, false, false, false, reply_markup)
 end
 end
 
@@ -7741,13 +7741,13 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:get(TheDrox.."Drox:Status:Welcome"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل الترحيب من قبل الادمنيه","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم تعطيل الترحيب من قبل الادمنيه*","md",true)
 end 
 local Welcome = Redis:get(TheDrox.."Drox:Welcome:Group"..msg_chat_id)
 if Welcome then 
 return LuaTele.sendText(msg_chat_id,msg_id,Welcome,"md",true)   
 else 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙لم يتم تعيين ترحيب للمجموعه","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙لم يتم تعيين ترحيب للمجموعه*","md",true)   
 end 
 end
 if text == "مسح الترحيب" or text == "حذف الترحيب" then 
@@ -7759,7 +7759,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Welcome:Group"..msg_chat_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم ازالة ترحيب المجموعه","md",true)   
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم ازالة ترحيب المجموعه*","md",true)   
 end
 if text == "ضع قوانين" or text == "وضع قوانين" then 
 if not msg.Addictive then
@@ -7770,7 +7770,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Set:Rules:" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل لي القوانين الان","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل لي القوانين الان*","md",true)  
 end
 if text == "مسح القوانين" or text == "حذف القوانين" then  
 if not msg.Addictive then
@@ -7781,14 +7781,14 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Group:Rules"..msg_chat_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم ازالة قوانين المجموعه","md",true)    
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم ازالة قوانين المجموعه*","md",true)    
 end
 if text == "القوانين" then 
 local Rules = Redis:get(TheDrox.."Drox:Group:Rules" .. msg_chat_id)   
 if Rules then     
 return LuaTele.sendText(msg_chat_id,msg_id,Rules,"md",true)     
 else      
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙لا توجد قوانين هنا","md",true)     
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙لا توجد قوانين هنا*","md",true)     
 end    
 end
 if text == "ضع وصف" or text == "وضع وصف" then 
@@ -7806,7 +7806,7 @@ if GetInfoBot(msg).Info == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه تغيير المعلومات* ',"md",true)  
 end
 Redis:setex(TheDrox.."Drox:Set:Description:" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل لي وصف المجموعه الان","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل لي وصف المجموعه الان*","md",true)  
 end
 if text == "مسح الوصف" or text == "حذف الوصف" then  
 if not msg.Addictive then
@@ -7823,7 +7823,7 @@ if GetInfoBot(msg).Info == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه تغيير المعلومات* ',"md",true)  
 end
 LuaTele.setChatDescription(msg_chat_id, '') 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم ازالة قوانين المجموعه","md",true)    
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم ازالة قوانين المجموعه*","md",true)    
 end
 
 if text and text:match("^ضع اسم (.*)") or text and text:match("^وضع اسم (.*)") then 
@@ -7842,7 +7842,7 @@ if GetInfoBot(msg).Info == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه تغيير المعلومات* ',"md",true)  
 end
 LuaTele.setChatTitle(msg_chat_id,NameChat)
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تغيير اسم المجموعه الى : "..NameChat,"md",true)    
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم تغيير اسم المجموعه الى :* "..NameChat,"md",true)    
 end
 
 if text == ("ضع صوره") then  
@@ -7857,7 +7857,7 @@ if GetInfoBot(msg).Info == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه تغيير المعلومات* ',"md",true)  
 end
 Redis:set(TheDrox.."Drox:Chat:Photo"..msg_chat_id..":"..msg.sender.user_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الصوره لوضعها","md",true)    
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الصوره لوضعها*","md",true)    
 end
 
 if text == "مسح قائمه المنع" then   
@@ -9509,7 +9509,7 @@ else
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
 local ban = LuaTele.getUser(Sudo_Id)
-local T = '* 𝘿𝙚𝙫 𝘽𝙤𝙩 \n— — — — — — — — —\n‹ : 𝘿𝙚𝙫 𝙉𝙖𝙢𝙚  : *['..ban.first_name..'](tg://user?id='..ban.id..')*\n*'
+local T = '‹ 𝘿𝙚𝙫 𝘽𝙤𝙩 : '..UserSudo..' \n ‹ 𝘿𝙚𝙫 𝙉𝙖𝙢𝙚  : ['..ban.first_name..'](tg://user?id='..ban.id..') \n— — — — — — — — —\n '
 keyboard = {} 
 keyboard.inline_keyboard = {
 {

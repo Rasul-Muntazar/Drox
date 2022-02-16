@@ -2596,7 +2596,7 @@ data = {
 {text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
-{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DrocTeAm'},
 },
 }
 }
@@ -2679,7 +2679,7 @@ data = {
 {text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
-{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DrocTeAm'},
 },
 }
 }
@@ -10832,7 +10832,7 @@ local CmdStart = '*\n᥀︙أهلآ بك في بوت '..(Redis:get(TheDrox.."Dro
 '\n᥀︙اضف البوت الى مجموعتك'..
 '\n᥀︙ارفعه ادمن {مشرف}'..
 '\n᥀︙ارسل كلمة { تفعيل } ليتم تفعيل المجموعه'..
-'\n᥀︙مطور البوت ← {'..UserSudo..'}*'
+'\n᥀︙مطور البوت ← {@'..UserSudo..'}*'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {

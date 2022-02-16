@@ -711,12 +711,12 @@ else
 UserInfousername = '['..UserInfo.first_name..'](tg://user?id='..UserId..')'
 end
 return {
-Lock     = '[˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه المسح *',
-unLock   = '[˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n'..TextMsg,
-lockKtm  = '[˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه الكتم *',
-lockKid  = '[˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه التقييد *',
-lockKick = '[˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه الطرد *',
-Reply    = '[˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙المستخدم ← *'..UserInfousername..'\n*'..TextMsg..'*'
+Lock     = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه المسح *',
+unLock   = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n'..TextMsg,
+lockKtm  = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه الكتم *',
+lockKid  = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه التقييد *',
+lockKick = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه الطرد *',
+Reply    = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙المستخدم ← *'..UserInfousername..'\n*'..TextMsg..'*'
 }
 end
 function StatusCanOrNotCan(ChatId,UserId)
@@ -6430,7 +6430,7 @@ Abs = math.random(2,140);
 local Text ='*᥀︙تم اختيار الاغنيه لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .',url="t.me/DroxTeAm"}},
+{{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"}},
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
@@ -9505,7 +9505,7 @@ local T = '* 𝘿𝙚𝙫 𝘽𝙤𝙩 \n— — — — — — — — —\n�
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = "https://t.me/DroxTeAm"}
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = "https://t.me/DroxTeAm"}
 },
 }
 local msgg = msg_id/2097152/0.5
@@ -9554,21 +9554,21 @@ end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
 photo = "https://t.me/Rasulm12/20"
 local T =[[*
-- 𝖶𝖾𝗅𝖼𝗈𝗆𝖾  𝖲𝗈𝗎𝗋𝖼𝖾 𝖲𝖺𝗇𝗉 𝖳𝖾𝖺𝗆 .
+- 𝖶𝖾𝗅𝖼𝗈𝗆𝖾  𝖲𝗈𝗎𝗋𝖼𝖾 Drox 𝖳𝖾𝖺𝗆 .
 - 𝖳𝗁𝖾 𝗅𝖺𝗋𝗀𝖾𝗌𝗍 𝗉𝗋𝗈𝖿𝖾𝗌𝗌𝗂𝗈𝗇𝖺𝗅 𝗉𝗅𝖺𝗍𝖿𝗈𝗋𝗆 𝗌𝗉𝖾𝖼𝗂𝖺𝗅𝗂𝗓𝖾𝖽 𝗂𝗇 𝖬𝖺𝗄𝗂𝗇𝗀 𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝗆 𝖡𝗈𝗍𝗌 .
-- اكبر  منصة أحترافية متخصصة لصنع الروبوتات :* [˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .](https://t.me/DroxTeAm)
+- اكبر  منصة أحترافية متخصصة لصنع الروبوتات :* [‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)
 ]]
 keyboard = {} 
 keyboard.inline_keyboard = {
 
 {
-{text = 'ᦔꫀ𝙫 𝘴ꪮ𝙪𝘳ᥴꫀ ', url = "https://t.me/P222P"},{text = 'لعنةُ .', url = "https://t.me/RRRR99"}
+{text = '‹ D𝖾𝗏 S𝖾𝗎𝗋𝖼𝖾 ›', url = "https://t.me/P222P"},{text = 'لعنةُ .', url = "https://t.me/RRRR99"}
 },
 {
-{text = '𝘁᭙𝘴 ᦔ𝘳ꪮ᥊', url = "https://t.me/Yv4bot"}
+{text = '‹ Tws Drox ›', url = "https://t.me/Yv4bot"}
 },
 {
-{text = ' ˛ ᦔ𝙧ꪮ᥊ ⁦⁩𝙩ꫀꪖ𝙢 .', url = "https://t.me/DroxTeAm"}
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = "https://t.me/DroxTeAm"}
 },
 }
 local msgg = msg_id/2097152/0.5

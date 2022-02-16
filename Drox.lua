@@ -2596,7 +2596,7 @@ data = {
 {text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
-{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},
 },
 }
 }
@@ -2679,7 +2679,7 @@ data = {
 {text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
-{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}, 
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},
 },
 }
 }
@@ -2688,6 +2688,7 @@ Redis:set(TheDrox.."Drox:Status:Id"..msg_chat_id,true) ;Redis:set(TheDrox.."Drox
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙المجموعه : {*['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')*}\n᥀︙تم تفعيل المجموعه اظغط رفع الادمنيه الرفع مالك الكروب *','md', true, false, false, false, reply_markup)
 end
 end
+
 
 if text == 'تعطيل' and msg.Developers then
 local Get_Chat = LuaTele.getChat(msg_chat_id)

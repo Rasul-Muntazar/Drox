@@ -2173,7 +2173,7 @@ end
 return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙تم استرجاع {'..X..'} مجموعه \n᥀︙واسترجاع {'..Y..'} مشترك في البوت')
 end
 end
-if text == 'رفع نسخه تشاكي' and msg.reply_to_message_id ~= 0 then
+if text == 'رفع نسخه دروكس' and msg.reply_to_message_id ~= 0 then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
 end
@@ -2208,7 +2208,7 @@ for k,idASAS in pairs(v.ASAS) do
 Redis:sadd(TheDrox.."Drox:TheBasics:Group"..idg,idASAS)
 end;end
 end
-return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙تم استرجاع المجموعات من نسخه تشاكي')
+return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙تم استرجاع المجموعات من نسخه دروكس')
 else
 return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙الملف لا يدعم هاذا البوت')
 end

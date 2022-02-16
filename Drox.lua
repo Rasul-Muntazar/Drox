@@ -9549,6 +9549,27 @@ if Redis:get(TheDrox.."Drox:Status:kool"..msg.chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,m,"md",true) 
 end
 end
+if text == 'رابط الحذف' or text == 'رابط حذف' then
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'Telegram', url = 'https://my.telegram.org/auth?to=delete'},{text = 'Instagram', url = 'https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/'}
+},
+{
+{text = 'Facebook', url = 'https://www.facebook.com/help/deleteaccount'},{text = 'Snapchat', url = 'https://accounts.Snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.Droxchat.com%2Faccounts%2Fdeleteaccount'}
+},
+{
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙رابط الحذف في جميع مواقع التواصل*',"md",false, false, false, false, reply_markup)
+end
 if text == "صورتي" then
 if Redis:get(TheDrox.."Drox:Status:photo"..msg.chat_id) then
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)

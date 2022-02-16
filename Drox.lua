@@ -2596,7 +2596,7 @@ data = {
 {text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'},
 },
 }
 }
@@ -2679,7 +2679,7 @@ data = {
 {text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'},
 },
 }
 }

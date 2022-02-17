@@ -4713,7 +4713,7 @@ t = "᥀︙لا يوجد ميديا في المجموعه"
 end
  LuaTele.sendText(msg_chat_id,msg_id, t)
 end
-if text == ("عدد الميديا") then  
+if text == ("عدد الميديا") or text == ("الميديا") then
 if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(4)..' }* ',"md",true)  
 end

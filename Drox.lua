@@ -2590,10 +2590,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ رفع الادمنيه ›', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},{text = '‹ تفعيل الحمايه ›', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
+{text = '‹ رفع الادمنيه ›', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},{text = '‹ الاوامر ›', data = msg.sender.user_id..'/'.. '/helpall'},
 },
 {
-{text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
+{text = '‹ الحمايه ›', data = msg.sender.user_id..'/'.. '/listallAddorrem'},
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},
@@ -2673,10 +2673,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ رفع الادمنيه ›', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},{text = '‹ تفعيل الحمايه ›', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
+{text = '‹ رفع الادمنيه ›', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},{text = '‹ الاوامر ›', data = msg.sender.user_id..'/'.. '/helpall'},
 },
 {
-{text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
+{text = '‹ الحمايه ›', data = msg.sender.user_id..'/'.. '/listallAddorrem'},
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},

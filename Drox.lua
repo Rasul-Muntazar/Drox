@@ -9502,18 +9502,18 @@ Redis:del(TheDrox..'Drox:Texting:DevTheDrox')
 return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙ تم حذف كليشه المطور')
 end
 if text == 'المطور' or text == 'مطور' then
-local TextingDevTheDrox = Redis:get(TheDrox..'Drox:Texting:DevTheDrox')
-if TextingDevTheDrox then 
-return LuaTele.sendText(msg_chat_id,msg_id,TextingDevDrox,"md",true)  
+local TextingDevTheSnap = Redis:get(TheSnap..'Snap:Texting:DevTheSnap')
+if TextingDevTheSnap then 
+return LuaTele.sendText(msg_chat_id,msg_id,TextingDevSnap,"md",true)  
 else
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
 local ban = LuaTele.getUser(Sudo_Id)
-local T = '‹ 𝘿𝙚𝙫 𝘽𝙤𝙩 : ['..ban.first_name..'](tg://user?id='..ban.id..')\n— — — — — — —\n'
+local T = '‹ 𝘿𝙚𝙫 𝘽𝙤𝙩 : ['..ban.first_name..'](tg://user?id='..ban.id..')\n— — — — — — — —\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = "https://t.me/DroxTeAm"}
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 local msgg = msg_id/2097152/0.5

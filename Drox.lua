@@ -9513,7 +9513,7 @@ local T = '‹ 𝘿𝙚𝙫 𝘽𝙤𝙩 : ['..ban.first_name..'](tg://user?id='
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = ''..ban.first_name..'', url = "https://t.me/'..UserSudo..'"}
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = "https://t.me/DroxTeAm"}
 },
 }
 local msgg = msg_id/2097152/0.5

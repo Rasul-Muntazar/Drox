@@ -9528,7 +9528,7 @@ if Redis:get(TheDrox.."Drox:Status:gamle"..msg.chat_id) then
 local photo = LuaTele.getUserProfilePhotos(msg.sender.user_id)
 if msg.Developers then
 if photo.total_count > 0 then
-return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,"*نسبه جمالك هي 900% عشان مطور ولازم اطبله😹♥*", "md")
+return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,"*نسبه جمالك هي 900% لان مطور ولازم اتلوك 😂♥*", "md")
 else
 return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙ لا توجد صوره ف حسابك*',"md",true) 
 end

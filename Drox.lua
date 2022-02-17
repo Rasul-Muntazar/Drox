@@ -9509,7 +9509,7 @@ else
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
 local ban = LuaTele.getUser(Sudo_Id)
-local T = '‹ 𝘿𝙚𝙫 𝘽𝙤𝙩 : ['..ban.first_name..'](https://t.me/'..UserSudo..')\n— — — — — — — — —\n'
+local T = '‹ 𝘿𝙚𝙫 𝘽𝙤𝙩 : ['..ban.first_name..'](https://t.me/'..UserSudo..')\n— — — — — — —\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {

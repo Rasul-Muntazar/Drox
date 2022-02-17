@@ -4311,11 +4311,11 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك �
 end
 if TextMsg == 'الرابط' then
 Redis:set(TheDrox.."Drox:Status:Link"..msg_chat_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل الرابط","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم تفعيل الرابط*","md",true)
 end
 if TextMsg == 'الترحيب' then
 Redis:set(TheDrox.."Drox:Status:Welcome"..msg_chat_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل الترحيب ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم تفعيل الترحيب*","md",true)
 end
 if TextMsg == 'الايدي' then
 if not msg.Managers then
@@ -4326,7 +4326,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Status:Id"..msg_chat_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل الايدي ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم تفعيل الايدي*","md",true)
 end
 if TextMsg == 'الايدي بالصوره' then
 if not msg.Managers then
@@ -4703,13 +4703,13 @@ local list = Redis:smembers(TheDrox.."Drox:allM"..msg.chat_id)
 for k,v in pairs(list) do
 local Message = v
 if Message then
-t = "᥀︙تم مسح "..k.." من الوسائط الموجوده"
+t = "᥀︙تم مسح *"..k.."* من الوسائط الموجوده"
 LuaTele.deleteMessages(msg.chat_id,{[1]= Message})
 Redis:del(TheDrox.."Drox:allM"..msg.chat_id)
 end
 end
 if #list == 0 then
-t = "*᥀︙لا يوجد ميديا في المجموعه*"
+t = "᥀︙لا يوجد ميديا في المجموعه"
 end
  LuaTele.sendText(msg_chat_id,msg_id, t)
 end
@@ -4725,7 +4725,7 @@ if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(4)..' }* ',"md",true)  
 end
 Redis:del(TheDrox.."Drox:Status:Del:Media"..msg.chat_id)
- LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙تم تعطيل المسح التلقائي للميديا*')
+ LuaTele.sendText(msg_chat_id,msg_id,'᥀︙تم تعطيل المسح التلقائي للميديا')
 return false
 end 
 if text == "تفعيل المسح التلقائي" then        
@@ -4733,7 +4733,7 @@ if not msg.TheBasics then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(4)..' }* ',"md",true)  
 end
 Redis:set(TheDrox.."Drox:Status:Del:Media"..msg.chat_id,true)
-LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙تم تفعيل المسح التلقائي للميديا*')
+LuaTele.sendText(msg_chat_id,msg_id,'᥀︙تم تفعيل المسح التلقائي للميديا')
 return false
 end 
 if text == "تعطيل اليوتيوب" then        

@@ -2593,7 +2593,7 @@ data = {
 {text = '‹ رفع الادمنيه ›', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},{text = '‹ تفعيل الحمايه ›', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
 },
 {
-{text = '‹ ترتيب الاوامر ›', data = msg.sender.user_id..'/'.. '/commands'},
+{text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},
@@ -2676,7 +2676,7 @@ data = {
 {text = '‹ رفع الادمنيه ›', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},{text = '‹ تفعيل الحمايه ›', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
 },
 {
-{text = '‹ ترتيب الاوامر ›', data = msg.sender.user_id..'/'.. '/commands'},
+{text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},
@@ -8098,6 +8098,9 @@ data = {
 {text = 'تعطيل اطردني', data = msg.sender.user_id..'/'.. 'unmute_kickme'},{text = 'تفعيل اطردني', data = msg.sender.user_id..'/'.. 'mute_kickme'},
 },
 {
+{text = '‹ ترتيب الاوامر ›', data = msg.sender.user_id..'/'.. '/commands'},
+},
+{
 {text = '- اخفاء الامر ', data =msg.sender.user_id..'/'.. 'delAmr'}
 },
 }
@@ -13041,6 +13044,9 @@ data = {
 },
 {
 {text = 'تعطيل اطردني', data = IdUser..'/'.. 'unmute_kickme'},{text = 'تفعيل اطردني', data = IdUser..'/'.. 'mute_kickme'},
+},
+{
+{text = '‹ ترتيب الاوامر ›', data = msg.sender.user_id..'/'.. '/commands'},
 },
 {
 {text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},

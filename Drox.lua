@@ -9502,8 +9502,8 @@ Redis:del(TheDrox..'Drox:Texting:DevTheDrox')
 return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙ تم حذف كليشه المطور')
 end
 if text == 'المطور' or text == 'مطور' then
-local TextingDevTheSnap = Redis:get(TheDrox..'Drox:Texting:DevTheDrox')
-if TextingDevTheSnap then 
+local TextingDevTheDrox = Redis:get(TheDrox..'Drox:Texting:DevTheDrox')
+if TextingDevTheDrox then 
 return LuaTele.sendText(msg_chat_id,msg_id,TextingDevDrox,"md",true)  
 else
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)

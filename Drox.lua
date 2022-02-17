@@ -9509,11 +9509,11 @@ else
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
 local ban = LuaTele.getUser(Sudo_Id)
-local T = '‹ 𝘿𝙚𝙫 𝙐𝙨𝙚𝙧 : '..UserSudo..' \n‹ 𝘿𝙚𝙫 𝙉𝙖𝙢𝙚  : ['..ban.first_name..'](https://t.me/'..UserSudo..')\n— — — — — — — — —\n'
+local T = '‹ 𝘿𝙚𝙫 𝙐𝙨𝙚𝙧 : '..@UserSudo..' \n‹ 𝘿𝙚𝙫 𝙉𝙖𝙢𝙚  : ['..ban.first_name..'](https://t.me/'..UserSudo..')\n— — — — — — — — —\n'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = ''..ban.first_name..'', url = "https://t.me/'..UserSudo..'"}
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = "https://t.me/DroxTeAm"}
 },
 }
 local msgg = msg_id/2097152/0.5

@@ -7721,7 +7721,7 @@ return LuaTele.sendText(msg_chat_id, msg_id, "*᥀︙ Link Group :* \n["..Get_Ch
 end
 end
 
-if text == "ضع ترحيب" or text == "وضع ترحيب" then  
+if text == "ضع ترحيب" or text == "وضع ترحيب" then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
 end

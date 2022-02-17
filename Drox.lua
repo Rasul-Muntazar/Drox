@@ -8098,9 +8098,6 @@ data = {
 {text = 'تعطيل اطردني', data = msg.sender.user_id..'/'.. 'unmute_kickme'},{text = 'تفعيل اطردني', data = msg.sender.user_id..'/'.. 'mute_kickme'},
 },
 {
-{text = '‹ ترتيب الاوامر ›', data = msg.sender.user_id..'/'.. '/commands'},
-},
-{
 {text = '- اخفاء الامر ', data =msg.sender.user_id..'/'.. 'delAmr'}
 },
 }
@@ -10837,29 +10834,6 @@ return LuaTele.sendText(msg_chat_id,msg_id,[[*
 ᥀︙ غنيلي - غ .
 *]],"md")
 end
-elseif Text and Text:match('(%d+)/commands') then
-local UserId = Text:match('(%d+)/commands')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تفع','تفعيل الايدي بالصوره')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ا','ايدي')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'م','رفع مميز')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'اد', 'رفع ادمن')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'مد','رفع مدير')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'من', 'رفع منشئ')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'اس', 'رفع منشئ اساسي')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'مط','رفع مطور')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تك','تنزيل الكل')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ر','الرابط')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رر','ردود المدير')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'،،','مسح المكتومين')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رد','اضف رد')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'سح','مسح سحكاتي')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'غ','غنيلي')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'رس','رسائلي')
-Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'ثانوي','رفع مطور ثانوي')
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '- رجوع', data =UserId..'/'.. 'NoNextSeting'},},}}
-LuaTele.editMessageText(ChatId,Msg_id,Reply_Status(IdUser,"*︙تم ترتيب الاوامر بالشكل التالي ~\n᥀︙ ايدي - ا .\n᥀︙ رفع مميز - م .\n᥀︙رفع ادمن - اد .\n᥀︙ رفع مدير - مد . \n᥀︙ رفع منشى - من . \n᥀︙ رفع منشئ الاساسي - اس  .\n᥀︙ رفع مطور - مط .\n᥀︙رفع مطور ثانوي - ثانوي .\n᥀︙ تنزيل الكل - تك .\n᥀︙ تعطيل الايدي بالصوره - تعط .\n᥀︙ تفعيل الايدي بالصوره - تفع .\n᥀︙ الرابط - ر .\n᥀︙ ردود المدير - رر .\n᥀︙ مسح المكتومين - ،، .\n᥀︙ اضف رد - رد .\n᥀︙ مسح سحكاتي - سح .\n᥀︙ مسح رسائلي - رس .\n᥀︙ غنيلي - غ .*").Lock, 'md', true, false, reply_markup)
-end
 end -- GroupBot
 if chat_type(msg.chat_id) == "UserBot" then 
 if text == 'تحديث الملفات ᥀' or text == 'تحديث' then
@@ -13044,9 +13018,6 @@ data = {
 },
 {
 {text = 'تعطيل اطردني', data = IdUser..'/'.. 'unmute_kickme'},{text = 'تفعيل اطردني', data = IdUser..'/'.. 'mute_kickme'},
-},
-{
-{text = '‹ ترتيب الاوامر ›', data = msg.sender.user_id..'/'.. '/commands'},
 },
 {
 {text = '{ القائمه الرئيسيه }', data = IdUser..'/helpall'},

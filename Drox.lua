@@ -3013,12 +3013,12 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙ايديك :* '..msg.sender
 end
 if text == "معرفي" or text == "يوزري" then
 local ban = LuaTele.getUser(msg.sender.user_id)
-if UserInfousername then
-UserInfousername = '[@'..UserInfo.username..']'
+if ban.username then
+banusername = '[@'..ban.username..']'
 else
-UserInfousername = 'لا يوجد'
+banusername = 'لا يوجد'
 end
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙معرفك :* @'..UserInfo.username,"md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙معرفك :* @'..ban.username,"md",true)
 end
 if text == 'معلوماتي' or text == 'موقعي' then
 local UserInfo = LuaTele.getUser(msg.sender.user_id)

@@ -3012,7 +3012,7 @@ if text == 'ايديي' then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙ايديك :* '..msg.sender.user_id,"md",true)  
 end
 if text == 'معرفي' or text == 'يوزري' then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙معرفك  :* @'..UserInfousername..',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙معرفك  :* @'..UserInfousername..,"md",true)  
 end
 if text == 'معلوماتي' or text == 'موقعي' then
 local UserInfo = LuaTele.getUser(msg.sender.user_id)

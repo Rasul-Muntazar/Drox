@@ -2590,10 +2590,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ رفع الادمنيه ›', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},{text = '‹ الاوامر ›', data = IdUser..'/helpall'},
+{text = '‹ رفع الادمنيه ›', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},{text = '‹ تفعيل الحمايه ›', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
 },
 {
-{text = '‹ الحمايه ›', data = msg.sender.user_id..'/listallAddorrem'}, 
+{text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},
@@ -2673,10 +2673,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ رفع الادمنيه ›', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},{text = '‹ الاوامر ›', data = IdUser..'/helpall'},
+{text = '‹ رفع الادمنيه ›', data = msg.sender.user_id..'/addAdmins@'..msg_chat_id},{text = '‹ تفعيل الحمايه ›', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
 },
 {
-{text = '‹ الحمايه ›', data = msg.sender.user_id..'/listallAddorrem'}, 
+{text = '‹ تفعيل الايدي ›', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},
@@ -3012,7 +3012,7 @@ if text == 'ايديي' then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙ايديك :* '..msg.sender.user_id,"md",true)  
 end
 if text == 'معرفي' or text == 'يوزري' then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙معرفك  :* @'..UserInfousername..,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙معرفك :* @'..UserName,"md",true)  
 end
 if text == 'معلوماتي' or text == 'موقعي' then
 local UserInfo = LuaTele.getUser(msg.sender.user_id)

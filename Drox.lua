@@ -3005,6 +3005,15 @@ local Text_Rand = List[math.random(#List)]
 Redis:set(TheDrox.."Drox:Set:Id:Group"..msg.chat_id,Text_Rand)
 return LuaTele.sendText(msg_chat_id,msg_id, '*᥀︙تم التغيير ارسل ايدي لعرض الايدي الجديد*',"md",true)  
 end
+if text == "اسمي"  then
+local ban = LuaTele.getUser(msg.sender.user_id)
+if ban.first_name then
+news = " "..ban.first_name.." "
+else
+news = " لا يوجد"
+end
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙اسمك :* '..ban.first_name,"md",true)
+end
 if text == 'رتبتي' then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙رتبتك هي :* '..msg.Name_Controller,"md",true)  
 end

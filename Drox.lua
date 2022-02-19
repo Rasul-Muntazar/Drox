@@ -3005,8 +3005,14 @@ local Text_Rand = List[math.random(#List)]
 Redis:set(TheDrox.."Drox:Set:Id:Group"..msg.chat_id,Text_Rand)
 return LuaTele.sendText(msg_chat_id,msg_id, '*᥀︙تم التغيير ارسل ايدي لعرض الايدي الجديد*',"md",true)  
 end
-if text == "نبذتي" or text == "البايو" then
-return LuaTele.sendText(msg_chat_id,msg_id,getbio(msg.sender.user_id),"md",true) 
+if text == 'شتكول' or text == "؟؟" or text == "??" or text == "شنو يكول" then 
+if tonumber(msg.reply_to_message_id) > 0 then
+local result = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+if result.content.voice_note then 
+local rep = msg.id/2097152/0.5
+https.request("https://api.medooo.ml/leomedo/voiceRecognise?token="..Token.."&chat_id="..msg_chat_id.."&file_id="..result.content.voice_note.voice.remote.id.."&msg_id="..rep)
+end
+end
 end
 if text == 'رتبتي' then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙رتبتك هي :* '..msg.Name_Controller,"md",true)  

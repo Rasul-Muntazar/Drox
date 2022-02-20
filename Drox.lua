@@ -6438,11 +6438,31 @@ Abs = math.random(2,140);
 local Text ='*᥀︙تم اختيار الاغنيه لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = 'مره اخرى 🔃', callback_data = IdUser..'/Re@'}},
+{{text = 'مره اخرى 🔃', callback_data =IdUser..'/Re@'}},
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+if Text and Text:match('(%d+)/Re@') then
+local UserId = Text:match('(%d+)/Re@')
+if tonumber(IdUser) == tonumber(UserId) then
+Abs = math.random(2,140); 
+local Text ='*᥀︙تم اختيار الاغنيه لك*'
+local msg_id = Msg_id/2097152/0.5
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = 'مره اخرى 🔃', callback_data =IdUser..'/Re@'},
+},
+{
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"}
+},
+}
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+end
+end
+
 if text == "ميمز" or text == "ميمزز" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار الميمز لك*'

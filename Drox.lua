@@ -9549,6 +9549,38 @@ if Redis:get(TheDrox.."Drox:Status:kool"..msg.chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,m,"md",true) 
 end
 end
+if text == ('تحكم') and msg.reply_to_message_id ~= 0 then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'تعطيل الرفع', data = msg.sender.user_id..'/'.. 'unmute_setadmib'},{text = 'تفعيل الرفع', data = msg.sender.user_id..'/'.. 'mute_setadmib'},
+},
+{
+{text = 'رفع رتبه',data = msg.sender.user_id..'/'.. 'takeup'},{text = 'تنزيل رتبه', data = msg.sender.user_id..'/'.. 'getdown'}
+},
+{
+{text = 'كتم', data = msg.sender.user_id..'/'.. 'اص'},{text = 'الغاء كتم',, data = msg.sender.user_id..'/'.. 'اص'}
+},
+{
+{text = 'حظر', data = msg.sender.user_id..'/'.. 'اص'},{text = 'الغاء حظر',, data = msg.sender.user_id..'/'.. 'اص'}
+},
+{
+{text = 'تقيد', data = msg.sender.user_id..'/'.. 'اص'},{text = 'الغاء تقيد', data = msg.sender.user_id..'/'.. 'اص'}
+},
+{
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"}
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙اختر ما تريده من ألاسفل*',"md",false, false, false, false, reply_markup)
+end
 if text == 'رابط الحذف' or text == 'رابط حذف' then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}

@@ -9564,16 +9564,16 @@ data = {
 {text = 'تعطيل الرفع', data = msg.sender.user_id..'/'.. 'unmute_setadmib'},{text = 'تفعيل الرفع', data = msg.sender.user_id..'/'.. 'mute_setadmib'},
 },
 {
-{text = 'رفع رتبه',data = msg.sender.user_id..'/'.. 'takeup'},{text = 'تنزيل رتبه', data = msg.sender.user_id..'/'.. 'getdown'}
+{text = 'رفع رتبه',data = msg.sender.user_id..'/'.. 'tak_eup'},{text = 'تنزيل رتبه', data = msg.sender.user_id..'/'.. 'get_down'}
 },
 {
-{text = 'كتم', data = msg.sender.user_id..'/'.. 'اص'},{text = 'الغاء كتم',, data = msg.sender.user_id..'/'.. 'اص'}
+{text = 'كتم', data = msg.sender.user_id..'/'.. 'kk_mute'},{text = 'الغاء كتم',, data = msg.sender.user_id..'/'.. 'nn_mute'}
 },
 {
-{text = 'حظر', data = msg.sender.user_id..'/'.. 'اص'},{text = 'الغاء حظر',, data = msg.sender.user_id..'/'.. 'اص'}
+{text = 'حظر', data = msg.sender.user_id..'/'.. 'hh_aban'},{text = 'الغاء حظر',, data = msg.sender.user_id..'/'.. 'nn_aban'}
 },
 {
-{text = 'تقيد', data = msg.sender.user_id..'/'.. 'اص'},{text = 'الغاء تقيد', data = msg.sender.user_id..'/'.. 'اص'}
+{text = 'تقيد', data = msg.sender.user_id..'/'.. 'tt_restrict'},{text = 'الغاء تقيد', data = msg.sender.user_id..'/'.. 'nn_restrict'}
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"}

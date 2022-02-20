@@ -6433,31 +6433,6 @@ LuaTele.sendText(msg_chat_id,msg_id,listall,"md",true)
 end
 end
 end
-if text == ('تحكم') and msg.reply_to_message_id ~= 0 then
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'كتم', data = msg.sender.user_id..'/Ktam@'..msg_chat_id},{text = 'الغاء كتم', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
-},
-{
-{text = 'حظر', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},{text = 'الغاء حظر', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
-},
-{
-{text = 'تقيد', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},{text = 'الغاء تقيد', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙اهلا بك عزيزي أختر من الاسفل*','md', true, false, false, false, reply_markup)
-end
-end
 if text == "غنيلي" or text == "غني" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار الاغنيه لك*'

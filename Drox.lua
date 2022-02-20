@@ -6439,7 +6439,7 @@ local Text ='*᥀︙تم اختيار الاغنيه لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'مره اخرى 🔃', callback_data = IdUser..'/Re@'},
+{text = 'مره اخرى 🔃', callback_data = IdUser..'/Re@'}
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"}
@@ -6457,7 +6457,7 @@ local msg_id = Msg_id/2097152/0.5
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'مره اخرى 🔃', callback_data = IdUser..'/Re@'},
+{text = 'مره اخرى 🔃', callback_data = IdUser..'/Re@'}
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"}

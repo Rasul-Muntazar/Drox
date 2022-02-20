@@ -6458,29 +6458,6 @@ data = {
 return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙اهلا بك عزيزي أختر من الاسفل*','md', true, false, false, false, reply_markup)
 end
 end
-if Text and Text:match('(%d+)/Ktam@(.*)') then
-local UserId = {Text:match('(%d+)/Ktam@(.*)')}
-if GetInfoBot(msg).Delmsg == false then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه حذف الرسائل* ',"md",true)  
-end
-local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if UserInfo.message == "Invalid user ID" then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n᥀︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
-end
-if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n᥀︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
-end
-if StatusSilent(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." } *","md",true)  
-end
-if Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"*᥀︙تم كتمه في المجموعه مسبقا*").Reply,"md",true)  
-else
-Redis:sadd(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"*᥀︙تم كتمه في المجموعه*").Reply,"md",true)  
-end
-end
 if text == "غنيلي" or text == "غني" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار الاغنيه لك*'

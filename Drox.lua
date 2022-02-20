@@ -6433,38 +6433,54 @@ LuaTele.sendText(msg_chat_id,msg_id,listall,"md",true)
 end
 end
 end
-if text== "همسه"  or text == "همسة" then
-return LuaTele.sendText(msg.chat_id,msg.id,"᥀︙اهلا بك عزيزي\n᥀︙اكتب معرف البوت ثم الرساله ثم معرف الشخص\n᥀︙مثال\n@PZ6bot السلام وعليكم @P222P")
+if text == ('تحكم') and msg.reply_to_message_id ~= 0 then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
 end
-if data and data.luatele and data.luatele == "updateNewInlineCallbackQuery" then
-local Text = LuaTele.base64_decode(data.payload.data)
-if Text and Text:match('/Hmsa1@(%d+)@(%d+)/(%d+)') then
-local ramsesadd = {string.match(Text,"^/Hmsa1@(%d+)@(%d+)/(%d+)$")}
-if tonumber(data.sender_user_id) == tonumber(ramsesadd[1]) or tonumber(ramsesadd[2]) == tonumber(data.sender_user_id) then
-local inget = Redis:get(TheDrox..'Drox:hmsabots'..ramsesadd[3]..data.sender_user_id)
-https.request("https://api.telegram.org/bot"..Token..'/answerCallbackQuery?callback_query_id='..data.id..'&text='..URL.escape(inget)..'&show_alert=true')
+if ChannelJoin(msg) == false then
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'كتم', data = msg.sender.user_id..'/Ktam@'..msg_chat_id},{text = 'الغاء كتم', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
+},
+{
+{text = 'حظر', data = msg.sender.user_id..'/'.. 'mute_IdPhoto'},{text = 'الغاء حظر', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
+},
+{
+{text = 'تقيد', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},{text = 'الغاء تقيد', data =msg.sender.user_id..'/LockAllGroup@'..msg_chat_id},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙اهلا بك عزيزي أختر من الاسفل*','md', true, false, false, false, reply_markup)
+end
+end
+if Text and Text:match('(%d+)/Ktam@(.*)') then
+local UserId = {Text:match('(%d+)/Ktam@(.*)')}
+if GetInfoBot(msg).Delmsg == false then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه حذف الرسائل* ',"md",true)  
+end
+local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+if UserInfo.message == "Invalid user ID" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n᥀︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
+end
+if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n᥀︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
+end
+if StatusSilent(msg_chat_id,Message_Reply.sender.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." } *","md",true)  
+end
+if Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"*᥀︙تم كتمه في المجموعه مسبقا*").Reply,"md",true)  
 else
-https.request("https://api.telegram.org/bot"..Token..'/answerCallbackQuery?callback_query_id='..data.id..'&text='..URL.escape('هذه الهمسه ليست لك')..'&show_alert=true')
+Redis:sadd(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"*᥀︙تم كتمه في المجموعه*").Reply,"md",true)  
 end
 end
-end
-if data and data.luatele and data.luatele == "updateNewInlineQuery" then
-local Text = data.query
-if Text and Text:match("^(.*) @(.*)$")  then
-local username = {string.match(Text,"^(.*) @(.*)$")}
-local UserId_Info = LuaTele.searchPublicChat(username[2])
-if UserId_Info.id then
-local idnum = math.random(1,64)
-local input_message_content = {message_text = 'هذه الهمسه لك ( [@'..username[2]..'] ) عزيزي اضغط لفتحها', parse_mode = 'Markdown'}	
-local reply_markup = {inline_keyboard={{{text = 'اضغط هنا لعرض الهمسه', callback_data = '/Hmsa1@'..data.sender_user_id..'@'..UserId_Info.id..'/'..idnum}}}}	
-local resuult = {{type = 'article', id = idnum, title = 'هذه همسه سريه الى [@'..username[2]..']', input_message_content = input_message_content, reply_markup = reply_markup}}	
-https.request("https://api.telegram.org/bot"..Token..'/answerInlineQuery?inline_query_id='..data.id..'&results='..JSON.encode(resuult))
-Redis:set(TheDrox..'Drox:hmsabots'..idnum..UserId_Info.id,username[1])
-Redis:set(TheDrox..'Drox:hmsabots'..idnum..data.sender_user_id,username[1])
-end
-end
-end
-
 if text == "غنيلي" or text == "غني" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار الاغنيه لك*'

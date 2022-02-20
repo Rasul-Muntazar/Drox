@@ -3005,15 +3005,6 @@ local Text_Rand = List[math.random(#List)]
 Redis:set(TheDrox.."Drox:Set:Id:Group"..msg.chat_id,Text_Rand)
 return LuaTele.sendText(msg_chat_id,msg_id, '*᥀︙تم التغيير ارسل ايدي لعرض الايدي الجديد*',"md",true)  
 end
-if text == 'شتكول' or text == "؟؟" or text == "??" or text == "شنو يكول" then 
-if tonumber(msg.reply_to_message_id) > 0 then
-local result = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-if result.content.voice_note then 
-local rep = msg.id/2097152/0.5
-https.request("https://api.medooo.ml/leomedo/voiceRecognise?token="..Token.."&chat_id="..msg_chat_id.."&file_id="..result.content.voice_note.voice.remote.id.."&msg_id="..rep)
-end
-end
-end
 if text == 'رتبتي' then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙رتبتك هي :* '..msg.Name_Controller,"md",true)  
 end
@@ -6442,6 +6433,38 @@ LuaTele.sendText(msg_chat_id,msg_id,listall,"md",true)
 end
 end
 end
+if text== "همسه"  or text == "همسة" then
+return LuaTele.sendText(msg.chat_id,msg.id,"*᥀︙اهلا بك عزيزي\n᥀︙اكتب معرف البوت ثم الرساله ثم معرف الشخص\n᥀︙مثال*\n@'..UserBot..' السلام وعليكم @P222P")
+end
+if data and data.luatele and data.luatele == "updateNewInlineCallbackQuery" then
+local Text = LuaTele.base64_decode(data.payload.data)
+if Text and Text:match('/Hmsa1@(%d+)@(%d+)/(%d+)') then
+local ramsesadd = {string.match(Text,"^/Hmsa1@(%d+)@(%d+)/(%d+)$")}
+if tonumber(data.sender_user_id) == tonumber(ramsesadd[1]) or tonumber(ramsesadd[2]) == tonumber(data.sender_user_id) then
+local inget = Redis:get(TheDrox..'Drox:hmsabots'..ramsesadd[3]..data.sender_user_id)
+https.request("https://api.telegram.org/bot"..Token..'/answerCallbackQuery?callback_query_id='..data.id..'&text='..URL.escape(inget)..'&show_alert=true')
+else
+https.request("https://api.telegram.org/bot"..Token..'/answerCallbackQuery?callback_query_id='..data.id..'&text='..URL.escape('هذه الهمسه ليست لك')..'&show_alert=true')
+end
+end
+end
+if data and data.luatele and data.luatele == "updateNewInlineQuery" then
+local Text = data.query
+if Text and Text:match("^(.*) @(.*)$")  then
+local username = {string.match(Text,"^(.*) @(.*)$")}
+local UserId_Info = LuaTele.searchPublicChat(username[2])
+if UserId_Info.id then
+local idnum = math.random(1,64)
+local input_message_content = {message_text = 'هذه الهمسه لك ( [@'..username[2]..'] ) عزيزي اضغط لفتحها', parse_mode = 'Markdown'}	
+local reply_markup = {inline_keyboard={{{text = 'اضغط هنا لعرض الهمسه', callback_data = '/Hmsa1@'..data.sender_user_id..'@'..UserId_Info.id..'/'..idnum}}}}	
+local resuult = {{type = 'article', id = idnum, title = 'هذه همسه سريه الى [@'..username[2]..']', input_message_content = input_message_content, reply_markup = reply_markup}}	
+https.request("https://api.telegram.org/bot"..Token..'/answerInlineQuery?inline_query_id='..data.id..'&results='..JSON.encode(resuult))
+Redis:set(TheDrox..'Drox:hmsabots'..idnum..UserId_Info.id,username[1])
+Redis:set(TheDrox..'Drox:hmsabots'..idnum..data.sender_user_id,username[1])
+end
+end
+end
+
 if text == "غنيلي" or text == "غني" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار الاغنيه لك*'
@@ -9970,7 +9993,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'*حـبيـبي ولله ࢪبـط فـيـشه ويـانـا🙈💋 ️*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*حـبيـبي ولله ࢪبـط فـيـشه ويـانـا🙈?? ️*',"md",false, false, false, false, reply_markup)
 end
 
 if text == 'واكف' or text == 'وكف' then

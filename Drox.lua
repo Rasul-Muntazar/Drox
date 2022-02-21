@@ -9577,6 +9577,7 @@ data = {
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"},
+},
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙اختر ما تريده من ألاسفل*',"md",false, false, false, false, reply_markup)

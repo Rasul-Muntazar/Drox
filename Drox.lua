@@ -6443,6 +6443,16 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+if text == "راب" or text == "رابب" then 
+Abs = math.random(2,140); 
+local Text ='*᥀︙تم اختيار الراب لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"}},
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RapEthan/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 if text == "ميمز" or text == "ميمزز" then 
 Abs = math.random(2,140); 
 local Text ='*᥀︙تم اختيار الميمز لك*'
@@ -6485,17 +6495,6 @@ local Text ='*᥀︙تم اختيار ريمكس لك*'
 local MsgId = msg.id/2097152/0.5
 local MSGID = string.gsub(MsgId,'.0','')
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RemixDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
-end
-if text == "راب" or text == "رابب" then 
-Abs = math.random(2,140); 
-local Text ='*᥀︙تم اختيار الراب لك*'
-keyboard = {} 
-keyboard.inline_keyboard = {
-{{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"}},
-}
-local msgg = msg.id/2097152/0.5
-return https.request("https://api.telegram.org/bot"..Token.."/sendVoice?chat_id="..msg.chat_id.."&voice="..math.random(2,148).."&caption="..URL.escape(Text).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
-end
 end
 --------------------------------------------------------------------------------------------------------------
 if text == "قفل التكرار" then 

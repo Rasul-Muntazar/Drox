@@ -2281,64 +2281,64 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙تم تحديث السور�
 end
 if text == '{ تعطيل الاذاعه } ' or text == 'تعطيل الاذاعه' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⦁ هاذا الامر يخص { '..Controller_Num(1)..' } * ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' } * ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:SendBcBot") 
-return LuaTele.sendText(msg_chat_id,msg_id," ⦁ تم تعطيل الاذاعه ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل الاذاعه ","md",true)
 end
 if text == '{ تفعيل الاذاعه } ' or text == 'تفعيل الاذاعه' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⦁ هاذا الامر يخص { '..Controller_Num(1)..' } * ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' } * ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:SendBcBot",true) 
-return LuaTele.sendText(msg_chat_id,msg_id," ⦁ تم تفعيل الاذاعه للمطورين ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل الاذاعه للمطورين ","md",true)
 end
 if text == '{ تعطيل المغادره } ' or text == 'تعطيل المغادره' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⦁ هاذا الامر يخص { '..Controller_Num(1)..' } * ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' } * ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:LeftBot") 
-return LuaTele.sendText(msg_chat_id,msg_id," ⦁ تم تعطيل المغادره ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل المغادره ","md",true)
 end
 if text == '{ تفعيل المغادره } ' or text == 'تفعيل المغادره' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⦁ هاذا الامر يخص { '..Controller_Num(1)..' } * ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' } * ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:LeftBot",true) 
-return LuaTele.sendText(msg_chat_id,msg_id," ⦁ تم تفعيل المغادره للمطورين ","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل المغادره للمطورين ","md",true)
 end
 if (Redis:get(TheDrox.."Drox:AddSudosNew"..msg_chat_id) == 'true') then
 if text == "الغاء" or text == '{ الغاء الامر } ' then   
 Redis:del(TheDrox.."Drox:AddSudosNew"..msg_chat_id)
-return LuaTele.sendText(msg_chat_id,msg_id, "\n ⦁ تم الغاء امر تغيير المطور الاساسي","md",true)    
+return LuaTele.sendText(msg_chat_id,msg_id, "\n᥀︙تم الغاء امر تغيير المطور الاساسي","md",true)    
 end 
 Redis:del(TheDrox.."Drox:AddSudosNew"..msg_chat_id)
 if text and text:match("^@[%a%d_]+$") then
 local UserId_Info = LuaTele.searchPublicChat(text)
 if not UserId_Info.id then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⦁ عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n᥀︙عذرا لا يوجد حساب بهاذا المعرف ","md",true)  
 end
 if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⦁ عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n᥀︙عذرا لا تستطيع استخدام معرف قناة او كروب ","md",true)  
 end
 if UserName and UserName[2]:match('(%S+)[Bb][Oo][Tt]') then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⦁ عذرا لا تستطيع استخدام معرف البوت ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n᥀︙عذرا لا تستطيع استخدام معرف البوت ","md",true)  
 end
 local Informationlua = io.open("Information.lua", 'w')
 Informationlua:write([[
@@ -2350,15 +2350,15 @@ SudoId = ]]..UserId_Info.id..[[
 }
 ]])
 Informationlua:close()
-return LuaTele.sendText(msg_chat_id,msg_id,"\n ⦁ تم تغيير المطور الاساسي اصبح على : [@"..text:gsub('@','').."]","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"\n᥀︙تم تغيير المطور الاساسي اصبح على : [@"..text:gsub('@','').."]","md",true)  
 end
 end
 if text == 'تغيير المطور الاساسي' or text == 'تغيير المطور الاساسي ᥀' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ⦁ هاذا الامر يخص { '..Controller_Num(1)..' } * ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' } * ',"md",true)  
 end
 Redis:set(TheDrox.."Drox:AddSudosNew"..msg_chat_id,true)
-return LuaTele.sendText(msg_chat_id,msg_id," ⦁ ارسل معرف المطور الاساسي مع @","md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل معرف المطور الاساسي مع @","md",true)
 end
 if text == 'جلب النسخه الاحتياطيه ᥀' or text == 'جلب نسخه احتياطيه' then
 if not msg.ControllerBot then 

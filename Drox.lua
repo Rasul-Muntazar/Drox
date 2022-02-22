@@ -711,12 +711,12 @@ else
 UserInfousername = '['..UserInfo.first_name..'](tg://user?id='..UserId..')'
 end
 return {
-Lock     = '᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه المسح *',
-unLock   = '᥀︙بواسطه ← *'..UserInfousername..'\n'..TextMsg,
-lockKtm  = '᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه الكتم *',
-lockKid  = '[᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه التقييد *',
-lockKick = '᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه الطرد *',
-Reply    = '᥀︙المستخدم ← *'..UserInfousername..'\n*'..TextMsg..'*'
+Lock     = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه المسح *',
+unLock   = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n'..TextMsg,
+lockKtm  = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه الكتم *',
+lockKid  = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه التقييد *',
+lockKick = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙بواسطه ← *'..UserInfousername..'\n*'..TextMsg..'\n᥀︙خاصيه الطرد *',
+Reply    = '[‹ Drox 𝖳𝖾𝖺𝗆 ›](https://t.me/DroxTeAm)\n*— — — — — — —\n᥀︙المستخدم ← *'..UserInfousername..'\n*'..TextMsg..'*'
 }
 end
 function StatusCanOrNotCan(ChatId,UserId)
@@ -10046,6 +10046,31 @@ data = {
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*سـؤال صـعـب خلـيـني افڪࢪ☹️️*',"md",false, false, false, false, reply_markup)
 end
+if text == 'السيرفر' or text == 'معلومات السيرفر ᥀' then
+if not msg.ControllerBot then 
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⦁ هاذا الامر يخص {'..Controller_Num(1)..' }* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local chinfo = Redis:get(TheDrox.."Drox:ch:admin")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+ ioserver = io.popen([[
+ linux_version=`lsb_release -ds`
+ memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
+ HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" 」}'`
+ CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
+ uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
+ echo '᥀︙{ نظام التشغيل } \n*-› '"$linux_version"'*' 
+ echo '*------------------------------\n*᥀︙{ الذاكره العشوائيه } \n*-› '"$memUsedPrc"'*'
+ echo '*------------------------------\n*᥀︙{ وحـده الـتـخـزيـن } \n*-› '"$HardDisk"'*'
+ echo '*------------------------------\n*᥀︙{ الـمــعــالــج } \n*-› '"`grep -c processor /proc/cpuinfo`""Core ~ {$CPUPer%} "'*'
+ echo '*------------------------------\n*᥀︙{ موقـع الـسـيـرفـر } \n*-› '`curl http://th3boss.com/ip/location`'*'
+ echo '*------------------------------\n*᥀︙{ الــدخــول } \n*-› '`whoami`'*'
+ echo '*------------------------------\n*᥀︙{ مـده تـشغيـل الـسـيـرفـر } \n*-› '"$uptime"'*'
+ ]]):read('*all')
+LuaTele.sendText(msg_chat_id,msg_id,ioserver,"md",true)
+end
 if text == 'تحديث' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  
@@ -10084,21 +10109,21 @@ end
 if text == "بوت" then
 local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local BotName = {
-"ههلا ؏ـمَݛʊ̤ وياك "..NamesBot,
-"كول حبي اني "..NamesBot.. "",
-"شكد تلح 😾"
+"*ههلا ؏ـمَݛʊ̤ وياك "..NamesBot*,
+"*كول حبي اني "..NamesBot.. "*",
+"*شكد تلح 😾*"
 }
 return LuaTele.sendText(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md",true)   
 end
 if text == (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس") then
 local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local NameBots = {
-"عمر "..NamesBot.. " شتريد؟",
-"أჂ̤ أჂ̤ هياتني اني",
-"موجود بس لتصيح",
-"لتــلح دا احجي ويه بنات دروكس بعدين اجاوبك",
-"راح نموت بكورونا ونته بعدك تصيح "..NamesBot,
-'يمعود والله نعسان'
+"*عمر "..NamesBot.. " شتريد؟*",
+"أ*Ⴢ̤ أჂ̤ هياتني اني*",
+"*موجود بس لتصيح*",
+"*لتــلح دا احجي ويه بنات دروكس بعدين اجاوبك*",
+"*راح نموت بكورونا ونته بعدك تصيح "..NamesBot*,
+'*يمعود والله نعسان*'
 }
 return LuaTele.sendText(msg_chat_id,msg_id, NameBots[math.random(#NameBots)],"md",true)  
 end
@@ -10967,11 +10992,14 @@ data = {
 {text = 'تحديث الملفات ᥀',type = 'text'},{text = 'تحديث السورس ᥀', type = 'text'},
 },
 {
+{text = 'معلومات السيرفر ᥀',type = 'text'},
+},
+{
 {text = 'الغاء الامر ᥀',type = 'text'},
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙ اهلا بك عزيزي المطور ', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙ اهلا بك عزيزي المطور*', 'md', false, false, false, false, reply_markup)
 end
 end
 

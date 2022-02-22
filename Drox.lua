@@ -10999,10 +10999,9 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙ اهلا بك عزيزي المطور*', 'md', false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙اهلا بك عزيزي المطور*', 'md', false, false, false, false, reply_markup)
 end
 end
-
 if text == 'تنظيف المشتركين ᥀' then
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(1)..' }* ',"md",true)  

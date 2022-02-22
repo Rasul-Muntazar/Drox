@@ -6453,12 +6453,25 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RapEthan/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+if text == "شعر" or text == "اشعار" then 
+Abs = math.random(2,592); 
+local Text ='*᥀︙تم اختيار الشعر لك*'
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"}},
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/L1BBBL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 if text == "ميمز" or text == "ميمزز" then 
-Abs = math.random(2,140); 
+Abs = math.random(2,200); 
 local Text ='*᥀︙تم اختيار الميمز لك*'
-local MsgId = msg.id/2097152/0.5
-local MSGID = string.gsub(MsgId,'.0','')
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/MemzDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..MsgId.."&parse_mode=markdown") 
+keyboard = {} 
+keyboard.inline_keyboard = {
+{{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"}},
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/fasngon/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == "فلم" or text == "افلام" then 
 Abs = math.random(2,140); 

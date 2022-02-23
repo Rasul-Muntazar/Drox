@@ -10248,13 +10248,13 @@ return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙عليك استخدام او�
 end
 if text == 'تمام' or text == 'تمامو' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10262,62 +10262,58 @@ return LuaTele.sendText(msg_chat_id,msg_id,'*تـدوم عمࢪيي💘 ️*',"m
 end
 if text == '😐' or text == '🙂' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'* شـبي حـلـو صـافـن😻💋 ️*',"md",false, false, false, false, reply_markup)
 end
 
-
 if text == 'اريد اكبل' or text == 'ارتبط' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*امـشي وخࢪ مـنـا يدوࢪ تـڪـبيل😏 ️*',"md",false, false, false, false, reply_markup)
 end
 
-
 if text == 'لتزحف' or text == 'زاحف' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id,'*شـعليڪ بـي عمࢪيي خـلي يـزحف💘☹️ ️*',"md",false, false, false, false, reply_markup)
 end
 
-
-
 if text == 'كلخره' or text == 'كل خره' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10326,13 +10322,13 @@ end
 
 if text == 'زحف' or text == 'زاحفه' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10341,13 +10337,13 @@ end
 
 if text == 'دي' or text == 'دد' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10356,13 +10352,13 @@ end
 
 if text == 'فرخ' or text == 'كحبه' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10371,13 +10367,13 @@ end
 
 if text == 'تعالي خاص' or text == 'خاص' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10385,13 +10381,13 @@ return LuaTele.sendText(msg_chat_id,msg_id,'*هااا يـول اخـذتـها 
 end
 if text == 'اكرهك' or text == 'اكرهج' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10400,13 +10396,13 @@ end
 
 if text == 'احبك' or text == 'احبج' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10415,13 +10411,13 @@ end
 
 if text == 'باي' or text == 'سيو' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10430,13 +10426,13 @@ end
 
 if text == 'عوائل' or text == 'صايره عوائل' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10445,13 +10441,13 @@ end
 
 if text == 'واكف' or text == 'وكف' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10461,13 +10457,13 @@ end
 
 if text == 'وين المدير' or text == 'المدير' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10475,13 +10471,13 @@ return LuaTele.sendText(msg_chat_id,msg_id,'*عمࢪيي تـفـضل وياڪ �
 end
 if text == 'انجب' or text == 'نجبي' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }
@@ -10490,13 +10486,13 @@ end
 
 if text == 'تحبني' or text == 'تحبيني' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ردود السورس معطلة*","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ مسح الرسالة ›', data =IdUser..'/'.. 'delAmr'},
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }

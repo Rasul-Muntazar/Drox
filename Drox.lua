@@ -13266,6 +13266,9 @@ data = {
 {
 {text = '- اخفاء الامر ', callback_data =IdUser..'/delAmr'},
 },
+{
+{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+},
 }
 }
 local TextHelp = [[*

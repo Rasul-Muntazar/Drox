@@ -1553,7 +1553,7 @@ end
 print(idPhoto)
 Redis:set(TheDrox.."Drox:Add:Rd:Manager:Photo"..test..msg_chat_id, idPhoto)  
 end
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حفظ رد للمدير بنجاح \n᥀︙ارسل ( "..test.." ) لرئية الرد","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حفظ رد للمدير بنجاح \n᥀︙ارسل ( *"..test.."* ) لرئية الرد*","md",true)  
 end  
 end
 if text and text:match("^(.*)$") then
@@ -6343,7 +6343,7 @@ else
 Creat = " Developers Bot \n"
 end
 if photo.total_count > 0 then
-local TestText = "  ‹ Owner Groups ›\n— — — — — — — — —\n ᥀︙*Owner Name* :  [".. ban.first_name.."](tg://user?id=".. ban.id..")\n᥀︙*Owner Bio* : [‹ "..Bio.." ›]"
+local TestText = "  ‹ Owner Groups ›\n— — — — — — — — —\n ᥀︙*Owner Name* :  [".. ban.first_name.."](tg://user?id=".. ban.id..")\n᥀︙*Owner Bio* : [ "..Bio.." ]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -9610,7 +9610,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,true)
-return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الكلمه لاضافتها في ردود المدير ","md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الكلمه لاضافتها في ردود المدير* ","md",true)  
 end
 if text == "حذف رد" then
 if not msg.Addictive then
@@ -10013,7 +10013,7 @@ Creat = " Developers Bot \n"
 end
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
-local TestText = "  ‹ Developers Bot ›\n— — — — — — — — —\n ᥀︙*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n᥀︙*Dev Bio* : ["..Bio.." ]\n"
+local TestText = "‹ Developers Bot ›\n— — — — — — — — —\n᥀︙*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n᥀︙*Dev Bio* : ["..Bio.." ]\n"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -10023,7 +10023,7 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "  ‹ Developers Source  ›\n— — — — — — — — —\n ᥀︙*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n᥀︙*Dev Bio* : [‹ "..Bio.." ›]"
+local TestText = "  ‹ Developers Source  ›\n— — — — — — — — —\n᥀︙*Dev Name* :  [".. ban.first_name.."](tg://user?id="..Sudo_Id..")\n᥀︙*Dev Bio* : [‹ "..Bio.." ›]"
 local msg_id = msg.id/2097152/0.5 
  https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
 end
@@ -10095,7 +10095,7 @@ keyboard.inline_keyboard = {
 {text = '‹ D𝖾𝗏 S𝖾𝗎𝗋𝖼𝖾 ›', url = "https://t.me/P222P"},{text = 'لعنةُ .', url = "https://t.me/RRRR99"}
 },
 {
-{text = 'ُ‹ Tws Drox ›', url = "https://t.me/Yv4bot"}
+{text = '‹ Tws Drox ›', url = "https://t.me/Yv4bot"}
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = "https://t.me/DroxTeAm"}
@@ -10573,7 +10573,7 @@ end
 if text == "بوت" then
 local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local BotName = {
-"ڪول حبي اني"..NamesBot,
+"ڪول حبي اني "..NamesBot,
 "؏ـمَݛʊ̤ ترا اسمي "..NamesBot.. "",
 "شڪد تلح 😾"
 }
@@ -13161,6 +13161,9 @@ data = {
 {text = 'العاب متطورة ', data = IdUser..'/degm'}, 
 },
 {
+{text = 'القائمه الرئيسيه ', data = IdUser..'/helpall'},
+},
+{
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
@@ -13218,7 +13221,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = 'القائمه الرئيسيه', data = IdUser..'/help6'},
+{text = 'القائمه الرئيسيه', data = IdUser..'/helpall'},
 },
 {
 {text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
@@ -13262,9 +13265,6 @@ data = {
 },
 {
 {text = '- اخفاء الامر ', callback_data =IdUser..'/delAmr'},
-},
-{
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
 },
 }
 }

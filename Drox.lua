@@ -1141,7 +1141,7 @@ for k,v in pairs(msg.content.member_user_ids) do
 local Info_User = LuaTele.getUser(v) 
 print(v)
 if v == tonumber(TheDrox) then
-local N = (Redis:get(TheDrox.."Drox:Name:Bot") or "كادي")
+local N = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 photo = LuaTele.getUserProfilePhotos(TheDrox)
 local bot = '᥀︙ انا بوت اسمي '..N..'\n᥀︙ وظيفتي حمايه المجموعة من السبام والتفليش الخ....\n᥀︙ لتفعيل البوت قم اضافته للمجموعتك وقم برفعه مشرف واكتب تفعيل\n'
 if photo.total_count > 0 then
@@ -10558,24 +10558,24 @@ end
 Redis:del(TheDrox.."Drox:Name:Bot") 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حذف اسم البوت ","md",true)   
 end
-if text == (Redis:get(TheDrox.."Drox:Name:Bot") or "كادي") then
-local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "كادي")
+if text == (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس") then
+local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local NameBots = {
 "عمر "..NamesBot.. " شتريد؟",
 "أჂ̤ أჂ̤ هياتني اني",
 "موجود بس لتصيح",
-"لتــلح دا احجي ويه بنات كادي بعدين اجاوبك",
+"لتــلح دا احجي ويه بنات دروكس بعدين اجاوبك",
 "راح نموت بكورونا ونته بعدك تصيح "..NamesBot,
 'يمعود والله نعسان'
 }
 return LuaTele.sendText(msg_chat_id,msg_id, NameBots[math.random(#NameBots)],"md",true)  
 end
 if text == "بوت" then
-local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "كادي")
+local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local BotName = {
-"باوع لك خليني احبك وصيحلي باسمي "..NamesBot,
-"لتخليني ارجع لحركاتي لقديمه وردا ترا اسمي "..NamesBot.. "",
-"راح نموت بكورونا ونته بعدك تصيح بوت"
+"ڪول حبي اني"..NamesBot,
+"؏ـمَݛʊ̤ ترا اسمي "..NamesBot.. "",
+"شڪد تلح 😾"
 }
 return LuaTele.sendText(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md",true)   
 end
@@ -11686,7 +11686,7 @@ baniusername = '*['..bain.first_name..'](tg://user?id='..bain.id..')*'
 else
 baniusername = 'لا يوجد'
 end
-local CmdStart = '*\n᥀︙أهلآ بك في بوت '..(Redis:get(TheDrox.."Drox:Name:Bot") or "كادي")..
+local CmdStart = '*\n᥀︙أهلآ بك في بوت '..(Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")..
 '\n᥀︙اختصاص البوت حماية المجموعات'..
 '\n᥀︙لتفعيل البوت عليك اتباع مايلي ...'..
 '\n᥀︙اضف البوت الى مجموعتك'..
@@ -12728,7 +12728,7 @@ if tonumber(IdUser) == tonumber(UserId) then
 local photo = LuaTele.getUserProfilePhotos(IdUser)
 local ban = LuaTele.getUser(IdUser)
 if photo.total_count > 1 then
-local ban_ns = '𝚑𝚎??𝚎 𝚊𝚛𝚎 𝚢𝚘𝚞𝚛 𝚙??𝚘𝚝𝚘𝚜'
+local ban_ns = '𝚑𝚎??𝚎 𝚊𝚛𝚎 𝚢𝚘𝚞𝚛 𝚙𝚑𝚘𝚝𝚘𝚜'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
@@ -13166,7 +13166,7 @@ data = {
 }
 }
 local TextHelp = [[*
-• أهلا بك في قائمة العاب سورس كادي اختر نوع الالعاب 
+• أهلا بك في قائمة العاب سورس دروكس اختر نوع الالعاب 
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -13206,7 +13206,7 @@ data = {
 }
 }
 local TextHelp = [[*
-• مرحبا بك في الالعاب الاحترافيه الخاص بسورس كادي 
+• مرحبا بك في الالعاب الاحترافيه الخاص بسورس دروكس 
 • اختر اللعبه ثم اختار المحادثة التي تريد اللعب بها
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)

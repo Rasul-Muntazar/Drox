@@ -10160,7 +10160,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙عليك استخدام اوامر التحكم بالقوائم*',"md",false, false, false, false, reply_markup)
 elseif text == 'م3' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
@@ -10180,7 +10180,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙عليك استخدام اوامر التحكم بالقوائم*',"md",false, false, false, false, reply_markup)
 elseif text == 'م4' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
@@ -10200,7 +10200,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙عليك استخدام اوامر التحكم بالقوائم*',"md",false, false, false, false, reply_markup)
 elseif text == 'م5' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
@@ -10220,7 +10220,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙عليك استخدام اوامر التحكم بالقوائم*',"md",false, false, false, false, reply_markup)
 elseif text == 'الالعاب' then
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
@@ -10244,7 +10244,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙ عليك استخدام اوامر التحكم بالقوائم',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙ عليك استخدام اوامر التحكم بالقوائم*',"md",false, false, false, false, reply_markup)
 end
 if text == '،' or text == '،،،' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
@@ -10254,7 +10254,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10268,7 +10268,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10283,7 +10283,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10298,7 +10298,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10313,7 +10313,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10328,7 +10328,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10343,7 +10343,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10358,7 +10358,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10373,7 +10373,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10387,7 +10387,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10402,7 +10402,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝖲𝗈𝗎𝗋𝖼𝖾 𝗄𝖺??𝗂', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10417,7 +10417,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10432,7 +10432,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10447,7 +10447,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10463,7 +10463,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10477,7 +10477,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10492,7 +10492,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ Drox 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'}, 
+{text = 'مسح الرسالة', callback_data =IdUser..'/delAmr'},
 },
 }
 }
@@ -10561,12 +10561,12 @@ end
 if text == (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس") then
 local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local NameBots = {
-"عمر "..NamesBot.. " شتريد؟",
-"أჂ̤ أჂ̤ هياتني اني",
-"موجود بس لتصيح",
-"لتــلح دا احجي ويه بنات دروكس بعدين اجاوبك",
+"*عمر "..NamesBot.. " شتريد؟*",
+"*أჂ̤ أჂ̤ هياتني اني*",
+"*موجود بس لتصيح*",
+"*لتــلح دا احجي ويه بنات دروكس بعدين اجاوبك*",
 "راح نموت بكورونا ونته بعدك تصيح "..NamesBot,
-'يمعود والله نعسان'
+'*يمعود والله نعسان*'
 }
 return LuaTele.sendText(msg_chat_id,msg_id, NameBots[math.random(#NameBots)],"md",true)  
 end
@@ -10574,8 +10574,8 @@ if text == "بوت" then
 local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local BotName = {
 "ڪول حبي اني "..NamesBot,
-"؏ـمَݛʊ̤ ترا اسمي "..NamesBot.. "",
-"شڪد تلح 😾"
+"*؏ـمَݛʊ̤ ترا اسمي "..NamesBot.. "*",
+"*شڪد تلح 😾*"
 }
 return LuaTele.sendText(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md",true)   
 end

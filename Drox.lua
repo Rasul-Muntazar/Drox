@@ -3100,7 +3100,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
 end
 if text == "نبذتي" or text == "البايو" then
-return LuaTele.sendText(msg_chat_id,msg_id,''..Bio..,"md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,getbio(msg.sender.user_id),"md",true) 
 end
 
 

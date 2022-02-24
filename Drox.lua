@@ -130,7 +130,7 @@ Status = 0
 DevelopersQ = Redis:sismember(TheDrox.."Drox:DevelopersQ:Groups",UserId) 
 if UserId == 1214622341 then
 Status = true
-elseif UserId == 1214622341 then
+elseif UserId == 1553530032 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -156,7 +156,7 @@ Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,User
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1214622341 then
 Status = 'مبرمج السورس'
-elseif UserId == 1214622341 then
+elseif UserId == 1553530032 then
 Status = 'ححلوة السورس'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
@@ -2417,7 +2417,7 @@ end
 end
 if text == 'تغيير المطور الاساسي' or text == 'تغيير المطور الاساسي ᥀' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص⦘'..Controller_Num(1)..' ⦘* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص {'..Controller_Num(1)..' }* ',"md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -3100,12 +3100,12 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 return LuaTele.sendText(msg_chat_id, msg_id, news, 'md', false, false, false, false, reply_markup)
 end
 if text == "نبذتي" or text == "البايو" then
-return LuaTele.sendText(msg_chat_id,msg_id,getbio(msg.sender.user_id),"md",true) 
+return LuaTele.sendText(msg_chat_id,msg_id,''..Bio..,"md",true)
 end
 
 
 if text == 'ايديي' then
-return LuaTele.sendText(msg_chat_id,msg_id,'\nايديك -› '..msg.sender.user_id,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙ايديك :* '..msg.sender.user_id,"md",true)  
 end
 if text == "اسمي"  then
 local ban = LuaTele.getUser(msg.sender.user_id)
@@ -3114,7 +3114,7 @@ news = " "..ban.first_name.." "
 else
 news = " لا يوجد"
 end
-return LuaTele.sendText(msg_chat_id,msg_id,'\n᥀︙اسمك الأول : '..ban.first_name,"md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙اسمك الأول :* '..ban.first_name,"md",true)
 end
 if text == "معرفي" or text == "يوزري" then
 local ban = LuaTele.getUser(msg.sender.user_id)
@@ -3123,7 +3123,7 @@ banusername = '[@'..ban.username..']'
 else
 banusername = 'لا يوجد'
 end
-return LuaTele.sendText(msg_chat_id,msg_id,'\n᥀︙معرفك هذا : @'..ban.username,"md",true)
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙معرفك :* @'..ban.username,"md",true)
 end
 if text == 'معلوماتي' or text == 'موقعي' then
 local UserInfo = LuaTele.getUser(msg.sender.user_id)

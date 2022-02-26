@@ -6343,7 +6343,7 @@ else
 Creat = " Developers Bot \n"
 end
 if photo.total_count > 0 then
-local TestText = "‹ Owner Groups ›\n— — — — — — — — —\n᥀︙*Owner Name* :  [".. ban.first_name.."](tg://user?id=".. ban.id..")\n᥀︙*Owner Bio* : [❲ "..Bio.." ❳]"
+local TestText = "‹ Owner Groups ›\n— — — — — — — — —\n᥀︙*Owner Name* :  [".. ban.first_name.."](tg://user?id=".. ban.id..")\n᥀︙*Owner Bio* : [ "..Bio.." ]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -6474,14 +6474,14 @@ return LuaTele.sendText(msg_chat_id,msg_id,Redis:get(TheDrox.."Drox:chadmin"..ms
 end
 if text == "اضف قناه" then
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص「 '..Controller_Num(7)..' 」* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..'  }* ',"md",true)  
 end
 Redis:set(TheDrox.."Drox:addchannel"..msg.sender.user_id,"on") 
 LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ ارسل ايدي القناه","md",true)  
 end
 if text == "قفل القناه" then 
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص「 '..Controller_Num(7)..' 」* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..'  }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(TheDrox.."Drox:ch:admin")
@@ -6633,7 +6633,7 @@ return false
 end 
 if text == "فتح القناه" then 
 if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص「 '..Controller_Num(7)..' 」* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..'  }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(TheDrox.."Drox:ch:admin")
@@ -10500,7 +10500,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'*سـؤال صـعـب خلـيـن�
 end
 if text == 'السيرفر' or text == 'معلومات السرفر' then
 if not msg.ControllerBot then 
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*⦁ هاذا الامر يخص「 '..Controller_Num(1)..' 」* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*⦁ هاذا الامر يخص { '..Controller_Num(1)..'  }* ',"md",true)  
 end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(TheDrox.."Drox:ch:admin")
@@ -10510,7 +10510,7 @@ end
  ioserver = io.popen([[
  linux_version=`lsb_release -ds`
  memUsedPrc=`free -m | awk 'NR==2{printf "%sMB/%sMB {%.2f%}\n", $3,$2,$3*100/$2 }'`
- HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" 」}'`
+ HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}"  }}'`
  CPUPer=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
  uptime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes."}'`
  echo '⦁   { نظام التشغيل } ⊰•\n*-› '"$linux_version"'*' 

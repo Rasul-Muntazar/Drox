@@ -2170,7 +2170,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.content.document then
@@ -2333,7 +2333,7 @@ end
 end
 end
 if text== "همسه"  or text == "همسة" then
-return LuaTele.sendText(msg.chat_id,msg.id,"᥀︙اهلا بك عزيزي\n᥀︙اكتب معرف البوت ثم الرساله ثم معرف الشخص\n᥀︙مثال\n@'..UserBot..' سلام وعليكم @P222P")
+return LuaTele.sendText(msg.chat_id,msg.id,"᥀︙اهلا بك عزيزي\n᥀︙اكتب معرف البوت ثم الرساله ثم معرف الشخص\n᥀︙مثال\n@PZ6BOT هاي @P222P")
 end
 if text == 'تحديث السورس' or text == 'تحديث السورس ᥀' then
 if not msg.ControllerBot then 
@@ -2435,7 +2435,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Groups = Redis:smembers(TheDrox..'Drox:ChekBotAdd')  
 local UsersBot = Redis:smembers(TheDrox..'Drox:Num:User:Pv')  
@@ -2629,7 +2629,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox..'Drox:Num:Add:Bot',text:match("تعين عدد الاعضاء (%d+)$") ) 
 LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعين عدد الاعضاء (%d+)$")..' عضو *',"md",true)  
@@ -2639,7 +2639,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙عدد احصائيات البوت الكامله \n— — — — — — — — —\n᥀︙عدد المجموعات : '..(Redis:scard(TheDrox..'Drox:ChekBotAdd') or 0)..'\n᥀︙عدد المشتركين : '..(Redis:scard(TheDrox..'Drox:Num:User:Pv') or 0)..'*',"md",true)  
 end
@@ -2826,7 +2826,7 @@ Redis:incr(TheDrox..'Drox:Num:Message:User'..msg.chat_id..':'..msg.sender.user_i
 if text == "ايدي" and msg.reply_to_message_id == 0 then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 if not Redis:get(TheDrox.."Drox:Status:Id"..msg_chat_id) then
 return false
@@ -3090,7 +3090,7 @@ local List = {
 ]]} 
 local Text_Rand = List[math.random(#List)] 
 Redis:set(TheDrox.."Drox:Set:Id:Group"..msg.chat_id,Text_Rand)
-return LuaTele.sendText(msg_chat_id,msg_id, '᥀︙تم التغيير ارسل ايدي لعرض الايدي الجديد',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id, '*᥀︙تم التغيير ارسل ايدي لعرض الايدي الجديد*',"md",true)  
 end
 if text == 'رتبتي' then
 local ban = LuaTele.getUser(msg.sender.user_id)
@@ -3183,7 +3183,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local StatusMember = LuaTele.getChatMember(msg_chat_id,TheDrox).status.luatele
 if (StatusMember ~= "chatMemberStatusAdministrator") then
@@ -3219,7 +3219,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -4131,7 +4131,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:DevelopersQ:Groups") 
 if #Info_Members == 0 then
@@ -4157,7 +4157,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Developers:Groups") 
 if #Info_Members == 0 then
@@ -4209,7 +4209,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:TheBasics:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4235,7 +4235,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Originators:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4261,7 +4261,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Managers:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4287,7 +4287,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Addictive:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4313,7 +4313,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Distinguished:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4339,7 +4339,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:BanAll:Groups") 
 if #Info_Members == 0 then
@@ -4365,7 +4365,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:BanGroup:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4391,7 +4391,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -4418,7 +4418,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if TextMsg == 'الرابط' then
 Redis:set(TheDrox.."Drox:Status:Link"..msg_chat_id,true) 
@@ -4434,7 +4434,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Status:Id"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل الايدي ","md",true)
@@ -4445,7 +4445,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Status:IdPhoto"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل الايدي بالصوره ","md",true)
@@ -4456,7 +4456,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Status:Reply"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل ردود المدير ","md",true)
@@ -4467,7 +4467,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Status:ReplySudo"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل ردود المطور ","md",true)
@@ -4478,7 +4478,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Status:BanId"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل الحظر , الطرد , التقييد","md",true)
@@ -4489,7 +4489,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Status:SetId"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل الرفع ","md",true)
@@ -4528,7 +4528,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:BotFree",true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل البوت الخدمي ","md",true)
@@ -4539,7 +4539,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:TwaslBot",true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل التواصل داخل البوت ","md",true)
@@ -4954,7 +4954,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if TextMsg == 'الرابط' then
 Redis:del(TheDrox.."Drox:Status:Link"..msg_chat_id) 
@@ -4970,7 +4970,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Status:Id"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل الايدي ","md",true)
@@ -4981,7 +4981,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Status:IdPhoto"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل الايدي بالصوره ","md",true)
@@ -4992,7 +4992,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Status:Reply"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل ردود المدير ","md",true)
@@ -5003,7 +5003,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Status:ReplySudo"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل ردود المطور ","md",true)
@@ -5014,7 +5014,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Status:BanId"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل الحظر , الطرد , التقييد","md",true)
@@ -5025,7 +5025,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Status:SetId"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل الرفع ","md",true)
@@ -5064,7 +5064,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:BotFree") 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل البوت الخدمي ","md",true)
@@ -5075,7 +5075,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:TwaslBot") 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل التواصل داخل البوت ","md",true)
@@ -5090,7 +5090,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -5120,7 +5120,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -5147,7 +5147,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙هاذا الامر يخص
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/DroxTeAm'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -5188,7 +5188,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙هاذا الامر يخص
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/DroxTeAm'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -5214,7 +5214,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5269,7 +5269,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5303,7 +5303,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Delmsg == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه حذف الرسائل* ',"md",true)  
@@ -5351,7 +5351,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -5377,7 +5377,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5424,7 +5424,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5469,7 +5469,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5509,7 +5509,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5541,7 +5541,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5570,7 +5570,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5611,7 +5611,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
@@ -5638,7 +5638,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
@@ -5662,7 +5662,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙هاذا الامر يخص
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/DroxTeAm'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local ban = LuaTele.getUser(Message_Reply.sender.user_id)
@@ -5700,7 +5700,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙هاذا الامر يخص
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/DroxTeAm'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local ban = LuaTele.getUser(Message_Reply.sender.user_id)
@@ -5723,7 +5723,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5767,7 +5767,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5795,7 +5795,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Delmsg == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه حذف الرسائل* ',"md",true)  
@@ -5832,7 +5832,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
@@ -5856,7 +5856,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5896,7 +5896,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5922,7 +5922,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -5963,7 +5963,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local UserInfo = LuaTele.getUser(UserId)
 if UserInfo.luatele == "error" and UserInfo.code == 6 then
@@ -5987,7 +5987,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local UserInfo = LuaTele.getUser(UserId)
 if UserInfo.luatele == "error" and UserInfo.code == 6 then
@@ -6008,7 +6008,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -6049,7 +6049,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -6077,7 +6077,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Delmsg == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه حذف الرسائل* ',"md",true)  
@@ -6111,7 +6111,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local UserInfo = LuaTele.getUser(UserId)
 if UserInfo.luatele == "error" and UserInfo.code == 6 then
@@ -6132,7 +6132,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -6169,7 +6169,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -6192,7 +6192,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -6256,7 +6256,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -6285,7 +6285,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -6314,7 +6314,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(klaer ..'Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
 local List_Members = Info_Members.members
@@ -6343,7 +6343,7 @@ else
 Creat = " Developers Bot \n"
 end
 if photo.total_count > 0 then
-local TestText = "‹ Owner Groups ›\n— — — — — — — — —\n᥀︙*Owner Name* :  [".. ban.first_name.."](tg://user?id=".. ban.id..")\n᥀︙*Owner Bio* : [❲ "..Bio.." ❳]"
+local TestText = "‹ Owner Groups ›\n— — — — — — — — —\n᥀︙*Owner Name* :  [".. ban.first_name.."](tg://user?id=".. ban.id..")\n᥀︙*Owner Bio* : [ "..Bio.." ]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -6368,7 +6368,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -6398,7 +6398,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -6424,18 +6424,16 @@ if y == true then
 LuaTele.sendText(msg_chat_id,msg_id,restricted,"md",true)  
 end
 end
-
-
 if text == "غادر" or text == "بوت غادر" or text == "مغادره" then 
 if not msg.Developers then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙هاذا الامر يخص { '..Controller_Num(3)..' }* ',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(3)..' }* ',"md",true)  
 end
 if not msg.ControllerBot and not Redis:set(TheDrox.."Drox:LeftBot") then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙امر المغادره معطل من قبل الاساسي *',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙امر المغادره معطل من قبل الاساسي *',"md",true)  
 end
 if ChannelJoin(msg) == false then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'\n• يجب عليك الاشتراك في القناه',"md",false, false, false, false, reply_markup)
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -6453,7 +6451,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
 local List_Members = Info_Members.members
@@ -6486,7 +6484,7 @@ end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(TheDrox.."Drox:ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:channell"..msg_chat_id,true) 
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل القنوات").Lock,"md",true)  
@@ -6498,7 +6496,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:text"..msg_chat_id,true) 
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الدردشه").Lock,"md",true)  
@@ -6510,7 +6508,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:set(TheDrox.."Drox:Lock:AddMempar"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل اضافة الاعضاء").Lock,"md",true)  
@@ -6522,7 +6520,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:set(TheDrox.."Drox:Lock:Join"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل دخول الاعضاء").Lock,"md",true)  
@@ -6534,7 +6532,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:set(TheDrox.."Drox:Lock:Bot:kick"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل البوتات").Lock,"md",true)  
@@ -6546,7 +6544,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:set(TheDrox.."Drox:Lock:Bot:kick"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل البوتات").lockKick,"md",true)  
@@ -6558,7 +6556,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end  
 Redis:set(TheDrox.."Drox:Lock:tagservr"..msg_chat_id,true)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الاشعارات").Lock,"md",true)  
@@ -6570,7 +6568,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end  
 Redis:set(TheDrox.."Drox:lockpin"..msg_chat_id,(LuaTele.getChatPinnedMessage(msg_chat_id).id or true)) 
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التثبيت هنا").Lock,"md",true)  
@@ -6582,7 +6580,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:set(TheDrox.."Drox:Lock:edit"..msg_chat_id,true) 
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل تعديل").Lock,"md",true)  
@@ -6594,7 +6592,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:set(TheDrox.."Drox:Lock:edit"..msg_chat_id,true) 
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل تعديل").Lock,"md",true)  
@@ -6606,7 +6604,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end  
 Redis:set(TheDrox.."Drox:Lock:tagservrbot"..msg_chat_id,true)   
 list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","Lock:forward","Lock:Keyboard","Lock:geam","Lock:Photo","Lock:Animation","Lock:Video","Lock:Audio","Lock:vico","Lock:Sticker","Lock:Document","Lock:Unsupported","Lock:Markdaun","Lock:Contact","Lock:Spam"}
@@ -6625,7 +6623,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:del(TheDrox.."Drox:Lock:AddMempar"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح اضافة الاعضاء").unLock,"md",true)  
@@ -6638,7 +6636,7 @@ end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(TheDrox.."Drox:ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:del(TheDrox.."Drox:Lock:channell"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح القنوات").unLock,"md",true)  
@@ -6650,7 +6648,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:del(TheDrox.."Drox:Lock:text"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الدردشه").unLock,"md",true)  
@@ -6662,7 +6660,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:del(TheDrox.."Drox:Lock:Join"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح دخول الاعضاء").unLock,"md",true)  
@@ -6674,7 +6672,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:del(TheDrox.."Drox:Lock:Bot:kick"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فـتح البوتات").unLock,"md",true)  
@@ -6686,7 +6684,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:del(TheDrox.."Drox:Lock:Bot:kick"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فـتح البوتات").unLock,"md",true)  
@@ -6698,7 +6696,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end  
 Redis:del(TheDrox.."Drox:Lock:tagservr"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فـتح الاشعارات").unLock,"md",true)  
@@ -6710,7 +6708,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:del(TheDrox.."Drox:lockpin"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فـتح التثبيت هنا").unLock,"md",true)  
@@ -6722,7 +6720,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:del(TheDrox.."Drox:Lock:edit"..msg_chat_id) 
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فـتح تعديل").unLock,"md",true)  
@@ -6734,7 +6732,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:del(TheDrox.."Drox:Lock:edit"..msg_chat_id) 
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فـتح تعديل").unLock,"md",true)  
@@ -6746,7 +6744,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end 
 Redis:del(TheDrox.."Drox:Lock:tagservrbot"..msg_chat_id)   
 list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","Lock:forward","Lock:Keyboard","Lock:geam","Lock:Photo","Lock:Animation","Lock:Video","Lock:Audio","Lock:vico","Lock:Sticker","Lock:Document","Lock:Unsupported","Lock:Markdaun","Lock:Contact","Lock:Spam"}
@@ -6909,7 +6907,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:hset(TheDrox.."Drox:Spam:Group:User"..msg_chat_id ,"Spam:User","del")  
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التكرار").Lock,"md",true)  
@@ -6919,7 +6917,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:hset(TheDrox.."Drox:Spam:Group:User"..msg_chat_id ,"Spam:User","keed")  
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التكرار").lockKid,"md",true)  
@@ -6929,7 +6927,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:hset(TheDrox.."Drox:Spam:Group:User"..msg_chat_id ,"Spam:User","mute")  
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التكرار").lockKtm,"md",true)  
@@ -6939,7 +6937,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:hset(TheDrox.."Drox:Spam:Group:User"..msg_chat_id ,"Spam:User","kick")  
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التكرار").lockKick,"md",true)  
@@ -6949,7 +6947,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:hdel(TheDrox.."Drox:Spam:Group:User"..msg_chat_id ,"Spam:User")  
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح التكرار").unLock,"md",true)  
@@ -6960,7 +6958,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Link"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الروابط").Lock,"md",true)  
@@ -6972,7 +6970,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Link"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الروابط").lockKid,"md",true)  
@@ -6984,7 +6982,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Link"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الروابط").lockKtm,"md",true)  
@@ -6996,7 +6994,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Link"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الروابط").lockKick,"md",true)  
@@ -7008,7 +7006,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Link"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الروابط").unLock,"md",true)  
@@ -7020,7 +7018,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:User:Name"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل المعرفات").Lock,"md",true)  
@@ -7032,7 +7030,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:User:Name"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل المعرفات").lockKid,"md",true)  
@@ -7044,7 +7042,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:User:Name"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل المعرفات").lockKtm,"md",true)  
@@ -7056,7 +7054,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:User:Name"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل المعرفات").lockKick,"md",true)  
@@ -7068,7 +7066,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:User:Name"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح المعرفات").unLock,"md",true)  
@@ -7080,7 +7078,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:hashtak"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التاك").Lock,"md",true)  
@@ -7092,7 +7090,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:hashtak"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التاك").lockKid,"md",true)  
@@ -7104,7 +7102,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:hashtak"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التاك").lockKtm,"md",true)  
@@ -7116,7 +7114,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:hashtak"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التاك").lockKick,"md",true)  
@@ -7128,7 +7126,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:hashtak"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح التاك").unLock,"md",true)  
@@ -7140,7 +7138,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Cmd"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الشارحه").Lock,"md",true)  
@@ -7152,7 +7150,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Cmd"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الشارحه").lockKid,"md",true)  
@@ -7164,7 +7162,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Cmd"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الشارحه").lockKtm,"md",true)  
@@ -7176,7 +7174,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Cmd"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الشارحه").lockKick,"md",true)  
@@ -7188,7 +7186,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Cmd"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الشارحه").unLock,"md",true)  
@@ -7200,7 +7198,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Photo"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الصور").Lock,"md",true)  
@@ -7212,7 +7210,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Photo"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الصور").lockKid,"md",true)  
@@ -7224,7 +7222,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Photo"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الصور").lockKtm,"md",true)  
@@ -7236,7 +7234,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Photo"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الصور").lockKick,"md",true)  
@@ -7248,7 +7246,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Photo"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الصور").unLock,"md",true)  
@@ -7260,7 +7258,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Video"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الفيديو").Lock,"md",true)  
@@ -7272,7 +7270,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Video"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الفيديو").lockKid,"md",true)  
@@ -7284,7 +7282,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Video"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الفيديو").lockKtm,"md",true)  
@@ -7296,7 +7294,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Video"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الفيديو").lockKick,"md",true)  
@@ -7308,7 +7306,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Video"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الفيديو").unLock,"md",true)  
@@ -7320,7 +7318,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Animation"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل المتحركه").Lock,"md",true)  
@@ -7332,7 +7330,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Animation"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل المتحركه").lockKid,"md",true)  
@@ -7344,7 +7342,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Animation"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل المتحركه").lockKtm,"md",true)  
@@ -7356,7 +7354,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Animation"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل المتحركه").lockKick,"md",true)  
@@ -7368,7 +7366,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Animation"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح المتحركه").unLock,"md",true)  
@@ -7380,7 +7378,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:geam"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الالعاب").Lock,"md",true)  
@@ -7392,7 +7390,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:geam"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الالعاب").lockKid,"md",true)  
@@ -7404,7 +7402,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:geam"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الالعاب").lockKtm,"md",true)  
@@ -7416,7 +7414,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:geam"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الالعاب").lockKick,"md",true)  
@@ -7428,7 +7426,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:geam"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الالعاب").unLock,"md",true)  
@@ -7440,7 +7438,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Audio"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الاغاني").Lock,"md",true)  
@@ -7452,7 +7450,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Audio"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الاغاني").lockKid,"md",true)  
@@ -7464,7 +7462,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Audio"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الاغاني").lockKtm,"md",true)  
@@ -7476,7 +7474,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Audio"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الاغاني").lockKick,"md",true)  
@@ -7488,7 +7486,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Audio"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الاغاني").unLock,"md",true)  
@@ -7500,7 +7498,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:vico"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الصوت").Lock,"md",true)  
@@ -7512,7 +7510,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:vico"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الصوت").lockKid,"md",true)  
@@ -7524,7 +7522,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:vico"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الصوت").lockKtm,"md",true)  
@@ -7536,7 +7534,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:vico"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الصوت").lockKick,"md",true)  
@@ -7548,7 +7546,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:vico"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الصوت").unLock,"md",true)  
@@ -7560,7 +7558,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Keyboard"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الكيبورد").Lock,"md",true)  
@@ -7572,7 +7570,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Keyboard"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الكيبورد").lockKid,"md",true)  
@@ -7584,7 +7582,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Keyboard"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الكيبورد").lockKtm,"md",true)  
@@ -7596,7 +7594,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Keyboard"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الكيبورد").lockKick,"md",true)  
@@ -7608,7 +7606,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Keyboard"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الكيبورد").unLock,"md",true)  
@@ -7620,7 +7618,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Sticker"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الملصقات").Lock,"md",true)  
@@ -7632,7 +7630,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Sticker"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الملصقات").lockKid,"md",true)  
@@ -7644,7 +7642,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Sticker"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الملصقات").lockKtm,"md",true)  
@@ -7656,7 +7654,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Sticker"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الملصقات").lockKick,"md",true)  
@@ -7668,7 +7666,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Sticker"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الملصقات").unLock,"md",true)  
@@ -7680,7 +7678,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:forward"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التوجيه").Lock,"md",true)  
@@ -7692,7 +7690,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:forward"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التوجيه").lockKid,"md",true)  
@@ -7704,7 +7702,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:forward"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التوجيه").lockKtm,"md",true)  
@@ -7716,7 +7714,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:forward"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل التوجيه").lockKick,"md",true)  
@@ -7728,7 +7726,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:forward"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح التوجيه").unLock,"md",true)  
@@ -7740,7 +7738,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Document"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الملفات").Lock,"md",true)  
@@ -7752,7 +7750,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Document"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الملفات").lockKid,"md",true)  
@@ -7764,7 +7762,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Document"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الملفات").lockKtm,"md",true)  
@@ -7776,7 +7774,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Document"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الملفات").lockKick,"md",true)  
@@ -7788,7 +7786,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Document"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الملفات").unLock,"md",true)  
@@ -7800,7 +7798,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Unsupported"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل السيلفي").Lock,"md",true)  
@@ -7812,7 +7810,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Unsupported"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل السيلفي").lockKid,"md",true)  
@@ -7824,7 +7822,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Unsupported"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل السيلفي").lockKtm,"md",true)  
@@ -7836,7 +7834,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Unsupported"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل السيلفي").lockKick,"md",true)  
@@ -7848,7 +7846,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Unsupported"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح السيلفي").unLock,"md",true)  
@@ -7860,7 +7858,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Markdaun"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الماركداون").Lock,"md",true)  
@@ -7872,7 +7870,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Markdaun"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الماركداون").lockKid,"md",true)  
@@ -7884,7 +7882,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Markdaun"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الماركداون").lockKtm,"md",true)  
@@ -7896,7 +7894,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Markdaun"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الماركداون").lockKick,"md",true)  
@@ -7908,7 +7906,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Markdaun"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الماركداون").unLock,"md",true)  
@@ -7920,7 +7918,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Contact"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الجهات").Lock,"md",true)  
@@ -7932,7 +7930,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Contact"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الجهات").lockKid,"md",true)  
@@ -7944,7 +7942,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Contact"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الجهات").lockKtm,"md",true)  
@@ -7956,7 +7954,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Contact"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الجهات").lockKick,"md",true)  
@@ -7968,7 +7966,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Contact"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الجهات").unLock,"md",true)  
@@ -7980,7 +7978,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Spam"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الكلايش").Lock,"md",true)  
@@ -7992,7 +7990,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Spam"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الكلايش").lockKid,"md",true)  
@@ -8004,7 +8002,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Spam"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الكلايش").lockKtm,"md",true)  
@@ -8016,7 +8014,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Spam"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الكلايش").lockKick,"md",true)  
@@ -8028,7 +8026,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Spam"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الكلايش").unLock,"md",true)  
@@ -8040,7 +8038,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Inlen"..msg_chat_id,"del")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الانلاين").Lock,"md",true)  
@@ -8052,7 +8050,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Inlen"..msg_chat_id,"ked")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الانلاين").lockKid,"md",true)  
@@ -8064,7 +8062,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Inlen"..msg_chat_id,"ktm")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الانلاين").lockKtm,"md",true)  
@@ -8076,7 +8074,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Lock:Inlen"..msg_chat_id,"kick")  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم قفـل الانلاين").lockKick,"md",true)  
@@ -8088,7 +8086,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Lock:Inlen"..msg_chat_id)  
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"᥀︙تم فتح الانلاين").unLock,"md",true)  
@@ -8100,7 +8098,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Set:Link"..msg_chat_id..""..msg.sender.user_id,120,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"📥︙ارسل رابط المجموعه او رابط قناة المجموعه","md",true)  
@@ -8111,7 +8109,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Group:Link"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم مسح الرابط ","md",true)             
@@ -8143,7 +8141,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Tshake:Welcome:Group" .. msg_chat_id .. "" .. msg.sender.user_id, 120, true)  
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل لي الترحيب الان".."\n᥀︙تستطيع اضافة مايلي !\n᥀︙دالة عرض الاسم »{`name`}\n᥀︙دالة عرض المعرف »{`user`}\n᥀︙دالة عرض اسم المجموعه »{`NameCh`}","md",true)   
@@ -8154,7 +8152,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not Redis:get(TheDrox.."Drox:Status:Welcome"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل الترحيب من قبل الادمنيه","md",true)
@@ -8172,7 +8170,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Welcome:Group"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم ازالة ترحيب المجموعه","md",true)   
@@ -8183,7 +8181,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Set:Rules:" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل لي القوانين الان","md",true)  
@@ -8194,7 +8192,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Group:Rules"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم ازالة قوانين المجموعه","md",true)    
@@ -8213,7 +8211,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -8230,7 +8228,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -8249,7 +8247,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -8267,7 +8265,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Info == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه تغيير المعلومات* ',"md",true)  
@@ -8282,7 +8280,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:List:Filter"..msg_chat_id)  
 if #list == 0 then  
@@ -8304,7 +8302,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:List:Filter"..msg_chat_id)  
 if #list == 0 then  
@@ -8337,7 +8335,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox..'Drox:FilterText'..msg_chat_id..':'..msg.sender.user_id,'true')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙ارسل الان { ملصق ,متحركه ,صوره ,رساله } *',"md",true)  
@@ -8348,7 +8346,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox..'Drox:FilterText'..msg_chat_id..':'..msg.sender.user_id,'DelFilter')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙ارسل الان { ملصق ,متحركه ,صوره ,رساله } *',"md",true)  
@@ -8360,7 +8358,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg.sender.user_id,"true") 
 return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙الان ارسل لي الامر القديم ...*","md",true)
@@ -8371,7 +8369,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Command:Reids:Group:Del"..msg_chat_id..":"..msg.sender.user_id,"true") 
 return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الامر الذي قمت بوضعه مكان الامر القديم*","md",true)
@@ -8382,7 +8380,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:Command:List:Group"..msg_chat_id)
 for k,v in pairs(list) do
@@ -8397,7 +8395,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:Command:List:Group"..msg_chat_id.."")
 Command = "*᥀︙قائمه الاوامر المضافه \n— — — — — — — — —*\n"
@@ -8421,7 +8419,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -8439,7 +8437,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -8456,7 +8454,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -8478,7 +8476,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -8526,7 +8524,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:get(TheDrox.."Drox:Status:Link"..msg.chat_id) then
 Statuslink = '❬ ✔️ ❭' else Statuslink = '❬ ❌ ❭'
@@ -8588,7 +8586,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Text = "*\n᥀︙اعدادات المجموعه ".."\n🔏︙علامة ال (✔️) تعني مقفول".."\n🔓︙علامة ال (❌) تعني مفتوح*"
 local reply_markup = LuaTele.replyMarkup{
@@ -8648,7 +8646,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -8689,7 +8687,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -8759,7 +8757,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
@@ -8858,7 +8856,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 if not UserId_Info.id then
@@ -8968,7 +8966,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙هاذا الامر يخص
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ᥀︙عذرا البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -8999,7 +8997,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙هاذا الامر يخص
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/S_a_i_d_i'}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n ᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ᥀︙عذرا البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -9031,7 +9029,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -9068,7 +9066,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -9106,7 +9104,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -9138,7 +9136,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -9183,7 +9181,7 @@ LuaTele.sendText(msg_chat_id,msg_id,'᥀︙عدد جهاتك المضافه هن
 elseif text == 'مسح' and msg.reply_to_message_id ~= 0 and msg.Addictive then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).Delmsg == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه حذف الرسائل* ',"md",true)  
@@ -9197,7 +9195,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙هاذا الامر يخص
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Set:Id:Groups"..msg.chat_id..""..msg.sender.user_id,240,true)  
 return LuaTele.sendText(msg_chat_id,msg_id,[[
@@ -9221,7 +9219,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n* ᥀︙هاذا الامر يخص
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Set:Id:Groups")
 return LuaTele.sendText(msg_chat_id,msg_id, ' ᥀︙تم ازالة كليشة الايدي العامه',"md",true)  
@@ -9233,7 +9231,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Redis:Id:Group"..msg.chat_id..""..msg.sender.user_id,240,true)  
 return LuaTele.sendText(msg_chat_id,msg_id,[[
@@ -9257,7 +9255,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Set:Id:Group"..msg.chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id, '᥀︙تم ازالة كليشة الايدي ',"md",true)  
@@ -9271,7 +9269,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:DevelopersQ:Groups") 
 if #Info_Members == 0 then
@@ -9286,7 +9284,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Developers:Groups") 
 if #Info_Members == 0 then
@@ -9316,7 +9314,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:TheBasics:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -9331,7 +9329,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Originators:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -9346,7 +9344,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Managers:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -9361,7 +9359,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Addictive:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -9376,7 +9374,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Distinguished:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -9391,7 +9389,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:BanAll:Groups") 
 if #Info_Members == 0 then
@@ -9406,7 +9404,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:BanGroup:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -9421,7 +9419,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id) 
 if #Info_Members == 0 then
@@ -9436,7 +9434,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
@@ -9461,7 +9459,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -9486,7 +9484,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -9511,7 +9509,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -9542,7 +9540,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:List:Manager"..msg_chat_id.."")
 for k,v in pairs(list) do
@@ -9565,7 +9563,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:List:Manager"..msg_chat_id.."")
 text = "᥀︙قائمه ردود المدير \n— — — — — — — — —\n"
@@ -9602,7 +9600,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الكلمه لاضافتها في ردود المدير*","md",true)  
@@ -9613,7 +9611,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true2")
 return LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙ارسل الان الكلمه لحذفها من ردود المدير*","md",true)  
@@ -9624,7 +9622,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:List:Rd:Sudo")
 for k,v in pairs(list) do
@@ -9647,7 +9645,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:List:Rd:Sudo")
 text = "\n📝︙قائمة ردود المطور \n— — — — — — — — —\n"
@@ -9684,7 +9682,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Set:Rd"..msg.sender.user_id..":"..msg_chat_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الكلمه لاضافتها في ردود المطور ","md",true)  
@@ -9695,7 +9693,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Set:On"..msg.sender.user_id..":"..msg_chat_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الكلمه لحذفها من ردود المطور","md",true)  
@@ -9706,7 +9704,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Broadcasting:Users" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
 LuaTele.sendText(msg_chat_id,msg_id,[[
@@ -9726,7 +9724,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Broadcasting:Groups" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
 LuaTele.sendText(msg_chat_id,msg_id,[[
@@ -9746,7 +9744,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Broadcasting:Groups:Pin" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
 LuaTele.sendText(msg_chat_id,msg_id,[[
@@ -9766,7 +9764,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Broadcasting:Groups:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
 LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل لي التوجيه الان\n᥀︙ليتم نشره في المجموعات","md",true)  
@@ -9779,7 +9777,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Broadcasting:Users:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
 LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل لي التوجيه الان\n᥀︙ليتم نشره الى المشتركين","md",true)  
@@ -9799,7 +9797,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -9834,7 +9832,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -9886,7 +9884,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*᥀︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -9925,7 +9923,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox..'Drox:GetTexting:DevTheDrox'..msg_chat_id..':'..msg.sender.user_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙ارسل لي الكليشه الان')
@@ -9936,7 +9934,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox..'Drox:Texting:DevTheDrox')
 return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙تم حذف كليشه المطور')
@@ -10105,7 +10103,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*♡︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n♡︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n♡︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -10142,7 +10140,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -10162,7 +10160,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -10182,7 +10180,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -10202,7 +10200,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -10223,7 +10221,7 @@ end
 if ChannelJoin(msg) == false then
 local chinfo = data_ns:get(ban_ns.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -10500,7 +10498,7 @@ end
 if ChannelJoin(msg) == false then
 local chinfo = Redis:get(TheDrox.."Drox:ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n⦁ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n⦁ عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
  ioserver = io.popen([[
  linux_version=`lsb_release -ds`
@@ -10524,7 +10522,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 print('Chat Id : '..msg_chat_id)
 print('User Id : '..msg_user_send_id)
@@ -10537,7 +10535,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Change:Name:Bot"..msg.sender.user_id,300,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل لي الاسم الان ","md",true)  
@@ -10548,7 +10546,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Name:Bot") 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حذف اسم البوت ","md",true)   
@@ -10580,7 +10578,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:Num:User:Pv")   
 local x = 0
@@ -10604,7 +10602,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:ChekBotAdd")   
 local x = 0
@@ -11555,7 +11553,7 @@ end
 if text and text:match("^اضف مجوهرات (%d+)$") and msg.reply_to_message_id ~= 0 then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
@@ -11574,7 +11572,7 @@ end
 if text and text:match("^اضف رسائل (%d+)$") and msg.reply_to_message_id ~= 0 then
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
@@ -11605,7 +11603,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تعط','تعطيل الايدي بالصوره')
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..'تفع','تفعيل الايدي بالصوره')
@@ -11657,7 +11655,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 print('Chat Id : '..msg_chat_id)
 print('User Id : '..msg_user_send_id)
@@ -11788,7 +11786,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:Num:User:Pv")   
 local x = 0
@@ -11812,7 +11810,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:ChekBotAdd")   
 local x = 0
@@ -11852,7 +11850,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Change:Start:Bot"..msg.sender.user_id,300,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل لي كليشه Start الان ","md",true)  
@@ -11863,7 +11861,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Start:Bot") 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حذف كليشه Start ","md",true)   
@@ -11874,7 +11872,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Change:Name:Bot"..msg.sender.user_id,300,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل لي الاسم الان ","md",true)  
@@ -11885,7 +11883,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:Name:Bot") 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حذف اسم البوت ","md",true)   
@@ -11896,7 +11894,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox..'Drox:Num:Add:Bot',text:match("تعين عدد الاعضاء (%d+)$") ) 
 LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙تم تعيين عدد اعضاء تفعيل البوت اكثر من : '..text:match("تعين عدد الاعضاء (%d+)$")..' عضو *',"md",true)  
@@ -11906,7 +11904,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 LuaTele.sendText(msg_chat_id,msg_id,'*᥀︙عدد احصائيات البوت الكامله \n— — — — — — — — —\n᥀︙عدد المجموعات : '..(Redis:scard(TheDrox..'Drox:ChekBotAdd') or 0)..'\n᥀︙عدد المشتركين : '..(Redis:scard(TheDrox..'Drox:Num:User:Pv') or 0)..'*',"md",true)  
 end
@@ -11916,7 +11914,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox..'Drox:GetTexting:DevTheDrox'..msg_chat_id..':'..msg.sender.user_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙ارسل لي الكليشه الان')
@@ -11927,7 +11925,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox..'Drox:Texting:DevTheDrox')
 return LuaTele.sendText(msg_chat_id,msg_id,'᥀︙تم حذف كليشه المطور')
@@ -11938,7 +11936,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Set:Rd"..msg.sender.user_id..":"..msg_chat_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الكلمه لاضافتها في ردود المطور ","md",true)  
@@ -11949,7 +11947,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:Set:On"..msg.sender.user_id..":"..msg_chat_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل الان الكلمه لحذفها من ردود المطور","md",true)  
@@ -11960,7 +11958,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Broadcasting:Users" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
 LuaTele.sendText(msg_chat_id,msg_id,[[
@@ -11980,7 +11978,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Broadcasting:Groups" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
 LuaTele.sendText(msg_chat_id,msg_id,[[
@@ -12000,7 +11998,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Broadcasting:Groups:Pin" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
 LuaTele.sendText(msg_chat_id,msg_id,[[
@@ -12020,7 +12018,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Broadcasting:Groups:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
 LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل لي التوجيه الان\n᥀︙ليتم نشره في المجموعات","md",true)  
@@ -12033,7 +12031,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:setex(TheDrox.."Drox:Broadcasting:Users:Fwd" .. msg_chat_id .. ":" .. msg.sender.user_id, 600, true) 
 LuaTele.sendText(msg_chat_id,msg_id,"᥀︙ارسل لي التوجيه الان\n᥀︙ليتم نشره الى المشتركين","md",true)  
@@ -12046,7 +12044,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:List:Rd:Sudo")
 text = "\n📝︙قائمة ردود المطور \n— — — — — — — — —\n"
@@ -12083,7 +12081,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(TheDrox.."Drox:List:Rd:Sudo")
 for k,v in pairs(list) do
@@ -12106,7 +12104,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Developers:Groups") 
 if #Info_Members == 0 then
@@ -12121,7 +12119,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:DevelopersQ:Groups") 
 if #Info_Members == 0 then
@@ -12136,7 +12134,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:BanAll:Groups") 
 if #Info_Members == 0 then
@@ -12151,7 +12149,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:BotFree") 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل البوت الخدمي ","md",true)
@@ -12162,7 +12160,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:del(TheDrox.."Drox:TwaslBot") 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تعطيل التواصل داخل البوت ","md",true)
@@ -12173,7 +12171,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:BotFree",true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل البوت الخدمي ","md",true)
@@ -12184,7 +12182,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 Redis:set(TheDrox.."Drox:TwaslBot",true) 
 return LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم تفعيل التواصل داخل البوت ","md",true)
@@ -12195,7 +12193,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end 
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:BanAll:Groups") 
 if #Info_Members == 0 then
@@ -12222,7 +12220,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:Developers:Groups") 
 if #Info_Members == 0 then
@@ -12248,7 +12246,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'\n*᥀︙هاذا الامر يخص 
 end
 if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n᥀︙عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Info_Members = Redis:smembers(TheDrox.."Drox:DevelopersQ:Groups") 
 if #Info_Members == 0 then
@@ -13174,9 +13172,10 @@ data = {
 {{text = 'جروفيسكي', url="https://t.me/gamee?game=GroovySki"},{text = 'KungFuInc', url="https://t.me/gamee?game=KungFuInc"}},  
 {{text = 'سبيس ترافلر', url="https://t.me/gamee?game=SpaceTraveler"},{text = 'RedAndBlue', url="https://t.me/gamee?game=RedAndBlue"}},  
 {{text = 'سكوداهوكي1 ', url="https://t.me/gamee?game=SkodaHockey1"},{text = 'SummerLove', url="https://t.me/gamee?game=SummerLove"}},  
-{{text = 'سمارتوبشارك', url="https://t.me/gamee?game=SmartUpShark"},{text = 'SpikyFish3', url="https://t.me/gamee?game=SpikyFish3"}},  
-{{text = '‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 › ⁦', url = 't.me/DroxTeAm'}},
+{{text = 'سمارتوبشارك', url="https://t.me/gamee?game=SmartUpShark"},{text = 'SpikyFish3', url="https://t.me/gamee?game=SpikyFish3"}},
+{{text = 'العاب السورس ', data = IdUser..'/normgm'}},
 {{text = 'القائمه الرئيسيه', data = IdUser..'/help6'}},
+{{text = '‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 › ⁦', url = 't.me/DroxTeAm'}},
 }
 }
 local TextHelp = [[*
@@ -13191,6 +13190,9 @@ if tonumber(IdUser) == tonumber(UserId) then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
+{
+{text = 'الالعاب الاحترافيه ', data = msg.sender.user_id..'/degm'}, 
+},
 {
 {text = 'القائمه الرئيسيه', data = IdUser..'/help6'},
 },

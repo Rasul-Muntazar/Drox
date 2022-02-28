@@ -10397,7 +10397,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '𝖲𝗈𝗎𝗋𝖼𝖾 𝗄𝖺??𝗂', url = 't.me/DroxTeAm'}, 
+{text = '‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 › ⁦ ⁦', url = 't.me/DroxTeAm'}, 
 },
 }
 }

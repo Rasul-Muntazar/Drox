@@ -130,7 +130,7 @@ Status = 0
 DevelopersQ = Redis:sismember(TheDrox.."Drox:DevelopersQ:Groups",UserId) 
 if UserId == 1214622341 then
 Status = true
-elseif UserId == 1553530032 then
+elseif UserId == 1214622341 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -156,8 +156,8 @@ Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,User
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1214622341 then
 Status = 'مبرمج السورس'
-elseif UserId == 1553530032 then
-Status = 'ححلوة السورس'
+elseif UserId == 1214622341 then
+Status = 'مطور السورس'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == TheDrox then
@@ -736,7 +736,7 @@ Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,User
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1214622341 then
 Status = true
-elseif UserId == 1553530032 then
+elseif UserId == 1214622341 then
 Status = true
 elseif UserId == Sudo_Id then  
 Status = true
@@ -775,7 +775,7 @@ Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,User
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1214622341 then
 Status = true
-elseif UserId == 1553530032 then
+elseif UserId == 1214622341 then
 Status = true
 elseif UserId == Sudo_Id then    
 Status = true
@@ -904,8 +904,8 @@ end
 if tonumber(msg.sender.user_id) == 1214622341 then
 msg.Name_Controller = 'مبرمج السورس '
 msg.The_Controller = 1
-elseif tonumber(msg.sender.user_id) == 1553530032 then
-msg.Name_Controller = 'ححلوة السورس '
+elseif tonumber(msg.sender.user_id) == 1214622341 then
+msg.Name_Controller = 'مطور السورس '
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
 msg.The_Controller = 1
@@ -1614,7 +1614,7 @@ Redis:del(TheDrox.."Drox:Add:Rd:Manager:Audio"..text..msg_chat_id)
 Redis:del(TheDrox.."Drox:Add:Rd:Manager:video_note"..text..msg_chat_id)
 Redis:del(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id)
 Redis:srem(TheDrox.."Drox:List:Manager"..msg_chat_id.."", text)
-LuaTele.sendText(msg_chat_id,msg_id,"᥀︙تم حذف الرد من ردود المدير ","md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,"*᥀︙تم حذف الرد من ردود المدير *","md",true)  
 return false
 end
 end
@@ -2980,7 +2980,7 @@ data = {
 {text = ' مسح الاساسين ', data =msg.sender.user_id..'/'.. 'TheBasics'}
 },
 {
-{text = '❲ إخفاء الأمر ❳', data =msg.sender.user_id..'/'.. 'delAmr'}
+{text = '{ إخفاء الأمر }', data =msg.sender.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -3090,7 +3090,7 @@ local List = {
 ]]} 
 local Text_Rand = List[math.random(#List)] 
 Redis:set(TheDrox.."Drox:Set:Id:Group"..msg.chat_id,Text_Rand)
-return LuaTele.sendText(msg_chat_id,msg_id, '᥀︙تم التغيير ارسل ايدي لعرض الايدي الجديد',"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id, '*᥀︙تم التغيير ارسل ايدي لعرض الايدي الجديد'*,"md",true)  
 end
 if text == 'رتبتي' then
 local ban = LuaTele.getUser(msg.sender.user_id)
@@ -5171,7 +5171,7 @@ end
 if Controller(msg_chat_id,UserId_Info.id) == 'مبرمج السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ᥀︙عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
 end
-if Controller(msg_chat_id,UserId_Info.id) == 'ححلوة السورس' then
+if Controller(msg_chat_id,UserId_Info.id) == 'مطور السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ᥀︙عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,UserId_Info.id).." }*","md",true)  
 end
 if Redis:sismember(TheDrox.."Drox:ktmAll:Groups",UserId_Info.id) then
@@ -5684,7 +5684,7 @@ end
 if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'مبرمج السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ᥀︙عذرا لا تستطيع كتم عام { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
 end
-if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'ححلوة السورس' then
+if Controller(msg_chat_id,Message_Reply.sender.user_id) == 'مطور السورس' then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n* ᥀︙عذرا لا تستطيع كتم عام{ "..Controller(msg_chat_id,Message_Reply.sender.user_id).." }*","md",true)  
 end
 if Redis:sismember(TheDrox.."Drox:ktmAll:Groups",Message_Reply.sender.user_id) then
@@ -10078,7 +10078,7 @@ local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id="..msg_chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == 'source' then
-video = "https://t.me/Rasulm12/23"
+video = "https://t.me/Rasulm12/26"
 local T =[[*
 - 𝖶𝖾𝗅𝖼𝗈𝗆𝖾  𝖲𝗈𝗎𝗋𝖼𝖾 Drox 𝖳𝖾𝖺𝗆 .
 - 𝖳𝗁𝖾 𝗅𝖺𝗋𝗀𝖾𝗌𝗍 𝗉𝗋𝗈𝖿𝖾𝗌𝗌𝗂𝗈𝗇𝖺𝗅 𝗉𝗅𝖺𝗍𝖿𝗈𝗋𝗆 𝗌𝗉𝖾𝖼𝗂𝖺𝗅𝗂𝗓𝖾𝖽 𝗂𝗇 𝖬𝖺𝗄𝗂𝗇𝗀 𝖳𝖾𝗅𝖾𝗀𝗋𝖺𝗆 𝖡𝗈𝗍𝗌 .

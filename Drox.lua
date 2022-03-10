@@ -3090,7 +3090,7 @@ local List = {
 ]]} 
 local Text_Rand = List[math.random(#List)] 
 Redis:set(TheDrox.."Drox:Set:Id:Group"..msg.chat_id,Text_Rand)
-return LuaTele.sendText(msg_chat_id,msg_id, '*᥀︙تم التغيير ارسل ايدي لعرض الايدي الجديد'*,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id, '*᥀︙تم التغيير ارسل ايدي لعرض الايدي الجديد*',"md",true)  
 end
 if text == 'رتبتي' then
 local ban = LuaTele.getUser(msg.sender.user_id)

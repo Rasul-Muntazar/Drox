@@ -2333,7 +2333,7 @@ end
 end
 end
 if text== "همسه"  or text == "همسة" then
-return LuaTele.sendText(msg.chat_id,msg.id,"᥀︙اهلا بك عزيزي\n᥀︙اكتب معرف البوت ثم الرساله ثم معرف الشخص\n᥀︙مثال\n@PZ6BOT هاي @P222P")
+return LuaTele.sendText(msg.chat_id,msg.id,"᥀︙اهلا بك عزيزي\n᥀︙اكتب معرف البوت ثم الرساله ثم معرف الشخص\n᥀︙مثال\n@PZ0BOT هاي @P222P")
 end
 if text == 'تحديث السورس' or text == 'تحديث السورس ᥀' then
 if not msg.ControllerBot then 

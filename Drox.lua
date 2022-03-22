@@ -3295,7 +3295,7 @@ Redis:set(TheDrox.."Drox:Status:distraction3"..msg_chat_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تفعيل امر شعر *").unLock,"md",true) end
 if TextMsg == 'فلم' then
 Redis:set(TheDrox.."Drox:Status:distraction4"..msg_chat_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تفعيل امر شعر *").unLock,"md",true) end
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تفعيل امر فلم *").unLock,"md",true) end
 if TextMsg == 'صوره' then
 Redis:set(TheDrox.."Drox:Status:distraction5"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تفعيل امر صوره *").unLock,"md",true) end

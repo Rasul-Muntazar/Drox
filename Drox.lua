@@ -6864,7 +6864,7 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "‹ : عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 Redis:set(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg.sender.user_id,"true") 
-return LuaTele.sendText(msg_chat_id,msg_id,"‹ : الان ارسل لي الامر القديم","md",true) end
+return LuaTele.sendText(msg_chat_id,msg_id,"*‹ : الان ارسل لي الامر القديم*","md",true) end
 if text == "حذف امر" or text == "مسح امر" then 
 if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للادمنية واعلى فقط',"md",true)  end
 if ChannelJoin(msg) == false then

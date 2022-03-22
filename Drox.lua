@@ -3733,7 +3733,7 @@ Redis:del(TheDrox.."Drox:Status:distraction3"..msg_chat_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تعطيل امر شعر *").unLock,"md",true) end
 if TextMsg == 'فلم' then
 Redis:del(TheDrox.."Drox:Status:distraction4"..msg_chat_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تعطيل امر شعر *").unLock,"md",true) end
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تعطيل امر فلم *").unLock,"md",true) end
 if TextMsg == 'صوره' then
 Redis:del(TheDrox.."Drox:Status:distraction5"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تعطيل امر صوره *").unLock,"md",true) end

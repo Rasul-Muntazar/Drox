@@ -746,13 +746,13 @@ if text and Redis:get(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg
 Redis:set(TheDrox.."Drox:Command:Reids:Group:New"..msg_chat_id,text)
 Redis:del(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg.sender.user_id)
 Redis:set(TheDrox.."Drox:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id,"true1") 
-return LuaTele.sendText(msg_chat_id,msg_id,"*‹ : ارسل الامر الجديد*","md",true)  end
+return LuaTele.sendText(msg_chat_id,msg_id,"‹ : ارسل الامر الجديد","md",true)  end
 if text and Redis:get(TheDrox.."Drox:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id) == "true1" then
 local NewCmd = Redis:get(TheDrox.."Drox:Command:Reids:Group:New"..msg_chat_id)
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..text,NewCmd)
 Redis:sadd(TheDrox.."Drox:Command:List:Group"..msg_chat_id,text)
 Redis:del(TheDrox.."Drox:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"*‹ : تم حفظ الامر باسم ↫* ‹ "..text..' ›',"md",true) end
+return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم حفظ الامر باسم ↫ ‹ "..text..' ›',"md",true) end
 if Redis:get(TheDrox.."Drox:Set:Link"..msg_chat_id..""..msg.sender.user_id) then
 if text and text:match("(https://telegram.me/%S+)") or text and text:match("(https://t.me/%S+)") then     
 local LinkGroup = text:match("(https://telegram.me/%S+)") or text:match("(https://t.me/%S+)")   
@@ -5158,8 +5158,8 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RemixDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == "فلم" or text == "فيلم" then 
-if not Redis:get(TheDrox.."Drox:Status:distraction4"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"‹ : عذراً امر انمي معطل","md",true) end 
-Abs = math.random(4,1002); 
+if not Redis:get(TheDrox.."Drox:Status:distraction4"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"‹ : عذراً امر فلم معطل","md",true) end 
+Abs = math.random(4,125); 
 local Text ='‹ : تم اختيار الفلم لك'
 keyboardd = {} 
 keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = msg.sender.user_id..'/Movies'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}
@@ -6864,7 +6864,7 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "‹ : عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 Redis:set(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg.sender.user_id,"true") 
-return LuaTele.sendText(msg_chat_id,msg_id,"*‹ : الان ارسل لي الامر القديم*","md",true) end
+return LuaTele.sendText(msg_chat_id,msg_id,"‹ : الان ارسل لي الامر القديم","md",true) end
 if text == "حذف امر" or text == "مسح امر" then 
 if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للادمنية واعلى فقط',"md",true)  end
 if ChannelJoin(msg) == false then

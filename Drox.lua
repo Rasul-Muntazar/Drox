@@ -738,8 +738,8 @@ if NewCmmd then
 Redis:del(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..text)
 Redis:del(TheDrox.."Drox:Command:Reids:Group:New"..msg_chat_id)
 Redis:srem(TheDrox.."Drox:Command:List:Group"..msg_chat_id,text)
-LuaTele.sendText(msg_chat_id,msg_id,"*‹ : تم ازالة هذا ↫* ‹ "..text.." ›","md",true) else
-LuaTele.sendText(msg_chat_id,msg_id,"*‹ : لا يوجد امر بهذا الاسم*","md",true) end
+LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم ازالة هذا ↫ ‹ "..text.." ›","md",true) else
+LuaTele.sendText(msg_chat_id,msg_id,"‹ : لا يوجد امر بهذا الاسم","md",true) end
 Redis:del(TheDrox.."Drox:Command:Reids:Group:Del"..msg_chat_id..":"..msg.sender.user_id)
 return false end
 if text and Redis:get(TheDrox.."Drox:Command:Reids:Group"..msg_chat_id..":"..msg.sender.user_id) == "true" then
@@ -752,7 +752,7 @@ local NewCmd = Redis:get(TheDrox.."Drox:Command:Reids:Group:New"..msg_chat_id)
 Redis:set(TheDrox.."Drox:Get:Reides:Commands:Group"..msg_chat_id..":"..text,NewCmd)
 Redis:sadd(TheDrox.."Drox:Command:List:Group"..msg_chat_id,text)
 Redis:del(TheDrox.."Drox:Command:Reids:Group:End"..msg_chat_id..":"..msg.sender.user_id)
-return LuaTele.sendText(msg_chat_id,msg_id,"*‹ : تم حفظ الامر باسم ↫* ‹ "..text..' ›',"md",true) end
+return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم حفظ الامر باسم ↫ ‹ "..text..' ›',"md",true) end
 if Redis:get(TheDrox.."Drox:Set:Link"..msg_chat_id..""..msg.sender.user_id) then
 if text and text:match("(https://telegram.me/%S+)") or text and text:match("(https://t.me/%S+)") then     
 local LinkGroup = text:match("(https://telegram.me/%S+)") or text:match("(https://t.me/%S+)")   
@@ -806,7 +806,7 @@ elseif msg.content.photo.sizes[3].photo.remote.id then
 idPhoto = msg.content.photo.sizes[3].photo.remote.id end
 print(idPhoto)
 Redis:set(TheDrox.."Drox:Add:Rd:Manager:Photo"..test..msg_chat_id, idPhoto)  end
-return LuaTele.sendText(msg_chat_id,msg_id,"*‹ : تم حفظ رد المدير الجديد*","md",false ,false, false, false, reply_markup) end end
+return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم حفظ رد المدير الجديد","md",false ,false, false, false, reply_markup) end end
 if text and text:match("^(.*)$") then
 if Redis:get(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id) == "true" then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',
@@ -851,7 +851,7 @@ Redis:del(TheDrox.."Drox:Add:Rd:Manager:Audio"..text..msg_chat_id)
 Redis:del(TheDrox.."Drox:Add:Rd:Manager:video_note"..text..msg_chat_id)
 Redis:del(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id)
 Redis:srem(TheDrox.."Drox:List:Manager"..msg_chat_id.."", text)
-LuaTele.sendText(msg_chat_id,msg_id,'*‹ : الكلمة ↫ ‹ *'..text..'* › تم حذفها*',"md",true)  
+LuaTele.sendText(msg_chat_id,msg_id,'‹ : الكلمة ↫ ‹ '..text..' › تم حذفها',"md",true)  
 return false end end
 if text and Redis:get(TheDrox.."Drox:Status:ReplySudo"..msg_chat_id) then
 local anemi = Redis:get(TheDrox.."Drox:Add:Rd:Sudo:Gif"..text)   
@@ -6874,7 +6874,7 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "‹ : عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 Redis:set(TheDrox.."Drox:Command:Reids:Group:Del"..msg_chat_id..":"..msg.sender.user_id,"true") 
-return LuaTele.sendText(msg_chat_id,msg_id,"*‹ : ارسل الان الامر الذي قمت بوضعه مكان الامر القديم*","md",true) end
+return LuaTele.sendText(msg_chat_id,msg_id,"‹ : ارسل الان الامر الذي قمت بوضعه مكان الامر القديم","md",true) end
 if text == "حذف الاوامر المضافه" or text == "مسح الاوامر المضافه" then 
 if not msg.Managers then return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للمدراء واعلى فقط',"md",true)  end
 if ChannelJoin(msg) == false then
@@ -7988,7 +7988,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, fal
 local reply_markup = LuaTele.replyMarkup{type = 'inline',
 data = {{{text = '‹ الغاء ›', data = msg.sender.user_id..'/closeRD'},},}}
 Redis:set(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,true)
-return LuaTele.sendText(msg_chat_id,msg_id,"*‹ : ارسل الان الكلمه لاضافتها في ردود المدير *","md",false ,false, false, false, reply_markup)  end
+return LuaTele.sendText(msg_chat_id,msg_id,"‹ : ارسل الان الكلمه لاضافتها في ردود المدير ","md",false ,false, false, false, reply_markup)  end
 if text == "حذف رد" then
 if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للادمنية واعلى فقط',"md",true)  end
 if ChannelJoin(msg) == false then
@@ -7999,7 +7999,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, u
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ الغاء ›', data = msg.sender.user_id..'/LARclose'},},}}
 Redis:set(TheDrox.."Drox:Set:Manager:rd"..msg.sender.user_id..":"..msg_chat_id,"true2")
-return LuaTele.sendText(msg_chat_id,msg_id,"*‹ : ارسل الان الكلمه لحذفها من ردود المدير*","md",false, false, false, false, reply_markup) end
+return LuaTele.sendText(msg_chat_id,msg_id,"‹ : ارسل الان الكلمه لحذفها من ردود المدير","md",false, false, false, false, reply_markup) end
 -- Lar --
 if text == ("الردود المتعدده العامه") or text == ("مسح الردود المتعدده العامه") or text == ("حذف الردود المتعدده العامه") then
 if not msg.DevelopersAS then 

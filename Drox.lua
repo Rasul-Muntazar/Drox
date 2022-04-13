@@ -67,7 +67,7 @@ local TheDrox = io.open("TheDrox", 'w')
 TheDrox:write([[
 cd $(cd $(dirname $0); pwd)
 while(true) do
-sudo lua5.4 Drox.lua
+sudo lua5.4.4 Drox.lua
 done
 ]])
 TheDrox:close()

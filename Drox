@@ -35,9 +35,9 @@ sudo apt install lua-lgi
 sudo apt install build-essential checkinstall zlib1g-dev -y
 mkdir tmp
 cd tmp
-wget https://luarocks.org/releases/luarocks-3.3.0.tar.gz --no-check-certificate
-tar zxpf luarocks-3.3.0.tar.gz
-cd luarocks-3.3.0
+wget https://luarocks.org/releases/luarocks-5.4.4.tar.gz --no-check-certificate
+tar zxpf luarocks-5.4.4.tar.gz
+cd luarocks-5.4.4
 ./configure && make && sudo make install
 sudo luarocks install luarocks
 sudo luarocks install luasec

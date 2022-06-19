@@ -1886,7 +1886,7 @@ send(msg_chat_id,msg_id,[[
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
 ↯︙يمكنك اضافة الى النص ‹ :
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
  `#username` ↬ معرف المستخدم
  `#msgs` ↬ عدد الرسائل
  `#name` ↬ اسم المستخدم
@@ -1970,7 +1970,7 @@ send(msg_chat_id,msg_id,[[
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
 ↯︙يمكنك اضافة الى النص ‹ :
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
  `#username` ↬ معرف المستخدم
  `#msgs` ↬ عدد الرسائل
  `#name` ↬ اسم المستخدم
@@ -2927,7 +2927,7 @@ local chinfo = Redis:get(Drox.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
 return send(msg.chat_id,msg.id,'*\n‹ : عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
-send(msg_chat_id,msg_id,'*‹ :عدد احصائيات البوت الكامله \nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n‹ :عدد المجموعات : '..(Redis:scard(Drox..'ChekBotAdd') or 0)..'\n‹ :عدد المشتركين : '..(Redis:scard(Drox..'Num:User:Pv') or 0)..'*',"md",true)  
+send(msg_chat_id,msg_id,'*‹ :عدد احصائيات البوت الكامله \nـــــــــــــــــــــــــــــــــــــــــــ\n‹ :عدد المجموعات : '..(Redis:scard(Drox..'ChekBotAdd') or 0)..'\n‹ :عدد المشتركين : '..(Redis:scard(Drox..'Num:User:Pv') or 0)..'*',"md",true)  
 end
 if text == 'تفعيل' and msg.Dev then
 if Redis:sismember(Drox..'ban:online',msg.chat_id) then
@@ -3545,7 +3545,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✔️ ❭' else promote = '❬ ❌ ❭'
 end
-PermissionsUser = '*\n‹ :صلاحيات المستخدم :\nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ'..'\n‹ :تغيير المعلومات : '..change_info..'\n‹ :تثبيت الرسائل : '..pin_messages..'\n‹ :اضافه مستخدمين : '..invite_users..'\n‹ :مسح الرسائل : '..delete_messages..'\n‹ :حظر المستخدمين : '..restrict_members..'\n‹ :اضافه المشرفين : '..promote..'\n\n*'
+PermissionsUser = '*\n‹ :صلاحيات المستخدم :\nـــــــــــــــــــــــــــــــــــــــــــ'..'\n‹ :تغيير المعلومات : '..change_info..'\n‹ :تثبيت الرسائل : '..pin_messages..'\n‹ :اضافه مستخدمين : '..invite_users..'\n‹ :مسح الرسائل : '..delete_messages..'\n‹ :حظر المستخدمين : '..restrict_members..'\n‹ :اضافه المشرفين : '..promote..'\n\n*'
 end
 return send(msg_chat_id,msg_id,
 '\n*‹ : ايديك : '..UserId..
@@ -3590,7 +3590,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✔️ ❭' else promote = '❬ ❌ ❭'
 end
-PermissionsUser = '*\n‹ :صلاحيات البوت في المجموعة :\nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ'..'\n‹ :تغيير المعلومات : '..change_info..'\n‹ :تثبيت الرسائل : '..pin_messages..'\n‹ :اضافه مستخدمين : '..invite_users..'\n‹ :مسح الرسائل : '..delete_messages..'\n‹ :حظر المستخدمين : '..restrict_members..'\n‹ :اضافه المشرفين : '..promote..'\n\n*'
+PermissionsUser = '*\n‹ :صلاحيات البوت في المجموعة :\nـــــــــــــــــــــــــــــــــــــــــــ'..'\n‹ :تغيير المعلومات : '..change_info..'\n‹ :تثبيت الرسائل : '..pin_messages..'\n‹ :اضافه مستخدمين : '..invite_users..'\n‹ :مسح الرسائل : '..delete_messages..'\n‹ :حظر المستخدمين : '..restrict_members..'\n‹ :اضافه المشرفين : '..promote..'\n\n*'
 return send(msg_chat_id,msg_id,PermissionsUser,"md",true) 
 end
 
@@ -4797,7 +4797,7 @@ local Info_Members = Redis:smembers(Drox.."Devss:Groups")
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه مطورين الثانويين \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه مطورين الثانويين \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4848,7 +4848,7 @@ local Info_Members = Redis:smembers(Drox.."Owners:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد مالكين حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه المالكين \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه المالكين \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4875,7 +4875,7 @@ local Info_Members = Redis:smembers(Drox.."Supcreator:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد منشئين اساسيين حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه المنشئين الاساسيين \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه المنشئين الاساسيين \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4902,7 +4902,7 @@ local Info_Members = Redis:smembers(Drox.."Creator:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد منشئين حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه المنشئين  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه المنشئين  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4929,7 +4929,7 @@ local Info_Members = Redis:smembers(Drox.."Manger:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد مدراء حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه المدراء  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه المدراء  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4956,7 +4956,7 @@ local Info_Members = Redis:smembers(Drox.."Admin:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد ادمنيه حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه الادمنيه  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه الادمنيه  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -4983,7 +4983,7 @@ local Info_Members = Redis:smembers(Drox.."Special:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد مميزين حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه المميزين  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه المميزين  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5008,7 +5008,7 @@ local Info_Members = Redis:smembers(Drox.."kholat:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد خولات حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه الخولات  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه الخولات  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5032,7 +5032,7 @@ local Info_Members = Redis:smembers(Drox.."wtka:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد وتكات ناشفة زي المستشفي , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه الوتكات  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه الوتكات  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5056,7 +5056,7 @@ local Info_Members = Redis:smembers(Drox.."twhd:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ :مفيش متوحدين هنا كلهم اتعالجو 😂😂 , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه المتوحدين  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه المتوحدين  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5080,7 +5080,7 @@ local Info_Members = Redis:smembers(Drox.."klb:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ :مفيش كلاب هنا ارفعلنل شويه نضيهم عضم 😂😂 , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه الكلاب  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه الكلاب  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5104,7 +5104,7 @@ local Info_Members = Redis:smembers(Drox.."mar:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ :مفيش حمير هنا 😂😂 , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه الحمير  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه الحمير  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5128,7 +5128,7 @@ local Info_Members = Redis:smembers(Drox.."3ra:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ :مفيش عرر هنا 😂😂 , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه العرر  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه العرر  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5152,7 +5152,7 @@ local Info_Members = Redis:smembers(Drox.."smb:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ :مفيش سمباويه هنا 😂😂 , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه السمب  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه السمب  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5176,7 +5176,7 @@ local Info_Members = Redis:smembers(Drox.."2rd:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ :مفيش قرود هنا يصحبي 😂😂 , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه القرود  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه القرود  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5200,7 +5200,7 @@ local Info_Members = Redis:smembers(Drox.."8by:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ :مفيش اغبيه هنا يصحبي 😂😂 , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه الاغبيه  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه الاغبيه  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5228,7 +5228,7 @@ local Info_Members = Redis:smembers(Drox.."BanAll:Groups")
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد محظورين عام حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه المحظورين عام  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه المحظورين عام  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5255,7 +5255,7 @@ local Info_Members = Redis:smembers(Drox.."ktmAll:Groups")
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد مكتومين عام حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه المكتومين عام  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه المكتومين عام  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5282,7 +5282,7 @@ local Info_Members = Redis:smembers(Drox.."BanGroup:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد محظورين حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه المحظورين  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه المحظورين  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5309,7 +5309,7 @@ local Info_Members = Redis:smembers(Drox.."SilentGroup:Group"..msg_chat_id)
 if #Info_Members == 0 then
 return send(msg_chat_id,msg_id,"‹ : لا يوجد مكتومين حاليا , ","md",true)  
 end
-ListMembers = '\n*‹ : قائمه المكتومين  \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+ListMembers = '\n*‹ : قائمه المكتومين  \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6726,7 +6726,7 @@ if msg.can_be_deleted_for_all_users == false then
 return send(msg_chat_id,msg_id,"\n*‹ : عذرآ البوت ليس ادمن في المجموعة يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Administrators", "*", 0, 200)
-listAdmin = '\n*‹ : قائمه الادمنيه \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+listAdmin = '\n*‹ : قائمه الادمنيه \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 local List_Members = Info_Members.members
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
@@ -6811,7 +6811,7 @@ return send(msg_chat_id,msg_id,"\n*‹ : عذرآ البوت ليس ادمن ف�
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Bots", "*", 0, 200)
 local List_Members = Info_Members.members
-listBots = '\n*‹ : قائمه البوتات \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+listBots = '\n*‹ : قائمه البوتات \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 x = 0
 for k, v in pairs(List_Members) do
 local UserInfo = LuaTele.getUser(v.member_id.user_id)
@@ -6823,7 +6823,7 @@ Admin = ""
 end
 listBots = listBots.."*"..k.." - @"..UserInfo.username.."* "..Admin.."\n"
 end
-send(msg_chat_id,msg_id,listBots.."*\nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n‹ :عدد البوتات التي هي ادمن ( "..x.." )*","md",true)  
+send(msg_chat_id,msg_id,listBots.."*\nـــــــــــــــــــــــــــــــــــــــــــ\n‹ :عدد البوتات التي هي ادمن ( "..x.." )*","md",true)  
 end
 
 
@@ -6844,7 +6844,7 @@ local Info_Members = LuaTele.getSupergroupMembers(msg_chat_id, "Recent", "*", 0,
 local List_Members = Info_Members.members
 x = 0
 y = nil
-restricted = '\n*‹ : قائمه المقيديين \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+restricted = '\n*‹ : قائمه المقيديين \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.is_member == true and Info_Members.members[k].status.luatele == "chatMemberStatusRestricted" then
 y = true
@@ -6889,7 +6889,7 @@ return send(msg.chat_id,msg.id,'*\n‹ : عليك الاشتراك في قناة
 end
 local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
 local List_Members = Info_Members.members
-listall = '\n*‹ : قائمه الاعضاء \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+listall = '\n*‹ : قائمه الاعضاء \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k, v in pairs(List_Members) do
 local UserInfo = LuaTele.getUser(v.member_id.user_id)
 if UserInfo.username ~= "" then
@@ -8826,7 +8826,7 @@ local list = Redis:smembers(Drox.."List:Filter"..msg_chat_id)
 if #list == 0 then  
 return send(msg_chat_id,msg_id,"*‹ : لا يوجد كلمات ممنوعه هنا *","md",true)   
 end  
-Filter = '\n*‹ : قائمه المنع \n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ*\n'
+Filter = '\n*‹ : قائمه المنع \n ـــــــــــــــــــــــــــــــــــــــــــ*\n'
 for k,v in pairs(list) do  
 print(v)
 if v:match('photo:(.*)') then
@@ -8922,7 +8922,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return send(msg.chat_id,msg.id,'*\n‹ : عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(Drox.."All:Command:List:Group")
-Command = "‹ : قائمه الاوامر المضافه العامه  \nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n"
+Command = "‹ : قائمه الاوامر المضافه العامه  \nـــــــــــــــــــــــــــــــــــــــــــ\n"
 for k,v in pairs(list) do
 Commands = Redis:get(Drox.."All:Get:Reides:Commands:Group"..v)
 if Commands then 
@@ -8988,7 +8988,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return send(msg.chat_id,msg.id,'*\n‹ : عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(Drox.."Command:List:Group"..msg_chat_id.."")
-Command = "‹ : قائمه الاوامر المضافه  \nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n"
+Command = "‹ : قائمه الاوامر المضافه  \nـــــــــــــــــــــــــــــــــــــــــــ\n"
 for k,v in pairs(list) do
 Commands = Redis:get(Drox.."Get:Reides:Commands:Group"..msg_chat_id..":"..v)
 if Commands then 
@@ -9149,7 +9149,7 @@ end
 if Redis:get(Drox.."Status:AddMe"..msg.chat_id) then
 StatusAddme = '❬ ✔️ ❭' else StatusAddme = '❬ ❌ ❭'
 end
-local protectionGroup = '\n*‹ :اعدادات حمايه المجموعة\n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n'
+local protectionGroup = '\n*‹ :اعدادات حمايه المجموعة\n ـــــــــــــــــــــــــــــــــــــــــــ\n'
 ..'\n‹ :جلب الرابط ➤ '..Statuslink
 ..'\n‹ :جلب الترحيب ➤ '..StatusWelcome
 ..'\n‹ :الايدي ➤ '..StatusId
@@ -9269,8 +9269,8 @@ end
 if Get_Chat.permissions.can_send_polls then
 polls = '❬ ✔️ ❭' else polls = '❬ ❌ ❭'
 end
-local permissions = '*\n‹ :صلاحيات المجموعة :\nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ'..'\n‹ :ارسال الويب : '..web..'\n‹ :تغيير معلومات المجموعة : '..info..'\n‹ :اضافه مستخدمين : '..invite..'\n‹ :تثبيت الرسائل : '..pin..'\n‹ :ارسال الميديا : '..media..'\n‹ :ارسال الرسائل : '..messges..'\n‹ :اضافه البوتات : '..other..'\n‹ :ارسال استفتاء : '..polls..'*\n\n'
-local TextChat = '*\n‹ :معلومات المجموعة :\nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ'..' \n‹ :عدد الادمنيه : ❬ '..Info_Chats.administrator_count..' ❭\n‹ :عدد المحظورين : ❬ '..Info_Chats.banned_count..' ❭\n‹ :عدد الاعضاء : ❬ '..Info_Chats.member_count..' ❭\n‹ :عدد المقيديين : ❬ '..Info_Chats.restricted_count..' ❭\n‹ :اسم المجموعة : ❬* ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ❭*'
+local permissions = '*\n‹ :صلاحيات المجموعة :\nـــــــــــــــــــــــــــــــــــــــــــ'..'\n‹ :ارسال الويب : '..web..'\n‹ :تغيير معلومات المجموعة : '..info..'\n‹ :اضافه مستخدمين : '..invite..'\n‹ :تثبيت الرسائل : '..pin..'\n‹ :ارسال الميديا : '..media..'\n‹ :ارسال الرسائل : '..messges..'\n‹ :اضافه البوتات : '..other..'\n‹ :ارسال استفتاء : '..polls..'*\n\n'
+local TextChat = '*\n‹ :معلومات المجموعة :\nـــــــــــــــــــــــــــــــــــــــــــ'..' \n‹ :عدد الادمنيه : ❬ '..Info_Chats.administrator_count..' ❭\n‹ :عدد المحظورين : ❬ '..Info_Chats.banned_count..' ❭\n‹ :عدد الاعضاء : ❬ '..Info_Chats.member_count..' ❭\n‹ :عدد المقيديين : ❬ '..Info_Chats.restricted_count..' ❭\n‹ :اسم المجموعة : ❬* ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ❭*'
 return send(msg_chat_id,msg_id, TextChat..permissions,"md",true)
 end
 if text == 'صلاحيات المجموعة' then
@@ -10348,7 +10348,7 @@ if text and text:match("^(.*)$") and tonumber(msg.sender.user_id) ~= tonumber(Dr
   ❨ ملف ، ملصق ، متحركه ، صوره
    ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
   ↯︙يمكنك اضافة الى النص ‹ :
-  ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+  ـــــــــــــــــــــــــــــــــــــــــــ
    `#username` ↬ معرف المستخدم
    `#msgs` ↬ عدد الرسائل
    `#name` ↬ اسم المستخدم
@@ -10529,7 +10529,7 @@ if text == ("الردود الانلاين") then
   return send(msg.chat_id,msg.id,'*\n‹ : عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
   local list = Redis:smembers(Drox.."List:Manager:inline"..msg_chat_id.."")
-  text = "‹ : قائمه الردود الانلاين \nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n"
+  text = "‹ : قائمه الردود الانلاين \nـــــــــــــــــــــــــــــــــــــــــــ\n"
   for k,v in pairs(list) do
   if Redis:get(Drox.."Add:Rd:Manager:Gif:inline"..v..msg_chat_id) then
   db = "متحركه ‹ :"
@@ -10596,7 +10596,7 @@ if text == "تاك للزوجات" or text == "الزوجات" then
   if #zwgat_list == 0 then 
     return send(msg_chat_id,msg_id,'‹ : لايوجد زوجات',"md",true) 
   end 
-  local zwga_list = "‹ : عدد الزوجات : "..#zwgat_list.."\n‹ : الزوجات :\nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n"
+  local zwga_list = "‹ : عدد الزوجات : "..#zwgat_list.."\n‹ : الزوجات :\nـــــــــــــــــــــــــــــــــــــــــــ\n"
   for k, v in pairs(zwgat_list) do
     local UserInfo = LuaTele.getUser(v)
     local zwga_name = UserInfo.first_name
@@ -10640,7 +10640,7 @@ if text == "تاك للمطلقات" or text == "المطلقات" then
   if #mutlqat_list == 0 then 
     return send(msg_chat_id,msg_id,'‹ : لايوجد مطلقات',"md",true) 
   end 
-  local mutlqa_list = "‹ : عدد المطلقات : "..#mutlqat_list.."\n‹ : المطلقات :\nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n"
+  local mutlqa_list = "‹ : عدد المطلقات : "..#mutlqat_list.."\n‹ : المطلقات :\nـــــــــــــــــــــــــــــــــــــــــــ\n"
   for k, v in pairs(mutlqat_list) do
     local UserInfo = LuaTele.getUser(v)
     local mutlqa_name = UserInfo.first_name
@@ -11016,7 +11016,7 @@ if text == 'قائمه الكت' then
     return send(msg_chat_id,msg_id,"‹ : لا يوجد اسأله, ","md",true)  
     end
     if #kit_list > 50 then
-    local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n'
+    local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ـــــــــــــــــــــــــــــــــــــــــــ\n'
     for i = 1, 30, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11031,7 +11031,7 @@ if text == 'قائمه الكت' then
     return send(msg_chat_id, msg_id, Listkit, 'md', false, false, false, false, reply_markup)
     end
     if #kit_list <= 50 then
-        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n'
+        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ـــــــــــــــــــــــــــــــــــــــــــ\n'
         for i = 1, #kit_list, 1 do
             Listkit = Listkit.." - "..kit_list[i].."\n"
         end
@@ -11054,7 +11054,7 @@ if Text and Text:match('(.*)/next/(.*)') then
     local kit_list = Redis:smembers(Drox.."kit:")
     local Residual = #kit_list - num
     if tonumber(IdUser) == tonumber(UserId) and Residual > 30 then
-        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n'
+        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ـــــــــــــــــــــــــــــــــــــــــــ\n'
     for i = num, anubis, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11069,7 +11069,7 @@ if Text and Text:match('(.*)/next/(.*)') then
     end
     if tonumber(IdUser) == tonumber(UserId) and Residual < 30 then
         local kit_end = num + Residual
-        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n'
+        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ـــــــــــــــــــــــــــــــــــــــــــ\n'
     for i = num, kit_end, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11093,7 +11093,7 @@ if Text and Text:match('(.*)/l_back/(.*)') then
     local Residual = #kit_list - num
     local back_r = Residual - 30
     if tonumber(IdUser) == tonumber(UserId) then
-        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n'
+        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ـــــــــــــــــــــــــــــــــــــــــــ\n'
     for i = back_r, Residual, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11117,7 +11117,7 @@ if Text and Text:match('(.*)/back/(.*)') then
     local Residual = #kit_list - num
     local back_r = Residual - 30
     if tonumber(IdUser) == tonumber(UserId) then
-        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n'
+        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ـــــــــــــــــــــــــــــــــــــــــــ\n'
     for i = anubis, num, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11132,7 +11132,7 @@ if Text and Text:match('(.*)/back/(.*)') then
     end
     if tonumber(IdUser) == tonumber(UserId) and Residual == #kit_list then
         local kit_end = num + Residual
-        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n'
+        local Listkit = '\n‹ : قائمه الاسأله  \n‹ : عدد الاسأله : '..#kit_list..'\n ـــــــــــــــــــــــــــــــــــــــــــ\n'
     for i = 1, 30, 1 do
         Listkit = Listkit.." - "..kit_list[i].."\n"
     end
@@ -11336,7 +11336,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return send(msg.chat_id,msg.id,'*\n‹ : عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(Drox.."List:Rd:Sudo")
-text = "\n‹ : قائمة الردود العامه \nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n"
+text = "\n‹ : قائمة الردود العامه \nـــــــــــــــــــــــــــــــــــــــــــ\n"
 for k,v in pairs(list) do
 if Redis:get(Drox.."Add:Rd:Sudo:Gif"..v) then
 db = "متحركه ‹ :"
@@ -11381,7 +11381,7 @@ send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -11405,7 +11405,7 @@ send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -11429,7 +11429,7 @@ send(msg_chat_id,msg_id,[[
 ↯︙ارسل لي سواء كان 
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ↯︙للخروج ارسل ( الغاء )
  ✓
 ]],"md",true)  
@@ -11510,7 +11510,7 @@ SilentGroup = 'مكتوم'
 else
 SilentGroup = 'غير مكتوم'
 end
-send(msg_chat_id,msg_id,"\n*‹ : معلومات الكشف \nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ"..'\n‹ :الحظر العام : '..BanAll..'\n‹ :الحظر : '..BanGroup..'\n‹ :الكتم : '..SilentGroup..'\n‹ :التقييد : '..Restricted..'*',"md",true)  
+send(msg_chat_id,msg_id,"\n*‹ : معلومات الكشف \nـــــــــــــــــــــــــــــــــــــــــــ"..'\n‹ :الحظر العام : '..BanAll..'\n‹ :الحظر : '..BanGroup..'\n‹ :الكتم : '..SilentGroup..'\n‹ :التقييد : '..Restricted..'*',"md",true)  
 end
 if text and text:match('^كشف القيود @(%S+)$') then
 local UserName = text:match('^كشف القيود @(%S+)$')
@@ -11556,7 +11556,7 @@ SilentGroup = 'مكتوم'
 else
 SilentGroup = 'غير مكتوم'
 end
-send(msg_chat_id,msg_id,"\n*‹ :معلومات الكشف \nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ"..'\n‹ :الحظر العام : '..BanAll..'\n‹ :الحظر : '..BanGroup..'\n‹ :الكتم : '..SilentGroup..'\n‹ :التقييد : '..Restricted..'*',"md",true)  
+send(msg_chat_id,msg_id,"\n*‹ :معلومات الكشف \nـــــــــــــــــــــــــــــــــــــــــــ"..'\n‹ :الحظر العام : '..BanAll..'\n‹ :الحظر : '..BanGroup..'\n‹ :الكتم : '..SilentGroup..'\n‹ :التقييد : '..Restricted..'*',"md",true)  
 end
 if text == 'رفع القيود' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -12332,7 +12332,7 @@ if text == "تاك للبقلبي" or text == "تاك للي فقلبي" or text
   if #heart_list == 0 then
     return send(msg_chat_id,msg_id,"قلبك فاضي محدش فيه","md")
   elseif #heart_list > 0 then
-    your_heart = "الناس الي فقلبك \nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n"
+    your_heart = "الناس الي فقلبك \nـــــــــــــــــــــــــــــــــــــــــــ\n"
     for k,v in pairs(heart_list) do
     local user_info = LuaTele.getUser(v)
     local name = user_info.first_name
@@ -12552,7 +12552,7 @@ send(msg_chat_id,msg_id,[[
 ❨ ملف ، ملصق ، متحركه ، صوره
  ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
 ↯︙يمكنك اضافة الى النص ‹ :
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
  `#username` ↬ معرف المستخدم
  `#msgs` ↬ عدد الرسائل
  `#name` ↬ اسم المستخدم
@@ -12723,7 +12723,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return send(msg.chat_id,msg.id,'*\n‹ : عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local list = Redis:smembers(Drox.."List:Rd:Sudo:mz")
-text = "\n‹ : قائمة الردود المميزه \nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n"
+text = "\n‹ : قائمة الردود المميزه \nـــــــــــــــــــــــــــــــــــــــــــ\n"
 for k,v in pairs(list) do
 if Redis:get(Drox.."Add:Rd:Sudo:mz:Gif"..v) then
 db = "متحركه ‹ :"
@@ -12943,7 +12943,7 @@ if text and text:match("^(.*)$") and tonumber(msg.sender.user_id) ~= tonumber(Dr
   ❨ ملف ، ملصق ، متحركه ، صوره
    ، فيديو ، بصمه الفيديو ، بصمه ، صوت ، رساله ❩
   ↯︙يمكنك اضافة الى النص ‹ :
-  ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+  ـــــــــــــــــــــــــــــــــــــــــــ
    `#username` ↬ معرف المستخدم
    `#msgs` ↬ عدد الرسائل
    `#name` ↬ اسم المستخدم
@@ -13063,7 +13063,7 @@ if text == ("الردود الانلاين العامه") then
   return send(msg.chat_id,msg.id,'*\n‹ : عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
   local list = Redis:smembers(Drox.."List:Manager:inline3am")
-  text = "‹ : قائمه الردود الانلاين \nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n"
+  text = "‹ : قائمه الردود الانلاين \nـــــــــــــــــــــــــــــــــــــــــــ\n"
   for k,v in pairs(list) do
   if Redis:get(Drox.."Add:Rd:Manager:Gif:inline3am"..v) then
   db = "متحركه ‹ :"
@@ -14582,7 +14582,7 @@ data = {
 return send(msg_chat_id,msg_id,'*كفيه شقط سيب حاجه لغيرك 😎😂*',"md",false, false, false, false, reply_markup)
 end
 end
-if text == "الردود" then
+if text == "ردود المدير" then
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'\n*‹ : هاذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
 end
@@ -14594,7 +14594,7 @@ local list = Redis:smembers(Drox.."List:Manager"..msg_chat_id.."")
 if #list == 0 then
 txx = "‹ : عذرا لا يوجد ردود للمدير في المجموعة"
 else
-txx = "‹ : قائمه الردود \nــــــــــــــــــــــ‹ :ـــــــــــــــــــــ\n"
+txx = "‹ : قائمه الردود \nـــــــــــــــــــــــــــــــــــــــــــ\n"
 for k,v in pairs(list) do
 if Redis:get(Drox.."Add:Rd:Manager:Gif"..v..msg_chat_id) then
 db = "متحركه ‹ :"
@@ -15247,7 +15247,7 @@ data = {
 }
 return send(msg_chat_id,msg_id, [[*
 ‹ : توجد ↫ 6 اوامر في البوت
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : 1 ↫ اوامر الحمايه
 ‹ : 2 ↫ اوامر الادمنيه
 ‹ : 3 ↫ اوامر المدراء
@@ -18678,11 +18678,11 @@ data = {
 }
 local TextHelp = [[*
 ‹ : اوامر الحمايه اتبع مايلي ...
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : قفل ، فتح ↫ الامر 
 ‹ : تستطيع قفل حمايه كما يلي ...
 ‹ :↫ بالتقييد ، بالطرد ، بالكتم 
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : الروابط
 ‹ : المعرف
 ‹ : التاك
@@ -18692,7 +18692,7 @@ local TextHelp = [[*
 ‹ : المتحركه
 ‹ : الملفات
 ‹ :الصور
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : الماركداون
 ‹ : البوتات
 ‹ : التكرار
@@ -18702,7 +18702,7 @@ local TextHelp = [[*
 ‹ : الفيديو
 ‹ : الانلاين
 ‹ : الدردشه
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : القناه
 ‹ : التوجيه
 ‹ : الاغاني
@@ -18737,19 +18737,19 @@ data = {
 }
 local TextHelp = [[*
 ‹ : اوامر ادمنية المجموعة ...
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : رفع، تنزيل ↫ مميز
 ‹ :تاك للكل ، عدد المجموعة
 ‹ : كتم ، حظر ، طرد ، تقييد
 ‹ : الغاء كتم ، الغاء حظر ، الغاء تقييد
 ‹ : منع ، الغاء منع 
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : عرض القوائم كما يلي ...
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : المكتومين
 ‹ : المميزين 
 ‹ : قائمه المنع
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : تثبيت ، الغاء تثبيت
 ‹ : الرابط ، الاعدادات
 ‹ : الترحيب ، القوانين
@@ -18758,11 +18758,11 @@ local TextHelp = [[*
 ‹ : جهاتي ،ايدي ، رسائلي
 ‹ : تعديلاتي ، نقاطي
 ‹ : كشف البوتات
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : وضع ، ضع ↫ الاوامر التاليه 
 ‹ : اسم ، رابط ، صوره
 ‹ : قوانين ، وصف ، ترحيب
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : حذف ، مسح ↫ الاوامر التاليه
 ‹ : قائمه المنع ، المحظورين 
 ‹ : المميزين ، المكتومين ، القوانين
@@ -18884,26 +18884,26 @@ data = {
 }
 local TextHelp = [[*
 ‹ : اوامر المدراء في المجموعة
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : رفع ، تنزيل ↫ ادمن
 ‹ : الادمنيه 
 ‹ : رفع، كشف ↫ القيود
 ‹ : تنزيل الكل ↫ بالرد ، بالمعرف
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : لتغيير رد الرتب في البوت
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : تغيير رد ↫ اسم الرتبه والنص
 ‹ : المطور ، المنشئ الاساسي
 ‹ : المنشئ ، المدير ، الادمن
 ‹ : المميز ، العضو
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : تفعيل ، تعطيل ↫ الاوامر التاليه ↓
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : الايدي ، الايدي بالصوره
 ‹ : الردود العامه ، الردود
 ‹ : اطردني ، الالعاب ، الرفع
 ‹ : الحظر ، الرابط 
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : تعين ، مسح ↫الايدي 
 ‹ : رفع الادمنيه ، مسح الادمنيه
 ‹ : الردود ، مسح الردود
@@ -18938,12 +18938,12 @@ data = {
 }
 local TextHelp = [[*
 ‹ : اوامر المنشئ الاساسي
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : رفع ، تنزيل ↫ منشئ 
 ‹ : المنشئين ، مسح المنشئين
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : اوامر المنشئ المجموعة
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : رفع ، تنزيل ↫  مدير
 ‹ : المدراء ، مسح المدراء
 ‹ : اضف رسائل ↫  بالرد او الايدي
@@ -18978,23 +18978,23 @@ data = {
 }
 local TextHelp = [[*
 ‹ : اوامر المطور الاساسي
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : حظر عام ، الغاء العام
 ‹ : اضف ، حذف ↫ مطور
 ‹ : قائمه العام ، مسح قائمه العام
 ‹ : المطورين ، مسح المطورين
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : اضف ، حذف ↫  رد عام 
 ‹ :وضع ، حذف ↫ كليشه المطور
 ‹ : مسح الردود العامه ، الردود العامه
 ‹ : تعين عدد الاعضاء ↫ العدد
 ‹ : تحديث
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : تفعيل ، تعطيل ↫  الاوامر التاليه ↓
 ‹ : البوت الخدمي ، المغادرة ، الاذاعه
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : اوامر المطور في البوت
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : تفعيل ، تعطيل ، الاحصائيات
 ‹ : رفع، تنزيل ↫ منشئ اساسي
 ‹ : رفع، تنزيل ↫ مالك
@@ -19030,9 +19030,9 @@ data = {
 }
 local TextHelp = [[*
 ‹ : اوامر التسلية
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : رفع ، تنزيل ↫ الاوامر التاليه ↓
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : غبي 
 ‹ : سمب
 ‹ : حمار
@@ -19042,9 +19042,9 @@ local TextHelp = [[*
 ‹ : متوحد
 ‹ : متوحده
 ‹ : كلب 
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : اوامر التاك 
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : الاغبياء
 ‹ : الحمير
 ‹ : الخولات
@@ -19053,9 +19053,9 @@ local TextHelp = [[*
 ‹ : الكلاب
 ‹ : العرر
 ‹ : القرود
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : اوامر الترفيه 
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : زخرفه
 ‹ : حساب العمر
 ‹ : اسمي
@@ -19150,7 +19150,7 @@ data = {
 }
 local TextHelp = [[*
 ‹ : قائمه الالعاب البوت
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : لعبة المختلف ↫ المختلف
 ‹ : لعبة الامثله ↫ امثله
 ‹ : لعبة العكس ↫ العكس
@@ -19167,7 +19167,7 @@ local TextHelp = [[*
 ‹ : لعبة الصراحه والجرأة ↫ صراحه
 ‹ : لعبه باد للأسئله +18 ↫ باد
 ‹ : لعبه جريمتي ويقوم البوت بإعطائك جريمه ↫ جريمتي
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : نقاطي ↫ لعرض عدد الارباح
 ‹ : بيع نقاطي ↫ { العدد } ↫ لبيع كل نقطه مقابل {50} رساله
 *]]
@@ -19201,7 +19201,7 @@ data = {
 }
 local TextHelp = [[*
 ‹ : توجد ↫ 6 اوامر في البوت
-ــــــــــــــــــــــ‹ :ـــــــــــــــــــــ
+ـــــــــــــــــــــــــــــــــــــــــــ
 ‹ : 1 ↫ اوامر الحمايه
 ‹ : 2 ↫ اوامر الادمنيه
 ‹ : 3 ↫ اوامر المدراء

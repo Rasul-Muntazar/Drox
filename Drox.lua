@@ -11765,9 +11765,9 @@ Redis:setex(TheDrox.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id,60, tr
 LuaTele.sendText(msg.chat_id,msg.id,[[
 • عشان تسوي حساب لازم تختار نوع البطاقة
 
-↤︎ `الرافدين .`
-↤︎ `بلوك جاين .`
-↤︎ `كوين بيس .`
+↤︎ `الرافدين`
+↤︎ `ماستر`
+↤︎ `فيزا`
 
 - اضغط للنسخ
 
@@ -11775,7 +11775,7 @@ LuaTele.sendText(msg.chat_id,msg.id,[[
 return false
 end
 if Redis:get(TheDrox.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) then
-if text == "الرافدين ." then
+if text == "الرافدين" then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
 news = ""..ban.first_name..""
@@ -11796,9 +11796,9 @@ Redis:set(TheDrox.."nonallban"..creditcc,text)
 Redis:set(TheDrox.."nonallid"..creditcc,banid)
 Redis:sadd(TheDrox.."noooybgy",msg.sender.user_id)
 Redis:del(TheDrox.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n• وسوينا لك حساب في البنك ( الرافدين . 💳 )  \n\n• رقم حسابك ↢ ( `"..creditcc.."` )\n• نوع البطاقة ↢ ( "..gg.." )\n• فلوسك ↢ ( `"..flossst.."` دولار 💸 )  ","md",true)  
+LuaTele.sendText(msg.chat_id,msg.id, "\n• وسوينا لك حساب في البنك ( الرافدين 💳 )  \n\n• رقم حسابك ↢ ( `"..creditcc.."` )\n• نوع البطاقة ↢ ( "..gg.." )\n• فلوسك ↢ ( `"..flossst.."` دولار 💸 )  ","md",true)  
 end 
-if text == "بلوك جاين ." then
+if text == "ماستر" then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
 news = ""..ban.first_name..""
@@ -11819,9 +11819,9 @@ Redis:set(TheDrox.."nonallban"..creditvi,text)
 Redis:set(TheDrox.."nonallid"..creditvi,banid)
 Redis:sadd(TheDrox.."noooybgy",msg.sender.user_id)
 Redis:del(TheDrox.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n• وسوينا لك حساب في البنك ( بلوك جاين . 💳 ) \n\n• رقم حسابك ↢ ( `"..creditvi.."` )\n• نوع البطاقة ↢ ( "..gg.." )\n• فلوسك ↢ ( `"..flossst.."` دولار 💸 )  ","md",true)   
+LuaTele.sendText(msg.chat_id,msg.id, "\n• وسوينا لك حساب في البنك ( ماستر 💳 ) \n\n• رقم حسابك ↢ ( `"..creditvi.."` )\n• نوع البطاقة ↢ ( "..gg.." )\n• فلوسك ↢ ( `"..flossst.."` دولار 💸 )  ","md",true)   
 end 
-if text == "كوين بيس ." then
+if text == "فيزا" then
 local ban = LuaTele.getUser(msg.sender.user_id)
 if ban.first_name then
 news = ""..ban.first_name..""
@@ -11842,7 +11842,7 @@ Redis:set(TheDrox.."nonallban"..creditex,text)
 Redis:set(TheDrox.."nonallid"..creditex,banid)
 Redis:sadd(TheDrox.."noooybgy",msg.sender.user_id)
 Redis:del(TheDrox.."nooolb" .. msg.chat_id .. ":" .. msg.sender.user_id) 
-LuaTele.sendText(msg.chat_id,msg.id, "\n• سويت لك حساب في البنك ( كوين بيس . 💳 ) \n\n• رقم حسابك ↢ ( `"..creditex.."` )\n• نوع البطاقة ↢ ( "..gg.." )\n• فلوسك ↢ ( `"..flossst.."` دولار 💸 )  ","md",true)   
+LuaTele.sendText(msg.chat_id,msg.id, "\n• سويت لك حساب في البنك ( فيزا 💳 ) \n\n• رقم حسابك ↢ ( `"..creditex.."` )\n• نوع البطاقة ↢ ( "..gg.." )\n• فلوسك ↢ ( `"..flossst.."` دولار 💸 )  ","md",true)   
 end 
 end
 if text == 'مسح حساب بنكي' or text == 'مسح حسابي' or text == 'حذف حسابي' or text == 'مسح حساب البنكي' or text =='مسح الحساب بنكي' or text =='مسح الحساب البنكي' or text == "مسح حسابي البنكي" or text == "مسح حسابي بنكي" then

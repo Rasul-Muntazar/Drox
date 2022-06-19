@@ -4266,10 +4266,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:DevelopersQ:Groups",UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مطور بنجاح ✓ ثانوي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مطور بنجاح ثانوي مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:DevelopersQ:Groups",UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مطور بنجاح ✓ ثانوي").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مطور بنجاح ثانوي").Reply,"md",true)  
 end
 end
 if UserName[1] == "مطور" then
@@ -4281,10 +4281,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:Developers:Groups",UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مطور بنجاح ✓ مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مطور بنجاح مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Developers:Groups",UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مطور بنجاح ✓ ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مطور بنجاح ").Reply,"md",true)  
 end
 end
 if UserName[1] == "مالك" then
@@ -4311,10 +4311,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته منشئ بنجاح ✓اساسي بنجاح ✓ مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته منشئ بنجاحاساسي بنجاح مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته منشئ بنجاح ✓اساسي بنجاح ✓ ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته منشئ بنجاحاساسي بنجاح ").Reply,"md",true)  
 end
 end
 if UserName[1] == "منشئ" then
@@ -4326,10 +4326,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:Originators:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته منشئ بنجاح ✓ مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته منشئ بنجاح مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Originators:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته منشئ بنجاح ✓ ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته منشئ بنجاح ").Reply,"md",true)  
 end
 end
 if UserName[1] == "مدير" then
@@ -4344,7 +4344,7 @@ if Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id,UserId_Info.id) t
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مدير مسبقآ ✓   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Managers:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مدير بنجاح ✓  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مدير بنجاح  ").Reply,"md",true)  
 end
 end
 if UserName[1] == "ادمن" then
@@ -4362,7 +4362,7 @@ if Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته ادمن مسبقآ ✓   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Addictive:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته ادمن بنجاح ✓  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته ادمن بنجاح  ").Reply,"md",true)  
 end
 end
 if UserName[1] == "مميز" then
@@ -4380,7 +4380,7 @@ if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,UserId_Info.
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مميز مسبقآ ✓   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,UserId_Info.id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مميز بنجاح ✓  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مميز بنجاح  ").Reply,"md",true)  
 end
 end
 end
@@ -4403,10 +4403,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:DevelopersQ:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مطور بنجاح ✓ ثانوي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مطور بنجاح ثانوي مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:DevelopersQ:Groups",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مطور بنجاح ✓ ثانوي").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مطور بنجاح ثانوي").Reply,"md",true)  
 end
 end
 if TextMsg == 'مطور' then
@@ -4418,10 +4418,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:Developers:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مطور بنجاح ✓ مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مطور بنجاح مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Developers:Groups",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مطور بنجاح ✓ ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مطور بنجاح ").Reply,"md",true)  
 end
 end
 if TextMsg == "مالك" then
@@ -4448,10 +4448,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ‹ : تم ترقيته منشئ اساسي بنجاح ✓").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ‹ : تم ترقيته منشئ اساسي بنجاح").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته منشئ اساسي بنجاح ✓").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته منشئ اساسي بنجاح").Reply,"md",true)  
 end
 end
 if TextMsg == "منشئ" then
@@ -4463,10 +4463,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته منشئ بنجاح ✓ مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته منشئ بنجاح مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته منشئ بنجاح ✓ ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته منشئ بنجاح ").Reply,"md",true)  
 end
 end
 if TextMsg == "مدير" then
@@ -4481,7 +4481,7 @@ if Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id,Message_Reply.sen
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مدير مسبقآ ✓   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مدير بنجاح ✓  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مدير بنجاح  ").Reply,"md",true)  
 end
 end
 if TextMsg == "ادمن" then
@@ -4499,7 +4499,7 @@ if Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id,Message_Reply.se
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته ادمن مسبقآ ✓   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته ادمن بنجاح ✓  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته ادمن بنجاح  ").Reply,"md",true)  
 end
 end
 if TextMsg == "كانسر" then
@@ -4621,7 +4621,7 @@ if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,Message_Repl
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مميز مسبقآ ✓   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مميز بنجاح ✓  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مميز بنجاح  ").Reply,"md",true)  
 end
 end
 end
@@ -4646,10 +4646,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:DevelopersQ:Groups",UserId) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"‹ : تم ترقيته مطور بنجاح ✓ ثانوي مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"‹ : تم ترقيته مطور بنجاح ثانوي مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:DevelopersQ:Groups",UserId) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"‹ : تم ترقيته مطور بنجاح ✓ ثانوي").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"‹ : تم ترقيته مطور بنجاح ثانوي").Reply,"md",true)  
 end
 end
 if UserId[1] == 'مطور' then
@@ -4661,10 +4661,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:Developers:Groups",UserId) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"‹ : تم ترقيته مطور بنجاح ✓ مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"‹ : تم ترقيته مطور بنجاح مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Developers:Groups",UserId) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"‹ : تم ترقيته مطور بنجاح ✓ ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"‹ : تم ترقيته مطور بنجاح ").Reply,"md",true)  
 end
 end
 if UserId[1] == "مالك" then
@@ -4691,10 +4691,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,UserId[2]) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته منشئ بنجاح ✓اساسي بنجاح ✓ مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته منشئ بنجاحاساسي بنجاح مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,UserId[2]) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته منشئ بنجاح ✓اساسي بنجاح ✓ ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته منشئ بنجاحاساسي بنجاح ").Reply,"md",true)  
 end
 end
 if UserId[1] == "منشئ" then
@@ -4706,10 +4706,10 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:Originators:Group"..msg_chat_id,UserId[2]) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته منشئ بنجاح ✓ مسبقا ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته منشئ بنجاح مسبقا ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Originators:Group"..msg_chat_id,UserId[2]) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته منشئ بنجاح ✓ ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته منشئ بنجاح ").Reply,"md",true)  
 end
 end
 if UserId[1] == "مدير" then
@@ -4724,7 +4724,7 @@ if Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مدير مسبقآ ✓   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Managers:Group"..msg_chat_id,UserId[2]) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مدير بنجاح ✓  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مدير بنجاح  ").Reply,"md",true)  
 end
 end
 if UserId[1] == "ادمن" then
@@ -4742,7 +4742,7 @@ if Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id,UserId[2]) then
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته ادمن مسبقآ ✓   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Addictive:Group"..msg_chat_id,UserId[2]) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته ادمن بنجاح ✓  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته ادمن بنجاح  ").Reply,"md",true)  
 end
 end
 if UserId[1] == "مميز" then
@@ -4760,7 +4760,7 @@ if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,UserId[2]) t
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مميز مسبقآ ✓   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,UserId[2]) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مميز بنجاح ✓  ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مميز بنجاح  ").Reply,"md",true)  
 end
 end
 end
@@ -13501,7 +13501,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم ا
 end
 print('Chat Id : '..msg_chat_id)
 print('User Id : '..msg_user_send_id)
-LuaTele.sendText(msg_chat_id,msg_id, "‹ : تم تحديث الملفات ♻","md",true)
+LuaTele.sendText(msg_chat_id,msg_id, "*‹ : تم تحديث الملفات*","md",true)
 dofile('Drox.lua')  
 end
 if text == '/start' then
@@ -13512,13 +13512,13 @@ end
 Redis:sadd(TheDrox..'Drox:Num:User:Pv',msg.sender.user_id)  
 if not msg.ControllerBot then
 if not Redis:get(TheDrox.."Drox:Start:Bot") then
-local CmdStart = '*\n‹ : اهلا بك عزيزي في بوت '..(Redis:get(TheDrox.."Drox:Name:Bot") or "Drox")..
+local CmdStart = '*\n‹ : اهلا بك عزيزي في بوت '..(Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")..
 '\n‹ : حمايه ضد التفليش + سريع جدا .'..
 '\n‹ : فقط ارفع البوت مشرف (ادمن) .'..
 '\n‹ : واكتب تفعيل داخل المجموعه .'..
 '\n‹ : البوت الاسرع والاقوا ع التلكرام .'..
 '\n‹ : للأستفسار عمري اي مشكله راسل المطور - .'..
-'\n‹ : المطور | <@'..UserSudo..'>*'
+'\n‹ : المطور @'..UserSudo..'*'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
@@ -13526,10 +13526,10 @@ data = {
 {text = '‹ : أضفني .', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '‹ : شروحات السورس -', url = 't.me/DroxTeAm'},
+{text = '‹ : شروحات السورس -', url = 't.me/ExpDrox'},
 },
 {
-{text = '‹ : سۅرس  Mac-', url = 't.me/DroxTeAm'},
+{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .', url = 't.me/DroxTeAm'},
 },
 }
 }
@@ -13542,10 +13542,10 @@ data = {
 {text = '‹ : أضفني .', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '‹ : شروحات السورس', url = 't.me/DroxTeAm'}, {text = '‹ : شراء بوت', url = 't.me/P222P'},
+{text = '‹ : شروحات السورس -', url = 't.me/ExpDrox'},
 },
 {
-{text = '‹ : . ‹ Mac 𝖳𝖾𝖺𝗆 .', url = 't.me/DroxTeAm'},
+{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .', url = 't.me/DroxTeAm'},
 },
 }
 }

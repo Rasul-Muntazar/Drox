@@ -4341,7 +4341,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مدير مسبقآ ✓   ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مدير مسبقاً   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Managers:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مدير بنجاح  ").Reply,"md",true)  
@@ -4359,7 +4359,7 @@ if not msg.Originators and not Redis:get(TheDrox.."Drox:Status:SetId"..msg_chat_
 return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته ادمن مسبقآ ✓   ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته ادمن مسبقاً   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Addictive:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته ادمن بنجاح  ").Reply,"md",true)  
@@ -4377,7 +4377,7 @@ if not msg.Originators and not Redis:get(TheDrox.."Drox:Status:SetId"..msg_chat_
 return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,UserId_Info.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مميز مسبقآ ✓   ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مميز مسبقاً   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,UserId_Info.id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم ترقيته مميز بنجاح  ").Reply,"md",true)  
@@ -4478,7 +4478,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مدير مسبقآ ✓   ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مدير مسبقاً   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مدير بنجاح  ").Reply,"md",true)  
@@ -4496,7 +4496,7 @@ if not msg.Originators and not Redis:get(TheDrox.."Drox:Status:SetId"..msg_chat_
 return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته ادمن مسبقآ ✓   ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته ادمن مسبقاً   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته ادمن بنجاح  ").Reply,"md",true)  
@@ -4618,7 +4618,7 @@ if not msg.Originators and not Redis:get(TheDrox.."Drox:Status:SetId"..msg_chat_
 return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مميز مسبقآ ✓   ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مميز مسبقاً   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم ترقيته مميز بنجاح  ").Reply,"md",true)  
@@ -4721,7 +4721,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Re
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم استخدم الامر*',"md",false, false, false, false, reply_markup)
 end
 if Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id,UserId[2]) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مدير مسبقآ ✓   ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مدير مسبقاً   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Managers:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مدير بنجاح  ").Reply,"md",true)  
@@ -4739,7 +4739,7 @@ if not msg.Originators and not Redis:get(TheDrox.."Drox:Status:SetId"..msg_chat_
 return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id,UserId[2]) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته ادمن مسبقآ ✓   ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته ادمن مسبقاً   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Addictive:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته ادمن بنجاح  ").Reply,"md",true)  
@@ -4757,7 +4757,7 @@ if not msg.Originators and not Redis:get(TheDrox.."Drox:Status:SetId"..msg_chat_
 return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
 if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,UserId[2]) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مميز مسبقآ ✓   ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مميز مسبقاً   ").Reply,"md",true)  
 else
 Redis:sadd(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,UserId[2]) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId[2],"‹ : تم ترقيته مميز بنجاح  ").Reply,"md",true)  
@@ -5829,17 +5829,15 @@ end
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender.user_id,t).Repbn,"md",true)  
 end
 if text == "غنيلي" then
-Abs = math.random(2,140); 
-local Text =" [‹ : تم اختيار الاغنيه لك : -](t.me/DroxTeAm)"
+if not Redis:get(TheDrox.."Drox:Status:distraction1"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"‹ : عذراً امر غنيلي معطل","md",true) end 
+Abs = math.random(4,2824); 
+local Text ='‹ : تم اختيار المقطع الصوتي لك'
 keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = ': مره اخرى 🔃.', callback_data = IdUser..'/Re@'},
-},
+keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = msg.sender.user_id..'/Song'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}
+}
 }
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) end
 if text == "راب" then
 Abs = math.random(2,140); 
 local Text ='*‹ : تم اختيار الاغنيه لك*'
@@ -5850,7 +5848,7 @@ keyboard.inline_keyboard = {
 },
 }
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == "شعر" then
 Abs = math.random(2,140); 
@@ -6379,7 +6377,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم حظره من المجموعه مسبقآ ✓ ").Reply,"md",true, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"‹ : تم حظره من المجموعه مسبقاً ").Reply,"md",true, false, false, false, reply_markup)
 else
 Redis:sadd(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,UserId_Info.id) 
 LuaTele.setChatMemberStatus(msg.chat_id,UserId_Info.id,'banned',0)
@@ -6838,7 +6836,7 @@ data = {
 }
 }
 if Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم حظره من المجموعه مسبقآ ✓ ").Reply,"md",true, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"‹ : تم حظره من المجموعه مسبقاً ").Reply,"md",true, false, false, false, reply_markup)
 else
 Redis:sadd(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
 LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'banned',0)
@@ -7110,7 +7108,7 @@ data = {
 }
 }
 if Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,UserId) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"‹ : تم حظره من المجموعه مسبقآ ✓ ").Reply,"md",true, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId,"‹ : تم حظره من المجموعه مسبقاً ").Reply,"md",true, false, false, false, reply_markup)
 else
 Redis:sadd(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,UserId) 
 LuaTele.setChatMemberStatus(msg.chat_id,UserId,'banned',0)
@@ -14631,7 +14629,7 @@ keyboard.inline_keyboard = {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
 },
 }
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
 end
 end
@@ -14650,7 +14648,7 @@ keyboard.inline_keyboard = {
 {text = '❲ Mac  𝖲𝗈𝗎𝗋𝖼𝖾 ❳',url="t.me/DroxTeAm"}
 },
 }
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
 end
 end

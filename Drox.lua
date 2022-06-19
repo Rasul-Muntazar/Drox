@@ -1178,7 +1178,7 @@ for k,v in pairs(msg.content.member_user_ids) do
 local Info_User = LuaTele.getUser(v) 
 print(v)
 if v == tonumber(TheDrox) then
-local N = (Redis:get(TheDrox.."Name:Bot") or "الروكس")
+local N = (Redis:get(TheDrox.."Name:Bot") or "دروكس")
 photo = LuaTele.getUserProfilePhotos(TheDrox)
 return LuaTele.sendPhoto(msg.chat_id, 0, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,'*‹ : انا بوت اسمي '..N..'\n‹ : وظيفتي حمايه الكروب من السبام والتفليش الخ....\n‹ : لتفعيل البوت قم اضافته للمجموعتك وقم برفعه مشرف واكتب تفعيل\n*', "md")
 end
@@ -2385,8 +2385,8 @@ if text == 'تحديث السورس' or text == 'تحديث السورس ‹ : '
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*‹ : هاذا الامر يخص ( '..Controller_Num(1)..' )* ',"md",true)  
 end
---os.execute('rm -rf Drox.lua')
---download('https://github.com/Mohmmedrg/NIGHTMARE/blob/main/Drox.lua','Drox.lua')
+os.execute('rm -rf Drox.lua')
+download('https://github.com/Rasul-Muntazar/Drox/main/Drox.lua','Drox.lua')
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*‹ : تم تحديث السورس * ',"md",true)  
 end
 if text == 'جلب نسخه احتياطيه' then
@@ -2637,7 +2637,7 @@ for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
 end 
-NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "الروكس")
+NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 Groups = (Redis:scard(TheDrox..'Drox:ChekBotAdd') or 0)
 Users = (Redis:scard(TheDrox..'Drox:Num:User:Pv') or 0)
 if photo.total_count > 0 then
@@ -6111,7 +6111,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. ms
 end
 if text == "منو اني" then
 if msg.sender.user_id == tonumber(1214622341) then
-LuaTele.sendText(msg_chat_id,msg_id,"‹ : انت الحلفي مطور السورس يقلبي🌚💘","md",true)
+LuaTele.sendText(msg_chat_id,msg_id,"‹ : انت  مطور السورس يقلبي🌚💘","md",true)
 elseif msg.sender.user_id == tonumber(Sudo_Id) then
 LuaTele.sendText(msg_chat_id,msg_id,"‹ : انت المطور الاساسي يقلبي🌚💘","md",true)
 elseif msg.DevelopersQ then
@@ -11058,7 +11058,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عمري اشترك ثم ا
 end
 print('Chat Id : '..msg_chat_id)
 print('User Id : '..msg_user_send_id)
-LuaTele.sendText(msg_chat_id,msg_id, "‹ : تم تحديث الملفات ♻","md",true)
+LuaTele.sendText(msg_chat_id,msg_id, "*‹ : تم تحديث الملفات*","md",true)
 dofile('Drox.lua')  
 end
 if text == "تغير اسم البوت" then 
@@ -11083,8 +11083,8 @@ end
 Redis:del(TheDrox.."Drox:Name:Bot") 
 return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم حذف اسم البوت ","md",true)   
 end
-if text == (Redis:get(TheDrox.."Drox:Name:Bot") or "الروكس") then
-local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "الروكس")
+if text == (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس") then
+local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local NameBots = {
 "يروح "..NamesBot.. " كول؟",
 "انا "..NamesBot.. " القميل",
@@ -11102,7 +11102,7 @@ for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
 end 
-local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "الروكس")
+local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local BotName = {
 "نادني "..NamesBot.. " عزيزي",
 "عزيزي اسمي "..NamesBot.. " وانت ؟",
@@ -11122,14 +11122,14 @@ msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(NamesBots).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
 end
-if text == (Redis:get(TheDrox.."Drox:Name:Bot") or "الروكس") then
+if text == (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس") then
 local photo = LuaTele.getUserProfilePhotos(TheDrox)
 local UserInfo = LuaTele.getUser(TheDrox)
 for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 UserInfo.first_name = Name_User
 break
 end 
-local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "الروكس")
+local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local BotName = {
 "يروح "..NamesBot.. " كول؟",
 "انا "..NamesBot.. " القميل",
@@ -11154,7 +11154,7 @@ https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. ms
 end
 end
 if text == "كيف الحال" then
-local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "الروكس")
+local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "دروكس")
 local BotName = {
 "الحمد لله ونته",
 "على قول @P222P ع الباري ونتَ",
@@ -11184,7 +11184,7 @@ if text == "تفله" then
 local NamesBot = (Redis:get(TheDrox.."Drox:Name:Bot") or "Drox")
 local BotName = {
 "اخخختفووو ام لمخاطيه بكصتك 😹🏃‍♀️.",
-"اختفوووو يلعار ابلع من عمك الحلفي??🏃‍♀️.",
+"اختفوووو يلعار ابلع من عمك🏃‍♀️.",
 "اختفوو ابلعها وكول عسل 😹🏃‍♀️.",
 }
 return LuaTele.sendText(msg_chat_id,msg_id,BotName[math.random(#BotName)],"md",true)   

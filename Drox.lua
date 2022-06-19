@@ -319,7 +319,7 @@ Admin = Redis:sismember(Drox.."Admin:Group"..ChatId,UserId)
 Special = Redis:sismember(Drox.."Special:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1214622341 then
-Status = 'المبرمج السورس'
+Status = 'مبرمج السورس'
 elseif UserId == 520922751 then
 Status = 'مطور السورس'
 elseif UserId == Sudo_Id then  
@@ -1104,7 +1104,7 @@ elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
 if tonumber(msg.sender.user_id) == 1214622341 then
-msg.Name_Controller = 'المبرمج السورس '
+msg.Name_Controller = 'مبرمج السورس '
 msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 520922751 then
 msg.Name_Controller = 'مطور السورس '
@@ -6387,7 +6387,7 @@ if Controller(msg_chat_id,UserId) == 'المطور الاساسي' then
 return send(msg_chat_id,msg_id,"\n*‹ : عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,UserId).." } *","md",true)  
 end
 if UserId == "1214622341" then
-return send(msg_chat_id,msg_id,"\n*‹ : عذرآ لا تستطيع استخدام الامر على المبرمج السورس *","md",true)  
+return send(msg_chat_id,msg_id,"\n*‹ : عذرآ لا تستطيع استخدام الامر على مبرمج السورس *","md",true)  
 end
 if UserId == "520922751" then
 return send(msg_chat_id,msg_id,"\n*‹ : عذرآ لا تستطيع استخدام الامر على مطور السورس*","md",true)  
@@ -6424,7 +6424,7 @@ if not msg.Devss then
 return send(msg_chat_id,msg_id,'\n*‹ : هذا الامر يخص  '..Controller_Num(2)..' * ',"md",true)  
 end
 if UserId == "1214622341" then
-return send(msg_chat_id,msg_id,"\n*‹ : عذرآ لا تستطيع استخدام الامر على المبرمج السورس *","md",true)  
+return send(msg_chat_id,msg_id,"\n*‹ : عذرآ لا تستطيع استخدام الامر على مبرمج السورس *","md",true)  
 end
 if UserId == "520922751" then
 return send(msg_chat_id,msg_id,"\n*‹ : عذرآ لا تستطيع استخدام الامر على مطور السورس *","md",true)  
@@ -11800,7 +11800,7 @@ data = {
 },
 }
 }
-return send(msg_chat_id,msg_id,"[- 𝖱𝖺𝗌𝗎𝗅 .𝖬𝗎𝗇𝗍𝖺ᴢ𝖺𝗋 .](tg://user?id=1214622341)","md",true, false, false, true, reply_markup)
+return send(msg_chat_id,msg_id,"[- 𝖱𝖺𝗌𝗎𝗅 .𝖬𝗎𝗇𝗍𝖺ᴢ𝖺𝗋 .](tg://user?id=1214622341) ‹ : مبرمج السورس : ","md",true, false, false, true, reply_markup)
 end
 
 if text == "تفعيل صورتي" or text == "تفعيل الصوره" then
@@ -13144,7 +13144,7 @@ return send(msg.chat_id,msg.id, "•  لديك حساب بنكي مسبقاً\n\
 end
 Redis:setex(Drox.."booobb" .. msg.chat_id .. ":" .. msg.sender.user_id,60, true)
 send(msg.chat_id,msg.id,[[
-– حته تسوي حساب لازم تختار نوع البطاقة
+ - حته تسوي حساب لازم تختار نوع البطاقة
 
 ⇠ `ماستر`
 ⇠ `فيزا`
@@ -13153,7 +13153,7 @@ send(msg.chat_id,msg.id,[[
 
 - اضغط للنسخ
 
-– مدة الطلب دقيقة واحدة ويطردك الموظف .
+ - مدة الطلب دقيقة واحدة ويطردك الموظف .
 ]],"md",true)  
 return false
 end
@@ -13246,16 +13246,16 @@ end
 if text == "البنك" then
 local txx = [[
 اوامر لعبه البنك :
-- انشاء حساب بنكي 
-- مسح حسابي
-- فلوسي ، حسابي 
-- تحويل + المبلغ (بعدها يطلب رقم الحساب)
-- ( استثمار ، حظ ، مضاربه ) + المبلغ 
-- راتبي ، راتب
-- بقشيش 
-- هجوم + المبلغ
-- زرف (بالرد)
-- اضف فلوس + المبلغ (بالرد) *للمطور الاساسي فقط*
+‹ : انشاء حساب بنكي 
+‹ : مسح حسابي
+ ‹ : فلوسي ، حسابي 
+ ‹ : تحويل + المبلغ (بعدها يطلب رقم الحساب)
+ ‹ : ( استثمار ، حظ ، مضاربه ) + المبلغ 
+ ‹ : راتبي ، راتب
+ ‹ : بقشيش 
+‹ : هجوم + المبلغ
+ ‹ : زرف (بالرد)
+ ‹ : اضف فلوس + المبلغ (بالرد) *للمطور الاساسي فقط*
 
 ]]
 send(msg.chat_id,msg.id,txx,"md")

@@ -14582,7 +14582,7 @@ data = {
 return send(msg_chat_id,msg_id,'*كفيه شقط سيب حاجه لغيرك 😎😂*',"md",false, false, false, false, reply_markup)
 end
 end
-if text == "ردود المدير" then
+if text == "الردود" then
 if not msg.Manger then
 return send(msg_chat_id,msg_id,'\n*‹ : هاذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
 end
@@ -15473,7 +15473,7 @@ if Redis:get(Drox.."name bot type : ") == "photo" then
   else
     local NamesBot = (Redis:get(Drox.."Name:Bot") or "دروكس")
     local NameBots = {
-"قلب "..NamesBot ,
+"ققَلب "..NamesBot ,
 "مين مزعلك بس يعيوني",
 "ثانيه واحده بسلك رقم واحده",
 "انا مش فاضي دروكس مكاني اهو",
@@ -15516,7 +15516,7 @@ if Redis:get(Drox.."name bot type : ") == "photo" then
     if photo.total_count > 0 then
       local NamesBot = (Redis:get(Drox.."Name:Bot") or "دروكس")
       local BotName = {
-      "اسمي "..NamesBot.." يبن العاميه",
+      "اسمي "..NamesBot.." ححبي",
       "يارب يكون موضوع مهم بس",
       "هو يوم مهبب انا عارف..عاوز اي ؟",
       "اسمي "..NamesBot.." يا كفيف",
@@ -15526,7 +15526,7 @@ if Redis:get(Drox.."name bot type : ") == "photo" then
     else
       local NamesBot = (Redis:get(Drox.."Name:Bot") or "دروكس")
       local BotName = {
-      "اسمي "..NamesBot.." يبن العاميه",
+      "اسمي "..NamesBot.." ححبي",
       "يارب يكون موضوع مهم بس",
       "هو يوم مهبب انا عارف..عاوز اي ؟",
       "اسمي "..NamesBot.." يا كفيف",
@@ -15537,7 +15537,7 @@ if Redis:get(Drox.."name bot type : ") == "photo" then
     end
           local NamesBot = (Redis:get(Drox.."Name:Bot") or "دروكس")
       local BotName = {
-      "اسمي "..NamesBot.." يبن العاميه",
+      "اسمي "..NamesBot.." ححبي",
       "يارب يكون موضوع مهم بس",
       "هو يوم مهبب انا عارف..عاوز اي ؟",
       "اسمي "..NamesBot.." يا كفيف",

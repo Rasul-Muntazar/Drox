@@ -14776,7 +14776,7 @@ if text then
 if text:match("^بحث (.*)$") then
 local search = text:match("^بحث (.*)$")
 local json = json:decode(http.request("https://api-jack.ml/api18.php?search="..URL.escape(search)..""))
-local datar = {data = {{text = "‹ : 𝑆𝑂𝑈𝑅𝐶𝐸 𝐵𝐿𝐴𝐶𝐾 ‹ :" , url = 'https://t.me/DroxTeAm'}}}
+local datar = {data = {{text = "- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ." , url = 'https://t.me/DroxTeAm'}}}
 for i = 1,5 do
 title = json.results[i].title
 link = json.results[i].url

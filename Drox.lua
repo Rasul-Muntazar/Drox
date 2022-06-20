@@ -5831,10 +5831,18 @@ end
 if text == "غنيلي" then
 if not Redis:get(TheDrox.."Drox:Status:distraction1"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"‹ : عذراً امر غنيلي معطل","md",true) end 
 Abs = math.random(4,2824); 
-local Text ='‹ : تم اختيار المقطع الصوتي لك'
+local Text ='*‹ : تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = msg.sender.user_id..'/Song'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}
-}
+keyboard.inline_keyboard = {
+{
+{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Song'},
+},
+{
+{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
+},
+{
+{text = '‹ اخفاء الميوزك ›', callback_data = IdUser..'/delAmr'},
+},
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) end
@@ -5844,7 +5852,7 @@ local Text ='*‹ : تم اختيار الاغنيه لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = ': مره اخرى 🔃.', callback_data = IdUser..'/Re@'},
+{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Re@'},
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -5852,17 +5860,17 @@ https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ms
 end
 if text == "شعر" then
 Abs = math.random(2,140); 
-local Text =" [‹ : تم اختيار الشعر لك :  ](t.me/DroxTeAm)"
+local Text ="*‹ : تم اختيار الشعر لك*"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = ': مره اخرى 🔃.', callback_data = IdUser..'/Re1@'},
+{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Re1@'},
 },
 {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
 },
 {
-{text = 'اخفاء الميوزك .', callback_data = IdUser..'/delAmr'},
+{text = '‹ اخفاء الميوزك ›', callback_data = IdUser..'/delAmr'},
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -14642,7 +14650,7 @@ local msg_id = Msg_id/2097152/0.5
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = ': مره اخرى 🔃.', callback_data = IdUser..'/Re@'},
+{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Re@'},
 },
 {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
@@ -14661,7 +14669,7 @@ local msg_id = Msg_id/2097152/0.5
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = ': مره اخرى 🔃.', callback_data = IdUser..'/Re1@'},
+{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Re1@'},
 },
 {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
@@ -14799,7 +14807,7 @@ keyboard.inline_keyboard = {
 {text = '- ميمز', callback_data = IdUser..'/memz@'},{text = '- غنيلي', callback_data = IdUser..'/kne@'},
 },
 {
-{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
+{text = '- 𝖣𝖱𝗈𝗑 ??𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
 },
 }
 local msg_id = Msg_id/2097152/0.5
@@ -14936,20 +14944,22 @@ local TextMahibesAgane = [[*
 *]]
 return LuaTele.editMessageText(ChatId,Msg_id,TextMahibesAgane, 'md', true, false, reply_markup)
 end
-if Text and Text:match('(%d+)/songg') then
-local UserId = Text:match('(%d+)/songg')
+if Text and Text:match('(%d+)/Song') then
+local UserId = Text:match('(%d+)/Song')
 if tonumber(IdUser) == tonumber(UserId) then
 Num = math.random(9,133)
 au ={
 type = "audio",
 media = "https://t.me/F_6AA/"..Num.."",
-caption = "[Ch : 𝐒𝐍𝐀𝐏 ](t.me/DroxTeAm)\n",
+caption = "*‹ : تم اختيار المقطع الصوتي لك*",
 parse_mode = "Markdown"                                                                                                                                                               
 }     
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = 'التالي 🎀🧸', callback_data=IdUser.."/songg"},
+{text = '‹ مرى اخرى ›', callback_data=IdUser.."/Song"},
+{
+{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
 },
 }
 local mm = Msg_id/2097152/0.5

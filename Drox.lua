@@ -14955,7 +14955,7 @@ parse_mode = "Markdown"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ مرة اخرى ›', callback_data=IdUser.."/songg},
+{text = '‹ مرة اخرى ›', callback_data=IdUser..'/songg},
 },
 }
 local mm = Msg_id/2097152/0.5

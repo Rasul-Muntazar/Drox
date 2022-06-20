@@ -5829,19 +5829,14 @@ end
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender.user_id,t).Repbn,"md",true)  
 end
 if text == "غنيلي" then
-if not Redis:get(TheDrox.."Drox:Status:distraction1"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"‹ : عذراً امر غنيلي معطل","md",true) end 
-Abs = math.random(4,2824); 
-local Text ='‹ : تم اختيار المقطع الصوتي لك'
+Abs = math.random(2,140); 
+local Text =" [‹ : تم اختياࢪ الاغنيه لك : -](t.me/nnzxnn)"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ اخفاء الميوزك ›', callback_data = IdUser..'/delAmr'}
+{text = ': مره اخرى 🔃.', callback_data = IdUser..'/Re@'},
 },
-{
-{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}
 }
-}
-
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) end
 if text == "راب" then

@@ -5829,21 +5829,20 @@ end
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender.user_id,t).Repbn,"md",true)  
 end
 if text == "غنيلي" then
-if not Redis:get(TheDrox.."Drox:Status:distraction1"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"‹ : عذراً امر غنيلي معطل","md",true) end 
-Abs = math.random(4,2824); 
-local Text ='‹ : تم اختيار المقطع الصوتي لك'
+Abs = math.random(2,140); 
+local Text ="*تم اختيار المقطع الصوتي لك*"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ اخفاء الميوزك ›', callback_data = IdUser..'/delAmr'}
+{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
 },
 {
-{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}
+{text = '‹ اخفاء الميوزك ›', callback_data = IdUser..'/delAmr'},
+},
 }
-}
-
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) end
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
 if text == "راب" then
 Abs = math.random(2,140); 
 local Text ='*‹ : تم اختيار الاغنيه لك*'
@@ -5854,16 +5853,13 @@ keyboard.inline_keyboard = {
 },
 }
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RapEthan/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == "شعر" then
 Abs = math.random(2,140); 
 local Text ="*‹ : تم اختيار الشعر لك*"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{
-{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Re1@'},
-},
 {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
 },
@@ -14416,13 +14412,13 @@ local reply_markup = LuaTele.replyMarkup{
 type = "inline",
 data = {
 {
-{text = " ( Ogg ↜ بصمه )", data = "oggidu@"..IdUser.."idv@"..listYt[3]}, 
+{text = "‹  Ogg ↜ بصمه ›", data = "oggidu@"..IdUser.."idv@"..listYt[3]}, 
 },
 {
-{text = " ( Mp3 ↜ ملف صوتي )", data = "mp3idu@"..IdUser.."idv@"..listYt[3]},  {text = " ( Mp4 ↜ فيديو )", data = "mp4idu@"..IdUser.."idv@"..listYt[3]}, 
+{text = " ‹  Mp3 ↜ ملف صوتي ›", data = "mp3idu@"..IdUser.."idv@"..listYt[3]},  {text = "‹  Mp4 ↜ فيديو ›", data = "mp4idu@"..IdUser.."idv@"..listYt[3]}, 
 },
 {
-{text = "(- الغاء الامر )", data = "idu@"..IdUser.."delamr"},
+{text = "‹ اخفاء الامر ›", data = "idu@"..IdUser.."delamr"},
 },
 }
 }
@@ -14643,7 +14639,7 @@ if Text and Text:match('(%d+)/Re@') then
 local UserId = Text:match('(%d+)/Re@')
 if tonumber(IdUser) == tonumber(UserId) then
 Abs = math.random(2,140); 
-local Text ='*‹ : تم اختيار الاغنيه لك*'
+local Text ='*‹ : تم اختيار الراب لك*'
 local msg_id = Msg_id/2097152/0.5
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -14654,7 +14650,7 @@ keyboard.inline_keyboard = {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
 },
 }
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/RapEthan/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
 end
 end
@@ -14942,25 +14938,6 @@ local TextMahibesAgane = [[*
 *]]
 return LuaTele.editMessageText(ChatId,Msg_id,TextMahibesAgane, 'md', true, false, reply_markup)
 end
-if Text and Text:match('(%d+)/songg') then
-local UserId = Text:match('(%d+)/songg')
-if tonumber(IdUser) == tonumber(UserId) then
-Num = math.random(9,133)
-au ={
-type = "audio",
-media = "https://t.me/F_6AA/"..Num.."",
-caption = "[- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 . ](t.me/DroxTeAm)\n",
-parse_mode = "Markdown"                                                                                                                                                               
-}     
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '‹ مرة اخرى ›', callback_data=IdUser.."//songg},
-},
-}
-local mm = Msg_id/2097152/0.5
-https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
-end 
 end
 if Text and Text:match('(%d+)/sorty2') then
 local UserId = Text:match('(%d+)/sorty2')

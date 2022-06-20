@@ -5829,17 +5829,21 @@ end
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender.user_id,t).Repbn,"md",true)  
 end
 if text == "غنيلي" then
-Abs = math.random(2,140); 
-local Text ="*تم اختيار المقطع الصوتي لك*"
+if not Redis:get(TheDrox.."Drox:Status:distraction1"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"‹ : عذراً امر غنيلي معطل","md",true) end 
+Abs = math.random(4,2824); 
+local Text ='‹ : تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Re@'},
+{text = '‹ اخفاء الميوزك ›', callback_data = IdUser..'/delAmr'}
 },
+{
+{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}
 }
+}
+
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/TEAMSUL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-end
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) end
 if text == "راب" then
 Abs = math.random(2,140); 
 local Text ='*‹ : تم اختيار الاغنيه لك*'
@@ -5850,7 +5854,7 @@ keyboard.inline_keyboard = {
 },
 }
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RapEthan/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == "شعر" then
 Abs = math.random(2,140); 
@@ -14639,7 +14643,7 @@ if Text and Text:match('(%d+)/Re@') then
 local UserId = Text:match('(%d+)/Re@')
 if tonumber(IdUser) == tonumber(UserId) then
 Abs = math.random(2,140); 
-local Text ='*‹ : تم اختيار المقطع الصوتي لك*'
+local Text ='*‹ : تم اختيار الاغنيه لك*'
 local msg_id = Msg_id/2097152/0.5
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -14951,7 +14955,7 @@ parse_mode = "Markdown"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ مرة اخرى ›', callback_data=IdUser.."/songg},
+{text = '‹ مرة اخرى ›', callback_data=IdUser.."//songg},
 },
 }
 local mm = Msg_id/2097152/0.5

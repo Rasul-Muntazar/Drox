@@ -5835,15 +5835,13 @@ local Text ='‹ : تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ مرة اخرى ›', callback_data = IdUser..'/song'},
+{text = '‹ اخفاء الميوزك ›', callback_data = IdUser..'/delAmr'}
 },
 {
-{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
-},
-{
-{text = '‹ اخفاء الميوزك ›', callback_data = IdUser..'/delAmr'},
-},
+{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}
 }
+}
+
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) end
 if text == "راب" then

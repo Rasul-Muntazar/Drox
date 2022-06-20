@@ -2905,7 +2905,7 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*‹ : اهلا بك مجددا عزيزي \n‹ : اليك الازرار الخاصه بأوامر التسليه الخاصه بسورس  Macفقط اضغط على الامر الذي تريد تنفيذه *','md', true, false, false, false, reply_markup)
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*‹ : اهلا بك مجددا عزيزي \n‹ : اليك الازرار الخاصه بأوامر التسليه الخاصه بسورس دروكس اضغط على الامر الذي تريد تنفيذه *','md', true, false, false, false, reply_markup)
 end
 if text == "تعطيل all" or text == "تعطيل @all" then 
 if not msg.Addictive then
@@ -6068,7 +6068,7 @@ Be confident in the power of God and you will never regret
 keyboard = {} 
 keyboard.inline_keyboard = {
 {{text = 'Delete Telegram',url="https://my.telegram.org/auth?to=delete"},{text = 'Delete Bot ',url="https://t.me/LC6BOT"}},
-{{text = 'Delete Instagram',url="https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/"},{text = 'Delete snapchat',url="https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.Droxchat.com%2Faccounts%2Fdeleteaccount"}},{{text= ' سورس  Mac',url="t.me/DroxTeAm"}}
+{{text = 'Delete Instagram',url="https://www.instagram.com/accounts/login/?next=/accounts/remove/request/permanent/"},{text = 'Delete snapchat',url="https://accounts.snapchat.com/accounts/login?continue=https%3A%2F%2Faccounts.Droxchat.com%2Faccounts%2Fdeleteaccount"}},{{text= '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}}
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/LifeAsoo/4489&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
@@ -14520,7 +14520,7 @@ local Text ='* - 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .\n⋆┄┄─┄─┄─�
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ ‹ 𝖲𝗈𝗎𝗋𝖼𝖾 Mac . ›',url="https://t.me/DroxTeAm"},{text = ' Updates source ⁦ᯓ',url="https://t.me/DroxTeAm"}
+{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="https://t.me/DroxTeAm"},{text = '‹ Updates source ⁦›',url="https://t.me/ExpDrox"}
 },
 {
 {text = ' مبرمج السورس',url="https://t.me/P222P"}
@@ -14569,7 +14569,7 @@ keyboard.inline_keyboard = {
 {text = '- ميمز', callback_data = IdUser..'/memz@'},{text = '- غنيلي', callback_data = IdUser..'/kne@'},
 },
 {
-{text = '‹ ‹ Mac 𝖲𝗈𝗎𝗋𝖼𝖾 ›',url="t.me/DroxTeAm"}
+{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
 },
 }
 local msg_id = Msg_id/2097152/0.5
@@ -15410,7 +15410,7 @@ data = {
 }
 }
 local TextHelp = [[*
-‹ : أهلا بك في قائمة العاب سورس  Macاختر نوع الالعاب 
+‹ : أهلا بك في قائمة العاب سورس دروكس اختر نوع الالعاب 
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -15447,7 +15447,7 @@ data = {
 }
 }
 local TextHelp = [[*
-‹ : مرحبا بك في الالعاب المتطورة الخاص بسورس  Mac
+‹ : مرحبا بك في الالعاب المتطورة الخاص بسورس دروكس
 ‹ : اختر اللعبه ثم اختار المحادثة التي تريد اللعب بها
 *]]
 LuaTele.editMessageText(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)

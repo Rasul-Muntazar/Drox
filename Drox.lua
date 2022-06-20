@@ -149,9 +149,9 @@ Addictive = Redis:sismember(TheDrox.."Drox:Addictive:Group"..ChatId,UserId)
 Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId)
 StatusMember = LuaTele.getChatMember(ChatId,UserId).status.luatele
 if UserId == 1214622341 then
-Status = 'مطور السورس '
+Status = 'مبرمج السورس '
 elseif UserId == 1214622341 then
-Status = 'مبرمج السورس'
+Status = 'مطور السورس'
 elseif UserId == Sudo_Id then  
 Status = 'المطور الاساسي'
 elseif UserId == TheDrox then
@@ -698,7 +698,7 @@ data = {
 {text = '- ارسال استفتاء : '..polls, data = UserId.. '/polls'}, 
 },
 {
-{text = '❲ اخفاء الامر ❳ ', data =IdUser..'/'.. '/delAmr'}
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. '/delAmr'}
 },
 }
 }
@@ -920,10 +920,10 @@ elseif Statusrestricted(msg.chat_id,msg.sender.user_id).SilentGroup == true then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
 if tonumber(msg.sender.user_id) == 1214622341 then
-msg.Name_Controller = 'مطور السورس'
+msg.Name_Controller = 'مبرمج السورس'
 msg.The_Controller = 1
 elseif tonumber(msg.sender.user_id) == 1214622341 then
-msg.Name_Controller = 'مبرمج السورس '
+msg.Name_Controller = 'مطور السورس '
 msg.The_Controller = 1
 elseif The_ControllerAll(msg.sender.user_id) == true then  
 msg.The_Controller = 1
@@ -2901,7 +2901,7 @@ data = {
 {text = '- ميمز', data = msg.sender.user_id..'/memz@'..msg_chat_id},{text = '- غنيلي', data = msg.sender.user_id..'/kne@'..msg_chat_id},
 },
 {
-{text = ' ❲ ‹ 𝖲𝗈𝗎𝗋𝖼𝖾 Mac . ❳ ',url="https://t.me/DroxTeAm"}
+{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 . ',url="https://t.me/DroxTeAm"}
 },
 }
 }
@@ -5904,7 +5904,7 @@ else
 Bio = ''
 end
 if photo.total_count > 0 then
-local TestText = "  ❲ Owner Groups ❳\n⋆┄┄─┄─┄─┄┄─┄─┄┄⋆\n ‹ : *Owner Name* :  ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n‹ : *Owner Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  ‹Owner Groups ›\n⋆┄┄─┄─┄─┄┄─┄─┄┄⋆\n ‹ : *Owner Name* :  ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n‹ : *Owner Bio* : [‹ "..Bio.." ›]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -5932,7 +5932,7 @@ Bio = ''
 end
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
 if photo.total_count > 0 then
-local TestText = "  ❲ Developers Bot ❳\n⋆┄┄─┄─┄─┄┄─┄─┄┄⋆\n ‹ : *Dev Name* :  ["..UserInfo.first_name.."](tg://user?id="..Sudo_Id..")\n‹ : *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  ‹ Developers Bot ›\n⋆┄┄─┄─┄─┄┄─┄─┄┄⋆\n ‹ : *Dev Name* :  ["..UserInfo.first_name.."](tg://user?id="..Sudo_Id..")\n‹ : *Dev Bio* : [‹ "..Bio.." ›]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
@@ -5942,12 +5942,12 @@ keyboardd.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5 
 return https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "  ❲ Developers Source ❳\n⋆┄┄─┄─┄─┄┄─┄─┄┄⋆\n ‹ : *Dev Name* :  ["..UserInfo.first_name.."](tg://user?id="..Sudo_Id..")\n‹ : *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  ‹Developers Source ›\n⋆┄┄─┄─┄─┄┄─┄─┄┄⋆\n ‹ : *Dev Name* :  ["..UserInfo.first_name.."](tg://user?id="..Sudo_Id..")\n‹ : *Dev Bio* : [‹ "..Bio.." ›]"
 local msg_id = msg.id/2097152/0.5 
 return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown")
 end
 end
-if text == 'مبرمج السورس' or text == 'مطور السورس' or text == 'المبرمج' then  
+if text == 'مبرمج السورس' or text == 'رسول' or text == 'رسو' then  
 local UserId_Info = LuaTele.searchPublicChat("P222P")
 if UserId_Info.id then
 local UserInfo = LuaTele.getUser(UserId_Info.id)
@@ -5959,11 +5959,11 @@ Bio = ''
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "  - 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .\n⋆┄┄─┄─┄─┄┄─┄─┄┄⋆\n ‹ : *Dev Name* :  ["..UserInfo.first_name.."](tg://user?id="..UserId_Info.id..")\n‹ : *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  - 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .\n⋆┄┄─┄─┄┄─┄─┄┄⋆\n‹ : *Dev Name* :  ["..UserInfo.first_name.."](tg://user?id="..UserId_Info.id..")\n‹ : *Dev Bio* : [‹ "..Bio.." ›]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '❲ 𝖼𝗈𝖽𝖾𝗋 ❳', url = "https://t.me/P222P"}
+{text = '- 𝖱𝖺𝗌𝗎𝗅 .𝖬𝗎𝗇𝗍𝖺ᴢ𝖺𝗋 .', url = "https://t.me/P222P"}
 },
 {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .', url='https://t.me/DroxTeAm'},
@@ -5976,7 +5976,7 @@ local TestText = "- معلومات مبرمج السورس : \\nn: name Dev . ["
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '❲ 𝖼𝗈𝖽𝖾𝗋 ❳', url = "https://t.me/P222P"}
+{text = '- 𝖱𝖺𝗌𝗎𝗅 .𝖬𝗎𝗇𝗍𝖺ᴢ𝖺𝗋 .', url = "https://t.me/P222P"}
 },
 {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .', url='https://t.me/DroxTeAm'},
@@ -5999,14 +5999,14 @@ Bio = ''
 end
 local photo = LuaTele.getUserProfilePhotos(UserId_Info.id)
 if photo.total_count > 0 then
-local TestText = "  - 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .\n⋆┄┄─┄─┄─┄┄─┄─┄┄⋆\n ‹ : *Dev Name* :  ["..UserInfo.first_name.."](tg://user?id="..UserId_Info.id..")\n‹ : *Dev Bio* : [❲ "..Bio.." ❳]"
+local TestText = "  - 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .\n⋆┄┄─┄┄─┄─┄┄⋆\n‹ : *Dev Name* :  ["..UserInfo.first_name.."](tg://user?id="..UserId_Info.id..")\n‹ : *Dev Bio* : [‹ "..Bio.." ›]"
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '❲ 𝗎𝗉𝖽𝖺𝗍𝖾’s ❳', url = "https://t.me/DroxTeAm"}
+{text = '‹ 𝗎𝗉𝖽𝖺𝗍𝖾’s ›', url = "https://t.me/DroxTeAm"}
 },
 {
-{text = '- Mac  𝖲𝗈𝗎𝗋𝖼𝖾 .', url='https://t.me/DroxTeAm'},
+{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .', url='https://t.me/DroxTeAm'},
 },
 }
 local msg_id = msg.id/2097152/0.5 
@@ -6041,7 +6041,7 @@ data = {
 {text = ' مسح الاساسين ', data =msg.sender.user_id..'/'.. 'TheBasics'}
 },
 {
-{text = '❲ إخفاء الأمر ❳', data =msg.sender.user_id..'/'.. 'delAmr'}
+{text = '‹ إخفاء الأمر ›', data =msg.sender.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -6109,7 +6109,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. ms
 end
 if text == "منو اني" then
 if msg.sender.user_id == tonumber(1214622341) then
-LuaTele.sendText(msg_chat_id,msg_id,"‹ : انت  مطور السورس يقلبي🌚💘","md",true)
+LuaTele.sendText(msg_chat_id,msg_id,"‹ : انت  مبرمج السورس يقلبي🌚💘","md",true)
 elseif msg.sender.user_id == tonumber(Sudo_Id) then
 LuaTele.sendText(msg_chat_id,msg_id,"‹ : انت المطور الاساسي يقلبي🌚💘","md",true)
 elseif msg.DevelopersQ then
@@ -6140,12 +6140,12 @@ data = {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .', url = "https://t.me/DroxTeAm"}
 },
 {
-{text = '❲ VIP version updates ❳', url = "https://https://t.me/eilanD_Source"}
+{text = '‹ VIP updates ›', url = "https://https://t.me/ExpDrox"}
 },
 }
 }
 return LuaTele.sendText(msg_chat_id,msg_id, [[
-‹ : حاله اشتراك البوت ❲ *Normal* ❳
+‹ : حاله اشتراك البوت ‹*Normal* ›
 ⋆┄┄─┄─┄─┄┄─┄─┄┄⋆
 ]],"md",false, false, false, false, reply_markup)
 end
@@ -9049,10 +9049,10 @@ return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم تعطيل جلب الر�
 end 
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {
-{text ="❲ رابط انلاين ❳", data = msg.sender.user_id.."/linkinlen"},{text ="❲ رابط كليشه ❳", data = msg.sender.user_id.."/linkiklesh"}, 
+{text ="‹ رابط انلاين ›", data = msg.sender.user_id.."/linkinlen"},{text ="‹ رابط كليشه ›", data = msg.sender.user_id.."/linkiklesh"}, 
 },
 {
-{text = '❲ اخفاء الامر ❳ ', data =msg.sender.user_id..'/'.. 'delAmr'}
+{text = '‹ اخفاء الامر ›', data =msg.sender.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -9436,7 +9436,7 @@ data = {
 {text = 'تعطيل اطردني', data = msg.sender.user_id..'/'.. 'unmute_kickme'},{text = 'تفعيل اطردني', data = msg.sender.user_id..'/'.. 'mute_kickme'},
 },
 {
-{text = '❲ اخفاء الامر ❳ ', data =msg.sender.user_id..'/'.. 'delAmr'}
+{text = '‹ اخفاء الامر ›', data =msg.sender.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -9553,10 +9553,10 @@ data = {
 {text = GetSetieng(msg_chat_id).lock_bots, data = '&'},{text = 'البوتات : ', data =msg.sender.user_id..'/'.. 'Status_bots'},
 },
 {
-{text = '❲ التالي ❳ ', data =msg.sender.user_id..'/'.. 'NextSeting'}
+{text = '‹ التالي ›', data =msg.sender.user_id..'/'.. 'NextSeting'}
 },
 {
-{text = '❲ اخفاء الامر ❳ ', data =msg.sender.user_id..'/'.. 'delAmr'}
+{text = '‹ اخفاء الامر ›', data =msg.sender.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -9669,7 +9669,7 @@ data = {
 {text = '- ارسال استفتاء : '..polls, data =msg.sender.user_id.. '/polls'}, 
 },
 {
-{text = '❲ اخفاء الامر ❳ ', data =msg.sender.user_id..'/'.. '/delAmr'}
+{text = '‹ اخفاء الامر ›', data =msg.sender.user_id..'/'.. '/delAmr'}
 },
 }
 }
@@ -10893,7 +10893,7 @@ data = {
 {text = '- ❺ -', data = msg.sender.user_id..'/help5'}, {text = '- ❻ -', data = msg.sender.user_id..'/help7'},
 },
 {
-{text = '❲ القفل و الفتح ❳', data = msg.sender.user_id..'/NoNextSeting'}, {text = '❲ التعطيل و التفعيل ❳', data = msg.sender.user_id..'/listallAddorrem'}, 
+{text = '‹ القفل و الفتح ›', data = msg.sender.user_id..'/NoNextSeting'}, {text = '‹ التعطيل و التفعيل ›', data = msg.sender.user_id..'/listallAddorrem'}, 
 },
 {
 {text = 'إخفاء الأمر', data = msg.sender.user_id..'/delAmr'},
@@ -12524,7 +12524,7 @@ local teex = "اشعار ايداع "..neews.."\nالمبلغ : "..F.." دولا
 LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TheDrox.."innoo" .. msg.sender.user_id,600, true)
 elseif sender == 10 then
-    K = 'حلاق 💇🏻‍♂' 
+    K = 'حلاق 💇??‍♂' 
     F = '1400'
 Redis:incrby(TheDrox.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TheDrox.."nool:flotysb"..msg.sender.user_id) or 0
@@ -14520,7 +14520,7 @@ local Text ='* - 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .\n⋆┄┄─┄─┄─�
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '❲ ‹ 𝖲𝗈𝗎𝗋𝖼𝖾 Mac . ❳',url="https://t.me/DroxTeAm"},{text = ' Updates source ⁦ᯓ',url="https://t.me/DroxTeAm"}
+{text = '‹ ‹ 𝖲𝗈𝗎𝗋𝖼𝖾 Mac . ›',url="https://t.me/DroxTeAm"},{text = ' Updates source ⁦ᯓ',url="https://t.me/DroxTeAm"}
 },
 {
 {text = ' مبرمج السورس',url="https://t.me/P222P"}
@@ -14569,7 +14569,7 @@ keyboard.inline_keyboard = {
 {text = '- ميمز', callback_data = IdUser..'/memz@'},{text = '- غنيلي', callback_data = IdUser..'/kne@'},
 },
 {
-{text = '❲ ‹ Mac 𝖲𝗈𝗎𝗋𝖼𝖾 ❳',url="t.me/DroxTeAm"}
+{text = '‹ ‹ Mac 𝖲𝗈𝗎𝗋𝖼𝖾 ›',url="t.me/DroxTeAm"}
 },
 }
 local msg_id = Msg_id/2097152/0.5
@@ -15077,10 +15077,10 @@ data = {
 {text = '- ❺ -', data = IdUser..'/help5'}, {text = '- ❻ -', data = IdUser..'/help7'}, 
 },
 {
-{text = '❲ القفل و الفتح ❳', data = IdUser..'/NoNextSeting'}, {text = '❲ التعطيل و التفعيل ❳', data = IdUser..'/listallAddorrem'}, 
+{text = '‹ القفل و الفتح ›', data = IdUser..'/NoNextSeting'}, {text = '‹ التعطيل و التفعيل ›', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '❲ إخفاء الأمر ❳', data = IdUser..'/delAmr'},
+{text = '‹ إخفاء الأمر ›', data = IdUser..'/delAmr'},
 },
 }
 }
@@ -15135,10 +15135,10 @@ data = {
 {text = '- ❺ -', data = IdUser..'/help5'}, {text = '- ❻ -', data = IdUser..'/help7'}, 
 },
 {
-{text = '❲ القفل و الفتح ❳', data = IdUser..'/NoNextSeting'}, {text = '❲ التعطيل و التفعيل ❳', data = IdUser..'/listallAddorrem'}, 
+{text = '‹ القفل و الفتح ›', data = IdUser..'/NoNextSeting'}, {text = '‹ التعطيل و التفعيل ›', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '❲ إخفاء الأمر ❳', data = IdUser..'/delAmr'},
+{text = '‹ إخفاء الأمر ›', data = IdUser..'/delAmr'},
 },
 }
 }
@@ -15194,10 +15194,10 @@ data = {
 {text = '- ❺ -', data = IdUser..'/help5'}, {text = '- ❻ -', data = IdUser..'/help7'}, 
 },
 {
-{text = '❲ القفل و الفتح ❳', data = IdUser..'/NoNextSeting'}, {text = '❲ التعطيل و التفعيل ❳', data = IdUser..'/listallAddorrem'}, 
+{text = '‹ القفل و الفتح ›', data = IdUser..'/NoNextSeting'}, {text = '‹ التعطيل و التفعيل ›', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '❲ إخفاء الأمر ❳', data = IdUser..'/delAmr'},
+{text = '‹ إخفاء الأمر ›', data = IdUser..'/delAmr'},
 },
 }
 }
@@ -15247,10 +15247,10 @@ data = {
 {text = '- ❺ -', data = IdUser..'/help5'}, {text = '- ❻ -', data = IdUser..'/help7'}, 
 },
 {
-{text = '❲ القفل و الفتح ❳', data = IdUser..'/NoNextSeting'}, {text = '❲ التعطيل و التفعيل ❳', data = IdUser..'/listallAddorrem'}, 
+{text = '‹ القفل و الفتح ›', data = IdUser..'/NoNextSeting'}, {text = '‹ التعطيل و التفعيل ›', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '❲ إخفاء الأمر ❳', data = IdUser..'/delAmr'},
+{text = '‹ إخفاء الأمر ›', data = IdUser..'/delAmr'},
 },
 }
 }
@@ -15288,10 +15288,10 @@ data = {
 {text = '- ❺ -', data = IdUser..'/help5'}, {text = '- ❻ -', data = IdUser..'/help7'}, 
 },
 {
-{text = '❲ القفل و الفتح ❳', data = IdUser..'/NoNextSeting'}, {text = '❲ التعطيل و التفعيل ❳', data = IdUser..'/listallAddorrem'}, 
+{text = '‹ القفل و الفتح ›', data = IdUser..'/NoNextSeting'}, {text = '‹ التعطيل و التفعيل ›', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '❲ إخفاء الأمر ❳', data = IdUser..'/delAmr'},
+{text = '‹ إخفاء الأمر ›', data = IdUser..'/delAmr'},
 },
 }
 }
@@ -15343,10 +15343,10 @@ data = {
 {text = '- ❺ -', data = IdUser..'/help5'}, {text = '- ❻ -', data = IdUser..'/help7'}, 
 },
 {
-{text = '❲ القفل و الفتح ❳', data = IdUser..'/NoNextSeting'}, {text = '❲ التعطيل و التفعيل ❳', data = IdUser..'/listallAddorrem'}, 
+{text = '‹ القفل و الفتح ›', data = IdUser..'/NoNextSeting'}, {text = '‹ التعطيل و التفعيل ›', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '❲ إخفاء الأمر ❳', data = IdUser..'/delAmr'},
+{text = '‹ إخفاء الأمر ›', data = IdUser..'/delAmr'},
 },
 }
 }
@@ -15405,7 +15405,7 @@ data = {
 {text = '- رجوع', data =UserId..'/'.. 'NoNextSeting'},
 },
 {
-{text = '❲ إخفاء الأمر ❳', data = IdUser..'/delAmr'},
+{text = '‹ إخفاء الأمر ›', data = IdUser..'/delAmr'},
 },
 }
 }
@@ -15442,7 +15442,7 @@ data = {
 {text = '- كرة السلة ', url = 'http://t.me/gamee?game=BasketBoy'}, {text = '- القط المجنون', url = 'http://t.me/gamee?game=CrazyCat'}, 
 },
 {
-{text = '❲ اخفاء الامر ❳ ', data =IdUser..'/'.. 'delAmr'}
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}
 },
 }
 }
@@ -15506,10 +15506,10 @@ data = {
 {text = '- ❺ -', data = IdUser..'/help5'}, {text = '- ❻ -', data = IdUser..'/help7'}, 
 },
 {
-{text = '❲ القفل و الفتح ❳', data = IdUser..'/NoNextSeting'}, {text = '❲ التعطيل و التفعيل ❳', data = IdUser..'/listallAddorrem'}, 
+{text = '‹ القفل و الفتح ›', data = IdUser..'/NoNextSeting'}, {text = '‹ التعطيل و التفعيل ›', data = IdUser..'/listallAddorrem'}, 
 },
 {
-{text = '❲ إخفاء الأمر ❳', data = IdUser..'/delAmr'},
+{text = '‹ إخفاء الأمر ›', data = IdUser..'/delAmr'},
 },
 }
 }
@@ -16670,10 +16670,10 @@ data = {
 {text = 'تعطيل اطردني', data = IdUser..'/'.. 'unmute_kickme'},{text = 'تفعيل اطردني', data = IdUser..'/'.. 'mute_kickme'},
 },
 {
-{text = '❲ القائمه الرئيسيه❳', data = IdUser..'/helpall'},
+{text = '‹ القائمه الرئيسيه ›', data = IdUser..'/helpall'},
 },
 {
-{text = '❲ اخفاء الامر ❳ ', data =IdUser..'/'.. 'delAmr'}
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}
 },
 }
 }
@@ -16730,10 +16730,10 @@ data = {
 {text = '- الرجوع ... ', data =IdUser..'/'.. 'NoNextSeting'}
 },
 {
-{text = '❲ القائمه الرئيسيه❳', data = IdUser..'/helpall'},
+{text = '‹ القائمه الرئيسيه ›', data = IdUser..'/helpall'},
 },
 {
-{text = '❲ اخفاء الامر ❳ ', data =IdUser..'/'.. '/delAmr'}
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. '/delAmr'}
 },
 }
 }
@@ -16784,13 +16784,13 @@ data = {
 {text = GetSetieng(ChatId).lock_bots, data = '&'},{text = 'البوتات : ', data =IdUser..'/'.. 'Status_bots'},
 },
 {
-{text = '❲ التالي ❳ ', data =IdUser..'/'.. 'NextSeting'}
+{text = '‹ التالي ›', data =IdUser..'/'.. 'NextSeting'}
 },
 {
-{text = '❲ القائمه الرئيسيه❳', data = IdUser..'/helpall'},
+{text = '‹ القائمه الرئيسيه ›', data = IdUser..'/helpall'},
 },
 {
-{text = '❲ اخفاء الامر ❳ ', data =IdUser..'/'.. 'delAmr'}
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}
 },
 }
 }

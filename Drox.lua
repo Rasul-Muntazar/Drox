@@ -14949,7 +14949,7 @@ Num = math.random(9,133)
 au ={
 type = "audio",
 media = "https://t.me/F_6AA/"..Num.."",
-caption = "[- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 . ](t.me/DroxTeAm)\n",
+caption = "*تم اختيار المقطع الصوتي لك*",
 parse_mode = "Markdown"                                                                                                                                                               
 }     
 keyboard = {} 

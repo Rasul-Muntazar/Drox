@@ -14140,12 +14140,12 @@ data = {{{text = '- مسح المطورين', data = msg.sender.user_id..'/Devel
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if not msg.ControllerBot then
-if Redis:get(TheDrox.."Drox:TwaslBot") and not Redis:sismember(TheDrox.."Drox:BaN:In:Tuasl",msg.sender.user_id) then
+if Redis:get(ThesookB.."sookB:TwaslBot") and not Redis:sismember(ThesookB.."sookB:BaN:In:Tuasl",msg.sender.user_id) then
 local ListGet = {Sudo_Id,msg.sender.user_id}
 local IdSudo = LuaTele.getChat(ListGet[1]).id
 local IdUser = LuaTele.getChat(ListGet[2]).id
 local FedMsg = LuaTele.sendForwarded(IdSudo, 0, IdUser, msg_id)
-Redis:setex(TheDrox.."Drox:Twasl:UserId"..msg.date,172800,IdUser)
+Redis:setex(ThesookB.."sookB:Twasl:UserId"..msg.date,172800,IdUser)
 if FedMsg.content.luatele == "messageSticker" then
 LuaTele.sendText(IdSudo,0,Reply_Status(IdUser,'‹ : قام بارسال الملصق').Reply,"md",true)  
 end
@@ -14155,13 +14155,13 @@ else
 if msg.reply_to_message_id ~= 0 then
 local Message_Get = LuaTele.getMessage(msg_chat_id, msg.reply_to_message_id)
 if Message_Get.forward_info then
-local Info_User = Redis:get(TheDrox.."Drox:Twasl:UserId"..Message_Get.forward_info.date) or 46899864
+local Info_User = Redis:get(ThesookB.."sookB:Twasl:UserId"..Message_Get.forward_info.date) or 46899864
 if text == 'حظر' then
-Redis:sadd(TheDrox..'Drox:BaN:In:Tuasl',Info_User)  
+Redis:sadd(ThesookB..'sookB:BaN:In:Tuasl',Info_User)  
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,'‹ : تم حظره من تواصل البوت ').Reply,"md",true)  
 end 
 if text =='الغاء الحظر' or text =='الغاء حظر' then
-Redis:srem(TheDrox..'Drox:BaN:In:Tuasl',Info_User)  
+Redis:srem(ThesookB..'sookB:BaN:In:Tuasl',Info_User)  
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,'‹ : تم الغاء حظره من تواصل البوت ').Reply,"md",true)  
 end 
 local ChatAction = LuaTele.sendChatAction(Info_User,'Typing')
@@ -14207,7 +14207,7 @@ function CallBackLua(data) --- هذا الكالباك بي الابديت
 if data and data.luatele and data.luatele == "updateNewInlineQuery" then
 local Text = data.query 
 if Text == '' then
-local input_message_content = {message_text = " ‹ : اهلا بك\n ‹ : لارسال الهمسه اكتب يوزر البوت + الهمسه + يوزر العضو اللي راح تسويله همسه \n ‹ : مثال  @Iillobot هلا @P222P"} 
+local input_message_content = {message_text = " ‹ : اهلا بك\n ‹ : لارسال الهمسه اكتب يوزر البوت + الهمسه + يوزر العضو اللي راح تسويله همسه \n ‹ : مثال  @Iillobot هلا @KKKZB"} 
 local resuult = {{
 type = 'article',
 id = math.random(1,64),
@@ -14215,7 +14215,7 @@ title = 'اضغط هنا لمعرفه كيفيه ارسال الهمسه',
 input_message_content = input_message_content,
 reply_markup = {
 inline_keyboard ={
-{{text ="- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .", url= "https://t.me/DroxTeAm"}},
+{{text ="ch", url= "https://t.me/nnzxnn"}},
 }
 },
 },

@@ -14938,7 +14938,6 @@ local TextMahibesAgane = [[*
 *]]
 return LuaTele.editMessageText(ChatId,Msg_id,TextMahibesAgane, 'md', true, false, reply_markup)
 end
-end
 if Text and Text:match('(%d+)/sorty2') then
 local UserId = Text:match('(%d+)/sorty2')
 if tonumber(IdUser) == tonumber(UserId) then

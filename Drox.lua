@@ -5835,7 +5835,7 @@ local Text ='*‹ : تم اختيار المقطع الصوتي لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Song'},
+{text = '‹ مرة اخرى ›', callback_data = IdUser..'/song'},
 },
 {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
@@ -14944,8 +14944,8 @@ local TextMahibesAgane = [[*
 *]]
 return LuaTele.editMessageText(ChatId,Msg_id,TextMahibesAgane, 'md', true, false, reply_markup)
 end
-if Text and Text:match('(%d+)/Song') then
-local UserId = Text:match('(%d+)/Song')
+if Text and Text:match('(%d+)/song') then
+local UserId = Text:match('(%d+)/song')
 if tonumber(IdUser) == tonumber(UserId) then
 Num = math.random(9,133)
 au ={
@@ -14957,7 +14957,7 @@ parse_mode = "Markdown"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ مرى اخرى ›', callback_data=IdUser.."/Song"},
+{text = '‹ مرى اخرى ›', callback_data=IdUser.."/song"},
 {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
 },

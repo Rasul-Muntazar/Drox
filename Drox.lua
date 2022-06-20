@@ -5830,12 +5830,9 @@ return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender.user_id,t).Re
 end
 if text == "غنيلي" then
 Abs = math.random(2,140); 
-local Text ="*تم اختيار المقطع الصوتي لك*"
+local Text ='‹ : تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {
-{
-{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Re@'},
-},
 {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
 },
@@ -5852,7 +5849,7 @@ local Text ='*‹ : تم اختيار الراب لك*'
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Rep@'},
+{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Re@'},
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -14140,12 +14137,12 @@ data = {{{text = '- مسح المطورين', data = msg.sender.user_id..'/Devel
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
 if not msg.ControllerBot then
-if Redis:get(ThesookB.."sookB:TwaslBot") and not Redis:sismember(ThesookB.."sookB:BaN:In:Tuasl",msg.sender.user_id) then
+if Redis:get(TheDrox.."Drox:TwaslBot") and not Redis:sismember(TheDrox.."Drox:BaN:In:Tuasl",msg.sender.user_id) then
 local ListGet = {Sudo_Id,msg.sender.user_id}
 local IdSudo = LuaTele.getChat(ListGet[1]).id
 local IdUser = LuaTele.getChat(ListGet[2]).id
 local FedMsg = LuaTele.sendForwarded(IdSudo, 0, IdUser, msg_id)
-Redis:setex(ThesookB.."sookB:Twasl:UserId"..msg.date,172800,IdUser)
+Redis:setex(TheDrox.."Drox:Twasl:UserId"..msg.date,172800,IdUser)
 if FedMsg.content.luatele == "messageSticker" then
 LuaTele.sendText(IdSudo,0,Reply_Status(IdUser,'‹ : قام بارسال الملصق').Reply,"md",true)  
 end
@@ -14155,13 +14152,13 @@ else
 if msg.reply_to_message_id ~= 0 then
 local Message_Get = LuaTele.getMessage(msg_chat_id, msg.reply_to_message_id)
 if Message_Get.forward_info then
-local Info_User = Redis:get(ThesookB.."sookB:Twasl:UserId"..Message_Get.forward_info.date) or 46899864
+local Info_User = Redis:get(TheDrox.."Drox:Twasl:UserId"..Message_Get.forward_info.date) or 46899864
 if text == 'حظر' then
-Redis:sadd(ThesookB..'sookB:BaN:In:Tuasl',Info_User)  
+Redis:sadd(TheDrox..'Drox:BaN:In:Tuasl',Info_User)  
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,'‹ : تم حظره من تواصل البوت ').Reply,"md",true)  
 end 
 if text =='الغاء الحظر' or text =='الغاء حظر' then
-Redis:srem(ThesookB..'sookB:BaN:In:Tuasl',Info_User)  
+Redis:srem(TheDrox..'Drox:BaN:In:Tuasl',Info_User)  
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,'‹ : تم الغاء حظره من تواصل البوت ').Reply,"md",true)  
 end 
 local ChatAction = LuaTele.sendChatAction(Info_User,'Typing')
@@ -14207,7 +14204,7 @@ function CallBackLua(data) --- هذا الكالباك بي الابديت
 if data and data.luatele and data.luatele == "updateNewInlineQuery" then
 local Text = data.query 
 if Text == '' then
-local input_message_content = {message_text = " ‹ : اهلا بك\n ‹ : لارسال الهمسه اكتب يوزر البوت + الهمسه + يوزر العضو اللي راح تسويله همسه \n ‹ : مثال  @Iillobot هلا @KKKZB"} 
+local input_message_content = {message_text = " ‹ : اهلا بك\n ‹ : لارسال الهمسه اكتب يوزر البوت + الهمسه + يوزر العضو اللي راح تسويله همسه \n ‹ : مثال  @Iillobot هلا @P222P"} 
 local resuult = {{
 type = 'article',
 id = math.random(1,64),
@@ -14215,7 +14212,7 @@ title = 'اضغط هنا لمعرفه كيفيه ارسال الهمسه',
 input_message_content = input_message_content,
 reply_markup = {
 inline_keyboard ={
-{{text ="ch", url= "https://t.me/nnzxnn"}},
+{{text ="- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .", url= "https://t.me/DroxTeAm"}},
 }
 },
 },
@@ -14645,7 +14642,7 @@ if Text and Text:match('(%d+)/Re@') then
 local UserId = Text:match('(%d+)/Re@')
 if tonumber(IdUser) == tonumber(UserId) then
 Abs = math.random(2,140); 
-local Text ='*‹ : تم اختيار المقطع الصوتي لك*'
+local Text ='*‹ : تم اختيار الاغنيه لك*'
 local msg_id = Msg_id/2097152/0.5
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -14657,25 +14654,6 @@ keyboard.inline_keyboard = {
 },
 }
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/AudiosDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
-LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/Rep@') then
-local UserId = Text:match('(%d+)/Rep@')
-if tonumber(IdUser) == tonumber(UserId) then
-Abs = math.random(2,140); 
-local Text ='*‹ : تم اختيار الراب لك*'
-local msg_id = Msg_id/2097152/0.5
-keyboard = {} 
-keyboard.inline_keyboard = {
-{
-{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Rep@'},
-},
-{
-{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
-},
-}
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/RapEthan/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
 end
 end
@@ -14962,6 +14940,26 @@ local TextMahibesAgane = [[*
 ‹ : كل ما عليك هوا الضغط على احدى العضمات في الازرار
 *]]
 return LuaTele.editMessageText(ChatId,Msg_id,TextMahibesAgane, 'md', true, false, reply_markup)
+end
+if Text and Text:match('(%d+)/songg') then
+local UserId = Text:match('(%d+)/songg')
+if tonumber(IdUser) == tonumber(UserId) then
+Num = math.random(9,133)
+au ={
+type = "audio",
+media = "https://t.me/F_6AA/"..Num.."",
+caption = "[- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 . ](t.me/DroxTeAm)\n",
+parse_mode = "Markdown"                                                                                                                                                               
+}     
+keyboard = {} 
+keyboard.inline_keyboard = {
+{
+{text = '‹ مرة اخرى ›', callback_data=IdUser.."/songg},
+},
+}
+local mm = Msg_id/2097152/0.5
+https.request("http://api.telegram.org/bot"..Token.."/editmessagemedia?chat_id="..ChatId.."&message_id="..mm.."&media="..JSON.encode(au).."&reply_markup="..JSON.encode(keyboard))
+end 
 end
 if Text and Text:match('(%d+)/sorty2') then
 local UserId = Text:match('(%d+)/sorty2')

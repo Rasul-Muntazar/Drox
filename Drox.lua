@@ -14949,13 +14949,13 @@ Num = math.random(9,133)
 au ={
 type = "audio",
 media = "https://t.me/F_6AA/"..Num.."",
-caption = "*تم اختيار المقطع الصوتي لك*",
+caption = "[Ch : 𝐒𝐍𝐀𝐏 ](t.me/nnzxnn)\n",
 parse_mode = "Markdown"                                                                                                                                                               
 }     
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ مرة اخرى ›', callback_data=IdUser..'/songg},
+{text = 'التالي 🎀🧸', callback_data=IdUser.."/songg"},
 },
 }
 local mm = Msg_id/2097152/0.5

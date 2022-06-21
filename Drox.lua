@@ -5845,11 +5845,14 @@ https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ms
 end
 if text == "راب" then
 Abs = math.random(2,140); 
-local Text ='*‹ : تم اختيار الاغنيه لك*'
+local Text ="*تم اختيار الراب لك*"
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ مرة اخرى ›', callback_data = IdUser..'/Re@'},
+{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
+},
+{
+{text = '‹ اخفاء الراب ›', callback_data = IdUser..'/delAmr'},
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -5864,7 +5867,7 @@ keyboard.inline_keyboard = {
 {text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
 },
 {
-{text = '‹ اخفاء الميوزك ›', callback_data = IdUser..'/delAmr'},
+{text = '‹ اخفاء الشعر ›', callback_data = IdUser..'/delAmr'},
 },
 }
 local msg_id = msg.id/2097152/0.5
@@ -5872,15 +5875,19 @@ https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ms
 end
 if text == "ميمز" then
 Abs = math.random(2,140); 
-local Text =" [متحركات Gٍٓif ᯓ ](t.me/DroxTeAm)"
+local Text ="*تم اختيار الميمز لك*"
 keyboard = {} 
 keyboard.inline_keyboard = {
-{{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}},
+{
+{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .',url="t.me/DroxTeAm"}
+},
+{
+{text = '‹ اخفاء الميمز ›', callback_data = IdUser..'/delAmr'},
+},
 }
 local msg_id = msg.id/2097152/0.5
-https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/https://t.me/DroxTeAm/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/fasngon/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
-
 if text == 'المالك' or text == 'المنشئ' then
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*‹ : ︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  

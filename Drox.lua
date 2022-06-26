@@ -8117,7 +8117,7 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "‹ : عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 local R = Redis:scard(TheDrox.."Drox:List:Rd:Sudo")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ غنيلي ›', data = msg.sender.user_id..'/Song'},},{{text = '‹ شعر ›', data = msg.sender.user_id..'/voice'},{text = '‹ اغنيه ›', data = msg.sender.user_id..'/Mp'},},{{text = '‹ ميمز ›', data = msg.sender.user_id..'/Memz'},{text = '‹ ريمكس ›', data = msg.sender.user_id..'/Remix'},},{{text = '‹ انمي ›', data = msg.sender.user_id..'/Anime'},{text = '‹ صوره ›', data = msg.sender.user_id..'/Photos'},},{{text = '‹ مسلسل ›', data = msg.sender.user_id..'/Series'},{text = '‹ فلم ›', data = msg.sender.user_id..'/Movies'},},{{text = '‹ متحركه ›', data = msg.sender.user_id..'/animation'},},{text = '‹ متحركه ›', data = msg.sender.user_id..'/animation'},},{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm'},},}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ غنيلي ›', data = msg.sender.user_id..'/Song'},},{{text = '‹ شعر ›', data = msg.sender.user_id..'/voice'},{text = '‹ اغنيه ›', data = msg.sender.user_id..'/Mp'},},{{text = '‹ ميمز ›', data = msg.sender.user_id..'/Memz'},{text = '‹ ريمكس ›', data = msg.sender.user_id..'/Remix'},},{{text = '‹ انمي ›', data = msg.sender.user_id..'/Anime'},{text = '‹ صوره ›', data = msg.sender.user_id..'/Photos'},},{{text = '‹ مسلسل ›', data = msg.sender.user_id..'/Series'},{text = '‹ فلم ›', data = msg.sender.user_id..'/Movies'},},{{text = '‹ متحركه ›', data = msg.sender.user_id..'/animation'},},{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, "‹ : يمكنك اختيار أحد اوامر التسليه ↫ ⤈", 'md', false, false, false, false, reply_markup) end
 -- Lar --
 if text == "اضف رد للكل" or text == "اضف رد عام" then 
@@ -10114,7 +10114,7 @@ end
     trakos = "Was Die . - المالك"
 Redis:incrby(TheDrox.."nool:flotysb"..msg.sender.user_id , F)
 local ballancee = Redis:get(TheDrox.."nool:flotysb"..msg.sender.user_id) or 0
-local teex = "اشعار ايداع "..trakos.."\nالمبلغ : "..F.." دولار 💸 \nوظيفتك : مالك البوت وعلى راسي \nنوع العملية : اضافة الاستحقاق\nرصيدك الآن : "..ballancee.." دولار 💸 "
+local teex = "اشعار ايداع "..trakos.."\nالمبلغ : "..F.." دولار ?? \nوظيفتك : مالك البوت وعلى راسي \nنوع العملية : اضافة الاستحقاق\nرصيدك الآن : "..ballancee.." دولار 💸 "
 LuaTele.sendText(msg.chat_id,msg.id,teex,"md",true)
 Redis:setex(TheDrox.."innoo" .. msg.sender.user_id,600, true)
 end

@@ -3307,7 +3307,7 @@ Redis:set(TheDrox.."Drox:Status:distraction3"..msg_chat_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تفعيل امر شعر *").unLock,"md",true) end
 if TextMsg == 'فلم' then
 Redis:set(TheDrox.."Drox:Status:distraction4"..msg_chat_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تفعيل امر شعر *").unLock,"md",true) end
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تفعيل امر فلم *").unLock,"md",true) end
 if TextMsg == 'صوره' then
 Redis:set(TheDrox.."Drox:Status:distraction5"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تفعيل امر صوره *").unLock,"md",true) end
@@ -3326,6 +3326,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹
 if TextMsg == 'مسلسل' then
 Redis:set(TheDrox.."Drox:Status:distraction10"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تفعيل امر مسلسل *").unLock,"md",true) end
+if TextMsg == 'راب' then
+Redis:set(TheDrox.."Drox:Status:distraction11"..msg_chat_id,true) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تفعيل امر راب *").unLock,"md",true) end
 if TextMsg == 'ردود البوت' then
 Redis:set(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تفعيل ردود البوت *").unLock,"md",true) end
@@ -3745,7 +3748,7 @@ Redis:del(TheDrox.."Drox:Status:distraction3"..msg_chat_id,true)
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تعطيل امر شعر *").unLock,"md",true) end
 if TextMsg == 'فلم' then
 Redis:del(TheDrox.."Drox:Status:distraction4"..msg_chat_id,true) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تعطيل امر شعر *").unLock,"md",true) end
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تعطيل امر فلم *").unLock,"md",true) end
 if TextMsg == 'صوره' then
 Redis:del(TheDrox.."Drox:Status:distraction5"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تعطيل امر صوره *").unLock,"md",true) end
@@ -3764,6 +3767,9 @@ return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹
 if TextMsg == 'مسلسل' then
 Redis:del(TheDrox.."Drox:Status:distraction10"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تعطيل امر مسلسل *").unLock,"md",true) end
+if TextMsg == 'راب' then
+Redis:del(TheDrox.."Drox:Status:distraction11"..msg_chat_id,true) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تعطيل امر راب *").unLock,"md",true) end
 if TextMsg == 'ردود البوت' then
 Redis:del(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"*‹ : تم تعطيل ردود البوت *").unLock,"md",true) end
@@ -5199,6 +5205,17 @@ keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = 
 }
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/L1BBBL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
+end
+if text == "راب" then
+if not Redis:get(TheDrox.."Drox:Status:distraction11"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"‹ : عذراً امر راب معطل","md",true) end 
+Abs = math.random(4,140); 
+local Text ='‹ : تم اختيار الراب لك'
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = msg.sender.user_id..'/rapp'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}
+}
+}
+local msg_id = msg.id/2097152/0.5
+https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RapEthan/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 if text == "ميمز" then
 if not Redis:get(TheDrox.."Drox:Status:distraction9"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"‹ : عذراً امر ميمز معطل","md",true) end 
@@ -8100,7 +8117,7 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "‹ : عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 local R = Redis:scard(TheDrox.."Drox:List:Rd:Sudo")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ غنيلي ›', data = msg.sender.user_id..'/Song'},},{{text = '‹ شعر ›', data = msg.sender.user_id..'/voice'},{text = '‹ اغنيه ›', data = msg.sender.user_id..'/Mp'},},{{text = '‹ ميمز ›', data = msg.sender.user_id..'/Memz'},{text = '‹ ريمكس ›', data = msg.sender.user_id..'/Remix'},},{{text = '‹ انمي ›', data = msg.sender.user_id..'/Anime'},{text = '‹ صوره ›', data = msg.sender.user_id..'/Photos'},},{{text = '‹ مسلسل ›', data = msg.sender.user_id..'/Series'},{text = '‹ فلم ›', data = msg.sender.user_id..'/Movies'},},{{text = '‹ متحركه ›', data = msg.sender.user_id..'/animation'},},{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm'},},}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ غنيلي ›', data = msg.sender.user_id..'/Song'},},{{text = '‹ شعر ›', data = msg.sender.user_id..'/voice'},{text = '‹ اغنيه ›', data = msg.sender.user_id..'/Mp'},},{{text = '‹ ميمز ›', data = msg.sender.user_id..'/Memz'},{text = '‹ ريمكس ›', data = msg.sender.user_id..'/Remix'},},{{text = '‹ انمي ›', data = msg.sender.user_id..'/Anime'},{text = '‹ صوره ›', data = msg.sender.user_id..'/Photos'},},{{text = '‹ مسلسل ›', data = msg.sender.user_id..'/Series'},{text = '‹ فلم ›', data = msg.sender.user_id..'/Movies'},},{{text = '‹ متحركه ›', data = msg.sender.user_id..'/animation'},},{text = '‹ متحركه ›', data = msg.sender.user_id..'/animation'},},{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, "‹ : يمكنك اختيار أحد اوامر التسليه ↫ ⤈", 'md', false, false, false, false, reply_markup) end
 -- Lar --
 if text == "اضف رد للكل" or text == "اضف رد عام" then 
@@ -11528,6 +11545,17 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = IdUser..'/'.. 'voice'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}}}
 local msg_id = Msg_id/2097152/0.5
  https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/L1BBBL/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_prsjeview=true&reply_markup="..JSON.encode(keyboard)) end
+ 
+ elseif Text and Text:match('(%d+)/rapp') then
+local UserId = Text:match('(%d+)/rapp')
+if tonumber(IdUser) == tonumber(UserId) then
+if not Redis:get(TheDrox.."Drox:Status:distraction11"..data.chat_id) then return LuaTele.answerCallbackQuery(data.id,"‹ : عذراً امر راب معطل",true) end 
+Abs = math.random(4,140); 
+local Text ='‹ : تم اختيار الراب لك'
+keyboard = {} 
+keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = IdUser..'/'.. 'rapp'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}}}
+local msg_id = Msg_id/2097152/0.5
+ https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. ChatId .. '&voice=https://t.me/RapEthan/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_prsjeview=true&reply_markup="..JSON.encode(keyboard)) end
 --
 elseif Text and Text:match('(%d+)/Memz') then
 local UserId = Text:match('(%d+)/Memz')

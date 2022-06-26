@@ -4777,6 +4777,59 @@ restricted = restricted.."*"..x.." - *["..UserInfo.id.."](tg://user?id="..UserIn
 end
 if y == true then
 LuaTele.sendText(msg_chat_id,msg_id,restricted,"md",true) end end
+if text == "تعطيل all" or text == "تعطيل @all" then 
+if not msg.Managers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للادمنية واعلى فقط',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local Get_Chat = LuaTele.getChat(Redis:get(TheDrox..'Drox:ChanneliD:Join'))
+local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
+local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "‹ : عذراً لاتستطيع استخدام البوت !\n‹ : عليك الاشتراك في القناة اولاً :")
+local reply_markup = LuaTele.replyMarkup{ type = 'inline',data = { { { text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join') }, }, } }
+return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup)
+end
+Redis:set(TheDrox.."Drox:lockalllll"..msg_chat_id,"off")
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"‹ :  تم قفـل @all هنا").Lock,"md",true)  
+return false
+end
+if text == "تفعيل all" or text == "تفعيل @all" then 
+if not msg.Managers then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للادمنية واعلى فقط',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local Get_Chat = LuaTele.getChat(Redis:get(TheDrox..'Drox:ChanneliD:Join'))
+local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
+local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "‹ : عذراً لاتستطيع استخدام البوت !\n‹ : عليك الاشتراك في القناة اولاً :")
+local reply_markup = LuaTele.replyMarkup{ type = 'inline',data = { { { text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join') }, }, } }
+return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup)
+end
+Redis:set(TheDrox.."Drox:lockalllll"..msg_chat_id,"on")
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender.user_id,"‹ :  تم فتح @all هنا").Lock,"md",true)  
+return false
+end
+if text == "@all" or text == "تاك عام" or text == "all" then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*‹ : هذا الامر يخص { '..Controller_Num(7)..' }* ',"md",true)  
+end
+local Info_Members = LuaTele.searchChatMembers(msg_chat_id, "*", 200)
+x = 0
+tags = 0
+local list = Info_Members.members
+for k, v in pairs(list) do
+local UserInfo = LuaTele.getUser(v.member_id.user_id)
+if x == 5 or x == tags or k == 0 then
+tags = x + 5
+listall = ""
+end
+x = x + 1
+if UserInfo.first_name ~= '' then
+listall = listall.." ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id.."),"
+end
+if x == 5 or x == tags or k == 0 then
+LuaTele.sendText(msg_chat_id,msg_id,listall,"md",true)  
+end
+end
+end
 if text == 'تاك للكل' then
 if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للادمنية واعلى فقط',"md",true)  end
 if ChannelJoin(msg) == false then
@@ -9880,7 +9933,7 @@ end
 if Redis:get(TheDrox.."xxxr" .. msg.sender.user_id) then
 Redis:incrby(TheDrox.."nool:flotysb"..msg.sender.user_id , 1000000)
 Redis:sadd(TheDrox.."ttpppi",msg.sender.user_id)
-return LuaTele.sendText(msg.chat_id,msg.id,"• خذ قرض 1000000 دولار 💸 ","md",true)
+return LuaTele.sendText(msg.chat_id,msg.id,"• خذ قرض 1000000 دولار ?? ","md",true)
 end
 local jjjo = "6000000"
 Redis:incrby(TheDrox.."nool:flotysb"..msg.sender.user_id , jjjo)

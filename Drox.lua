@@ -1,9 +1,8 @@
-------------------------------------------------
--- This Source Was Developed By (Lar) @P222P.--
---   This Is The Source Channel @P222P .   --
---           - 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 -                 --
---        -- https://t.me/P222P --         --
------------------------------------------------- 
+--[[
+
+
+
+]] 
 URL     = require("./libs/url")
 JSON    = require("./libs/dkjson")
 serpent = require("libs/serpent")
@@ -3035,8 +3034,7 @@ ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n" end e
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ مسح المالكين : '..LaR..' ›', data = msg.sender_id.user_id..'/TheBasicsQ'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, ListMembers, 'md', false, false, false, false, reply_markup) end
 if text == 'المنشئين الاساسيين' or text == 'المنشئين الاساسين' then
-if LuaTele.getChatMember(msg_chat_id,msg.sender_id.user_id).status.luatele ~= "chatMemberStatusCreator" or not msg.Developers then 
-if not msg.Managers then return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للمدراء واعلى فقط',"md",true)  end
+if LuaTele.getChatMember(msg_chat_id,msg.sender_id.user_id).status.luatele ~= "chatMemberStatusCreator" or not msg.Developers then return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للمطورين الثانويين واعلى فقط',"md",true)  end
 if ChannelJoin(msg) == false then
 local Get_Chat = LuaTele.getChat(Redis:get(TheDrox..'Drox:ChanneliD:Join'))
 local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
@@ -11003,7 +11001,7 @@ local list = Redis:smembers(TheDrox.."Drox:List:Rd:Sudo")
 text = "\n‹ : قائمة ردود المطور ↫ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 for k,v in pairs(list) do
 if Redis:get(TheDrox.."Drox:Add:Rd:Sudo:Gif"..v) then
-db = "متحركه ??"
+db = "متحركه 🎭"
 elseif Redis:get(TheDrox.."Drox:Add:Rd:Sudo:vico"..v) then
 db = "بصمه 📢"
 elseif Redis:get(TheDrox.."Drox:Add:Rd:Sudo:stekr"..v) then
@@ -12126,19 +12124,6 @@ Redis:set(TheDrox.."Drox:Status:Id"..data.chat_id,true) ;Redis:set(TheDrox.."Dro
 return LuaTele.sendText(ChatId,Msg_id,'*‹ : تم اعادة تفعيل المجموعة ↫ ‹ *['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ›*','md', true, false, false, false, reply_markup) end end 
 end
 --
-if Text and Text:match('(%d+)/disable') then
-local UserId = Text:match('(%d+)/disable')
-if tonumber(IdUser) == tonumber(UserId) then
-local Get_Chat = LuaTele.getChat(data.chat_id)
-local Info_Chats = LuaTele.getSupergroupFullInfo(data.chat_id)
-if not Redis:sismember(TheDrox.."Drox:ChekBotAdd",data.chat_id) then return LuaTele.editMessageText(ChatId,Msg_id, '\n‹ : المجموعة تم تعطيلها بالتأكيد',"md",true)  
-else
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ غادر ›', data = UserId..'/'..'Yesbot'},{text = '‹ تفعيل ›', data = UserId..'/'..'activation'},},{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm'},},}}
-Redis:srem(TheDrox.."Drox:ChekBotAdd",data.chat_id)
-return LuaTele.sendText(ChatId,Msg_id,'*‹ : تم تعطيل المجموعة ↫ ‹ *['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ›*','md',true, false, false, false, reply_markup) end end
-end
---
-
 if Text and Text:match('(%d+)/LinKTexT') then
 local UserId = Text:match('(%d+)/LinKTexT')
 if tonumber(IdUser) == tonumber(UserId) then 
@@ -12162,7 +12147,6 @@ end
 end
 end
 end
-
 
 if Text and Text:match('(%d+)/LinKOnla') then
 local UserId = Text:match('(%d+)/LinKOnla')
@@ -12188,7 +12172,18 @@ end
 end
 end
 
-
+if Text and Text:match('(%d+)/disable') then
+local UserId = Text:match('(%d+)/disable')
+if tonumber(IdUser) == tonumber(UserId) then
+local Get_Chat = LuaTele.getChat(data.chat_id)
+local Info_Chats = LuaTele.getSupergroupFullInfo(data.chat_id)
+if not Redis:sismember(TheDrox.."Drox:ChekBotAdd",data.chat_id) then return LuaTele.editMessageText(ChatId,Msg_id, '\n‹ : المجموعة تم تعطيلها بالتأكيد',"md",true)  
+else
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ غادر ›', data = UserId..'/'..'Yesbot'},{text = '‹ تفعيل ›', data = UserId..'/'..'activation'},},{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm'},},}}
+Redis:srem(TheDrox.."Drox:ChekBotAdd",data.chat_id)
+return LuaTele.sendText(ChatId,Msg_id,'*‹ : تم تعطيل المجموعة ↫ ‹ *['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ›*','md',true, false, false, false, reply_markup) end end
+end
+--
 if Text and Text:match('/Mahibes(%d+)') then
 local GetMahibes = Text:match('/Mahibes(%d+)') 
 local NumMahibes = math.random(1,6)

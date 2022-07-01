@@ -5495,22 +5495,6 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/SeriesDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 --
-if text == "ترند" or text == "المتفاعلين" then
-if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للادمنية واعلى فقط',"md",true)  end
-GroupAllRtba = Redis:get(TheDrox..':GroupUserCountMsg:'..msg.chat_id)
-GetAllNames  = Redis:get(TheDrox..':GroupNameUser:'..msg.chat_id)
-GroupAllRtbaL = {}
-for k,v in pairs(GroupAllRtba) do table.insert(GroupAllRtbaL,{v,k}) end
-Count,Kount,i = 8 , 0 , 1
-for _ in pairs(GroupAllRtbaL) do Kount = Kount + 1 end
-table.sort(GroupAllRtbaL, function(a, b) return tonumber(a[1]) > tonumber(b[1]) end)
-if Count >= Kount then Count = Kount end
-Text = "‹ : الاشخاص الاكثر تفاعل ⤈ :\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
-for k,v in ipairs(GroupAllRtbaL) do
-if i <= Count then  Text = Text..i.." ↬ [‹ "..(GetAllNames[v[2]] or "خطأ بالأسـم").." ›](tg://user?id="..v[2]..") ↬ ‹ *"..v[1].."* ›  \n" end ; i=i+1
-end
-return LuaTele.sendText(msg.chat_id,msg.id,Text,"md")
-end
 if text == "ترند الكروبات" then
 if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للادمنية واعلى فقط',"md",true)  end
 GroupAllRtba = Redis:hgetall(TheDrox..':GroupUserCountMsg:groups')

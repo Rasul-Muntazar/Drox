@@ -5296,7 +5296,7 @@ https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ms
 end
 --
 if text == "ترند" or text == "المتفاعلين" then
-if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n⌔︰هذا الامر للادمنية واعلى فقط',"md",true)  end
+if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للادمنية واعلى فقط',"md",true)  end
 GroupAllRtba = Redis:hgetall(TheDrox..':GroupUserCountMsg:'..msg.chat_id)
 GetAllNames  = Redis:hgetall(TheDrox..':GroupNameUser:'..msg.chat_id)
 GroupAllRtbaL = {}
@@ -5312,7 +5312,7 @@ end
 return LuaTele.sendText(msg.chat_id,msg.id,Text,"md")
 end
 if text == "ترند الكروبات" then
-if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\‹ : هذا الامر للادمنية واعلى فقط',"md",true)  end
+if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : هذا الامر للادمنية واعلى فقط',"md",true)  end
 GroupAllRtba = Redis:hgetall(TheDrox..':GroupUserCountMsg:groups')
 GetAllNames  = Redis:hgetall(TheDrox..':GroupNameUser:groups')
 GroupAllRtbaL = {}

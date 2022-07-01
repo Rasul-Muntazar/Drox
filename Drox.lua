@@ -5294,6 +5294,59 @@ keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = 
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/SeriesDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
+--
+if text == "ترند" or text == "المتفاعلين" then
+if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n⌔︰هذا الامر للادمنية واعلى فقط',"md",true)  end
+GroupAllRtba = Redis:hgetall(TheDrox..':GroupUserCountMsg:'..msg.chat_id)
+GetAllNames  = Redis:hgetall(TheDrox..':GroupNameUser:'..msg.chat_id)
+GroupAllRtbaL = {}
+for k,v in pairs(GroupAllRtba) do table.insert(GroupAllRtbaL,{v,k}) end
+Count,Kount,i = 8 , 0 , 1
+for _ in pairs(GroupAllRtbaL) do Kount = Kount + 1 end
+table.sort(GroupAllRtbaL, function(a, b) return tonumber(a[1]) > tonumber(b[1]) end)
+if Count >= Kount then Count = Kount end
+Text = "‹ : الاشخاص الاكثر تفاعل ⤈ :\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
+for k,v in ipairs(GroupAllRtbaL) do
+if i <= Count then  Text = Text..i.." ↬ [‹ "..(GetAllNames[v[2]] or "خطأ بالأسـم").." ›](tg://user?id="..v[2]..") ↬ ‹ *"..v[1].."* ›  \n" end ; i=i+1
+end
+return LuaTele.sendText(msg.chat_id,msg.id,Text,"md")
+end
+if text == "ترند الكروبات" then
+if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\‹ : هذا الامر للادمنية واعلى فقط',"md",true)  end
+GroupAllRtba = Redis:hgetall(TheDrox..':GroupUserCountMsg:groups')
+GetAllNames  = Redis:hgetall(TheDrox..':GroupNameUser:groups')
+GroupAllRtbaL = {}
+for k,v in pairs(GroupAllRtba) do table.insert(GroupAllRtbaL,{v,k}) end
+Count,Kount,i = 8 , 0 , 1
+for _ in pairs(GroupAllRtbaL) do Kount = Kount + 1 end
+table.sort(GroupAllRtbaL, function(a, b) return tonumber(a[1]) > tonumber(b[1]) end)
+if Count >= Kount then Count = Kount end
+Text = "*‹ : قائمه ترند الكروبات 📊. \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉*\n"
+for k,v in pairs(GroupAllRtbaL) do
+if v[2] and v[2]:match("(-100%d+)") then
+local InfoChat = LuaTele.getChat(v[2])
+local InfoChats = LuaTele.getSupergroupFullInfo(v[2])
+if InfoChats.code ~= 400 then
+var(InfoChats.invite_link)
+if not InfoChats.invite_link then
+linkedid = "["..InfoChat.title.."]" or "خطأ بالأسـم"
+else
+linkedid = "["..InfoChat.title.."]("..InfoChats.invite_link.invite_link..")"
+end
+if i <= Count then  
+Text = Text..i.."↫  ‹ "..(linkedid).."  › ↫  ‹ *"..v[1].."*  ›  \n" 
+end ; 
+i=i+1
+end
+end
+end
+return LuaTele.sendText (msg.chat_id,msg.id,Text,"md",true)
+end
+if text and msg.chat_id then
+local GetMsg = Redis:incr(TheDrox..'TheDrox:MsgNumbergroups'..msg.chat_id) or 1
+Redis:hset(TheDrox..':GroupUserCountMsg:groups',msg.chat_id,GetMsg)
+end
+--
 if text == 'هاي' or text == 'هايي' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
@@ -6702,18 +6755,48 @@ Redis:del(TheDrox.."Drox:Group:Link"..msg_chat_id)
 return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم مسح الرابط ","md",true)             
 end
 if text == "الرابط" then
-if not not Redis:get(TheDrox.."Drox:Status:Link"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم تعطيل جلب الرابط من قبل الادمنيه","md",true) end 
-local Get_Chat = LuaTele.getChat(msg_chat_id)
-local GetLink = Redis:get(TheDrox.."Drox:Group:Link"..msg_chat_id) 
+if not Redis:get(TheDrox.."Drox:Status:Link"..msg_chat_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"‹ : تم تعطيل جلب الرابط من قبل الادمنيه","md",true)
+end 
+local reply_markup = LuaTele.replyMarkup{ 
+type = 'inline',
+data = { 
+{ 
+{ text = '‹ نص ›', data = msg.sender_id.user_id..'/LinKTexT' },{ text = '‹ انلاين ›', data = msg.sender_id.user_id..'/LinKOnla' },
+ },
+ { 
+{ text = '‹ اخفاء الاوامر ›', data =msg.sender_id.user_id..'/'.. 'delAmr' }
+ },
+ { 
+{ text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm' }, 
+ },
+ }
+ }
+ return LuaTele.sendText(msg_chat_id,msg_id,'*‹ : اختر نوع الرابط الذي تريده*',"md",false, false, false, false, reply_markup)
+end
+if Text and Text:match('(%d+)/LinKOnla') then
+local UserId = Text:match('(%d+)/LinKOnla')
+if tonumber(IdUser) == tonumber(UserId) then 
+local Get_Chat = LuaTele.getChat(data.chat_id) 
+local GetLink = Redis:get(TheDrox.."Drox:Group:Link"..data.chat_id) 
 if GetLink then
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text =Get_Chat.title, url = GetLink },},}}
-return LuaTele.sendText(msg_chat_id, msg_id, '‹ : Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n❨ '..GetLink..' ❩', 'md', true, false, false, false, reply_markup)
+local Text = '‹ : Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nᅠᅠᅠᅠ❨ ['..Get_Chat.title.. ']('..GetLink..') ❩ '
+keyboard = {} 
+keyboard.inline_keyboard = {{{text= Get_Chat.title, url=GetLink}}}
+local msg_id = Msg_id/2097152/0.5
+return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&message_id='..msg_id..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 else
-local LinkGroup = LuaTele.generateChatInviteLink(msg_chat_id,'taha',tonumber(msg.date+86400),100,false)
-if LinkGroup.code == 3 then
-return LuaTele.sendText(msg_chat_id,msg_id,"‹ : لا استطيع جلب الرابط بسبب ليس لدي صلاحيه دعوه مستخدمين من خلال الرابط ","md",true) end
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = Get_Chat.title, url = LinkGroup.invite_link },},}}
-return LuaTele.sendText(msg_chat_id, msg_id, '‹ : Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n❨ '..LinkGroup.invite_link..' ❩', 'md', true, false, false, false, reply_markup) end end
+local LinkGroup = json:decode(https.request('https://api.telegram.org/bot'..Token..'/exportChatInviteLink?chat_id='..data.chat_id))
+if LinkGroup.ok == true then
+local Text = '‹ : Link Group ↬ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\nᅠᅠᅠᅠ❨ ['..Get_Chat.title.. ']('..LinkGroup.result..') ❩ '
+keyboard = {} 
+keyboard.inline_keyboard = {{{text= Get_Chat.title,url= LinkGroup.result}}}
+local msg_id = Msg_id/2097152/0.5
+return https.request("https://api.telegram.org/bot"..Token..'/editMessageText?chat_id='..ChatId..'&message_id='..msg_id..'&text=' .. URL.escape(Text).."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
+end
+end
+end
+end
 -- LaR --
 if text == 'غادر' then
 if not msg.DevelopersAS then 

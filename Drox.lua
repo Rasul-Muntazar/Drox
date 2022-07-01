@@ -16642,21 +16642,6 @@ if Redis:get(TheDrox.."Drox:Lock:tagservr"..data.message.chat_id) then
 LuaTele.deleteMessages(data.message.chat_id,{[1]= data.message.id})
 end
 end 
-if tonumber(data.message.sender.user_id) == tonumber(TheDrox) then
-return false
-end
-if data.message.content.luatele == "messageChatJoinByLink" and Redis:get(TheDrox..'Drox:Status:joinet'..data.message.chat_id) == 'true' then
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '{ انا لست بوت }', data = data.message.sender.user_id..'/UnKed'},
-},
-}
-} 
-LuaTele.setChatMemberStatus(data.message.chat_id,data.message.sender.user_id,'restricted',{1,0,0,0,0,0,0,0,0})
-return LuaTele.sendText(data.message.chat_id, data.message.id, '♡︙عليك اختيار انا لست بوت لتخطي نضام التحقق', 'md',false, false, false, false, reply_markup)
-end
 
 File_Bot_Run(data.message,data.message)
 

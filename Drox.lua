@@ -333,6 +333,51 @@ if Channel then
 local url , res = https.request('https://api.telegram.org/bot'..Token..'/getchatmember?chat_id=@'..Channel..'&user_id='..msg.sender_id.user_id)
 local ChannelJoin = JSON.decode(url)
 if ChannelJoin.result.status == "left" then JoinChannel = false end end return JoinChannel end
+function editrtp(chat,user,msgid,useri) 
+if Redis:sismember(TheDrox.."Drox:BanGroup:Group"..chat,useri) then 
+BanGroupz = "✓" 
+else 
+BanGroupz = "✗" 
+end 
+if Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..chat,useri) then 
+SilentGroupz = "✓" 
+else 
+SilentGroupz = "✗" 
+end 
+if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..chat,useri)  then 
+TheBasicsz = "✓" 
+else 
+TheBasicsz = "✗" 
+end 
+if Redis:sismember(TheDrox.."Drox:Originators:Group"..chat,useri) then 
+Originatorsz = "✓" 
+else 
+Originatorsz = "✗" 
+end 
+if Redis:sismember(TheDrox.."Drox:Managers:Group"..chat,useri) then 
+Managersz = "✓" 
+else 
+Managersz = "✗" 
+end 
+if Redis:sismember(TheDrox.."Drox:Addictive:Group"..chat,useri) then 
+Addictivez = "✓" 
+else 
+Addictivez = "✗" 
+end 
+if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..chat,useri) then 
+Distinguishedz = "✓" 
+else 
+Distinguishedz = "✗" 
+end 
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = { 
+{{text = 'رفع منشئ اساسي : '..TheBasicsz, data =user..'/statusTheBasicsz/'..useri},{text = 'رفع منشئ : '..Originatorsz, data =user..'/statusOriginatorsz/'..useri},}, 
+{{text = 'رفع مدير : '..Managersz, data =user..'/statusManagersz/'..useri},{text = 'رفع ادمن : '..Addictivez, data =user..'/statusAddictivez/'..useri},}, 
+{{text = 'رفع مميز : '..Distinguishedz, data =user..'/statusDistinguishedz/'..useri},}, 
+{{text = 'حظر العضو : '..BanGroupz, data =user..'/statusban/'..useri},{text = 'كتم العضو : '..SilentGroupz, data =user..'/statusktm/'..useri},}, 
+{{text = 'مسح الرتب : ', data =user..'/statusmem/'..useri},}, 
+{{text = '- اخفاء الامر ', data ='/delAmr1'}}}} 
+return LuaTele.editMessageText(chat,msgid,'*\n‹ : يمكنك تحكم بالعضو عن طريق الازرار . .*', 'md', true, false, reply_markup) 
+end
 function File_Bot_Run(msg,data) local msg_chat_id = msg.chat_id local msg_reply_id = msg.reply_to_message_id local msg_user_send_id = msg.sender_id.user_id local msg_id = msg.id local text = nil
 if msg.sender_id.luatele == "messageSenderChat" then LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id}) return false end
 if msg.date and msg.date < tonumber(os.time() - 15) then print("->> Old Message End <<-") return false end
@@ -369,51 +414,6 @@ if msg.The_Controller == 1 or msg.The_Controller == 100 or msg.The_Controller ==
 if msg.The_Controller == 1 or msg.The_Controller == 100 or msg.The_Controller == 2 or msg.The_Controller == 3 or msg.The_Controller == 99 or msg.The_Controller == 44 or msg.The_Controller == 4 or msg.The_Controller == 5 or msg.The_Controller == 6 or msg.The_Controller == 7 or msg.The_Controller == 88 or msg.The_Controller == 9 then msg.Cleaner = true end
 if msg.The_Controller == 1 or msg.The_Controller == 100 or msg.The_Controller == 2 or msg.The_Controller == 3 or msg.The_Controller == 99 or msg.The_Controller == 44 or msg.The_Controller == 4 or msg.The_Controller == 5 or msg.The_Controller == 6 or msg.The_Controller == 7 or msg.The_Controller == 8 or msg.The_Controller == 9 then msg.Distinguished = true end
 --
-function editrtp(chat,user,msgid,useri)
-if Redis:sismember(TheDrox.."Drox:BanGroup:Group"..chat,useri) then
-BanGroupz = "✓"
-else
-BanGroupz = "✗"
-end
-if Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..chat,useri) then
-SilentGroupz = "✓"
-else
-SilentGroupz = "✗"
-end
-if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..chat,useri)  then
-TheBasicsz = "✓"
-else
-TheBasicsz = "✗"
-end
-if Redis:sismember(TheDrox.."Drox:Originators:Group"..chat,useri) then
-Originatorsz = "✓"
-else
-Originatorsz = "✗"
-end
-if Redis:sismember(TheDrox.."Drox:Managers:Group"..chat,useri) then
-Managersz = "✓"
-else
-Managersz = "✗"
-end
-if Redis:sismember(TheDrox.."Drox:Addictive:Group"..chat,useri) then
-Addictivez = "✓"
-else
-Addictivez = "✗"
-end
-if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..chat,useri) then
-Distinguishedz = "✓"
-else
-Distinguishedz = "✗"
-end
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{{text = 'رفع منشئ اساسي : '..TheBasicsz, data =user..'/statusTheBasicsz/'..useri},{text = 'رفع منشئ : '..Originatorsz, data =user..'/statusOriginatorsz/'..useri},},
-{{text = 'رفع مدير : '..Managersz, data =user..'/statusManagersz/'..useri},{text = 'رفع ادمن : '..Addictivez, data =user..'/statusAddictivez/'..useri},},
-{{text = 'رفع مميز : '..Distinguishedz, data =user..'/statusDistinguishedz/'..useri},},
-{{text = 'حظر العضو : '..BanGroupz, data =user..'/statusban/'..useri},{text = 'كتم العضو : '..SilentGroupz, data =user..'/statusktm/'..useri},},
-{{text = 'مسح الرتب : ', data =user..'/statusmem/'..useri},},
-{{text = '- اخفاء الامر ', data ='/delAmr1'}}}}
-return LuaTele.editMessageText(chat,msgid,'*\n‹ : يمكنك تحكم بالعضو عن طريق الازرار . .*', 'md', true, false, reply_markup)
-end
 if text and (text:match("عيوره") or text:match("كس") or text:match("طيز") or text:match("ديس") or text:match("انيج") or text:match("نيج") or text:match("ديوس") or text:match("عير") or text:match("كسختك") or text:match("كسمك") or text:match("كسربك") or text:match("بلاع") or text:match("ابو العيوره") or text:match("منيوج") or text:match("كحبه") or text:match("كحاب") or text:match("الكحبه") or text:match("كسك") or text:match("طيزك") or text:match("كس امك") or text:match("صرم") or text:match("كس اختك")) then
 if Redis:get(TheDrox.."Drox:Lock:Fshar"..msg_chat_id) and not msg.Addictive then
 LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
@@ -2106,6 +2106,163 @@ if UserInfo.username then
 UserInfousername = '@'..UserInfo.username..''
 else
 UserInfousername = 'لا يوجد'
+end
+if text and text:match('^تحكم @(%S+)$') then
+local UserName = text:match('^تحكم @(%S+)$') 
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*‹ : هذا الامر يخص ( '..Controller_Num(7)..' )* ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local chinfo = Redis:get(TheDrox.."Drox:ch:Addictive")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local UserId_Info = LuaTele.searchPublicChat(UserName)
+if not UserId_Info.id then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n‹ : عذرآ لا يوجد حساب بهذا المعرف ","md",true)  
+end
+if UserId_Info.type.is_channel == true then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n‹ : عذرآ لا تستطيع استخدام معرف قناة او قروب ","md",true)  
+end
+if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n‹ : عذرآ لا تستطيع استخدام معرف البوت ","md",true)  
+end
+TheBasics = Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg.chat_id,UserId_Info.id) 
+Originators = Redis:sismember(TheDrox.."Drox:Originators:Group"..msg.chat_id,UserId_Info.id)
+Managers = Redis:sismember(TheDrox.."Drox:Managers:Group"..msg.chat_id,UserId_Info.id)
+Addictive = Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg.chat_id,UserId_Info.id)
+Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg.chat_id,UserId_Info.id)
+BanGroup = Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg.chat_id,UserId_Info.id)
+SilentGroup = Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg.chat_id,UserId_Info.id)
+if BanGroup then
+BanGroupz = "✓"
+else
+BanGroupz = "✗"
+end
+if SilentGroup then
+SilentGroupz = "✓"
+else
+SilentGroupz = "✗"
+end
+if TheBasics then
+TheBasicsz = "✓"
+else
+TheBasicsz = "✗"
+end
+if Originators then
+Originatorsz = "✓"
+else
+Originatorsz = "✗"
+end
+if Managers then
+Managersz = "✓"
+else
+Managersz = "✗"
+end
+if Addictive then
+Addictivez = "✓"
+else
+Addictivez = "✗"
+end
+if Distinguished then
+Distinguishedz = "✓"
+else
+Distinguishedz = "✗"
+end
+
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{
+{text = 'رفع منشئ اساسي : '..TheBasicsz, data =msg.sender_id.user_id..'/statusTheBasicsz/'..UserId_Info.id},{text = 'رفع منشئ : '..Originatorsz, data =msg.sender_id.user_id..'/statusOriginatorsz/'..UserId_Info.id},
+},
+{
+{text = 'رفع مدير : '..Managersz, data =msg.sender_id.user_id..'/statusManagersz/'..UserId_Info.id},{text = 'رفع ادمن : '..Addictivez, data =msg.sender_id.user_id..'/statusAddictivez/'..UserId_Info.id},
+},
+{
+{text = 'رفع مميز : '..Distinguishedz, data =msg.sender_id.user_id..'/statusDistinguishedz/'..UserId_Info.id},
+},
+{
+{text = 'حظر العضو : '..BanGroupz, data =msg.sender_id.user_id..'/statusban/'..UserId_Info.id},{text = 'كتم العضو : '..SilentGroupz, data =msg.sender_id.user_id..'/statusktm/'..UserId_Info.id},
+},
+{
+{text = 'تنزيل الرتب : ', data =msg.sender_id.user_id..'/statusmem/'..UserId_Info.id},
+},
+{
+{text = '- اخفاء الامر ', data ='/delAmr1'}
+}
+}
+}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : يمكنك تحكم بالعضو عن طريق الازرار \n تعني ان معه الرتبه : ✓ \nتعني انه ليس معه رتبه : ✗*',"md",false, false, false, false, reply_markup)
+end
+
+if text == 'تحكم' then
+if not msg.Addictive then
+return LuaTele.sendText(msg_chat_id,msg_id,'\n*‹ : هذا الامر يخص ( '..Controller_Num(7)..' )* ',"md",true)  
+end
+local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+TheBasics = Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg.chat_id,Message_Reply.sender_id.user_id) 
+Originators = Redis:sismember(TheDrox.."Drox:Originators:Group"..msg.chat_id,Message_Reply.sender_id.user_id)
+Managers = Redis:sismember(TheDrox.."Drox:Managers:Group"..msg.chat_id,Message_Reply.sender_id.user_id)
+Addictive = Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg.chat_id,Message_Reply.sender_id.user_id)
+Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg.chat_id,Message_Reply.sender_id.user_id)
+BanGroup = Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg.chat_id,Message_Reply.sender_id.user_id)
+SilentGroup = Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg.chat_id,Message_Reply.sender_id.user_id)
+if BanGroup then
+BanGroupz = "✓"
+else
+BanGroupz = "✗"
+end
+if SilentGroup then
+SilentGroupz = "✓"
+else
+SilentGroupz = "✗"
+end
+if TheBasics then
+TheBasicsz = "✓"
+else
+TheBasicsz = "✗"
+end
+if Originators then
+Originatorsz = "✓"
+else
+Originatorsz = "✗"
+end
+if Managers then
+Managersz = "✓"
+else
+Managersz = "✗"
+end
+if Addictive then
+Addictivez = "✓"
+else
+Addictivez = "✗"
+end
+if Distinguished then
+Distinguishedz = "✓"
+else
+Distinguishedz = "✗"
+end
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
+{
+{text = 'رفع منشئ اساسي : '..TheBasicsz, data =msg.sender_id.user_id..'/statusTheBasicsz/'..Message_Reply.sender_id.user_id},{text = 'رفع منشئ : '..Originatorsz, data =msg.sender_id.user_id..'/statusOriginatorsz/'..Message_Reply.sender_id.user_id},
+},
+{
+{text = 'رفع مدير : '..Managersz, data =msg.sender_id.user_id..'/statusManagersz/'..Message_Reply.sender_id.user_id},{text = 'رفع ادمن : '..Addictivez, data =msg.sender_id.user_id..'/statusAddictivez/'..Message_Reply.sender_id.user_id},
+},
+{
+{text = 'رفع مميز : '..Distinguishedz, data =msg.sender_id.user_id..'/statusDistinguishedz/'..Message_Reply.sender_id.user_id},
+},
+{
+{text = 'حظر العضو : '..BanGroupz, data =msg.sender_id.user_id..'/statusban/'..Message_Reply.sender_id.user_id},{text = 'كتم العضو : '..SilentGroupz, data =msg.sender_id.user_id..'/statusktm/'..Message_Reply.sender_id.user_id},
+},
+{
+{text = 'تنزيل الرتب : ', data =msg.sender_id.user_id..'/statusmem/'..Message_Reply.sender_id.user_id},
+},
+{
+{text = '- اخفاء الامر ', data ='/delAmr1'}
+}
+}
+}
+return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : يمكنك تحكم بالعضو عن طريق الازرار \n تعني ان معه الرتبه : ✓ \nتعني انه ليس معه رتبه : ✗*',"md",false, false, false, false, reply_markup)
 end
 return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : معرفك ↫ ❨ '..UserInfousername..' ❩',"md",true)  end
 if text == 'معلوماتي' or text == 'موقعي' then
@@ -5218,163 +5375,6 @@ Redis:del(TheDrox..'Drox:'..lock..msg_chat_id)
 end
 LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"*‹ : تم فتح جميع الاوامر*").unLock,"md",true)  
 return false end
-if text and text:match('^تحكم @(%S+)$') then
-local UserName = text:match('^تحكم @(%S+)$') 
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*‹ : هذا الامر يخص ( '..Controller_Num(7)..' )* ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(TheDrox.."Drox:ch:Addictive")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : عليك الاشتراك في قناة البوت لاستخدام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local UserId_Info = LuaTele.searchPublicChat(UserName)
-if not UserId_Info.id then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n‹ : عذرآ لا يوجد حساب بهذا المعرف ","md",true)  
-end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n‹ : عذرآ لا تستطيع استخدام معرف قناة او قروب ","md",true)  
-end
-if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n‹ : عذرآ لا تستطيع استخدام معرف البوت ","md",true)  
-end
-TheBasics = Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg.chat_id,UserId_Info.id) 
-Originators = Redis:sismember(TheDrox.."Drox:Originators:Group"..msg.chat_id,UserId_Info.id)
-Managers = Redis:sismember(TheDrox.."Drox:Managers:Group"..msg.chat_id,UserId_Info.id)
-Addictive = Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg.chat_id,UserId_Info.id)
-Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg.chat_id,UserId_Info.id)
-BanGroup = Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg.chat_id,UserId_Info.id)
-SilentGroup = Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg.chat_id,UserId_Info.id)
-if BanGroup then
-BanGroupz = "✓"
-else
-BanGroupz = "✗"
-end
-if SilentGroup then
-SilentGroupz = "✓"
-else
-SilentGroupz = "✗"
-end
-if TheBasics then
-TheBasicsz = "✓"
-else
-TheBasicsz = "✗"
-end
-if Originators then
-Originatorsz = "✓"
-else
-Originatorsz = "✗"
-end
-if Managers then
-Managersz = "✓"
-else
-Managersz = "✗"
-end
-if Addictive then
-Addictivez = "✓"
-else
-Addictivez = "✗"
-end
-if Distinguished then
-Distinguishedz = "✓"
-else
-Distinguishedz = "✗"
-end
-
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{
-{text = 'رفع منشئ اساسي : '..TheBasicsz, data =msg.sender_id.user_id..'/statusTheBasicsz/'..UserId_Info.id},{text = 'رفع منشئ : '..Originatorsz, data =msg.sender_id.user_id..'/statusOriginatorsz/'..UserId_Info.id},
-},
-{
-{text = 'رفع مدير : '..Managersz, data =msg.sender_id.user_id..'/statusManagersz/'..UserId_Info.id},{text = 'رفع ادمن : '..Addictivez, data =msg.sender_id.user_id..'/statusAddictivez/'..UserId_Info.id},
-},
-{
-{text = 'رفع مميز : '..Distinguishedz, data =msg.sender_id.user_id..'/statusDistinguishedz/'..UserId_Info.id},
-},
-{
-{text = 'حظر العضو : '..BanGroupz, data =msg.sender_id.user_id..'/statusban/'..UserId_Info.id},{text = 'كتم العضو : '..SilentGroupz, data =msg.sender_id.user_id..'/statusktm/'..UserId_Info.id},
-},
-{
-{text = 'تنزيل الرتب : ', data =msg.sender_id.user_id..'/statusmem/'..UserId_Info.id},
-},
-{
-{text = '- اخفاء الامر ', data ='/delAmr1'}
-}
-}
-}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : يمكنك تحكم بالعضو عن طريق الازرار \n تعني ان معه الرتبه : ✓ \nتعني انه ليس معه رتبه : ✗*',"md",false, false, false, false, reply_markup)
-end
-
-if text == 'تحكم' then
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*‹ : هذا الامر يخص ( '..Controller_Num(7)..' )* ',"md",true)  
-end
-local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-TheBasics = Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg.chat_id,msg.sender_id.user_id) 
-Originators = Redis:sismember(TheDrox.."Drox:Originators:Group"..msg.chat_id,msg.sender_id.user_id)
-Managers = Redis:sismember(TheDrox.."Drox:Managers:Group"..msg.chat_id,msg.sender_id.user_id)
-Addictive = Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg.chat_id,msg.sender_id.user_id)
-Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg.chat_id,msg.sender_id.user_id)
-BanGroup = Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg.chat_id,msg.sender_id.user_id)
-SilentGroup = Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg.chat_id,msg.sender_id.user_id)
-if BanGroup then
-BanGroupz = "✓"
-else
-BanGroupz = "✗"
-end
-if SilentGroup then
-SilentGroupz = "✓"
-else
-SilentGroupz = "✗"
-end
-if TheBasics then
-TheBasicsz = "✓"
-else
-TheBasicsz = "✗"
-end
-if Originators then
-Originatorsz = "✓"
-else
-Originatorsz = "✗"
-end
-if Managers then
-Managersz = "✓"
-else
-Managersz = "✗"
-end
-if Addictive then
-Addictivez = "✓"
-else
-Addictivez = "✗"
-end
-if Distinguished then
-Distinguishedz = "✓"
-else
-Distinguishedz = "✗"
-end
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
-{
-{text = 'رفع منشئ اساسي : '..TheBasicsz, data =msg.sender_id.user_id..'/statusTheBasicsz/'..msg.sender_id.user_id},{text = 'رفع منشئ : '..Originatorsz, data =msg.sender_id.user_id..'/statusOriginatorsz/'..msg.sender_id.user_id},
-},
-{
-{text = 'رفع مدير : '..Managersz, data =msg.sender_id.user_id..'/statusManagersz/'..msg.sender_id.user_id},{text = 'رفع ادمن : '..Addictivez, data =msg.sender_id.user_id..'/statusAddictivez/'..msg.sender_id.user_id},
-},
-{
-{text = 'رفع مميز : '..Distinguishedz, data =msg.sender_id.user_id..'/statusDistinguishedz/'..msg.sender_id.user_id},
-},
-{
-{text = 'حظر العضو : '..BanGroupz, data =msg.sender_id.user_id..'/statusban/'..msg.sender_id.user_id},{text = 'كتم العضو : '..SilentGroupz, data =msg.sender_id.user_id..'/statusktm/'..msg.sender_id.user_id},
-},
-{
-{text = 'تنزيل الرتب : ', data =msg.sender_id.user_id..'/statusmem/'..msg.sender_id.user_id},
-},
-{
-{text = '- اخفاء الامر ', data ='/delAmr1'}
-}
-}
-}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n‹ : يمكنك تحكم بالعضو عن طريق الازرار \n تعني ان معه الرتبه : ✓ \nتعني انه ليس معه رتبه : ✗*',"md",false, false, false, false, reply_markup)
-end
 if text == "غنيلي" then
 if not Redis:get(TheDrox.."Drox:Status:distraction1"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"‹ : عذراً امر غنيلي معطل","md",true) end 
 Abs = math.random(4,2824); 
@@ -11720,6 +11720,111 @@ ChatId = data.chat_id
 Msg_id = data.message_id
 
 --
+if Text and Text:match('(%d+)/statusTheBasicsz/(%d+)') and data.owner then
+local UserId = {Text:match('(%d+)/statusTheBasicsz/(%d+)')}
+if tonumber(IdUser) == tonumber(UserId[1]) then
+if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2]) then
+Redis:srem(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2])
+else
+Redis:sadd(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2])
+end
+return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
+end
+end
+if Text and Text:match('(%d+)/statusOriginatorsz/(%d+)') and data.TheBasics then
+local UserId = {Text:match('(%d+)/statusOriginatorsz/(%d+)')}
+if tonumber(IdUser) == tonumber(UserId[1]) then 
+if Redis:sismember(TheDrox.."Drox:Originators:Group"..ChatId,UserId[2]) then
+Redis:srem(TheDrox.."Drox:Originators:Group"..ChatId,UserId[2])
+else
+Redis:sadd(TheDrox.."Drox:Originators:Group"..ChatId,UserId[2])
+end
+return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
+end
+end
+if Text and Text:match('(%d+)/statusManagersz/(%d+)') and data.Originators then
+local UserId = {Text:match('(%d+)/statusManagersz/(%d+)')}
+if tonumber(IdUser) == tonumber(UserId[1]) then
+if Redis:sismember(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2]) then
+Redis:srem(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2])
+else
+Redis:sadd(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2])
+end
+return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
+end
+end
+if Text and Text:match('(%d+)/statusAddictivez/(%d+)') and data.Managers then
+local UserId = {Text:match('(%d+)/statusAddictivez/(%d+)')}
+if tonumber(IdUser) == tonumber(UserId[1]) then
+if Redis:sismember(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2]) then
+Redis:srem(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2])
+else
+Redis:sadd(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2])
+end
+return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
+end
+end
+if Text and Text:match('(%d+)/statusDistinguishedz/(%d+)') and data.Addictive then
+local UserId = {Text:match('(%d+)/statusDistinguishedz/(%d+)')}
+if tonumber(IdUser) == tonumber(UserId[1]) then
+if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2]) then
+Redis:srem(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2])
+else
+Redis:sadd(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2])
+end
+return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
+end
+end
+if Text and Text:match('(%d+)/statusmem/(%d+)') and data.owner then
+local UserId ={ Text:match('(%d+)/statusmem/(%d+)')}
+if tonumber(IdUser) == tonumber(UserId[1]) then
+Redis:srem(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2])
+Redis:srem(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2])
+Redis:srem(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2])
+Redis:srem(TheDrox.."Drox:TheBasicsQ:Group"..ChatId,UserId[2])
+Redis:srem(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2])
+Redis:srem(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2])
+Redis:srem(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2])
+LuaTele.setChatMemberStatus(ChatId,UserId[2],'restricted',{1,1,1,1,1,1,1,1,1})
+return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
+end
+end
+if Text and Text:match('/delAmr1') then
+local UserId = Text:match('/delAmr1')
+if data.Addictive then
+return LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
+end
+end
+if Text and Text:match('(%d+)/statusban/(%d+)') and data.Addictive then
+local UserId ={ Text:match('(%d+)/statusban/(%d+)')}
+if tonumber(IdUser) == tonumber(UserId[1]) then
+if StatusCanOrNotCan(ChatId,UserId[2]) then
+return LuaTele.answerCallbackQuery(data.id,"\n•عذرآ لا تستطيع استخدام الامر على ( "..Controller(ChatId,UserId[2]).." } ", true)
+end
+if Redis:sismember(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2]) then
+Redis:srem(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2])
+LuaTele.setChatMemberStatus(ChatId,UserId[2],'restricted',{1,1,1,1,1,1,1,1,1})
+else
+Redis:sadd(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2])
+LuaTele.setChatMemberStatus(ChatId,UserId[2],'banned',0)
+end
+return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
+end
+end
+if Text and Text:match('(%d+)/statusktm/(%d+)') and data.Addictive then
+local UserId ={ Text:match('(%d+)/statusktm/(%d+)')}
+if tonumber(IdUser) == tonumber(UserId[1]) then
+if StatusSilent(ChatId,UserId[2]) then
+return LuaTele.answerCallbackQuery(data.id, "\n•عذرآ لا تستطيع استخدام الامر على ( "..Controller(ChatId,UserId[2]).." } ", true)
+end
+if Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2]) then
+Redis:srem(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2])
+else
+Redis:sadd(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2])
+end
+return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
+end
+end
 if Text and Text:match('(%d+)/UpdateSo') then
 local UserId = Text:match('(%d+)/UpdateSo')
 if tonumber(IdUser) == tonumber(UserId) then 
@@ -13702,111 +13807,6 @@ local Text = "\n‹ : من خلال الازرار يمكنك مسح رسائل�
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ مسح سحكاتي : '..LaR..' ›', data =IdUser..'/'.. 'MsgDell'},{text = '‹ مسح رسائلي : '..lar..' ›', data =IdUser..'/'.. 'MMsgDel'},},{{text = '‹ اخفاء الاوامر ›', data =IdUser..'/'.. 'delAmr'}},{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm'},},}}
 LuaTele.editMessageText(ChatId,Msg_id,Text, 'md', false, false, reply_markup) end end 
 -- LaR
-if Text and Text:match('(%d+)/statusTheBasicsz/(%d+)') and data.owner then
-local UserId = {Text:match('(%d+)/statusTheBasicsz/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusOriginatorsz/(%d+)') and data.TheBasics then
-local UserId = {Text:match('(%d+)/statusOriginatorsz/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then 
-if Redis:sismember(TheDrox.."Drox:Originators:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:Originators:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:Originators:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusManagersz/(%d+)') and data.Originators then
-local UserId = {Text:match('(%d+)/statusManagersz/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusAddictivez/(%d+)') and data.Managers then
-local UserId = {Text:match('(%d+)/statusAddictivez/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusDistinguishedz/(%d+)') and data.Addictive then
-local UserId = {Text:match('(%d+)/statusDistinguishedz/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusmem/(%d+)') and data.owner then
-local UserId ={ Text:match('(%d+)/statusmem/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-Redis:srem(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:TheBasicsQ:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2])
-LuaTele.setChatMemberStatus(ChatId,UserId[2],'restricted',{1,1,1,1,1,1,1,1,1})
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('/delAmr1') then
-local UserId = Text:match('/delAmr1')
-if data.Addictive then
-return LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/statusban/(%d+)') and data.Addictive then
-local UserId ={ Text:match('(%d+)/statusban/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if StatusCanOrNotCan(ChatId,UserId[2]) then
-return LuaTele.answerCallbackQuery(data.id,"\n‹ : عذرآ لا تستطيع استخدام الامر على ( "..Controller(ChatId,UserId[2]).." } ", true)
-end
-if Redis:sismember(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2])
-LuaTele.setChatMemberStatus(ChatId,UserId[2],'restricted',{1,1,1,1,1,1,1,1,1})
-else
-Redis:sadd(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2])
-LuaTele.setChatMemberStatus(ChatId,UserId[2],'banned',0)
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusktm/(%d+)') and data.Addictive then
-local UserId ={ Text:match('(%d+)/statusktm/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if StatusSilent(ChatId,UserId[2]) then
-return LuaTele.answerCallbackQuery(data.id, "\n‹ : عذرآ لا تستطيع استخدام الامر على ( "..Controller(ChatId,UserId[2]).." } ", true)
-end
-if Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
 if Text and Text:match('(%d+)/delAmr') then
 local UserId = Text:match('(%d+)/delAmr')
 if tonumber(IdUser) == tonumber(UserId) then return LuaTele.deleteMessages(ChatId,{[1]= Msg_id}) end end

@@ -2987,7 +2987,7 @@ end
 end
 if text == 'الرتبه' or text == 'رتبته' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.username then
 UserInfousername = '@'..UserInfo.username..''
 else
@@ -3764,16 +3764,16 @@ end
 end
 if text == 'ايدي' or text == 'كشف'  and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.username then
 UserInfousername = '@'..UserInfo.username..''
 else
 UserInfousername = 'لا يوجد'
 end
-local UserId = Message_Reply.sender.user_id
-local RinkBot = Controller(msg_chat_id,Message_Reply.sender.user_id)
-local TotalMsg = Redis:get(TheDrox..'Drox:Num:Message:User'..msg_chat_id..':'..Message_Reply.sender.user_id) or 0
-local TotalEdit = Redis:get(TheDrox..'Drox:Num:Message:Edit'..msg_chat_id..Message_Reply.sender.user_id) or 0
+local UserId = msg.sender_id.user_id
+local RinkBot = Controller(msg_chat_id,msg.sender_id.user_id)
+local TotalMsg = Redis:get(TheDrox..'Drox:Num:Message:User'..msg_chat_id..':'..msg.sender_id.user_id) or 0
+local TotalEdit = Redis:get(TheDrox..'Drox:Num:Message:Edit'..msg_chat_id..msg.sender_id.user_id) or 0
 local TotalMsgT = Total_message(TotalMsg) 
 return LuaTele.sendText(msg_chat_id,msg_id,
 '\n*♡︙ايديه : '..UserId..
@@ -3895,7 +3895,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اض�
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n❍ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if StatusCanOrNotCan(msg_chat_id,UserInfo.id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*❍ عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,UserInfo.id).." } *","md",true)  
 end
@@ -4020,13 +4020,13 @@ if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*•هذا الامر يخص ( '..Controller_Num(7)..' )* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-TheBasics = Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg.chat_id,Message_Reply.sender.user_id) 
-Originators = Redis:sismember(TheDrox.."Drox:Originators:Group"..msg.chat_id,Message_Reply.sender.user_id)
-Managers = Redis:sismember(TheDrox.."Drox:Managers:Group"..msg.chat_id,Message_Reply.sender.user_id)
-Addictive = Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg.chat_id,Message_Reply.sender.user_id)
-Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg.chat_id,Message_Reply.sender.user_id)
-BanGroup = Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg.chat_id,Message_Reply.sender.user_id)
-SilentGroup = Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg.chat_id,Message_Reply.sender.user_id)
+TheBasics = Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg.chat_id,msg.sender_id.user_id) 
+Originators = Redis:sismember(TheDrox.."Drox:Originators:Group"..msg.chat_id,msg.sender_id.user_id)
+Managers = Redis:sismember(TheDrox.."Drox:Managers:Group"..msg.chat_id,msg.sender_id.user_id)
+Addictive = Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg.chat_id,msg.sender_id.user_id)
+Distinguished = Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg.chat_id,msg.sender_id.user_id)
+BanGroup = Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg.chat_id,msg.sender_id.user_id)
+SilentGroup = Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg.chat_id,msg.sender_id.user_id)
 if BanGroup then
 BanGroupz = "✓"
 else
@@ -4064,19 +4064,19 @@ Distinguishedz = "✗"
 end
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {
-{text = 'رفع منشئ اساسي : '..TheBasicsz, data =msg.sender_id.user_id..'/statusTheBasicsz/'..Message_Reply.sender.user_id},{text = 'رفع منشئ : '..Originatorsz, data =msg.sender_id.user_id..'/statusOriginatorsz/'..Message_Reply.sender.user_id},
+{text = 'رفع منشئ اساسي : '..TheBasicsz, data =msg.sender_id.user_id..'/statusTheBasicsz/'..msg.sender_id.user_id},{text = 'رفع منشئ : '..Originatorsz, data =msg.sender_id.user_id..'/statusOriginatorsz/'..msg.sender_id.user_id},
 },
 {
-{text = 'رفع مدير : '..Managersz, data =msg.sender_id.user_id..'/statusManagersz/'..Message_Reply.sender.user_id},{text = 'رفع ادمن : '..Addictivez, data =msg.sender_id.user_id..'/statusAddictivez/'..Message_Reply.sender.user_id},
+{text = 'رفع مدير : '..Managersz, data =msg.sender_id.user_id..'/statusManagersz/'..msg.sender_id.user_id},{text = 'رفع ادمن : '..Addictivez, data =msg.sender_id.user_id..'/statusAddictivez/'..msg.sender_id.user_id},
 },
 {
-{text = 'رفع مميز : '..Distinguishedz, data =msg.sender_id.user_id..'/statusDistinguishedz/'..Message_Reply.sender.user_id},
+{text = 'رفع مميز : '..Distinguishedz, data =msg.sender_id.user_id..'/statusDistinguishedz/'..msg.sender_id.user_id},
 },
 {
-{text = 'حظر العضو : '..BanGroupz, data =msg.sender_id.user_id..'/statusban/'..Message_Reply.sender.user_id},{text = 'كتم العضو : '..SilentGroupz, data =msg.sender_id.user_id..'/statusktm/'..Message_Reply.sender.user_id},
+{text = 'حظر العضو : '..BanGroupz, data =msg.sender_id.user_id..'/statusban/'..msg.sender_id.user_id},{text = 'كتم العضو : '..SilentGroupz, data =msg.sender_id.user_id..'/statusktm/'..msg.sender_id.user_id},
 },
 {
-{text = 'تنزيل الرتب : ', data =msg.sender_id.user_id..'/statusmem/'..Message_Reply.sender.user_id},
+{text = 'تنزيل الرتب : ', data =msg.sender_id.user_id..'/statusmem/'..msg.sender_id.user_id},
 },
 {
 {text = '- اخفاء الامر ', data ='/delAmr1'}
@@ -4358,7 +4358,7 @@ return LuaTele.sendText(msg_chat_id,msg_id,'⌔︰هل انت متأكد من ع
 if text and text:match("^تنزيل (.*)$") and msg.reply_to_message_id ~= 0 then
 local TextMsg = text:match("^تنزيل (.*)$")
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
@@ -4373,11 +4373,11 @@ if ChannelJoin(msg) == false then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n??: عمري اشترك ثم استخدم الامر❗️*',"md",false, false, false, false, reply_markup)
 end
-if not Redis:sismember(TheDrox.."Drox:DevelopersQ:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله مطور ثانوي مسبقا ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."Drox:DevelopersQ:Groups",msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله مطور ثانوي مسبقا ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."Drox:DevelopersQ:Groups",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله مطور ثانوي").Reply,"md",true)  
+Redis:srem(TheDrox.."Drox:DevelopersQ:Groups",msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله مطور ثانوي").Reply,"md",true)  
 end
 end
 if TextMsg == 'مطور' then
@@ -4390,11 +4390,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if not Redis:sismember(TheDrox.."Drox:Developers:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله مطور مسبقا ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."Drox:Developers:Groups",msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله مطور مسبقا ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."Drox:Developers:Groups",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله مطور ").Reply,"md",true)  
+Redis:srem(TheDrox.."Drox:Developers:Groups",msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله مطور ").Reply,"md",true)  
 end
 end
 if TextMsg == "مالك" then
@@ -4407,11 +4407,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if not Redis:sismember(TheDrox.."Drox:TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله مالك مسبقا ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."Drox:TheBasicsQ:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله مالك مسبقا ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."Drox:TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله مالك ").Reply,"md",true)  
+Redis:srem(TheDrox.."Drox:TheBasicsQ:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله مالك ").Reply,"md",true)  
 end
 end
 if TextMsg == "منشئ اساسي" then
@@ -4424,11 +4424,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if not Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله منشئ اساسي مسبقا ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله منشئ اساسي ").Reply,"md",true)  
+Redis:srem(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله منشئ اساسي ").Reply,"md",true)  
 end
 end
 if TextMsg == "منشئ" then
@@ -4441,11 +4441,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if not Redis:sismember(TheDrox.."Drox:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من المنشئين مسبقا ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."Drox:Originators:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من المنشئين مسبقا ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."Drox:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من المنشئين ").Reply,"md",true)  
+Redis:srem(TheDrox.."Drox:Originators:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من المنشئين ").Reply,"md",true)  
 end
 end
 if TextMsg == "مدير" then
@@ -4458,11 +4458,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if not Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من المدراء مسبقا ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من المدراء مسبقا ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."Drox:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من المدراء ").Reply,"md",true)  
+Redis:srem(TheDrox.."Drox:Managers:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من المدراء ").Reply,"md",true)  
 end
 end
 if TextMsg == "ادمن" then
@@ -4475,75 +4475,75 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if not Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من الادمنيه مسبقا ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من الادمنيه مسبقا ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من الادمنيه ").Reply,"md",true)  
+Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من الادمنيه ").Reply,"md",true)  
 end
 end
 if TextMsg == "كانسر" then
-if not Redis:sismember(TheDrox.."wtka:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من الكانسريه قبل فتره 😞 ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."wtka:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من الكانسريه قبل فتره 😞 ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."wtka:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من الكانسريه بعد ما صار مرتب ولطيف 💝 ").Reply,"md",true)  
+Redis:srem(TheDrox.."wtka:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من الكانسريه بعد ما صار مرتب ولطيف 💝 ").Reply,"md",true)  
 end
 end
 if TextMsg == "مطي" or text == "حمار" then
-if not Redis:sismember(TheDrox.."mar:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙الحمار هاذا بطل يصفن ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."mar:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙الحمار هاذا بطل يصفن ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."mar:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙نزلنا من الحمير تعال رجع العربانه 🙁 ").Reply,"md",true)  
+Redis:srem(TheDrox.."mar:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙نزلنا من الحمير تعال رجع العربانه 🙁 ").Reply,"md",true)  
 end
 end
 if TextMsg == "قرد" then
-if not Redis:sismember(TheDrox.."2rd:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙بطل يكمز على الكروب الله هدا 😫 ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."2rd:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙بطل يكمز على الكروب الله هدا 😫 ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."2rd:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من قايمه القرود تعال نزلو من الشجره😂🌚 ").Reply,"md",true)  
+Redis:srem(TheDrox.."2rd:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من قايمه القرود تعال نزلو من الشجره😂🌚 ").Reply,"md",true)  
 end
 end
 if TextMsg == "كلب" or text == "جلب" then
-if not Redis:sismember(TheDrox.."klb:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙خلاص هل چلب لح بل نباح ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."klb:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙خلاص هل چلب لح بل نباح ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."klb:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من الكلاب خل يرجع العضمه").Reply,"md",true)  
+Redis:srem(TheDrox.."klb:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من الكلاب خل يرجع العضمه").Reply,"md",true)  
 end
 end
 if TextMsg == "ملك" then
-if not Redis:sismember(TheDrox.."smb:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙نزللنا من زمان بعد ما صار لوكي").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."smb:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙نزللنا من زمان بعد ما صار لوكي").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."smb:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من الملك لازم ياخد دروس رجوله😂🌚 ").Reply,"md",true)  
+Redis:srem(TheDrox.."smb:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من الملك لازم ياخد دروس رجوله😂🌚 ").Reply,"md",true)  
 end
 end
 if TextMsg == "لطيف" then
-if not Redis:sismember(TheDrox.."kholat:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من اللطيفين قبل هسه 🙃 ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."kholat:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من اللطيفين قبل هسه 🙃 ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."kholat:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله لطيف بلكروب بسبب التكبر 🙂💔 ").Reply,"md",true)  
+Redis:srem(TheDrox.."kholat:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله لطيف بلكروب بسبب التكبر 🙂💔 ").Reply,"md",true)  
 end
 end
 if TextMsg == "غبي" or text == "اثول" then
-if not Redis:sismember(TheDrox.."8by:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙يارب تعقل وتبقا ذكي 😂   🙃 ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."8by:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙يارب تعقل وتبقا ذكي 😂   🙃 ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."8by:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙خير اهو شغل مخك اهو نزلناك من الاغبياء🌚 ").Reply,"md",true)  
+Redis:srem(TheDrox.."8by:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙خير اهو شغل مخك اهو نزلناك من الاغبياء🌚 ").Reply,"md",true)  
 end
 end
 if TextMsg == "لوكي" then
-if not Redis:sismember(TheDrox.."3ra:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙اعقل بقا 😂   🙃 ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."3ra:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙اعقل بقا 😂   🙃 ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."3ra:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙ماعرف الناس راح تحترمك لو لا  ").Reply,"md",true)  
+Redis:srem(TheDrox.."3ra:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙ماعرف الناس راح تحترمك لو لا  ").Reply,"md",true)  
 end
 end
 if TextMsg == "مميز" then
@@ -4556,11 +4556,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if not Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من المميزين مسبقا ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من المميزين مسبقا ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من المميزبن ").Reply,"md",true)  
+Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من المميزبن ").Reply,"md",true)  
 end
 end
 end
@@ -4873,7 +4873,7 @@ end
 if text and text:match("^رفع (.*)$") and msg.reply_to_message_id ~= 0 then
 local TextMsg = text:match("^رفع (.*)$")
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
@@ -4890,11 +4890,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if Redis:sismember(TheDrox.."Drox:DevelopersQ:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته مطور بنجاح ✓ ثانوي مسبقا ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."Drox:DevelopersQ:Groups",msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته مطور بنجاح ✓ ثانوي مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."Drox:DevelopersQ:Groups",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته مطور بنجاح ✓ ثانوي").Reply,"md",true)  
+Redis:sadd(TheDrox.."Drox:DevelopersQ:Groups",msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته مطور بنجاح ✓ ثانوي").Reply,"md",true)  
 end
 end
 if TextMsg == 'مطور' then
@@ -4907,11 +4907,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if Redis:sismember(TheDrox.."Drox:Developers:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته مطور بنجاح ✓ مسبقا ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."Drox:Developers:Groups",msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته مطور بنجاح ✓ مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."Drox:Developers:Groups",Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته مطور بنجاح ✓ ").Reply,"md",true)  
+Redis:sadd(TheDrox.."Drox:Developers:Groups",msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته مطور بنجاح ✓ ").Reply,"md",true)  
 end
 end
 if TextMsg == "مالك" then
@@ -4924,11 +4924,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if Redis:sismember(TheDrox.."Drox:TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته مالك مسبقا ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."Drox:TheBasicsQ:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته مالك مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."Drox:TheBasicsQ:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته مالك ").Reply,"md",true)  
+Redis:sadd(TheDrox.."Drox:TheBasicsQ:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته مالك ").Reply,"md",true)  
 end
 end
 if TextMsg == "منشئ اساسي" then
@@ -4941,11 +4941,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id," ♡︙تم ترقيته منشئ اساسي بنجاح ✓").Reply,"md",true)  
+if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id," ♡︙تم ترقيته منشئ اساسي بنجاح ✓").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته منشئ اساسي بنجاح ✓").Reply,"md",true)  
+Redis:sadd(TheDrox.."Drox:TheBasics:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته منشئ اساسي بنجاح ✓").Reply,"md",true)  
 end
 end
 if TextMsg == "منشئ" then
@@ -4958,11 +4958,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if Redis:sismember(TheDrox.."Drox:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته منشئ بنجاح ✓ مسبقا ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."Drox:Originators:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته منشئ بنجاح ✓ مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."Drox:Originators:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته منشئ بنجاح ✓ ").Reply,"md",true)  
+Redis:sadd(TheDrox.."Drox:Originators:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته منشئ بنجاح ✓ ").Reply,"md",true)  
 end
 end
 if TextMsg == "مدير" then
@@ -4975,11 +4975,11 @@ local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
 local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لاتستطيع استخدام البوت !\n⌔︰عليك الاشتراك في القناة اولاً :")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
-if Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته مدير مسبقآ ✓   ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته مدير مسبقآ ✓   ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."Drox:Managers:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته مدير بنجاح ✓  ").Reply,"md",true)  
+Redis:sadd(TheDrox.."Drox:Managers:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته مدير بنجاح ✓  ").Reply,"md",true)  
 end
 end
 if TextMsg == "ادمن" then
@@ -4995,11 +4995,11 @@ return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, fal
 if not msg.Originators and not Redis:get(TheDrox.."Drox:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"♡︙تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
-if Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته ادمن مسبقآ ✓   ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته ادمن مسبقآ ✓   ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."Drox:Addictive:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته ادمن بنجاح ✓  ").Reply,"md",true)  
+Redis:sadd(TheDrox.."Drox:Addictive:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته ادمن بنجاح ✓  ").Reply,"md",true)  
 end
 end
 if TextMsg == "كانسر" then
@@ -5008,11 +5008,11 @@ local chinfo = Redis:get(TheDrox.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n♡︙عمري اشترك ثم استخدم الامر❗️*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(TheDrox.."wtka:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙هاذا عابر مرحله التخلف ولمغثه ب100 مره 🤔😂 ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."wtka:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙هاذا عابر مرحله التخلف ولمغثه ب100 مره 🤔😂 ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."wtka:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم رفعه كانسر بسبب تأثره بلتيك توك وتومس شلبي 😌  ").Reply,"md",true)  
+Redis:sadd(TheDrox.."wtka:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم رفعه كانسر بسبب تأثره بلتيك توك وتومس شلبي 😌  ").Reply,"md",true)  
 end
 end
 if TextMsg == "مطي" then
@@ -5021,11 +5021,11 @@ local chinfo = Redis:get(TheDrox.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n♡︙عمري اشترك ثم استخدم الامر❗️*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(TheDrox.."mar:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙نزلناه من زمان بطل يصفن 🥲 ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."mar:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙نزلناه من زمان بطل يصفن 🥲 ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."mar:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم رفعه مطي خل يستلم العربانه 😂  ").Reply,"md",true)  
+Redis:sadd(TheDrox.."mar:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم رفعه مطي خل يستلم العربانه 😂  ").Reply,"md",true)  
 end
 end
 if TextMsg == "قرد" then
@@ -5034,11 +5034,11 @@ local chinfo = Redis:get(TheDrox.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n♡︙عمري اشترك ثم استخدم الامر❗️*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(TheDrox.."2rd:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙نزلناه من زمان من ع الشجره 😂 😂 ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."2rd:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙نزلناه من زمان من ع الشجره 😂 😂 ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."2rd:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙رفعته الك قرد بل كروب انطي موز 😂😂  ").Reply,"md",true)  
+Redis:sadd(TheDrox.."2rd:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙رفعته الك قرد بل كروب انطي موز 😂😂  ").Reply,"md",true)  
 end
 end
 if TextMsg == "كلب" then
@@ -5047,11 +5047,11 @@ local chinfo = Redis:get(TheDrox.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n♡︙عمري اشترك ثم استخدم الامر❗️*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(TheDrox.."klb:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙هاذا بس ينبح هنا ويلح ميتوب 👊🏻 ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."klb:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙هاذا بس ينبح هنا ويلح ميتوب 👊🏻 ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."klb:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم رفعه كلب خليه يجي ياخد عضمه😂  ").Reply,"md",true)  
+Redis:sadd(TheDrox.."klb:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم رفعه كلب خليه يجي ياخد عضمه😂  ").Reply,"md",true)  
 end
 end
 if TextMsg == "ملك" then
@@ -5060,11 +5060,11 @@ local chinfo = Redis:get(TheDrox.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n♡︙عمري اشترك ثم استخدم الامر❗️*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(TheDrox.."smb:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"كفو تستاهل التاج هيه كوه ؟").Reply,"md",true)  
+if Redis:sismember(TheDrox.."smb:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"كفو تستاهل التاج هيه كوه ؟").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."smb:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙رفعنا كنك يبا هلشخص اسطوره  ").Reply,"md",true)  
+Redis:sadd(TheDrox.."smb:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙رفعنا كنك يبا هلشخص اسطوره  ").Reply,"md",true)  
 end
 end
 if TextMsg == "لطيف" then
@@ -5073,11 +5073,11 @@ local chinfo = Redis:get(TheDrox.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n♡︙عمري اشترك ثم استخدم الامر❗️*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(TheDrox.."kholat:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙محطوط ف قايمة اللطيفين من  وكت 😂 ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."kholat:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙محطوط ف قايمة اللطيفين من  وكت 😂 ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."kholat:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم رفعه لطيف بلكروب من كد ما رائع 🥺💝  ").Reply,"md",true)  
+Redis:sadd(TheDrox.."kholat:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم رفعه لطيف بلكروب من كد ما رائع 🥺💝  ").Reply,"md",true)  
 end
 end
 if TextMsg == "غبي" then
@@ -5086,11 +5086,11 @@ local chinfo = Redis:get(TheDrox.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n♡︙عمري اشترك ثم استخدم الامر❗️*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(TheDrox.."8by:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙هو كده كده محطوط ف قايمة الاغبية  😂 😂 ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."8by:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙هو كده كده محطوط ف قايمة الاغبية  😂 😂 ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."8by:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم رفعه غبي المجموعة  😂  ").Reply,"md",true)  
+Redis:sadd(TheDrox.."8by:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم رفعه غبي المجموعة  😂  ").Reply,"md",true)  
 end
 end
 if TextMsg == "لوكي" then
@@ -5099,11 +5099,11 @@ local chinfo = Redis:get(TheDrox.."ch:admin")
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = ''..Redis:get(TheDrox..'Drox:Channel:Join:Name')..'', url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')}, },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n♡︙عمري اشترك ثم استخدم الامر❗️*',"md",false, false, false, false, reply_markup)
 end
-if Redis:sismember(TheDrox.."3ra:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙محد يحترمه من كد ما لوكي  ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."3ra:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙محد يحترمه من كد ما لوكي  ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."3ra:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم رفعه لوكي بلكروب 🙂😂  ").Reply,"md",true)  
+Redis:sadd(TheDrox.."3ra:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم رفعه لوكي بلكروب 🙂😂  ").Reply,"md",true)  
 end
 end
 if TextMsg == "مميز" then
@@ -5119,11 +5119,11 @@ return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, fal
 if not msg.Originators and not Redis:get(TheDrox.."Drox:Status:SetId"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"♡︙تم تعطيل (الرفع) من قبل المنشئين","md",true)
 end 
-if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته مميز مسبقآ ✓   ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته مميز مسبقآ ✓   ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم ترقيته مميز بنجاح ✓  ").Reply,"md",true)  
+Redis:sadd(TheDrox.."Drox:Distinguished:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم ترقيته مميز بنجاح ✓  ").Reply,"md",true)  
 end
 end
 end
@@ -5284,7 +5284,7 @@ end
 end
 if text == "تزوجيني" or text == "نتزوج" then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local Jabwa = LuaTele.getUser(Message_Reply.sender.user_id)
+local Jabwa = LuaTele.getUser(msg.sender_id.user_id)
 local bain = LuaTele.getUser(msg.sender_id.user_id)
 if Jabwa.first_name then
 TheDroxusername = '*طلب ↫ *['..bain.first_name..'](tg://user?id='..bain.id..')*\nالزواج من ↫ *['..Jabwa.first_name..'](tg://user?id='..Jabwa.id..')*\nهل العروسه مواقفه علي هذا\n*'
@@ -5295,7 +5295,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '• موافقه', data = Message_Reply.sender.user_id..'/zog1'},{text = '• مو موافقه', data = Message_Reply.sender.user_id..'/zog2'}, 
+{text = '• موافقه', data = msg.sender_id.user_id..'/zog1'},{text = '• مو موافقه', data = msg.sender_id.user_id..'/zog2'}, 
 },
 }
 }
@@ -5303,22 +5303,22 @@ return LuaTele.sendText(msg_chat_id,msg_id,TheDroxusername,"md",false, false, fa
 end
 if text == "زواج" or text == "رفع زوجتي" or text == "رفع زوجي" and msg.reply_to_message_id ~= 0 then
   local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-  local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-  if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender_id.user_id) then
+  local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
+  if tonumber(msg.sender_id.user_id) == tonumber(msg.sender_id.user_id) then
     return LuaTele.sendText(msg_chat_id,msg_id,"انت غبي  تريد تزوج نفسك ؟ شون تخلف جهال 😂💔 ؟!!","md",true)  
   end
-  if tonumber(Message_Reply.sender.user_id) == tonumber(TheDrox) then
+  if tonumber(msg.sender_id.user_id) == tonumber(TheDrox) then
     return LuaTele.sendText(msg_chat_id,msg_id,"ابعد عني يحيحان ","md",true)  
   end
-  if Redis:sismember(TheDrox..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
+  if Redis:sismember(TheDrox..msg_chat_id.."zwgat:",msg.sender_id.user_id) then
 local rd_mtzwga = {"اسفه عمري متزوجه","متزوجه يابا لاتلح 😒🔪","بابا متزوجه شون زوجه الك 🥺💔","للاسف متزوجه بس  لو مستعجل شوف واحده تانيه كروب متروس صاكات","😒🔪 البنيه مزوجه دعبل منا"}
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
 else local rd_zwag = {"تم زواجك منه وبارك الله لكم وعليكم 💔💕","لولولولويي تم الزواج عقبال العيال بقا 💃💃","مبروك تزوجتها 💃وخلصنا","تم زواجكم... ودا رقمي اذ العريس معرف شيسوي 012345..","الزواج تم اتفضلو اعملو احلا واحد هيهيهي"}
-    if Redis:sismember(TheDrox..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
-    Redis:srem(TheDrox..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
+    if Redis:sismember(TheDrox..msg_chat_id.."mutlqat:",msg.sender_id.user_id) then 
+    Redis:srem(TheDrox..msg_chat_id.."mutlqat:",msg.sender_id.user_id)
     end
-    Redis:sadd(TheDrox..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) 
-    return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
+    Redis:sadd(TheDrox..msg_chat_id.."zwgat:",msg.sender_id.user_id) 
+    return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
     end
 end
 
@@ -5341,20 +5341,20 @@ return LuaTele.sendText(msg_chat_id,msg_id,zwga_list,"md",true)
 end
 if text == "طلاق" or text == "تنزيل زوجتي" or text == "تنزيل زوجي" and msg.reply_to_message_id ~= 0 then
   local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-  local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-  if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender_id.user_id) then
+  local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
+  if tonumber(msg.sender_id.user_id) == tonumber(msg.sender_id.user_id) then
     return LuaTele.sendText(msg_chat_id,msg_id,"احا هو انت كنت متزوج نفسك حته تطلق 💔😂","md",true)  
   end
-  if tonumber(Message_Reply.sender.user_id) == tonumber(TheDrox) then
+  if tonumber(msg.sender_id.user_id) == tonumber(TheDrox) then
     return LuaTele.sendText(msg_chat_id,msg_id,"هو احنا كنا متزوجين يروح خالتك حته نطلق 💔😒","md",true)  
   end
-  if Redis:sismember(TheDrox..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
-    Redis:srem(TheDrox..msg_chat_id.."zwgat:",Message_Reply.sender.user_id)
-    Redis:sadd(TheDrox..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) 
+  if Redis:sismember(TheDrox..msg_chat_id.."zwgat:",msg.sender_id.user_id) then
+    Redis:srem(TheDrox..msg_chat_id.."zwgat:",msg.sender_id.user_id)
+    Redis:sadd(TheDrox..msg_chat_id.."mutlqat:",msg.sender_id.user_id) 
     local rd_tmtlaq = {"تم طلاقكم للاسف","تم الطلاق ام عباس تريد تعرف اتطلقتو اليش ؟","تم الطلاق الئن العريس ميعرف 😒🔪","تم الطلاق الئن في نور دخلت بنصهم","تم الطلاق هذا رقمي لو حبيتي نتكلم 💵💔 01234..."}
-    return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tmtlaq[math.random(#rd_tmtlaq)]).Reply,"md",true)  
+    return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,rd_tmtlaq[math.random(#rd_tmtlaq)]).Reply,"md",true)  
     else local rd_tlaq = {"ما متزوجه حته تطلق اصلا 🔪😒","عانز محد يتزوجها 💔😂","محد يقلدله قبل 💔😂"}
-    return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_tlaq[math.random(#rd_tlaq)]).Reply,"md",true)  
+    return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,rd_tlaq[math.random(#rd_tlaq)]).Reply,"md",true)  
     end
 end
 if text == "تاك للمطلقات" or text == "المطلقات" then
@@ -7617,15 +7617,15 @@ if not msg.Originators and not Redis:get(TheDrox.."Drox:Status:BanId"..msg_chat_
 return LuaTele.sendText(msg_chat_id,msg_id,"♡︙تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." } *","md",true)  
+if StatusCanOrNotCan(msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,msg.sender_id.user_id).." } *","md",true)  
 end
 if TimeKed[2] == 'يوم' then
 Time_Restrict = TimeKed[1]:match('(%d+)')
@@ -7639,8 +7639,8 @@ if TimeKed[2] == 'دقيقه' then
 Time_Restrict = TimeKed[1]:match('(%d+)')
 Time = Time_Restrict * 60
 end
-LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,0,0,0,0,0,0,0,0,tonumber(msg.date+Time)})
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تقييده في المجموعه \n♡︙لمدة : "..TimeKed[1]..' '..TimeKed[2]).Reply,"md",true)  
+LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'restricted',{1,0,0,0,0,0,0,0,0,tonumber(msg.date+Time)})
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تقييده في المجموعه \n♡︙لمدة : "..TimeKed[1]..' '..TimeKed[2]).Reply,"md",true)  
 end
 
 if text and text:match('^تقييد (%d+) (.*) (%d+)$') then
@@ -7818,22 +7818,22 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if Controllerbanall(msg_chat_id,Message_Reply.sender.user_id) == true then 
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." } *","md",true)  
+if Controllerbanall(msg_chat_id,msg.sender_id.user_id) == true then 
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,msg.sender_id.user_id).." } *","md",true)  
 end
-if Redis:sismember(TheDrox.."Drox:BanAll:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
+if Redis:sismember(TheDrox.."Drox:BanAll:Groups",msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:sadd(TheDrox.."Drox:BanAll:Groups",Message_Reply.sender.user_id) 
-LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'banned',0)
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم حظره عام من المجموعات ").Reply,"md",true)  
+Redis:sadd(TheDrox.."Drox:BanAll:Groups",msg.sender_id.user_id) 
+LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'banned',0)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم حظره عام من المجموعات ").Reply,"md",true)  
 end
 end
 if text == ('الغاء العام') and msg.reply_to_message_id ~= 0 then
@@ -7847,19 +7847,19 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if not Redis:sismember(TheDrox.."Drox:BanAll:Groups",Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم الغاء حظره عام من المجموعات مسبقا ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."Drox:BanAll:Groups",msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم الغاء حظره عام من المجموعات مسبقا ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."Drox:BanAll:Groups",Message_Reply.sender.user_id) 
-LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,1,1,1,1,1,1,1,1})
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم الغاء حظره عام من المجموعات  ").Reply,"md",true)  
+Redis:srem(TheDrox.."Drox:BanAll:Groups",msg.sender_id.user_id) 
+LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'restricted',{1,1,1,1,1,1,1,1,1})
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم الغاء حظره عام من المجموعات  ").Reply,"md",true)  
 end
 end
 if text == ('حظر') and msg.reply_to_message_id ~= 0 then
@@ -7882,30 +7882,30 @@ if not msg.Originators and not Redis:get(TheDrox.."Drox:Status:BanId"..msg_chat_
 return LuaTele.sendText(msg_chat_id,msg_id,"♡︙تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." } *","md",true)  
+if StatusCanOrNotCan(msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,msg.sender_id.user_id).." } *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '- الغاء الحظر', data = msg.sender_id.user_id..'/unbanktmkid@'..Message_Reply.sender.user_id},
+{text = '- الغاء الحظر', data = msg.sender_id.user_id..'/unbanktmkid@'..msg.sender_id.user_id},
 },
 }
 }
-if Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم حظره من المجموعه مسبقآ ✓ ").Reply,"md",true, false, false, false, reply_markup)
+if Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم حظره من المجموعه مسبقآ ✓ ").Reply,"md",true, false, false, false, reply_markup)
 else
-Redis:sadd(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'banned',0)
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم حظره من المجموعه ✓ ").Reply,"md",true, false, false, false, reply_markup)
+Redis:sadd(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,msg.sender_id.user_id) 
+LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'banned',0)
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم حظره من المجموعه ✓ ").Reply,"md",true, false, false, false, reply_markup)
 end
 end
 if text == ('الغاء حظر') and msg.reply_to_message_id ~= 0 then
@@ -7922,19 +7922,19 @@ if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if not Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم الغاء حظره من المجموعه مسبقا ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم الغاء حظره من المجموعه مسبقا ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,1,1,1,1,1,1,1,1})
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم الغاء حظره من المجموعه  ").Reply,"md",true)  
+Redis:srem(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,msg.sender_id.user_id) 
+LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'restricted',{1,1,1,1,1,1,1,1,1})
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم الغاء حظره من المجموعه  ").Reply,"md",true)  
 end
 end
 
@@ -7952,29 +7952,29 @@ if GetInfoBot(msg).Delmsg == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*♡︙البوت ليس لديه صلاحيه حذف الرسائل* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if StatusSilent(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." } *","md",true)  
+if StatusSilent(msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,msg.sender_id.user_id).." } *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '- الغاء الكتم', data = msg.sender_id.user_id..'/unbanktmkid@'..Message_Reply.sender.user_id},
+{text = '- الغاء الكتم', data = msg.sender_id.user_id..'/unbanktmkid@'..msg.sender_id.user_id},
 },
 }
 }
-if Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم كتمه في المجموعه مسبقا ").Reply,"md",true, false, false, false, reply_markup)
+if Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم كتمه في المجموعه مسبقا ").Reply,"md",true, false, false, false, reply_markup)
 else
-Redis:sadd(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم كتمه في المجموعه  ").Reply,"md",true, false, false, false, reply_markup)
+Redis:sadd(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم كتمه في المجموعه  ").Reply,"md",true, false, false, false, reply_markup)
 end
 end
 if text == ('الغاء كتم') and msg.reply_to_message_id ~= 0 then
@@ -7988,18 +7988,18 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if not Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم الغاء كتمه من المجموعه ").Reply,"md",true)  
+if not Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم الغاء كتمه من المجموعه ").Reply,"md",true)  
 else
-Redis:srem(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم الغاء كتمه من المجموعه ").Reply,"md",true)  
+Redis:srem(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,msg.sender_id.user_id) 
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم الغاء كتمه من المجموعه ").Reply,"md",true)  
 end
 end
 
@@ -8023,26 +8023,26 @@ if not msg.Originators and not Redis:get(TheDrox.."Drox:Status:BanId"..msg_chat_
 return LuaTele.sendText(msg_chat_id,msg_id,"♡︙تم تعطيل (الحظر : الطرد : التقييد) من قبل المدراء","md",true)
 end 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." } *","md",true)  
+if StatusCanOrNotCan(msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,msg.sender_id.user_id).." } *","md",true)  
 end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '- الغاء الامر', data = msg.sender_id.user_id..'/unbanktmkid@'..Message_Reply.sender.user_id},
+{text = '- الغاء الامر', data = msg.sender_id.user_id..'/unbanktmkid@'..msg.sender_id.user_id},
 },
 }
 }
-LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,0,0,0,0,0,0,0,0})
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تقييده في المجموعه ").Reply,"md",true, false, false, false, reply_markup)
+LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'restricted',{1,0,0,0,0,0,0,0,0})
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تقييده في المجموعه ").Reply,"md",true, false, false, false, reply_markup)
 end
 
 if text == ('الغاء التقييد') and msg.reply_to_message_id ~= 0 then
@@ -8062,15 +8062,15 @@ if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*♡︙البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,1,1,1,1,1,1,1})
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم الغاء تقييده من المجموعه").Reply,"md",true)  
+LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'restricted',{1,1,1,1,1,1,1,1})
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم الغاء تقييده من المجموعه").Reply,"md",true)  
 end
 
 if text == ('طرد') and msg.reply_to_message_id ~= 0 then
@@ -8089,19 +8089,19 @@ if GetInfoBot(msg).BanUser == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*♡︙البوت ليس لديه صلاحيه حظر المستخدمين* ',"md",true)  
 end 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,Message_Reply.sender.user_id).." } *","md",true)  
+if StatusCanOrNotCan(msg_chat_id,msg.sender_id.user_id) then
+return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,msg.sender_id.user_id).." } *","md",true)  
 end
-LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'banned',0)
---LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,1,1,1,1,1,1,1,1})
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم طرده من المجموعه ✓ ").Reply,"md",true)  
+LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'banned',0)
+--LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'restricted',{1,1,1,1,1,1,1,1,1})
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم طرده من المجموعه ✓ ").Reply,"md",true)  
 end
 
 if text and text:match('^حظر عام (%d+)$') then
@@ -11079,91 +11079,91 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "⌔︰عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-if Redis:sismember(TheDrox.."Drox:Developers:Groups",Message_Reply.sender.user_id) then
+if Redis:sismember(TheDrox.."Drox:Developers:Groups",msg.sender_id.user_id) then
 dev = "المطور ،" else dev = "" end
-if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg_chat_id, Message_Reply.sender.user_id) then
+if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg_chat_id, msg.sender_id.user_id) then
 crr = "منشئ اساسي ،" else crr = "" end
-if Redis:sismember(TheDrox..'Drox:Originators:Group'..msg_chat_id, Message_Reply.sender.user_id) then
+if Redis:sismember(TheDrox..'Drox:Originators:Group'..msg_chat_id, msg.sender_id.user_id) then
 cr = "منشئ ،" else cr = "" end
-if Redis:sismember(TheDrox..'Drox:Managers:Group'..msg_chat_id, Message_Reply.sender.user_id) then
+if Redis:sismember(TheDrox..'Drox:Managers:Group'..msg_chat_id, msg.sender_id.user_id) then
 own = "مدير ،" else own = "" end
-if Redis:sismember(TheDrox..'Drox:Addictive:Group'..msg_chat_id, Message_Reply.sender.user_id) then
+if Redis:sismember(TheDrox..'Drox:Addictive:Group'..msg_chat_id, msg.sender_id.user_id) then
 mod = "ادمن ،" else mod = "" end
-if Redis:sismember(TheDrox..'Drox:Distinguished:Group'..msg_chat_id, Message_Reply.sender.user_id) then
+if Redis:sismember(TheDrox..'Drox:Distinguished:Group'..msg_chat_id, msg.sender_id.user_id) then
 vip = "مميز ،" else vip = ""
 end
-if The_ControllerAll(Message_Reply.sender.user_id) == true then
+if The_ControllerAll(msg.sender_id.user_id) == true then
 Rink = 1
-elseif Redis:sismember(TheDrox.."Drox:Developers:Groups",Message_Reply.sender.user_id)  then
+elseif Redis:sismember(TheDrox.."Drox:Developers:Groups",msg.sender_id.user_id)  then
 Rink = 2
-elseif Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg_chat_id, Message_Reply.sender.user_id) then
+elseif Redis:sismember(TheDrox.."Drox:TheBasics:Group"..msg_chat_id, msg.sender_id.user_id) then
 Rink = 3
-elseif Redis:sismember(TheDrox.."Drox:Originators:Group"..msg_chat_id, Message_Reply.sender.user_id) then
+elseif Redis:sismember(TheDrox.."Drox:Originators:Group"..msg_chat_id, msg.sender_id.user_id) then
 Rink = 4
-elseif Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id, Message_Reply.sender.user_id) then
+elseif Redis:sismember(TheDrox.."Drox:Managers:Group"..msg_chat_id, msg.sender_id.user_id) then
 Rink = 5
-elseif Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id, Message_Reply.sender.user_id) then
+elseif Redis:sismember(TheDrox.."Drox:Addictive:Group"..msg_chat_id, msg.sender_id.user_id) then
 Rink = 6
-elseif Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, Message_Reply.sender.user_id) then
+elseif Redis:sismember(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, msg.sender_id.user_id) then
 Rink = 7
 else
 Rink = 8
 end
-if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender.user_id) == false then
+if StatusCanOrNotCan(msg_chat_id,msg.sender_id.user_id) == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙ليس لديه اي رتبه هنا *","md",true)  
 end
 if msg.ControllerBot then
 if Rink == 1 or Rink < 1 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(TheDrox.."Drox:Developers:Groups",Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:TheBasics:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Originators:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Managers:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, Message_Reply.sender.user_id)
+Redis:srem(TheDrox.."Drox:Developers:Groups",msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:TheBasics:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Originators:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Managers:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, msg.sender_id.user_id)
 elseif msg.Developers then
 if Rink == 2 or Rink < 2 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(TheDrox.."Drox:TheBasics:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Originators:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Managers:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, Message_Reply.sender.user_id)
+Redis:srem(TheDrox.."Drox:TheBasics:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Originators:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Managers:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, msg.sender_id.user_id)
 elseif msg.TheBasics then
 if Rink == 3 or Rink < 3 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(TheDrox.."Drox:Originators:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Managers:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, Message_Reply.sender.user_id)
+Redis:srem(TheDrox.."Drox:Originators:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Managers:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, msg.sender_id.user_id)
 elseif msg.Originators then
 if Rink == 4 or Rink < 4 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(TheDrox.."Drox:Managers:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, Message_Reply.sender.user_id)
+Redis:srem(TheDrox.."Drox:Managers:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, msg.sender_id.user_id)
 elseif msg.Managers then
 if Rink == 5 or Rink < 5 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id, Message_Reply.sender.user_id)
-Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, Message_Reply.sender.user_id)
+Redis:srem(TheDrox.."Drox:Addictive:Group"..msg_chat_id, msg.sender_id.user_id)
+Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, msg.sender_id.user_id)
 elseif msg.Addictive then
 if Rink == 6 or Rink < 6 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙لا يمكن تنزيل رتبه نفس رتبتك ولا اعلى من رتبتك *","md",true)  
 end
-Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, Message_Reply.sender.user_id)
+Redis:srem(TheDrox.."Drox:Distinguished:Group"..msg_chat_id, msg.sender_id.user_id)
 end
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙تم تنزيل الشخص من الرتب التاليه { "..dev..""..crr..""..cr..""..own..""..mod..""..vip.." *}","md",true)  
 end
@@ -11287,16 +11287,16 @@ if GetInfoBot(msg).SetAdmin == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*♡︙البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-https.request("https://api.telegram.org/bot" .. Token .. "/promoteChatMember?chat_id=" .. msg_chat_id .. "&user_id=" ..Message_Reply.sender.user_id.."&can_invite_users=True")
-LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم وضع له لقب : "..CustomTitle).Reply,"md",true)  
-https.request("https://api.telegram.org/bot"..Token.."/setChatAdministratorCustomTitle?chat_id="..msg_chat_id.."&user_id="..Message_Reply.sender.user_id.."&custom_title="..CustomTitle)
+https.request("https://api.telegram.org/bot" .. Token .. "/promoteChatMember?chat_id=" .. msg_chat_id .. "&user_id=" ..msg.sender_id.user_id.."&can_invite_users=True")
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم وضع له لقب : "..CustomTitle).Reply,"md",true)  
+https.request("https://api.telegram.org/bot"..Token.."/setChatAdministratorCustomTitle?chat_id="..msg_chat_id.."&user_id="..msg.sender_id.user_id.."&custom_title="..CustomTitle)
 end
 if text and text:match('^ضع لقب @(%S+) (.*)$') then
 local UserName = {text:match('^ضع لقب @(%S+) (.*)$')}
@@ -11354,14 +11354,14 @@ if GetInfoBot(msg).SetAdmin == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*♡︙البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-local SetAdmin = LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'administrator',{1 ,1, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, ''})
+local SetAdmin = LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'administrator',{1 ,1, 0, 0, 0, 0, 0 , 0, 0, 0, 0, 0, ''})
 if SetAdmin.code == 3 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙لا يمكنني رفعه ليس لدي صلاحيات *","md",true)  
 end
@@ -11369,7 +11369,7 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '- تعديل الصلاحيات ', data = msg.sender_id.user_id..'/groupNumseteng//'..Message_Reply.sender.user_id}, 
+{text = '- تعديل الصلاحيات ', data = msg.sender_id.user_id..'/groupNumseteng//'..msg.sender_id.user_id}, 
 },
 }
 }
@@ -11433,21 +11433,21 @@ if GetInfoBot(msg).SetAdmin == false then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*♡︙البوت ليس لديه صلاحيه اضافة مشرفين* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-local SetAdmin = LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'administrator',{0 ,0, 0, 0, 0, 0, 0 ,0, 0})
+local SetAdmin = LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'administrator',{0 ,0, 0, 0, 0, 0, 0 ,0, 0})
 if SetAdmin.code == 400 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙لست انا من قام برفعه *","md",true)  
 end
 if SetAdmin.code == 3 then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙لا يمكنني تنزيله ليس لدي صلاحيات *","md",true)  
 end
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم تنزيله من المشرفين ").Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم تنزيله من المشرفين ").Reply,"md",true)  
 end
 if text and text:match('^تنزيل مشرف @(%S+)$') then
 local UserName = text:match('^تنزيل مشرف @(%S+)$')
@@ -12310,7 +12310,7 @@ return false
 end
 if text == 'كشف القيود' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
@@ -12329,23 +12329,23 @@ return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, fal
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
-local GetMemberStatus = LuaTele.getChatMember(msg_chat_id,Message_Reply.sender.user_id).status
+local GetMemberStatus = LuaTele.getChatMember(msg_chat_id,msg.sender_id.user_id).status
 if GetMemberStatus.luatele == "chatMemberStatusRestricted" then
 Restricted = 'مقيد'
 else
 Restricted = 'غير مقيد'
 end
-if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).BanAll == true then
+if Statusrestricted(msg_chat_id,msg.sender_id.user_id).BanAll == true then
 BanAll = 'محظور عام'
 else
 BanAll = 'غير محظور عام'
 end
-if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).BanGroup == true then
+if Statusrestricted(msg_chat_id,msg.sender_id.user_id).BanGroup == true then
 BanGroup = 'محظور'
 else
 BanGroup = 'غير محظور'
 end
-if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).SilentGroup == true then
+if Statusrestricted(msg_chat_id,msg.sender_id.user_id).SilentGroup == true then
 SilentGroup = 'مكتوم'
 else
 SilentGroup = 'غير مكتوم'
@@ -12401,7 +12401,7 @@ LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙معلومات الكشف \n♡┄
 end
 if text == 'رفع القيود' and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
@@ -12420,28 +12420,28 @@ return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, fal
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n*♡︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
-local GetMemberStatus = LuaTele.getChatMember(msg_chat_id,Message_Reply.sender.user_id).status
+local GetMemberStatus = LuaTele.getChatMember(msg_chat_id,msg.sender_id.user_id).status
 if GetMemberStatus.luatele == "chatMemberStatusRestricted" then
 Restricted = 'مقيد'
-LuaTele.setChatMemberStatus(msg.chat_id,Message_Reply.sender.user_id,'restricted',{1,1,1,1,1,1,1,1})
+LuaTele.setChatMemberStatus(msg.chat_id,msg.sender_id.user_id,'restricted',{1,1,1,1,1,1,1,1})
 else
 Restricted = ''
 end
-if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).BanAll == true and msg.ControllerBot then
+if Statusrestricted(msg_chat_id,msg.sender_id.user_id).BanAll == true and msg.ControllerBot then
 BanAll = 'محظور عام ,'
-Redis:srem(TheDrox.."Drox:BanAll:Groups",Message_Reply.sender.user_id) 
+Redis:srem(TheDrox.."Drox:BanAll:Groups",msg.sender_id.user_id) 
 else
 BanAll = ''
 end
-if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).BanGroup == true then
+if Statusrestricted(msg_chat_id,msg.sender_id.user_id).BanGroup == true then
 BanGroup = 'محظور ,'
-Redis:srem(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(TheDrox.."Drox:BanGroup:Group"..msg_chat_id,msg.sender_id.user_id) 
 else
 BanGroup = ''
 end
-if Statusrestricted(msg_chat_id,Message_Reply.sender.user_id).SilentGroup == true then
+if Statusrestricted(msg_chat_id,msg.sender_id.user_id).SilentGroup == true then
 SilentGroup = 'مكتوم ,'
-Redis:srem(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,Message_Reply.sender.user_id) 
+Redis:srem(TheDrox.."Drox:SilentGroup:Group"..msg_chat_id,msg.sender_id.user_id) 
 else
 SilentGroup = ''
 end
@@ -12937,54 +12937,54 @@ if Redis:get(TheDrox.."name bot type : ") == "photo" then
 
 if text == "هينه" or text == "هينهه" or text == "رزله" and msg.reply_to_message_id ~= 0 then
   local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-  local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-  if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender_id.user_id) then
+  local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
+  if tonumber(msg.sender_id.user_id) == tonumber(msg.sender_id.user_id) then
     return LuaTele.sendText(msg_chat_id,msg_id,"شو تمضرط اكو واحد يهين نفسه؟🤔👌🏿 ؟!!","md",true)  
   end
-  if tonumber(Message_Reply.sender.user_id) == tonumber(1342680269) then
+  if tonumber(msg.sender_id.user_id) == tonumber(1342680269) then
     return LuaTele.sendText(msg_chat_id,msg_id,"انجب الك حمار هذا مبرمج سورس ميلان 💛✌️","md",true)  
   end
-  if tonumber(Message_Reply.sender.user_id) == tonumber(msg.Creator) then
+  if tonumber(msg.sender_id.user_id) == tonumber(msg.Creator) then
     return LuaTele.sendText(msg_chat_id,msg_id,"شو تمضرط اكو واحد يهين المالك 🤔🏃‍♂️","md",true)  
   end
-  if tonumber(Message_Reply.sender.user_id) == tonumber(Sudo_Id) then
+  if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
     return LuaTele.sendText(msg_chat_id,msg_id,"‍لكك جرجف تريد اهين المطور لا اكتلكك وازربب على كبركك،💩🖐","md",true)  
   end
-  if Redis:sismember(TheDrox..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
+  if Redis:sismember(TheDrox..msg_chat_id.."zwgat:",msg.sender_id.user_id) then
 local rd_mtzwga ={"لكك جرجف  احترم اسيادكك لا اكتلكك وازربب على كبركك،💩🖐🏿","هشش لكك فاشل  لتضل تمسلت لا اخربط تضاريس وجهك جنه ابط عبده، 😖👌🏿","حبيبي  راح احاول احترمكك هالمره بلكي تبطل حيونه، 🤔🔪","دمشي لك  ينبوع الفشل مو زين ملفيك ونحجي وياك هي منبوذ 😏🖕🏿","ها الغليض التفس ابو راس المربع  متعلملك جم حجايه وجاي تطكطكهن علينه دبطل😒🔪",}
 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
 else local rd_zwag = {"لكك جرجف  احترم اسيادكك لا اكتلكك وازربب على كبركك،💩🖐🏿","هشش لكك فاشل  لتضل تمسلت لا اخربط تضاريس وجهك جنه ابط عبده، 😖👌🏿","حبيبي  راح احاول احترمكك هالمره بلكي تبطل حيونه، 🤔🔪","دمشي لك  ينبوع الفشل مو زين ملفيك ونحجي وياك هي منبوذ 😏🖕🏿","ها الغليض التفس ابو راس المربع  متعلملك جم حجايه وجاي تطكطكهن علينه دبطل😒🔪",}
-    if Redis:sismember(TheDrox..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
-    Redis:srem(TheDrox..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
+    if Redis:sismember(TheDrox..msg_chat_id.."mutlqat:",msg.sender_id.user_id) then 
+    Redis:srem(TheDrox..msg_chat_id.."mutlqat:",msg.sender_id.user_id)
     end
-    Redis:sadd(TheDrox..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) 
-    return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
+    Redis:sadd(TheDrox..msg_chat_id.."zwgat:",msg.sender_id.user_id) 
+    return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
     end
 end
 
 if text == "بوسه" or text == "بوسهن" or text == "مصه" and msg.reply_to_message_id ~= 0 then
   local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-  local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-  if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender_id.user_id) then
+  local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
+  if tonumber(msg.sender_id.user_id) == tonumber(msg.sender_id.user_id) then
     return LuaTele.sendText(msg_chat_id,msg_id,"شو تمضرط اكو واحد يبوس نفسه؟🤔👌🏿 ؟!!","md",true)  
   end
-  if tonumber(Message_Reply.sender.user_id) == tonumber(Sudo_Id) then
+  if tonumber(msg.sender_id.user_id) == tonumber(Sudo_Id) then
     return LuaTele.sendText(msg_chat_id,msg_id,"امواححح احلاا بوسةة المطوريي😻🔥💗","md",true)  
   end
-  if tonumber(Message_Reply.sender.user_id) == tonumber(msg.Creator) then
+  if tonumber(msg.sender_id.user_id) == tonumber(msg.Creator) then
     return LuaTele.sendText(msg_chat_id,msg_id,"مواححح احلاا بوسةة للمالك😻🔥💗","md",true)  
   end
-  if Redis:sismember(TheDrox..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) then
+  if Redis:sismember(TheDrox..msg_chat_id.."zwgat:",msg.sender_id.user_id) then
 local rd_mtzwga ={"مواححح افيش عافيههه😍🔥💗","امممووااهحح شهلعسل🥺🍯💘","مواححح،ءوفف اذوب🤤💗"} 
 
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,rd_mtzwga[math.random(#rd_mtzwga)]).Reply,"md",true)  
 else local rd_zwag = {"مواححح افيش عافيههه😍🔥💗","امممووااهحح شهلعسل🥺🍯💘","مواححح،ءوفف اذوب🤤💗"}  
-    if Redis:sismember(TheDrox..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id) then 
-    Redis:srem(TheDrox..msg_chat_id.."mutlqat:",Message_Reply.sender.user_id)
+    if Redis:sismember(TheDrox..msg_chat_id.."mutlqat:",msg.sender_id.user_id) then 
+    Redis:srem(TheDrox..msg_chat_id.."mutlqat:",msg.sender_id.user_id)
     end
-    Redis:sadd(TheDrox..msg_chat_id.."zwgat:",Message_Reply.sender.user_id) 
-    return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
+    Redis:sadd(TheDrox..msg_chat_id.."zwgat:",msg.sender_id.user_id) 
+    return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,rd_zwag[math.random(#rd_zwag)]).Reply,"md",true)  
     end
 end
 if text == "شنو رئيك بهذا" or text == "شنو رائيك بهذ" or text == "شنو رئيك بهذ" or text == "شنو رائيك بهذ" then
@@ -13369,10 +13369,10 @@ local coniss = coniss:gsub('٨','8')
 local coniss = coniss:gsub('٩','9')
 local coniss = tonumber(coniss)
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-if tonumber(Message_Reply.sender.user_id) == tonumber(msg.sender_id.user_id) then
+if tonumber(msg.sender_id.user_id) == tonumber(msg.sender_id.user_id) then
 return LuaTele.sendText(msg.chat_id,msg.id, "• غبي تبي تتزوج نفسك!\n","md",true)
 end
-if tonumber(Message_Reply.sender.user_id) == tonumber(TheDrox) then
+if tonumber(msg.sender_id.user_id) == tonumber(TheDrox) then
 return LuaTele.sendText(msg.chat_id,msg.id, "• غبي تبي تتزوج بوت!\n","md",true)
 end
 if Redis:get(TheDrox..msg_chat_id..msg.sender_id.user_id.."rgalll2:") then
@@ -13399,22 +13399,22 @@ if tonumber(ballancee) < tonumber(coniss) then
 return LuaTele.sendText(msg.chat_id,msg.id, "• فلوسك ماتكفي للمهر\n","md",true)
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-if Redis:get(TheDrox..msg_chat_id..Message_Reply.sender.user_id.."rgalll2:") or Redis:get(TheDrox..msg_chat_id..Message_Reply.sender.user_id.."bnttt2:") then
+if Redis:get(TheDrox..msg_chat_id..msg.sender_id.user_id.."rgalll2:") or Redis:get(TheDrox..msg_chat_id..msg.sender_id.user_id.."bnttt2:") then
 return LuaTele.sendText(msg.chat_id,msg.id, "• لا تقرب للمتزوجين \n","md",true)
 end
 UserNameyr = math.floor(coniss / 15)
 UserNameyy = math.floor(coniss - UserNameyr)
 local zwga_id = Redis:get(TheDrox..msg_chat_id..msg.sender_id.user_id.."bnttt2:") 
-Redis:set(TheDrox..msg_chat_id..Message_Reply.sender.user_id.."bnttt2:", msg.sender_id.user_id)
-Redis:set(TheDrox..msg_chat_id..msg.sender_id.user_id.."rgalll2:", Message_Reply.sender.user_id)
-Redis:set(TheDrox..msg_chat_id..Message_Reply.sender.user_id.."mhrrr2:", UserNameyy)
+Redis:set(TheDrox..msg_chat_id..msg.sender_id.user_id.."bnttt2:", msg.sender_id.user_id)
+Redis:set(TheDrox..msg_chat_id..msg.sender_id.user_id.."rgalll2:", msg.sender_id.user_id)
+Redis:set(TheDrox..msg_chat_id..msg.sender_id.user_id.."mhrrr2:", UserNameyy)
 Redis:set(TheDrox..msg_chat_id..msg.sender_id.user_id.."mhrrr2:", UserNameyy)
 local id_rgal = LuaTele.getUser(msg.sender_id.user_id)
 alzog = "["..id_rgal.first_name.."](tg://user?id="..msg.sender_id.user_id..") "
-local albnt = LuaTele.getUser(Message_Reply.sender.user_id)
-albnt = "["..albnt.first_name.."](tg://user?id="..Message_Reply.sender.user_id..") "
+local albnt = LuaTele.getUser(msg.sender_id.user_id)
+albnt = "["..albnt.first_name.."](tg://user?id="..msg.sender_id.user_id..") "
 Redis:decrby(TheDrox.."nool:flotysb"..msg.sender_id.user_id , UserNameyy)
-Redis:incrby(TheDrox.."nool:flotysb"..Message_Reply.sender.user_id , UserNameyy)
+Redis:incrby(TheDrox.."nool:flotysb"..msg.sender_id.user_id , UserNameyy)
 Redis:incrby(TheDrox.."mznom"..msg_chat_id..msg.sender_id.user_id , UserNameyy)
 Redis:sadd(TheDrox.."almtzog"..msg_chat_id,msg.sender_id.user_id)
 return LuaTele.sendText(msg_chat_id,msg_id,"• مبرووك تم زواجكم\n• الزوج :"..alzog.."\n• الزوجه :"..albnt.."\n• المهر : "..UserNameyy.." بعد خصم 15% \n• لعرض عقدكم اكتبو زواجي","md")
@@ -15182,15 +15182,15 @@ if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*♡︙هاذا الامر يخص ( '..Controller_Num(7)..' )* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-Redis:incrby(TheDrox.."Drox:Num:Add:Games"..msg.chat_id..Message_Reply.sender.user_id, text:match("^اضف مجوهرات (%d+)$"))  
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم اضافه له { "..text:match("^اضف مجوهرات (%d+)$").." } من المجوهرات").Reply,"md",true)  
+Redis:incrby(TheDrox.."Drox:Num:Add:Games"..msg.chat_id..msg.sender_id.user_id, text:match("^اضف مجوهرات (%d+)$"))  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم اضافه له { "..text:match("^اضف مجوهرات (%d+)$").." } من المجوهرات").Reply,"md",true)  
 end
 if text and text:match("^اضف رسائل (%d+)$") and msg.reply_to_message_id ~= 0 then
 if ChannelJoin(msg) == false then
@@ -15203,15 +15203,15 @@ if not msg.Addictive then
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*♡︙هاذا الامر يخص ( '..Controller_Num(7)..' )* ',"md",true)  
 end
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ تستطيع فقط استخدام الامر على المستخدمين ","md",true)  
 end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then
 return LuaTele.sendText(msg_chat_id,msg_id,"\n♡︙عذرآ لا تستطيع استخدام الامر على البوت ","md",true)  
 end
-Redis:incrby(TheDrox.."Drox:Num:Message:User"..msg.chat_id..":"..Message_Reply.sender.user_id, text:match("^اضف رسائل (%d+)$"))  
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Message_Reply.sender.user_id,"♡︙تم اضافه له { "..text:match("^اضف رسائل (%d+)$").." } من الرسائل").Reply,"md",true)  
+Redis:incrby(TheDrox.."Drox:Num:Message:User"..msg.chat_id..":"..msg.sender_id.user_id, text:match("^اضف رسائل (%d+)$"))  
+return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,"♡︙تم اضافه له { "..text:match("^اضف رسائل (%d+)$").." } من الرسائل").Reply,"md",true)  
 end
 if text == "مجوهراتي" then 
 local Num = Redis:get(TheDrox.."Drox:Num:Add:Games"..msg.chat_id..msg.sender_id.user_id) or 0
@@ -15625,7 +15625,7 @@ LuaTele.sendText(msg_chat_id,msg_id,'*♡︙عدد احصائيات البوت �
 end
 if text == 'الرتبه' or text == 'رتبته'  and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
+local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 if UserInfo.username then
 UserInfousername = '@'..UserInfo.username..''
 else

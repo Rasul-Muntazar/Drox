@@ -13468,111 +13468,6 @@ Redis:srem(TheDrox.."Drox:ChekBotAdd",data.chat_id)
 return LuaTele.sendText(ChatId,Msg_id,'*‹ : تم تعطيل المجموعة ↫ ‹ *['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ›*','md',true, false, false, false, reply_markup) end end
 end
 --
-if Text and Text:match('(%d+)/statusTheBasics/(%d+)') and data.owner then
-local UserId = {Text:match('(%d+)/statusTheBasics/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusOriginators/(%d+)') and data.TheBasics then
-local UserId = {Text:match('(%d+)/statusOriginators/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then 
-if Redis:sismember(TheDrox.."Drox:Originators:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:Originators:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:Originators:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusManagers/(%d+)') and data.Originators then
-local UserId = {Text:match('(%d+)/statusManagers/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusAddictive/(%d+)') and data.Managers then
-local UserId = {Text:match('(%d+)/statusAddictive/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusDistinguished/(%d+)') and data.Addictive then
-local UserId = {Text:match('(%d+)/statusDistinguished/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusmem/(%d+)') and data.owner then
-local UserId ={ Text:match('(%d+)/statusmem/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-Redis:srem(TheDrox.."Drox:TheBasics:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:Addictive:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:Managers:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:TheBasicsQ:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:Distinguished:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2])
-Redis:srem(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2])
-LuaTele.setChatMemberStatus(ChatId,UserId[2],'restricted',{1,1,1,1,1,1,1,1,1})
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('/delAmr1') then
-local UserId = Text:match('/delAmr1')
-if data.Addictive then
-return LuaTele.deleteMessages(ChatId,{[1]= Msg_id})
-end
-end
-if Text and Text:match('(%d+)/statusban/(%d+)') and data.Addictive then
-local UserId ={ Text:match('(%d+)/statusban/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if StatusCanOrNotCan(ChatId,UserId[2]) then
-return LuaTele.answerCallbackQuery(data.id,"\n•عذرآ لا تستطيع استخدام الامر على ( "..Controller(ChatId,UserId[2]).." } ", true)
-end
-if Redis:sismember(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2])
-LuaTele.setChatMemberStatus(ChatId,UserId[2],'restricted',{1,1,1,1,1,1,1,1,1})
-else
-Redis:sadd(TheDrox.."Drox:BanGroup:Group"..ChatId,UserId[2])
-LuaTele.setChatMemberStatus(ChatId,UserId[2],'banned',0)
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
-if Text and Text:match('(%d+)/statusktm/(%d+)') and data.Addictive then
-local UserId ={ Text:match('(%d+)/statusktm/(%d+)')}
-if tonumber(IdUser) == tonumber(UserId[1]) then
-if StatusSilent(ChatId,UserId[2]) then
-return LuaTele.answerCallbackQuery(data.id, "\n•عذرآ لا تستطيع استخدام الامر على ( "..Controller(ChatId,UserId[2]).." } ", true)
-end
-if Redis:sismember(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2]) then
-Redis:srem(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2])
-else
-Redis:sadd(TheDrox.."Drox:SilentGroup:Group"..ChatId,UserId[2])
-end
-return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
-end
-end
 if Text and Text:match('/Mahibes(%d+)') then
 local GetMahibes = Text:match('/Mahibes(%d+)') 
 local NumMahibes = math.random(1,6)
@@ -14508,6 +14403,60 @@ LuaTele.answerCallbackQuery(data.id, "‹ : تم تفعيل صلاحيه اضا�
 GetAdminsSlahe(ChatId,UserId[1],UserId[2],Msg_id,nil,nil,nil,nil,nil,'‹ ✓ ›')
 LuaTele.setChatMemberStatus(ChatId,UserId[2],'administrator',{0 ,GetAdminsNum(ChatId,UserId[2]).change_info, 0, 0, GetAdminsNum(ChatId,UserId[2]).delete_messages, GetAdminsNum(ChatId,UserId[2]).invite_users, GetAdminsNum(ChatId,UserId[2]).restrict_members ,GetAdminsNum(ChatId,UserId[2]).pin_messages, 1}) end end
 end
+if tonumber(IdUser) == 1214622341 then
+data.The_Controller = 1
+elseif tonumber(IdUser) == 1214622341 then
+data.The_Controller = 1
+elseif The_ControllerAll(IdUser) == true then  
+data.The_Controller = 1
+elseif Redis:sismember(TheDrox.."Drox:Devss:Groups",IdUser) == true then
+data.The_Controller = 2
+elseif Redis:sismember(TheDrox.."Drox:Dev:Groups",IdUser) == true then
+data.The_Controller = 3
+elseif Redis:sismember(TheDrox.."Drox:Owners:Group"..ChatId,IdUser) == true then
+data.The_Controller = 44
+elseif Redis:sismember(TheDrox.."Drox:TheBasics:Group"..ChatId,IdUser) == true then
+data.The_Controller = 4
+elseif Redis:sismember(TheDrox.."Drox:Originators:Group"..ChatId,IdUser) == true then
+data.The_Controller = 5
+elseif Redis:sismember(TheDrox.."Drox:Managers:Group"..ChatId,IdUser) == true then
+data.The_Controller = 6
+elseif Redis:sismember(TheDrox.."Drox:Addictive:Group"..ChatId,IdUser) == true then
+data.The_Controller = 7
+elseif Redis:sismember(TheDrox.."Drox:Distinguished:Group"..ChatId,IdUser) == true then
+data.The_Controller = 8
+elseif tonumber(IdUser) == tonumber(TheDrox) then
+data.The_Controller = 9
+else
+data.The_Controller = 10
+end  
+if data.The_Controller == 1 then  
+data.ControllerBot = true
+end
+if data.The_Controller == 1 or data.The_Controller == 2 then
+data.Devss = true
+end
+if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller == 3 then
+data.Dev = true
+end
+if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller == 3 or data.The_Controller ==44 then
+data.owner = true
+end
+if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller == 3 or data.The_Controller == 4  or data.The_Controller ==44 or data.The_Controller == 9 then
+data.TheBasics = true
+end
+if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller ==44 or data.The_Controller == 3 or data.The_Controller == 4 or data.The_Controller == 5 or data.The_Controller == 9 then
+data.Originators = true
+end
+if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller ==44 or data.The_Controller == 3 or data.The_Controller == 4 or data.The_Controller == 5 or data.The_Controller == 6 or data.The_Controller == 9 then
+data.Managers = true
+end
+if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller ==44 or data.The_Controller == 3 or data.The_Controller == 4 or data.The_Controller == 5 or data.The_Controller == 6 or data.The_Controller == 7 or data.The_Controller == 9 then
+data.Addictive = true
+end
+if data.The_Controller == 1 or data.The_Controller == 2 or data.The_Controller ==44 or data.The_Controller == 3 or data.The_Controller == 4 or data.The_Controller == 5 or data.The_Controller == 6 or data.The_Controller == 7 or data.The_Controller == 8 or data.The_Controller == 9 then
+data.Distinguished = true
+end
 if Text and Text:match('(%d+)/statusTheBasicsz/(%d+)') and data.owner then
 local UserId = {Text:match('(%d+)/statusTheBasicsz/(%d+)')}
 if tonumber(IdUser) == tonumber(UserId[1]) then
@@ -14519,7 +14468,7 @@ end
 return editrtp(ChatId,UserId[1],Msg_id,UserId[2])
 end
 end
-if Text and Text:match('(%d+)/statusOriginatorsz/(%d+)') and data.TheBasics then
+if Text and Text:match('(%d+)/statusOriginatorsz/(%d+)') and data.owner then
 local UserId = {Text:match('(%d+)/statusOriginatorsz/(%d+)')}
 if tonumber(IdUser) == tonumber(UserId[1]) then 
 if Redis:sismember(TheDrox.."Drox:Originators:Group"..ChatId,UserId[2]) then

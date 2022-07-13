@@ -2297,7 +2297,7 @@ else
 UserInfousername = 'لا يوجد'
 end
 return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : معرفك ↫ ❨ '..UserInfousername..' ❩',"md",true)  end
-if text == 'اني منو' or text == "منو اني" then
+if text == 'انا منو' or text == "منو اني" then
 if not Redis:get(TheDrox.."Drox:Status:IdPhoto"..msg_chat_id) then
 return false
 end
@@ -17182,13 +17182,8 @@ local UserId = Text:match('(%d+)/SilentGroupGroup')
 if tonumber(IdUser) == tonumber(UserId) then
 Redis:del(TheDrox.."Drox:SilentGroup:Group"..ChatId) 
 LuaTele.editMessageText(ChatId,Msg_id,"‹ : تم مسح المكتومين بالمجموعة", 'md', false) end end
- end end
+end
+end
 
 
 luatele.run(CallBackLua)
- 
-
-
-
-
-

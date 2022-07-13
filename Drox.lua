@@ -514,103 +514,10 @@ local Lock_Bots = Redis:get(TheDrox.."Drox:Lock:Bot:kick"..msg_chat_id)
 for k,v in pairs(msg.content.member_user_ids) do
 local Info_User = LuaTele.getUser(v) 
 if data.luatele == "updateChatMember" then
-if data.new_chat_member.member_id.user_id == tonumber(TheDrox) then
-if data.new_chat_member.status.can_delete_messages == true then
-local chat_id = data.chat_id
-local who_promot = data.actor_user_id
---code start
-if redis:sismember(TheDrox..'ban:online',chat_id) then ---check if ban
-return LuaTele.sendText(chat_id,0,"\n*⇜ هذه القروب محظور سوف اغادر جاوو*","md",true)  
-bot.leaveChat(chat_id)
-end ---end check if ban
-local Info_Chats = bot.getSupergroupFullInfo(chat_id) ---check if count is true
-if tonumber(Info_Chats.member_count) < tonumber((redis:get(TheDrox..'Num:Add:Bot') or 0)) and not devB(who_promot) then
-return LuaTele.sendText(chat_id,0,'• عدد الاعضاء قليل لا يمكن تفعيل القروب\n يجب ان يكون اكثر من '..redis:get(TheDrox..'Num:Add:Bot'),"md",true)
-bot.leaveChat(chat_id)
-end---end check if count is true
-if not redis:sismember(TheDrox..":Groups", chat_id) then ---done active
-local Get_Chat = bot.getChat(chat_id)
-local UserInfo = bot.getUser(who_promot)
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = Get_Chat.title, url = Info_Chats.invite_link.invite_link}, 
-},
-{
-{text = 'مغادرة القروب', data = '/leftgroup@'..chat_id}, 
-},
-}
-}
-return LuaTele.sendText(sudoid,0,'*\n• تم تفعيل قروب جديد \n• بواسطه : *['..UserInfo.first_name..'](tg://user?id='..who_promot..')*\n• معلومات القروب :\n• عدد الاعضاء ↤ '..Info_Chats.member_count..'\n• عدد الادمنيه ↤ '..Info_Chats.administrator_count..'\n• عدد المطرودين ↤ '..Info_Chats.banned_count..'\n• عدد المقيدين ↤ '..Info_Chats.restricted_count..'\n• الرابط\n : '..Info_Chats.invite_link.invite_link..'*',"md", true, false, false, false, reply_markup)
-redis:sadd(TheDrox..":Groups", chat_id)
-redis:set(TheDrox..'Drox:tagallgroup'..chat_id,'open') 
-redis:set(TheDrox.."Drox:Status:Link"..chat_id,true) 
-redis:set(TheDrox.."Drox:Status:Games"..chat_id,true) 
-redis:set(TheDrox.."Drox:Status:Reply"..chat_id,true) 
-redis:set(TheDrox.."Drox:calculate"..chat_id,true) 
-redis:set(TheDrox.."Drox:name:Bot"..chat_id,true) 
-redis:set(TheDrox.."Drox:brjj"..chat_id,true) 
-redis:set(TheDrox.."Drox:myzhrfa"..chat_id,true) 
-redis:set(TheDrox.."Drox:idnotmembio"..chat_id,true) 
-redis:set(TheDrox.."Drox:Abs:kol:Abs"..chat_id,true) 
-redis:set(TheDrox.."Drox:Abs:Addme:Abs"..chat_id,true) 
-redis:set(TheDrox.."Drox:Abs:Nzlne:Abs"..chat_id,true) 
-redis:set(TheDrox.."Drox:taggg"..chat_id,true) 
-redis:set(TheDrox.."Drox:Redis:setRt"..chat_id,true) 
-redis:set(TheDrox.."Drox:youutube"..chat_id,true) 
-redis:set(TheDrox.."Drox:thnaee"..chat_id,true) 
-redis:set(TheDrox.."Drox:shakse"..chat_id,true) 
-redis:set(TheDrox.."Drox:indar"..chat_id,true) 
-redis:set(TheDrox.."Drox:dartba"..chat_id,true) 
-redis:set(TheDrox.."Drox:shapeh"..chat_id,true) 
-redis:set(TheDrox.."Drox:anamen"..chat_id,true) 
-redis:set(TheDrox.."Drox:trfeh"..chat_id,true) 
-redis:set(TheDrox.."Drox:aftare"..chat_id,true) 
-redis:set(TheDrox.."Drox:ttzog"..chat_id,true) 
-redis:set(TheDrox.."Drox:zogne"..chat_id,true) 
-redis:set(TheDrox.."Drox:nsab"..chat_id,true) 
-redis:set(TheDrox.."Drox:AlThther:Chat"..chat_id,"true")
-redis:set(TheDrox.."Drox:replayallbot"..chat_id,true)
-redis:set(TheDrox.."Drox:Status:Welcome"..chat_id,true) 
-redis:set(TheDrox.."Drox:AlThther:Chat"..chat_id,"true")
-redis:set(TheDrox..'Drox:lockalllll'..chat_id,'on') 
-redis:set(TheDrox.."Drox:Status:IdPhoto"..chat_id,true) 
-redis:del(TheDrox.."Drox:spammkick"..chat_id)
-redis:set(TheDrox.."Drox:Lock:edit"..chat_id,true) 
-redis:sadd(TheDrox.."Drox:ChekBotAdd",chat_id)
-redis:set(TheDrox.."Drox:Status:Games"..chat_id,true) 
-redis:set(TheDrox.."Drox:Status:Id"..chat_id,true)
-redis:set(TheDrox.."Drox:Status:Reply"..chat_id,true)
-redis:set(TheDrox.."Drox:market"..chat_id,true) 
-redis:set(TheDrox.."Drox:Status:ReplySudo"..chat_id,true)
-redis:set(TheDrox.."Drox:Status:BanId"..chat_id,true)
-redis:set(TheDrox.."Drox:Status:SetId"..chat_id,true) 
-local Info_Members = bot.getSupergroupMembers(chat_id, "Administrators", "*", 0, 200)
-local List_Members = Info_Members.members
-for k, v in pairs(List_Members) do
-if Info_Members.members[k].bot_info == nil then
-if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
-redis:sadd(TheDrox..":"..chat_id..":Status:Creator",v.member_id.user_id) 
-else
-redis:sadd(TheDrox..":"..chat_id..":Status:Administrator",v.member_id.user_id) 
-end
-end
-end
-local txt = '⇜ من 「 ['..UserInfo.first_name..'](tg://user?id='..who_promot..')⁪⁬‌‌‌‌ 」\n⇜ تم تفعيل القروب ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..') تلقائياً\n✦'
-local reply_markup = bot.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '- 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 .', url = 't.me/DroxTeAm'}, 
-},
-}
-}
-return return LuaTele.sendText(chat_id, 0 , txt, 'md', false, false, false, false, reply_markup)
-end ---end done active
---code end
-end
-end
+if v == tonumber(TheDrox) then
+local N = (Redis:get(TheDrox.."Name:Bot") or "دروكس")
+photo = LuaTele.getUserProfilePhotos(TheDrox)
+return LuaTele.sendPhoto(msg.chat_id, 0, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,'*‹ : انا بوت اسمي '..N..'\n‹ : وظيفتي حمايه الكروب من السبام والتفليش الخ....\n‹ : لتفعيل البوت قم اضافته للمجموعتك وقم برفعه مشرف واكتب تفعيل\n*', "md")
 end
 if Info_User.type.luatele == "userTypeBot" then
 if Lock_Bots == "del" and not msg.Distinguished then

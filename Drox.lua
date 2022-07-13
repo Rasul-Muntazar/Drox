@@ -513,6 +513,13 @@ local AddMembrs = Redis:get(TheDrox.."Drox:Lock:AddMempar"..msg_chat_id)
 local Lock_Bots = Redis:get(TheDrox.."Drox:Lock:Bot:kick"..msg_chat_id)
 for k,v in pairs(msg.content.member_user_ids) do
 local Info_User = LuaTele.getUser(v) 
+if data.luatele == "updateChatMember" then
+if data.new_chat_member.member_id.user_id == tonumber(TheDrox) then
+if v == tonumber(TheDrox) then
+local N = (Redis:get(TheDrox.."Name:Bot") or "دروكس")
+photo = LuaTele.getUserProfilePhotos(TheDrox)
+return LuaTele.sendPhoto(msg.chat_id, 0, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id,'*‹ : انا بوت اسمي '..N..'\n‹ : وظيفتي حمايه الكروب من السبام والتفليش الخ....\n‹ : لتفعيل البوت قم اضافته للمجموعتك وقم برفعه مشرف واكتب تفعيل\n*', "md")
+end
 if Info_User.type.luatele == "userTypeBot" then
 if Lock_Bots == "del" and not msg.Distinguished then
 LuaTele.setChatMemberStatus(msg.chat_id,v,'banned',0)
@@ -2291,7 +2298,7 @@ else
 UserInfousername = 'لا يوجد'
 end
 return LuaTele.sendText(msg_chat_id,msg_id,'\n‹ : معرفك ↫ ❨ '..UserInfousername..' ❩',"md",true)  end
-if text == 'انا منو' or text == "منو اني" then
+if text == 'اني منو' or text == "منو اني" then
 if not Redis:get(TheDrox.."Drox:Status:IdPhoto"..msg_chat_id) then
 return false
 end
@@ -11218,8 +11225,6 @@ Redis:del("trans" .. msg.chat_id .. ":" .. msg.sender_id.user_id)
 Redis:del("transn" .. msg.sender_id.user_id)
 end
 end
-
-
 if text == "ترتيبي" then
 if Redis:sismember("booob",msg.sender_id.user_id) then
 local bank_users = Redis:smembers("booob")

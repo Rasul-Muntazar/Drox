@@ -14324,7 +14324,7 @@ local GetMsg = Redis:incr(Drox..'Drox:MsgNumbergroups'..msg.chat_id) or 1
 Redis:hset(Drox..':GroupUserCountMsg:groups',msg.chat_id,GetMsg)
 end
 --     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
-if text == 'رسو' or text == 'رسول' then
+if text == 'المبرمج' or text == 'رسول' or text 'مبرمج السورس' then
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {

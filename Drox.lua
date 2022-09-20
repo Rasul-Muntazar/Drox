@@ -14130,7 +14130,7 @@ type = 'inline',
 data = {
 {
 {text = '‹ موافق ›', data = msg.sender_id.user_id..'/yes_zw/'..member_id},
-{text = '‹ مو موافق ›', data = msg.sender_id.user_id..'/no_zw/'..member_id},
+{text = '‹ غير موافق ›', data = msg.sender_id.user_id..'/no_zw/'..member_id},
 },
 }
 }
@@ -14235,7 +14235,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙تم طلاكك من ["..zwg_n
 end
 end
 --     Source EVaN     --
-if text == "ثنائي اليوم" and ChCheck(msg) and not Redis:get(Drox..'2nd:Chat'..msg.chat_id)  then
+if text == "ثنائي اليوم" or text == "ث" and ChCheck(msg) and not Redis:get(Drox..'2nd:Chat'..msg.chat_id)  then
 local Info_Members = LuaTele.searchChatMembers(msg.chat_id, "*", 200)
 local List_Members = Info_Members.members
 local NumRand1 = math.random(1, #List_Members); 
@@ -14730,18 +14730,17 @@ data = {
 },
 }
 }
-return LuaTele.sendText(msg.chat_id,msg.id, [[
+return LuaTele.sendText(msg.chat_id,msg.id, [[*
 ⌁︙تـوجد ⤈↫ 6 اوامر في البوت .
-• • — — — — — — — — — • — — — — — — — •
+
 ⌁︙م1 ↫ ‹ اوامـر الـحمـاية ›
 ⌁︙م2  ↫ ‹ اوامـر الادمـنـية ›
 ⌁︙م3  ↫ ‹ اوامـر الـمـدࢪاء ›
 ⌁︙م4  ↫ ‹ اوامـر الـمنشئـين ›
 ⌁︙م5  ↫ ‹ اوامـر الـمطـورين › 
 ⌁︙م6  ↫ ‹ اوامـر الاعضاء ›
-• • — — — — — — — — — • — — — — — — — •
-⌁︙𝖢𝗁𝖺𝗇𝖾𝖾𝗅 𝖲𝗈𝗎𝗋𝖼𝖾 : @DroxTeAm › 
-]],"md",false, false, false, false, reply_markup)
+— — — — — — — — —
+*]],"md",false, false, false, false, reply_markup)
 elseif text == 'م1' then
 if not msg.Admin then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(8)..' .\n').Warning,"md",true)    
@@ -17297,7 +17296,7 @@ data = {
 {text = '⌁ اضف البوت الى مجموعتك .', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '⌁ المطور .', url = 't.me/'..UserSudo},{text = '⌁ شراء بوت .', url = 't.me/J45BoT'},},
+{text = '⌁ المطور .', url = 't.me/'..UserSudo},{text = '⌁ شراء بوت .', url = 't.me/uQuuuBot'},},
 {{text = '‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},},
 }
 }
@@ -17310,7 +17309,7 @@ data = {
 {text = '⌁ اضف البوت الى مجموعتك .', url = 't.me/'..UserBot..'?startgroup=new'}, 
 },
 {
-{text = '⌁ المطور .', url = 't.me/'..UserSudo},{text = '⌁ شراء بوت .', url = 't.me/J45BoT'},},
+{text = '⌁ المطور .', url = 't.me/'..UserSudo},{text = '⌁ شراء بوت .', url = 't.me/uQuuuBot'},},
 {{text = '‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},},
 }
 }
@@ -20363,18 +20362,17 @@ data = {
 },
 }
 }
-local TextHelp = [[
+local TextHelp = [[*
 ⌁︙تـوجد ⤈↫ 6 اوامر في البوت .
-• • — — — — — — — — — • — — — — — — — •
+
 ⌁︙م1 ↫ ‹ اوامـر الـحمـاية ›
 ⌁︙م2  ↫ ‹ اوامـر الادمـنـية ›
 ⌁︙م3  ↫ ‹ اوامـر الـمـدࢪاء ›
 ⌁︙م4  ↫ ‹ اوامـر الـمنشئـين ›
 ⌁︙م5  ↫ ‹ اوامـر الـمطـورين › 
 ⌁︙م6  ↫ ‹ اوامـر الاعضاء ›
-• • — — — — — — — — — • — — — — — — — •
-⌁︙𝖢𝗁𝖺𝗇𝖾𝖾𝗅 𝖲𝗈𝗎𝗋𝖼𝖾 : @DroxTeAm › 
-]]
+ — — — — — — — — —
+*]]
 LuaTele.editMessageText(ChatId,msg_id,TextHelp, 'md', true, false, reply_markup)
 end
 end

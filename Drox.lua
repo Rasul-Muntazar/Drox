@@ -14913,7 +14913,7 @@ if not msg.muhammad then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n').Warning,"md",true)    
 end
 os.execute('rm -rf Drox.lua') 
-os.execute('curl -s https://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@raw.githubusercontent.com/ssm2121/c/main/Drox.lua -o Drox.lua')
+os.execute('curl -s https://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@raw.githubusercontent.com/Rasul-Muntazar/Drox/main/Drox.lua -o Drox.lua')
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
 local Text = [[
 *⌁︙تم تحديث السورس ...✓*
@@ -17186,7 +17186,7 @@ if not msg.muhammad then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n').Warning,"md",true)    
 end
 os.execute('rm -rf Drox.lua') 
-os.execute('curl -s https://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@raw.githubusercontent.com/ssm2121/c/main/Drox.lua -o Drox.lua') 
+os.execute('curl -s https://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@raw.githubusercontent.com/Rasul-Muntazar/Drox/main/Drox.lua -o Drox.lua') 
 print("\27[31;47m\n          ( تم تحديث السورس )          \n\27[0;34;49m\n") 
 local Text = [[
 *⌁︙تم تحديث السورس ...✓*

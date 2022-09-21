@@ -880,7 +880,7 @@ print('Downloaded :> '..name)
 return './'..name
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 function ChCheck(msg)
 local var = true 
 local chid = Redis:get(Drox..'Drox:Channel:Join')
@@ -913,7 +913,7 @@ else
 local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 local Drox = {"حبيبي","؏َـمࢪي","عزيزي","يڪلبي","روحي","حب","حــچي","ضلعي"} 
 local Drox = Drox[math.random(#Drox)]
-local Text = '⌁︙عذࢪاَ '..Drox..' ↫  ['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')\n⌁︙عـليك الاشـتࢪاك في قنـاة البـوت اولآ\nꔹ• — — — — — — — — — •ꔹ'
+local Text = '⌁︙عذࢪاَ '..Drox..' ↫  ['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')\n⌁︙عـليك الاشـتࢪاك في قنـاة البـوت اولآ\nꔹ— — — — — — — — —ꔹ'
 LuaTele.sendText(msg.chat_id,msg.id,Text,"md",false, false, false, false, reply_markup)
 end
 else
@@ -923,7 +923,7 @@ else
 return var
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 function rray(ay)
 UserId = (ay.sender_user_id or ay.sender_id.user_id or ay.sender_id.chat_id)
 if ay.sender_id and not ay.sender_id.chat_id then
@@ -1010,7 +1010,7 @@ ay.VipMem = true
 end
 return 1, ay
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 function media_id(msg,media)
 if msg.content.animation then
 print("animation = "..media.animation.id)
@@ -1023,11 +1023,11 @@ print("sticker = "..media.sticker.id)
 return media.sticker.id
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 function zkrfa(text)
 zh = https.request('https://devdeiveddev.ml/api/zkrfa.php?text='..URL.escape(text))
 zx = JSON.decode(zh)
-t = "\n ⌁︙قائمه الزخرفه ↫ ⤈\n• — — — — — — — — — •\n"
+t = "\n ⌁︙قائمه الزخرفه ↫ ⤈\n— — — — — — — — —\n"
 i = 0
 for k,v in pairs(zx.ok) do
 i = i + 1
@@ -1047,19 +1047,19 @@ end
 function File_Bot_Run(msg)
 user_id = (msg.sender_id.user_id or msg.sender_id.chat_id)
 -- print('----------------'..'\nchat_id = '..msg.chat_id..'\nuser_id = '..user_id)
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 local media =  (msg.content.video_note or msg.content.voice_note or msg.content.video or msg.content.document or msg.content.audio or msg.content.animation or msg.content.photo or msg.content.sticker)
 local media_id = media_id(msg,media)
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if msg.sender_id.user_id then
 Redis:incr(Drox..'Num:Message:User'..msg.chat_id..':'..msg.sender_id.user_id)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if msg.date and msg.date < tonumber(os.time() - 15) then
 print("->> Old Message End <<-")
 return false
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if msg.content.text then
 text = msg.content.text.text
 -- print('text = '..text)
@@ -1070,28 +1070,28 @@ end
 else 
 text = nil
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if tonumber(msg.sender_id.user_id) == tonumber(Drox) then
 print('This is reply for Bot')
 return false
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if msg.sender_id.luatele == "messageSenderChat" then
 if Redis:get(Drox.."Lock:channell"..msg.chat_id) then
 LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
 return false
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 a, msg = rray(msg)
 if a == 0 then
 return false
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Redis:get(Drox.."Lock:text"..msg.chat_id) and not msg.VipMem then
 return LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end 
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if msg.content.luatele == "messageChatAddMembers" then -- اضافه اشخاص
 local Lock_Bots = Redis:get(Drox.."Lock:Bot:kick"..msg.chat_id)
 for k,v in pairs(msg.content.member_user_ids) do
@@ -1174,7 +1174,7 @@ return LuaTele.sendText(msg.chat_id, msg.id, TextWelcome, 'md', true, false, fal
 end end end
 end end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if not msg.Admin and msg.content.luatele ~= "messageChatAddMembers" and Redis:hget(Drox.."Spam:Group:User"..msg.chat_id,"Spam:User") then --حماية من التكرار
 if tonumber(msg.sender_id.user_id) == tonumber(Drox) then
 return false
@@ -1377,7 +1377,7 @@ Redis:srem(Drox.."muh:Admins:"..msg.chat_id,msg.sender_id.user_id)
 Redis:srem(Drox.."muh:VipMem:"..msg.chat_id,msg.sender_id.user_id)
 if Json_Info.ok == false and Json_Info.error_code == 400 and Json_Info.description == "Bad Request: CHAT_ADMIN_REQUIRED" then
 if #monsha ~= 0 then 
-local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n• — — — — — — — — — •*\n'
+local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n— — — — — — — — —*\n'
 for k, v in pairs(monsha) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -1394,7 +1394,7 @@ end
 end
 if Json_Info.ok == false and Json_Info.error_code == 400 and Json_Info.description == "Bad Request: can't remove chat owner" then
 if #monsha ~= 0 then 
-local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n• — — — — — — — — — •*\n'
+local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n— — — — — — — — —*\n'
 for k, v in pairs(monsha) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -1411,7 +1411,7 @@ end
 end
 if Json_Info.ok == true and Json_Info.result == true then
 if #monsha ~= 0 then 
-local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n• — — — — — — — — — •*\n'
+local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n— — — — — — — — —*\n'
 for k, v in pairs(monsha) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -1456,7 +1456,7 @@ Redis:srem(Drox.."muh:Admins:"..msg.chat_id,msg.sender_id.user_id)
 Redis:srem(Drox.."muh:VipMem:"..msg.chat_id,msg.sender_id.user_id)
 if Json_Info.ok == false and Json_Info.error_code == 400 and Json_Info.description == "Bad Request: CHAT_ADMIN_REQUIRED" then
 if #monsha ~= 0 then 
-local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n• — — — — — — — — — •*\n'
+local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n— — — — — — — — —*\n'
 for k, v in pairs(monsha) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -1472,7 +1472,7 @@ end
 end
 if Json_Info.ok == false and Json_Info.error_code == 400 and Json_Info.description == "Bad Request: can't remove chat owner" then
 if #monsha ~= 0 then 
-local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n• — — — — — — — — — •*\n'
+local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n— — — — — — — — —*\n'
 for k, v in pairs(monsha) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -1488,7 +1488,7 @@ end
 end
 if Json_Info.ok == true and Json_Info.result == true then
 if #monsha ~= 0 then 
-local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n• — — — — — — — — — •*\n'
+local ListMembers = '\n*⌁︙تاك للمالكين ↫ ⤈ \n— — — — — — — — —*\n'
 for k, v in pairs(monsha) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -1916,7 +1916,7 @@ LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,"⌁︙قام بارسال شارحه في المجموعة وتم طرده\n").Reply,"md",true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text and (text:match("سني نكس") or text:match("شيعه") or text:match("الشيعه") or text:match("السنه") or text:match("طائفتكم") or text:match("شيعي") or text:match("انا سني") or text:match("مسيحي") or text:match("يهودي") or text:match("صابئي") or text:match("ملحد") or text:match("بالسنه") or text:match("شيعة")) then
 if not Redis:get(Drox.."muh:Lock:Taf"..msg.chat_id) and not msg.BasicConstructor then
 LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
@@ -1950,7 +1950,7 @@ LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,"⌁︙ممنوع الفشار في المجموعه \n⌁︙تأدب شوية عيب\n 😡").Warning,"md",true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (Redis:get(Drox..'FilterText'..msg.chat_id..':'..msg.sender_id.user_id) == 'true') then
 if text or msg.content.photo or msg.content.animation or msg.content.sticker then
 if msg.content.photo then
@@ -2148,7 +2148,7 @@ LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(iduserr,"⌁︙تم اضافه 
 Redis:del('Drox:'..Drox..'id:user'..msg.chat_id) 
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text or msg.content.video_note or msg.content.document or msg.content.audio or msg.content.video or msg.content.voice_note or msg.content.sticker or msg.content.animation or msg.content.photo then
 local test = Redis:get(Drox.."Text:Manager"..msg.sender_id.user_id..":"..msg.chat_id.."")
 if Redis:get(Drox.."Set:Manager:rd"..msg.sender_id.user_id..":"..msg.chat_id) == "true1" then
@@ -2223,7 +2223,7 @@ data = {
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙تم حفظ الرد \n⌁︙ارسل ( "..test.." ) لرئية الرد","md",false, false, false, false, reply_markup)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text and text:match("^(.*)$") then
 if Redis:get(Drox.."Set:Manager:rd"..msg.sender_id.user_id..":"..msg.chat_id) == "true" then
 Redis:set(Drox.."Set:Manager:rd"..msg.sender_id.user_id..":"..msg.chat_id,"true1")
@@ -2254,14 +2254,14 @@ return LuaTele.sendText(msg.chat_id,msg.id,[[
 ❨ ملف • ملصق • متحركه • صوره
 • فيديو • بصمه • صوت • رساله ❩
 ⌁︙يمكنك اضافة الى النص ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙`#username` ↬ معرف المستخدم
 ⌁︙`#name` ↬ اسم المستخدم
 ⌁︙`#msgs` ↬ عدد الرسائل
 ⌁︙`#id` ↬ ايدي المستخدم
 ⌁︙`#stast` ↬ رتبة المستخدم
 ⌁︙`#edit` ↬ عدد السحكات
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ↫ ‹ الغاء ›
 ✓
 ]],"md",false, false, false, false, reply_markup)
@@ -2383,14 +2383,14 @@ return LuaTele.sendText(msg.chat_id,msg.id,[[
 ❨ ملف • ملصق • متحركه • صوره
 • فيديو • بصمه • صوت • رساله ❩
 ⌁︙يمكنك اضافة الى النص ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙`#username` ↬ معرف المستخدم
 ⌁︙`#name` ↬ اسم المستخدم
 ⌁︙`#msgs` ↬ عدد الرسائل
 ⌁︙`#id` ↬ ايدي المستخدم
 ⌁︙`#stast` ↬ رتبة المستخدم
 ⌁︙`#edit` ↬ عدد السحكات
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ↫ ‹ الغاء ›
 ✓
 ]],"md",false, false, false, false, reply_markup)
@@ -2904,7 +2904,7 @@ else
 LuaTele.sendText(msg.chat_id,msg.id,'⌁︙المعرف خطأ او البوت ليس مشرف في القناه ',"md",true)  
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 --set rd inline dev--
 if text == ("مسح الردود الانلاين العامه") or text == ("↫ مسح الردود الانلاين العامه  ⌁") and ChCheck(msg) then
 if not msg.SecondSudo then
@@ -3044,14 +3044,14 @@ LuaTele.sendText(msg.chat_id,msg.id,[[
 ❨ ملف • ملصق • متحركه • صوره
 • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
 ⌁︙يمكنك اضافة الى النص ⌁︙
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙`#username` ↬ معرف المستخدم
 ⌁︙`#name` ↬ اسم المستخدم
 ⌁︙`#msgs` ↬ عدد الرسائل
 ⌁︙`#id` ↬ ايدي المستخدم
 ⌁︙`#stast` ↬ رتبة المستخدم
 ⌁︙`#edit` ↬ عدد السحكات
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ↫ ‹ الغاء ›
 ✓
 ]],"md",true, false, false, false, reply_markup)
@@ -3159,7 +3159,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'�
 end
 
 local list = Redis:smembers(Drox.."List:Manager:inline3am")
-text = "⌁︙قائمه الردود الانلاين ↫ ⤈\n• — — — — — — — — — •\n"
+text = "⌁︙قائمه الردود الانلاين ↫ ⤈\n— — — — — — — — —\n"
 for k,v in pairs(list) do
 if Redis:get(Drox.."Add:Rd:Manager:Gif:inline3am"..v) then
 db = "متحركه 🎭"
@@ -3188,7 +3188,7 @@ end
 return LuaTele.sendText(msg.chat_id,msg.id,"["..text.."]","md",true)
 end
 --end rd inline dev--
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "تفعيل الاشتراك الاجباري" or text == "↫ تفعيل الاشتراك الاجباري ⌁" then
 if not msg.SecondSudo then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n').Warning,"md",true)    
@@ -3245,7 +3245,7 @@ local TextHelp = [[*
 Redis:set(Drox.."chmembers","on")
 return LuaTele.sendText(msg.chat_id,msg.id,TextHelp,"md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Redis:get(Drox.."textch:user"..msg.chat_id.."" .. msg.sender_id.user_id) then 
 if text and text:match("^الغاء$") then 
 Redis:del(Drox.."textch:user"..msg.chat_id.."" .. msg.sender_id.user_id)  
@@ -3276,7 +3276,7 @@ LuaTele.sendText(msg.chat_id,msg.id,"⌁︙للمطور الاساسي فقط ",
 else
 local chtext = Redis:get(Drox.."muh:ChText")
 if chtext then
-LuaTele.sendText(msg.chat_id,msg.id,'⌁︙كليشة الاشتراك ↫ ⤈ \n• — — — — — — — — — •\n['..chtext..']', 'md')
+LuaTele.sendText(msg.chat_id,msg.id,'⌁︙كليشة الاشتراك ↫ ⤈ \n— — — — — — — — —\n['..chtext..']', 'md')
 else
 if Redis:get(Drox.."Drox:Channel:Join") then
 local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
@@ -3290,7 +3290,7 @@ User = GetInfo.result.invite_link
 end
 local Drox = {"حبيبي","؏َـمࢪي","عزيزي","يڪلبي","روحي","حب","حــچي","ضلعي"} 
 local Drox = Drox[math.random(#Drox)]
-local Text = '⌁︙عذࢪاَ '..Drox..' ↫  ['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')\n⌁︙عـليك الاشـتࢪاك في قنـاة البـوت اولآ\nꔹ• — — — — — — — — — •ꔹ'
+local Text = '⌁︙عذࢪاَ '..Drox..' ↫  ['..UserInfo.first_name..'](tg://user?id='..UserInfo.id..')\n⌁︙عـليك الاشـتࢪاك في قنـاة البـوت اولآ\nꔹ— — — — — — — — —ꔹ'
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 {{text=GetInfo.result.title,url=User}},
 }}
@@ -3315,7 +3315,7 @@ Redis:set(Drox.."lockalllll","on")
 LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,"⌁︙تم فتح @all هنا\n ✓").Lock,"md",true)  
 return false
 end 
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "ضع الترحيب عام" or text == "وضع الترحيب عام" or text == "↫ وضع الترحيب عام ⌁" and ChCheck(msg) then  
 if not msg.SecondSudo then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n').Warning,"md",true)    
@@ -3325,7 +3325,7 @@ local textett =[[
 ⌁︙ارسل لي الترحيب عام الان
 ⌁︙تستطيع اضافة مايلي !
 ⌁︙يمكنك استخدام الدوال الاتيه ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 • عرض اسم الشخص : `{الاسم}`
 • عرض معرف الشخص : `{المعرف}`
 • عرض اسم المجموعه : `{المجموعه}`
@@ -3334,7 +3334,7 @@ local textett =[[
 • عرض عدد الادمنيه : `{الادمنيه}`
 • عرض الوقت : `{الوقت}`
 • عرض التاريخ : `{التاريخ}`
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ‹ الغاء ›
 ✓
 ]]
@@ -3358,7 +3358,7 @@ end
 Redis:del(Drox.."Drox:Welcome:Groups") 
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙تم ازالة الترحيب العام في المجموعات","md",true)   
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 
 if Redis:get(Drox.."Drox:Welcome:Groups:Set" .. msg.chat_id .. "" .. msg.sender_id.user_id) then 
 if text == "الغاء" or text == "↫ الغاء الامر ⌁" then 
@@ -3369,7 +3369,7 @@ Redis:del(Drox.."Drox:Welcome:Groups:Set" .. msg.chat_id .. "" .. msg.sender_id.
 Redis:set(Drox.."Drox:Welcome:Groups",text) 
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙تم حفظ الترحيب العام للمجموعات","md",true)     
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text and (text:match("^ضع قناتي (.*)$") or text:match("^وضع قناتي (.*)$")) and ChCheck(msg) then
 local UserId = Text:match("^ضع قناتي (.*)$") or text:match("^وضع قناتي (.*)$") 
 if not msg.VipMem then
@@ -3419,7 +3419,7 @@ LuaTele.sendText(msg.chat_id,msg.id,Text,"md",false, false, false, false, reply_
 return false
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Redis:get(Drox..'SetChannelVip'..msg.sender_id.user_id) then 
 if text =='الغاء' then 
 LuaTele.sendText(msg.chat_id,msg.id, '⌁︙تم الغاء حفظ قناتك ',"md",true)  
@@ -3467,7 +3467,7 @@ local rules = Redis:get(Drox..'muh:Channel:Vip'..msg.sender_id.user_id)
 LuaTele.sendText(msg.chat_id,msg.id, rules,"md",true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "me" or text == "انا" or text == "اني" or text == "منو اني" or text == "من انا" or text == "↫ من انا ⌁" and ChCheck(msg) then
 if Redis:get(Drox..'muh:ME'..msg.chat_id) then 
 if Redis:get(Drox..'Warning:Chat'..msg.chat_id)  then
@@ -3508,10 +3508,10 @@ LuaTele.sendText(msg.chat_id,msg.id,'لا تمتلك صوره في حسابك',"
 end
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 
 
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text and text:match("^غادر (-%d+)$")  then
 local Text = { string.match(text, "^(غادر) (-%d+)$")}
 if not msg.SudoBot then
@@ -3527,7 +3527,7 @@ else
 LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لم تتم اضافتي بها لاقوم بمغادرتها", "md")
 end 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'رفع النسخه الاحتياطيه' and msg.reply_to_message_id ~= 0 or text == 'رفع نسخه احتياطيه' and msg.reply_to_message_id ~= 0 then
 if not msg.SecondSudo then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n').Warning,"md",true)    
@@ -3794,7 +3794,7 @@ File:write(Get_Json)
 File:close()
 return LuaTele.sendDocument(msg.chat_id,msg.id,'./'..UserBot..'.json', '*⌁︙تم جلب النسخه الاحتياطيه\n⌁︙تحتوي على {'..#Groups..'} كروب \n⌁︙وتحتوي على {'..#UsersBot..'} مشترك *\n', 'md')
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'جلب نسخه الردود' or text == 'جلب نسخة الردود' or text == 'جلب الردود' or text == '↫ جلب نسخة الردود ⌁' then
 if not msg.SecondSudo then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n').Warning,"md",true)  end
@@ -3895,7 +3895,7 @@ end
 return LuaTele.sendText(msg.chat_id,msg.id,'\n*⌁︙تم استرجاع ردود المجموعات* ',"md",true)  
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text and text:match("^تعين عدد الاعضاء (%d+)$") and ChCheck(msg) then
 if not msg.SecondSudo then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n').Warning,"md",true)    
@@ -3906,15 +3906,15 @@ elseif text =='الاحصائيات' and ChCheck(msg) then
 if not msg.SecondSudo then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n').Warning,"md",true)    
 end
-LuaTele.sendText(msg.chat_id,msg.id,'*⌁︙عدد احصائيات البوت الكامله ↫ ⤈\n• — — — — — — — — — •\n⌁︙عدد المجموعات : '..(Redis:scard(Drox..'muh:Groups') or 0)..'\n⌁︙عدد المشتركين : '..(Redis:scard(Drox..'muh:Users') or 0)..'*\n✓',"md",true)  
+LuaTele.sendText(msg.chat_id,msg.id,'*⌁︙عدد احصائيات البوت الكامله ↫ ⤈\n— — — — — — — — —\n⌁︙عدد المجموعات : '..(Redis:scard(Drox..'muh:Groups') or 0)..'\n⌁︙عدد المشتركين : '..(Redis:scard(Drox..'muh:Users') or 0)..'*\n✓',"md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if msg.content.luatele == "MessageChatJoinByLink" or msg.content.luatele == "MessageChatAddMembers" then   
 Redis:incr(Drox..'muh:EntryNumber'..msg.chat_id..':'..os.date('%d'))  
 elseif msg.content.luatele == "MessageChatDeleteMember" then   
 Redis:incr(Drox..'muh:ExitNumber'..msg.chat_id..':'..os.date('%d'))  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'تفعيل' and msg.SudoBot then
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg.chat_id,msg.id,"\n*⌁︙عذرآ البوت ليس ادمن في المجموعة يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -3958,7 +3958,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(Sudo_Id,0,'*\n⌁︙تم تفعيل مجموعه جديده ↫ ⤈ *\n• — — — — — — — — — •\n⌁︙بواسطة ↫ ['..UserInfo.first_name..'](tg://user?id='..msg.sender_id.user_id..') \n*⌁︙معلومات المجموعة ↫ ⤈ *\n⌁︙اسم المجموعه ↫ ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')\n⌁︙عدد الاعضاء ↫ '..Info_Chats.member_count..'\n⌁︙عدد الادمنيه ↫ '..Info_Chats.administrator_count..'\n⌁︙عدد المطرودين ↫ '..Info_Chats.banned_count..'\n⌁︙عدد المقيدين ↫ '..Info_Chats.restricted_count..'\n• — — — — — — — — — •\n⌁︙الوقت ↫ '..os.date('%I:%M%p')..'\n⌁︙التاريخ ↫ '..os.date('%Y/%m/%d')..'\n ✓',"md",true, false, false, false, reply_markup)
+LuaTele.sendText(Sudo_Id,0,'*\n⌁︙تم تفعيل مجموعه جديده ↫ ⤈ *\n— — — — — — — — —\n⌁︙بواسطة ↫ ['..UserInfo.first_name..'](tg://user?id='..msg.sender_id.user_id..') \n*⌁︙معلومات المجموعة ↫ ⤈ *\n⌁︙اسم المجموعه ↫ ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')\n⌁︙عدد الاعضاء ↫ '..Info_Chats.member_count..'\n⌁︙عدد الادمنيه ↫ '..Info_Chats.administrator_count..'\n⌁︙عدد المطرودين ↫ '..Info_Chats.banned_count..'\n⌁︙عدد المقيدين ↫ '..Info_Chats.restricted_count..'\n— — — — — — — — —\n⌁︙الوقت ↫ '..os.date('%I:%M%p')..'\n⌁︙التاريخ ↫ '..os.date('%Y/%m/%d')..'\n ✓',"md",true, false, false, false, reply_markup)
 end
 Redis:sadd(Drox.."muh:Groups",msg.chat_id)
 Redis:set(Drox.."Status:Id"..msg.chat_id,true) ;Redis:del(Drox.."Status:Reply"..msg.chat_id) ;Redis:del(Drox.."Status:ReplySudo"..msg.chat_id) ;Redis:set(Drox.."Status:BanId"..msg.chat_id,true) ;Redis:set(Drox.."Status:SetId"..msg.chat_id,true) ;Redis:set(Drox.."Status:IdPhoto"..msg.chat_id,true) ;Redis:set(Drox.."Status:Games"..msg.chat_id,true) 
@@ -4038,7 +4038,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(Sudo_Id,0,'*\n⌁︙تم تفعيل مجموعه جديده ↫ ⤈ *\n• — — — — — — — — — •\n⌁︙بواسطة ↫ ['..UserInfo.first_name..'](tg://user?id='..msg.sender_id.user_id..') \n*⌁︙معلومات المجموعة ↫ ⤈ *\n⌁︙اسم المجموعه ↫ ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')\n⌁︙عدد الاعضاء ↫ '..Info_Chats.member_count..'\n⌁︙عدد الادمنيه ↫ '..Info_Chats.administrator_count..'\n⌁︙عدد المطرودين ↫ '..Info_Chats.banned_count..'\n⌁︙عدد المقيدين ↫ '..Info_Chats.restricted_count..'\n• — — — — — — — — — •\n⌁︙الوقت ↫ '..os.date('%I:%M%p')..'\n⌁︙التاريخ ↫ '..os.date('%Y/%m/%d')..'\n ✓',"md",true, false, false, false, reply_markup)
+LuaTele.sendText(Sudo_Id,0,'*\n⌁︙تم تفعيل مجموعه جديده ↫ ⤈ *\n— — — — — — — — —\n⌁︙بواسطة ↫ ['..UserInfo.first_name..'](tg://user?id='..msg.sender_id.user_id..') \n*⌁︙معلومات المجموعة ↫ ⤈ *\n⌁︙اسم المجموعه ↫ ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')\n⌁︙عدد الاعضاء ↫ '..Info_Chats.member_count..'\n⌁︙عدد الادمنيه ↫ '..Info_Chats.administrator_count..'\n⌁︙عدد المطرودين ↫ '..Info_Chats.banned_count..'\n⌁︙عدد المقيدين ↫ '..Info_Chats.restricted_count..'\n— — — — — — — — —\n⌁︙الوقت ↫ '..os.date('%I:%M%p')..'\n⌁︙التاريخ ↫ '..os.date('%Y/%m/%d')..'\n ✓',"md",true, false, false, false, reply_markup)
 end
 Redis:sadd(Drox.."muh:Groups",msg.chat_id)
 Redis:set(Drox.."Status:Id"..msg.chat_id,true) ;Redis:del(Drox.."Status:Reply"..msg.chat_id) ;Redis:del(Drox.."Status:ReplySudo"..msg.chat_id) ;Redis:set(Drox.."Status:BanId"..msg.chat_id,true) ;Redis:set(Drox.."Status:SetId"..msg.chat_id,true) ;Redis:set(Drox.."Status:IdPhoto"..msg.chat_id,true) ;Redis:set(Drox.."Status:Games"..msg.chat_id,true) 
@@ -4240,7 +4240,7 @@ return LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photo
 '\n⌁︙رسائلك : '..TotalMsg..
 '\n⌁︙تعديلاتك : '..TotalEdit..
 '\n⌁︙تفاعلك : '..TotalMsgT..
-'\n• — — — — — — — — — •', "html")
+'\n— — — — — — — — —', "html")
 else
 return LuaTele.sendText(msg.chat_id,msg.id,
 '\n⌁︙ايديك : '..UserId..
@@ -4277,7 +4277,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,
 '\n⌁︙رسائلك : '..TotalMsg..
 '\n⌁︙تعديلاتك : '..TotalEdit..
 '\n⌁︙تفاعلك : '..TotalMsgT..
-'\n• — — — — — — — — — •',"html",true) 
+'\n— — — — — — — — —',"html",true) 
 end
 end
 end
@@ -4414,7 +4414,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✓ ❭' else promote = '❬ ✗ ❭'
 end
-ay = ay..'*\n⌁︙صلاحيات المستخدم :\n• — — — — — — — — — •'..'\n⌁︙تغيير المعلومات : '..change_info..'\n⌁︙تثبيت الرسائل : '..pin_messages..'\n⌁︙اضافه مستخدمين : '..invite_users..'\n⌁︙مسح الرسائل : '..delete_messages..'\n⌁︙حظر المستخدمين : '..restrict_members..'\n⌁︙اضافه المشرفين : '..promote..'\n\n*'
+ay = ay..'*\n⌁︙صلاحيات المستخدم :\n— — — — — — — — —'..'\n⌁︙تغيير المعلومات : '..change_info..'\n⌁︙تثبيت الرسائل : '..pin_messages..'\n⌁︙اضافه مستخدمين : '..invite_users..'\n⌁︙مسح الرسائل : '..delete_messages..'\n⌁︙حظر المستخدمين : '..restrict_members..'\n⌁︙اضافه المشرفين : '..promote..'\n\n*'
 end
 return LuaTele.sendText(msg.chat_id,msg.id,ay,"html",true) 
 end
@@ -4445,7 +4445,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✓ ❭' else promote = '❬ ✗ ❭'
 end
-PermissionsUser = '*\n⌁︙صلاحيات البوت في المجموعة ↫ ⤈\n• — — — — — — — — — •'..'\n⌁︙تغيير المعلومات : '..change_info..'\n⌁︙تثبيت الرسائل : '..pin_messages..'\n⌁︙اضافه مستخدمين : '..invite_users..'\n⌁︙مسح الرسائل : '..delete_messages..'\n⌁︙حظر المستخدمين : '..restrict_members..'\n⌁︙اضافه المشرفين : '..promote..'\n\n*'
+PermissionsUser = '*\n⌁︙صلاحيات البوت في المجموعة ↫ ⤈\n— — — — — — — — —'..'\n⌁︙تغيير المعلومات : '..change_info..'\n⌁︙تثبيت الرسائل : '..pin_messages..'\n⌁︙اضافه مستخدمين : '..invite_users..'\n⌁︙مسح الرسائل : '..delete_messages..'\n⌁︙حظر المستخدمين : '..restrict_members..'\n⌁︙اضافه المشرفين : '..promote..'\n\n*'
 return LuaTele.sendText(msg.chat_id,msg.id,PermissionsUser,"md",true) 
 end
 
@@ -4470,7 +4470,7 @@ Message = Message - 1048576
 end
 LuaTele.sendText(msg.chat_id, msg.id, "⌁︙تم تنظيف ↬ "..NumMessage.. ' رساله', 'md')
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (msg.content.animation) or (msg.content.photo) or (msg.content.video) or (msg.content.document) or (msg.content.sticker) or (msg.content.voice) or (msg.content.audio) and msg.reply_to_message_id ~= 0 then
 Redis:sadd(Drox.."Drox:allM"..msg.chat_id, msg.id)
 end
@@ -4528,7 +4528,7 @@ end
 return LuaTele.sendText(msg.chat_id,msg.id,t)  
 end
 
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text and text:match('^تنزيل (.*) @(%S+)$') and ChCheck(msg) then
 local UserName = {text:match('^تنزيل (.*) @(%S+)$')}
 local UserId_Info = LuaTele.searchPublicChat(UserName[2])
@@ -5409,7 +5409,7 @@ end
 return false
 end
 if Redis:sismember(Drox.."Bakra:Group"..msg.chat_id,Message_Reply.sender_id.user_id) then
-return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(Message_Reply.sender_id.user_id,"⌁︙هي بقره شرفع منه بعد😹??").Reply,"md",true)  
+return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(Message_Reply.sender_id.user_id,"⌁︙هي بقره شرفع منه بعد😹💔").Reply,"md",true)  
 else
 Redis:sadd(Drox.."Bakra:Group"..msg.chat_id,Message_Reply.sender_id.user_id) 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(Message_Reply.sender_id.user_id,"⌁︙تم رفعه في قائمة الهوايش\n ✓").Reply,"md",true)  
@@ -5695,7 +5695,7 @@ local Info_Members = Redis:smembers(Drox.."muh:SecondSudo:")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه مطورين الثانويين ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه مطورين الثانويين ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5717,7 +5717,7 @@ local Info_Members = Redis:smembers(Drox.."muh:SudoBot:")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه مطورين البوت ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه مطورين البوت ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5739,7 +5739,7 @@ local Info_Members = Redis:smembers(Drox.."muh:Owner:"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد مالكين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه المالكين ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المالكين ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5761,7 +5761,7 @@ local Info_Members = Redis:smembers(Drox.."muh:BasicConstructor:"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد منشئين اساسيين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه المنشئين الاساسيين ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المنشئين الاساسيين ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5783,7 +5783,7 @@ local Info_Members = Redis:smembers(Drox.."muh:Constructor:"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد منشئين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه المنشئين ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المنشئين ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5805,7 +5805,7 @@ local Info_Members = Redis:smembers(Drox.."muh:Managers:"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد مدراء حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه المدراء ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المدراء ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5827,7 +5827,7 @@ local Info_Members = Redis:smembers(Drox.."muh:Admins:"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد ادمنيه حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه الادمنيه ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه الادمنيه ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5849,7 +5849,7 @@ local Info_Members = Redis:smembers(Drox.."muh:VipMem:"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد مميزين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه المميزين ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المميزين ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5868,7 +5868,7 @@ if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg.chat_id,msg.id,"\n*⌁︙عذرآ البوت ليس ادمن في المجموعه يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg.chat_id, "Administrators", "*", 0, 200)
-listAdmin = '\n*⌁︙قائمه المشرفين ↫ ⤈\n• — — — — — — — — — •*\n'
+listAdmin = '\n*⌁︙قائمه المشرفين ↫ ⤈\n— — — — — — — — —*\n'
 local List_Members = Info_Members.members
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
@@ -5891,7 +5891,7 @@ local Info_Members = Redis:smembers(Drox.."Donky:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد مطايه كلها اوادم , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمة مطاية المجموعه ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمة مطاية المجموعه ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5910,7 +5910,7 @@ local Info_Members = Redis:smembers(Drox.."HaTa:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙*لا يوجد حاتات كلهن محلوات* 😹💔","md",true)  
 end
-ListMembers = '⌁︙*قائمة حاتات المجموعه 😹💔 ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '⌁︙*قائمة حاتات المجموعه 😹💔 ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5929,7 +5929,7 @@ local Info_Members = Redis:smembers(Drox.."twhd:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙مفيش متوحدين هنا كلهم اتعالجو 😂😂 , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه المتوحدين ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المتوحدين ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5948,7 +5948,7 @@ local Info_Members = Redis:smembers(Drox.."klb:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙*لا يوجد جلاب كلهم ملقحين* 😹💔","md",true)  
 end
-ListMembers = '⌁︙*قائمة الجلاب المجموعه 😹💔 ↫ ⤈  \n • — — — — — — — — — •*\n'
+ListMembers = '⌁︙*قائمة الجلاب المجموعه 😹💔 ↫ ⤈  \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5967,7 +5967,7 @@ local Info_Members = Redis:smembers(Drox.."Tale:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙*لا يوجد طليان كلهم نغوله مينقطون* 😹💔","md",true)  
 end
-ListMembers = '\n⌁︙*قائمة طليان المجموعه 😹💔 ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '\n⌁︙*قائمة طليان المجموعه 😹💔 ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -5986,7 +5986,7 @@ local Info_Members = Redis:smembers(Drox.."Jred:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙*لا يوجد جريذيه كلهم عدموهم* 😹💔","md",true)  
 end
-ListMembers = '⌁︙*قائمة الجريذيه المجموعه 😹💔 ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '⌁︙*قائمة الجريذيه المجموعه 😹💔 ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6005,7 +6005,7 @@ local Info_Members = Redis:smembers(Drox.."Zahf:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙*لا يوجد زواحف كلهم ثكال* 😹💔","md",true)  
 end
-ListMembers = '⌁︙قائمة زواحف المجموعه ??💔 ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '⌁︙قائمة زواحف المجموعه ??💔 ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6024,7 +6024,7 @@ local Info_Members = Redis:smembers(Drox.."Monkey:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙ماكو قروده هنا شبعو موز 😂😂 , ","md",true)  
 end
-ListMembers = '⌁︙قائمة قروده المجموعه 😹💔 ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '⌁︙قائمة قروده المجموعه 😹💔 ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6043,7 +6043,7 @@ local Info_Members = Redis:smembers(Drox.."8by:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙ماكو اغبياء هنا كلهم اذكياء ","md",true)  
 end
-ListMembers = '⌁︙*قائمه الاغبياء ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '⌁︙*قائمه الاغبياء ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6063,7 +6063,7 @@ local Info_Members = Redis:smembers(Drox.."Bakra:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙*لا يوجد بقرات كلهن ضعيفات ومبيهن حليب* 😹💔","md",true)  
 end
-ListMembers = '⌁︙قائمة البقرات المجموعه ??💔 ↫ ⤈ \n• — — — — — — — — — • \n'
+ListMembers = '⌁︙قائمة البقرات المجموعه ??💔 ↫ ⤈ \n— — — — — — — — — \n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6083,7 +6083,7 @@ local Info_Members = Redis:smembers(Drox.."hlo:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙*لا يوجد صاكين كلهم جكمين* 😹💔","md",true)  
 end
-ListMembers = '⌁︙قائمة صاكين المجموعه 😹💔 ↫ ⤈ \n• — — — — — — — — — • \n'
+ListMembers = '⌁︙قائمة صاكين المجموعه 😹💔 ↫ ⤈ \n— — — — — — — — — \n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6103,7 +6103,7 @@ local Info_Members = Redis:smembers(Drox.."Sakl:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙*لا يوجد صخوله كلهم اوادم* 😹💔","md",true)  
 end
-ListMembers = '⌁︙قائمة الصخوله المجموعه 😹💔 ↫ ⤈ \n• — — — — — — — — — • \n'
+ListMembers = '⌁︙قائمة الصخوله المجموعه 😹💔 ↫ ⤈ \n— — — — — — — — — \n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6123,7 +6123,7 @@ local Info_Members = Redis:smembers(Drox.."Bro:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙*لا يوجد ضلوع راحو وي الطيبين* 😹💔","md",true)  
 end
-ListMembers = '⌁︙قائمة الضلوع المجموعه 😹💔 ↫ ⤈ \n• — — — — — — — — — • \n'
+ListMembers = '⌁︙قائمة الضلوع المجموعه 😹💔 ↫ ⤈ \n— — — — — — — — — \n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6143,7 +6143,7 @@ local Info_Members = Redis:smembers(Drox.."Bro:Girl:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙*لا يوجد ضلعات كلهن برابيك* 😹💔","md",true)  
 end
-ListMembers = '⌁︙قائمة الضلعات المجموعه 😹💔 ↫ ⤈ \n• — — — — — — — — — • \n'
+ListMembers = '⌁︙قائمة الضلعات المجموعه 😹💔 ↫ ⤈ \n— — — — — — — — — \n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6165,7 +6165,7 @@ end
 local Info_BanAllMembers = Redis:smembers(Drox.."BanAll:Groups") 
 local Info_KtmAllMembers = Redis:smembers(Drox.."ktmAll:Groups") 
 if #Info_BanAllMembers ~= 0 then 
-ListMembers = '\n*⌁︙قائمه المحظورين عام ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المحظورين عام ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_BanAllMembers) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6177,7 +6177,7 @@ else
 ListMembers = ""
 end
 if #Info_KtmAllMembers ~= 0 then 
-ListMembers = ListMembers..'\n*⌁︙قائمه المكتومين عام ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = ListMembers..'\n*⌁︙قائمه المكتومين عام ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_KtmAllMembers) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6207,7 +6207,7 @@ local Info_Members = Redis:smembers(Drox.."BanAll:Groups")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد محظورين عام حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه المحظورين عام ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المحظورين عام ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6229,7 +6229,7 @@ local Info_Members = Redis:smembers(Drox.."ktmAll:Groups")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد مكتومين عام حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه المكتومين عام ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المكتومين عام ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6251,7 +6251,7 @@ local Info_Members = Redis:smembers(Drox.."BanGroup:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد محظورين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه المحظورين ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المحظورين ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6273,7 +6273,7 @@ local Info_Members = Redis:smembers(Drox.."SilentGroup:Group"..msg.chat_id)
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد مكتومين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه المكتومين ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المكتومين ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -6287,7 +6287,7 @@ type = 'inline',
 data = {{{text = '‹ مسح المكتومين ›', data = msg.sender_id.user_id..'/SilentGroupGroup'},},}}
 return LuaTele.sendText(msg.chat_id, msg.id, ListMembers, 'md', false, false, false, false, reply_markup)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 --     بدايه التفعيل     --
 if text and text:match("^تفعيل (.*)$") and ChCheck(msg) and msg.reply_to_message_id == 0 then
 local TextMsg = text:match("^تفعيل (.*)$")
@@ -6658,7 +6658,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,"�
 end end
 end-- التفعيل
 --     نهايه التفعيل     --
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 --     بدايه التعطيل     --
 if text and text:match("^تعطيل (.*)$") and msg.reply_to_message_id == 0 then
 local TextMsg = text:match("^تعطيل (.*)$")
@@ -7031,7 +7031,7 @@ end end
 end-- تعطيل
 
 --     نهايه التعطيل     --
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text and text:match('^حظر عام @(%S+)$') then
 local UserName = text:match('^حظر عام @(%S+)$')
 if not msg.SecondSudo then
@@ -8019,7 +8019,7 @@ LuaTele.setChatMemberStatus(msg.chat_id,UserId,'restricted',{1,1,1,1,1,1,1,1,1})
 https.request('https://api.telegram.org/bot'..Token..'/unbanChatMember?chat_id='..msg.chat_id..'&user_id='..UserId)
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(UserId,"⌁︙تم طرده من المجموعة \n").Reply,"md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text then
 if text:match('^انذار @(%S+)$') or text:match('^إنذار @(%S+)$') then
 if not msg.Admin then
@@ -8105,7 +8105,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(UserInfo.id,"⌁︙اخ�
 end
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "نزلني" then
 if not Redis:get(Drox.."Status:remMe"..msg.chat_id) then
 return LuaTele.sendText(msg.chat_id,msg.id,"*⌁︙امر نزلني تم تعطيله من قبل المدراء *","md",true)  
@@ -8142,7 +8142,7 @@ Redis:srem(Drox.."muh:VipMem:"..msg.chat_id, msg.sender_id.user_id)
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙تم تنزيلك من الادمنيه والمميزين ","md",true) 
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'تحويل' then 
 if tonumber(msg.reply_to_message_id) > 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -8199,7 +8199,7 @@ os.remove('stick.jpg')
 end 
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'شيكول' and ChCheck(msg) then 
 if tonumber(msg.reply_to_message_id) > 0 then
 local result = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -8217,7 +8217,7 @@ end
 end
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "اطردني" or text == "طردني" then
 if not Redis:get(Drox.."Status:KickMe"..msg.chat_id) then
 return LuaTele.sendText(msg.chat_id,msg.id,"*⌁︙امر اطردني تم تعطيله من قبل المدراء \n*","md",true)  
@@ -8256,7 +8256,7 @@ if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg.chat_id,msg.id,"\n*⌁︙عذرآ البوت ليس ادمن في المجموعة يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg.chat_id, "Administrators", "*", 0, 200)
-listAdmin = '\n*⌁︙قائمه الادمنيه ↫ ⤈\n • — — — — — — — — — •*\n'
+listAdmin = '\n*⌁︙قائمه الادمنيه ↫ ⤈\n — — — — — — — — —*\n'
 local List_Members = Info_Members.members
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.luatele == "chatMemberStatusCreator" then
@@ -8300,7 +8300,7 @@ end
 end
 LuaTele.sendText(msg.chat_id,msg.id,'\n*⌁︙تم ترقيه - ('..y..') ادمنيه *',"md",true)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'المالك' or text == "منشئ" or text =="منشى" or text == "المنشئ" or text =="المنشى"  or text =="مالك المجموعه" or text =="مالك المجموعة" then
 if msg.can_be_deleted_for_all_users == false then
 return LuaTele.sendText(msg.chat_id,msg.id,"\n*⌁︙عذرآ البوت ليس ادمن في المجموعة يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  
@@ -8318,12 +8318,12 @@ return false
 end
 if UserInfo.username then
 if photo and photo.total_count and photo.total_count > 0 then
-local Text ="*⌁︙Owner Name ↬* ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n*⌁︙Owner User ↬* [@"..UserInfo.username.."]\n*⌁︙Owner id ↬* ["..UserInfo.id.."](T.me/"..UserInfo.username..")\n*⌁︙Owner Bio ↬* ["..bio.."]\n• — — — — — — — — — •"
+local Text ="*⌁︙Owner Name ↬* ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n*⌁︙Owner User ↬* [@"..UserInfo.username.."]\n*⌁︙Owner id ↬* ["..UserInfo.id.."](T.me/"..UserInfo.username..")\n*⌁︙Owner Bio ↬* ["..bio.."]\n— — — — — — — — —"
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ '..UserInfo.first_name..' ›', url = 't.me/'..UserInfo.username}, },{{text = '‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},},}}
 LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, Text, "md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup)
 return false
 else
-local Creator ="*⌁︙Owner Name ↬* ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n*⌁︙Owner User ↬* [@"..UserInfo.username.."]\n*⌁︙Owner id ↬* ["..UserInfo.id.."](T.me/"..UserInfo.username..")\n*⌁︙Owner Bio ↬* ["..bio.."]\n• — — — — — — — — — •"
+local Creator ="*⌁︙Owner Name ↬* ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n*⌁︙Owner User ↬* [@"..UserInfo.username.."]\n*⌁︙Owner id ↬* ["..UserInfo.id.."](T.me/"..UserInfo.username..")\n*⌁︙Owner Bio ↬* ["..bio.."]\n— — — — — — — — —"
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ '..UserInfo.first_name..' ›', url = 't.me/'..UserInfo.username}, },{{text = '‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},},}}
 LuaTele.sendText(msg.chat_id,msg.id,Creator,"md", true, false, false, false, reply_markup)
 return false
@@ -8332,7 +8332,7 @@ end
 end
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'كشف البوتات' and ChCheck(msg) then
 if not msg.Manager then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(7)..' .\n').Warning,"md",true)    
@@ -8342,7 +8342,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,"\n*⌁︙عذرآ البوت ليس 
 end
 local Info_Members = LuaTele.getSupergroupMembers(msg.chat_id, "Bots", "*", 0, 200)
 local List_Members = Info_Members.members
-listBots = '⌁︙قائمة البوتات ↫ ⤈ \n• — — — — — — — — — •\n'
+listBots = '⌁︙قائمة البوتات ↫ ⤈ \n— — — — — — — — —\n'
 x = 0
 for k, v in pairs(List_Members) do
 local UserInfo = LuaTele.getUser(v.member_id.user_id)
@@ -8356,7 +8356,7 @@ Admin = "→ عضو"
 end
 listBots = listBots..""..k.." - @"..UserInfo.username.." "..Admin.."\n"
 end
-local s = '• — — — — — — — — — •\n⌁︙عدد البوتات هنا ↫ '..#List_Members..'\n'
+local s = '— — — — — — — — —\n⌁︙عدد البوتات هنا ↫ '..#List_Members..'\n'
 local t = '⌁︙عدد البوتات المرفوعه ↫ '..x..'\n⌁︙ملاحضه علامة الـ✯ تعني ان البوت ادمن في هذه المجموعه\n ✓'
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -8368,7 +8368,7 @@ data = {
 }
 LuaTele.sendText(msg.chat_id,msg.id,"["..listBots.."]"..s..t,"md", false, false, false, false, reply_markup)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'المقيدين' and ChCheck(msg) then
 if not msg.Manager then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(7)..' .\n').Warning,"md",true)    
@@ -8380,7 +8380,7 @@ local Info_Members = LuaTele.getSupergroupMembers(msg.chat_id, "Recent", "*", 0,
 local List_Members = Info_Members.members
 x = 0
 y = nil
-restricted = '\n*⌁︙قائمه المقيديين ↫ ⤈\n • — — — — — — — — — •*\n'
+restricted = '\n*⌁︙قائمه المقيديين ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(List_Members) do
 if Info_Members.members[k].status.is_member == true and Info_Members.members[k].status.luatele == "chatMemberStatusRestricted" then
 y = true
@@ -8397,7 +8397,7 @@ if y == true then
 LuaTele.sendText(msg.chat_id,msg.id,restricted,"md",true)  
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "غادر" or text == 'بوت غادر' and ChCheck(msg) then 
 if not msg.SudoBot then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(3)..' .\n').Warning,"md",true)    
@@ -8410,14 +8410,14 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 }}
 return LuaTele.sendText(msg.chat_id,msg.id,'*\n⌁︙هل انت متاكد من مغادرة البوت \n⌁︙سيتم حذف جميع بيانات المجموعة\n.*',"md",false, false, false, false, reply_markup)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'تاك للكل' and ChCheck(msg) then
 if not msg.Admin then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(8)..' .\n').Warning,"md",true)    
 end
 local Info_Members = LuaTele.searchChatMembers(msg.chat_id, "*", 200)
 local List_Members = Info_Members.members
-listall = '\n*⌁︙قائمه الاعضاء ↫ ⤈\n • — — — — — — — — — •*\n'
+listall = '\n*⌁︙قائمه الاعضاء ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(List_Members) do
 local UserInfo = LuaTele.getUser(v.member_id.user_id)
 if UserInfo.username ~= "" then
@@ -8542,7 +8542,7 @@ if not Redis:get(Drox..'muh:spech:muh'..msg.chat_id) then
 return LuaTele.sendText(msg.chat_id,msg.id,m,"md",true) 
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text ==("صورته") and ChCheck(msg) and msg.reply_to_message_id ~= 0 or text ==("صورتة") and msg.reply_to_message_id ~= 0 and ChCheck(msg) then 
 if Redis:get(Drox.."hisphoto"..msg.chat_id) == "off" then
 LuaTele.sendText(msg.chat_id,msg.id,'*⌁︙الصوره معطله*',"md",true) 
@@ -8595,7 +8595,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,'*⌁︙لا توجد صوره ف ح�
 end
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "صورتي" and ChCheck(msg) then
 if Redis:get(Drox.."myphoto"..msg.chat_id) == "off" then
 LuaTele.sendText(msg.chat_id,msg.id,'*⌁︙الصوره معطله*',"md",true) 
@@ -8619,7 +8619,7 @@ end
 if text and text:match("^(تعطيل ملف) (.*)(.lua)$") then
 local FileGet = {string.match(text, "^(تعطيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
-local GetJson, Res = https.request("https://raw.githubusercontent.com/ssm2121/Files_Drox/master/Files_Drox/"..FileName)
+local GetJson, Res = https.request("https://raw.githubusercontent.com/Rasul-Muntazar/Files_Drox/master/Files_Drox/"..FileName)
 if Res == 200 then
 os.execute("rm -fr Files_Drox/"..FileName)
 LuaTele.sendText(msg.chat_id, msg.id,"\nالملف ↫ ‹ "..FileName.." ›\nتم تعطيله وحذفه من البوت بنجاح") 
@@ -8631,7 +8631,7 @@ end
 if text and text:match("^(تفعيل ملف) (.*)(.lua)$") then
 local FileGet = {string.match(text, "^(تفعيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
-local GetJson, Res = https.request("https://raw.githubusercontent.com/ssm2121/Files_Drox/master/Files_Drox/"..FileName)
+local GetJson, Res = https.request("https://raw.githubusercontent.com/Rasul-Muntazar/Files_Drox/master/Files_Drox/"..FileName)
 if Res == 200 then
 local ChekAuto = io.open("Files_Drox/"..FileName,'w+')
 ChekAuto:write(GetJson)
@@ -8647,12 +8647,12 @@ if text == "متجر الملفات" or text == 'المتجر' then
 if not msg.muhammad then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n').Warning,"md",true)    
 end 
-local Get_Files, res = https.request("https://raw.githubusercontent.com/ssm2121/Files_Drox/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/Rasul-Muntazar/Files_Drox/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files)
 if Get_info then
-local TextS = "\n⌁︙قائمة ملفات متجر سورس دروكس\n⌁︙الملفات المتوفره حاليا ↫ ⤈\n• — — — — — — — — — • \n"
-local TextE = "• — — — — — — — — — • \n⌁︙علامة ↫ (✔) تعني الملف مفعل\n⌁︙علامة ↫ (✖️) تعني الملف معطل\n"
+local TextS = "\n⌁︙قائمة ملفات متجر سورس دروكس\n⌁︙الملفات المتوفره حاليا ↫ ⤈\n— — — — — — — — — \n"
+local TextE = "— — — — — — — — — \n⌁︙علامة ↫ (✔) تعني الملف مفعل\n⌁︙علامة ↫ (✖️) تعني الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local CheckFileisFound = io.open("Files_Drox/"..name,"r")
@@ -8672,7 +8672,7 @@ else
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد اتصال من الـapi","md",true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 -- بداية الميديا
 if (text == "متحركه" or text == "↫ متحركه ⌁") and ChCheck(msg) and not Redis:get(Drox..'muh:gif:muh'..msg.chat_id) then
 muh = math.random(4,143); 
@@ -8682,7 +8682,7 @@ keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/gif
 local msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token..'/sendanimation?chat_id=' .. msg.chat_id .. '&animation=https://t.me/AnimationDragon/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (text == "ميمز" or text == "↫ ميمز ⌁") and not Redis:get(Drox..'muh:memz:muh'..msg.chat_id) then
 muh = math.random(3,1171); 
 local Text ='*⌁︙تم اختيار مقطع الميمز لك*'
@@ -8691,7 +8691,7 @@ keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/mem
 local msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/MemzDragon/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (text == "غنيلي" or text == "↫ غنيلي ⌁") and ChCheck(msg) and not Redis:get(Drox..'muh:Audios:muh'..msg.chat_id) then
 muh = math.random(3,2689); 
 local Text ='*⌁︙تم اختيار المقطع الصوتي لك*'
@@ -8700,7 +8700,7 @@ keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data=msg.s
 local msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/AudioDragon/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (text == "اغنيه" or text == "↫ اغنيه ⌁" or text == "اغاني") and ChCheck(msg) and not Redis:get(Drox..'muh:mp3:muh'..msg.chat_id) then
 muh = math.random(2,1167); 
 local Text ='*⌁︙تم اختيار الاغنيه لك*'
@@ -8709,7 +8709,7 @@ keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/mp3
 local msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/sendVoice/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (text == "ريمكس" or text == "↫ ريمكس ⌁") and ChCheck(msg) and not Redis:get(Drox..'muh:Remix:muh'..msg.chat_id) then
 muh = math.random(3,442); 
 local Text ='*⌁︙تم اختيار الريمكس لك*'
@@ -8718,7 +8718,7 @@ keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/rem
 local msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice=https://t.me/RemixDragon/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text then
 local GetMsg = Redis:incr(Drox..'Num:Message:User'..msg.chat_id..':'..msg.sender_id.user_id) 
 Redis:hset(Drox..':GroupUserCountMsg:'..msg.chat_id,msg.sender_id.user_id,GetMsg)
@@ -8744,7 +8744,7 @@ Count,Kount,i = 8 , 0 , 1
 for _ in pairs(GroupAllRtbaL) do Kount = Kount + 1 end
 table.sort(GroupAllRtbaL, function(a, b) return tonumber(a[1]) > tonumber(b[1]) end)
 if Count >= Kount then Count = Kount end
-Text = "*⌁︙قائمه ترند التفاعل 📊. \n• — — — — — — — — — •*\n"
+Text = "*⌁︙قائمه ترند التفاعل 📊. \n— — — — — — — — —*\n"
 for k,v in ipairs(GroupAllRtbaL) do
 if i <= Count then  Text = Text..i.."- ❲ ["..(GetAllNames[v[2]] or "خطأ بالأسـم").."](tg://user?id="..v[2]..") ❳ - ❲ *"..v[1].."* ❳  \n" end ; i=i+1
 end
@@ -8759,7 +8759,7 @@ Count,Kount,i = 8 , 0 , 1
 for _ in pairs(GroupAllRtbaL) do Kount = Kount + 1 end
 table.sort(GroupAllRtbaL, function(a, b) return tonumber(a[1]) > tonumber(b[1]) end)
 if Count >= Kount then Count = Kount end
-Text = "*⌁︙قائمه ترند الكروبات 📊. \n• — — — — — — — — — •*\n"
+Text = "*⌁︙قائمه ترند الكروبات 📊. \n— — — — — — — — —*\n"
 for k,v in pairs(GroupAllRtbaL) do
 if v[2] and v[2]:match("(-100%d+)") then
 local InfoChat = LuaTele.getChat(v[2])
@@ -8783,7 +8783,7 @@ if text and msg.chat_id then
 local GetMsg = Redis:incr(Drox..'Drox:MsgNumbergroups'..msg.chat_id) or 1
 Redis:hset(Drox..':GroupUserCountMsg:groups',msg.chat_id,GetMsg)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (text == "صوره" or text == "↫ صوره ⌁") and ChCheck(msg) and not Redis:get(Drox..'muh:Photo:muh'..msg.chat_id) then
 muh = math.random(3,1146); 
 local Text ='*⌁︙تم اختيار الصوره لك*'
@@ -8792,7 +8792,7 @@ keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/pho
 local msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/PhotosDragon/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (text == "انمي" or text == "↫ انمي ⌁") and ChCheck(msg) and not Redis:get(Drox..'muh:Anime:muh'..msg.chat_id) then
 muh = math.random(3,1002); 
 local Text ='*⌁︙تم اختيار صورة الانمي لك*'
@@ -8801,7 +8801,7 @@ keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/ani
 local msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/AnimesDragon/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (text == "فلم" or text == "↫ فلم ⌁") and ChCheck(msg) and not Redis:get(Drox..'muh:Movies:muh'..msg.chat_id) then
 muh = math.random(45,125); 
 local Text ='*⌁︙تم اختيار الفلم لك*'
@@ -8810,7 +8810,7 @@ keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/Mov
 local msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/MoviesDragon/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (text == "مسلسل" or text == "↫ مسلسل ⌁") and ChCheck(msg) and not Redis:get(Drox..'muh:Series:muh'..msg.chat_id) then
 muh = math.random(2,54); 
 local Text ='*⌁︙تم اختيار المسلسل لك*'
@@ -8819,7 +8819,7 @@ keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/ser
 local msg_id = msg.id/2097152/0.5 
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/SeriesDragon/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'شعر' and ChCheck(msg) and not Redis:get(Drox..'muh:s3r:muh'..msg.chat_id) then
 Num = math.random(2,140); 
 local Text ='*⌁︙تم اختيار الشعر لك*'
@@ -8832,7 +8832,7 @@ keyboard.inline_keyboard = {
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. msg.chat_id .. '&voice='..voice..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "شبيهي" and ChCheck(msg) or txet == "يشبهني" and ChCheck(msg) then
 local t = "تصدك يخلق من الشبه اربعين🌚"
 Num = math.random(9,12)
@@ -8856,7 +8856,7 @@ local m = "https://t.me/DMmAR0/"..Rrr..""
 local rep = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendPhoto?chat_id="..msg.chat_id.."&caption="..URL.escape(t).."&photo="..m.."&reply_to_message_id="..rep.."&parse_mode=Markdown")
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'السورس' or text == 'سورس' or text == 'يا سورس' or text == '↫  السورس ⌁' then
 photo = "https://t.me/Rasulm12/41"
 local Text =[[
@@ -8869,16 +8869,16 @@ keyboard.inline_keyboard = {
 {text = '‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},
 },
 {
-{text = '‹ Dev 𝖣𝖱𝗈𝗑 ›', url = 't.me/uQuuu'},{text = '‹ Tws Bot ›', url = 't.me/uQuuuBot'},
+{text = '‹ مطـوࢪ السـوࢪس ›', url = 't.me/uQuuu'},{text = '‹ شـࢪاء بوت ›', url = 't.me/uQuuuBot'},
 },
 {
-{text = '‹ تفـآصيل ›', url = 't.me/BB4BBB'},
+{text = '‹ تفـآصيل. ›', url = 't.me/BB4BBB'},
 },
 }
 local msg_id = msg.id/2097152/0.5
 return https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/DroxTeAm&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "قفل الكل" and ChCheck(msg) then 
 if not msg.Admin then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(8)..' .\n').Warning,"md",true)    
@@ -9936,7 +9936,7 @@ local TextWelcome = [[
 ⌁︙ارسل لي الترحيب المجموعة الان
 ⌁︙تستطيع اضافة مايلي !
 ⌁︙يمكنك استخدام الدوال الاتيه ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 • عرض اسم الشخص : `{الاسم}`
 • عرض معرف الشخص : `{المعرف}`
 • عرض اسم المجموعه : `{المجموعه}`
@@ -9945,7 +9945,7 @@ local TextWelcome = [[
 • عرض عدد الادمنيه : `{الادمنيه}`
 • عرض الوقت : `{الوقت}`
 • عرض التاريخ : `{التاريخ}`
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ‹ الغاء ›
 ✓
 ]]
@@ -10075,7 +10075,7 @@ local list = Redis:smembers(Drox.."List:Filter"..msg.chat_id)
 if #list == 0 then  
 return LuaTele.sendText(msg.chat_id,msg.id,"*⌁︙لا يوجد كلمات ممنوعه هنا *","md",true)   
 end  
-Filter = '\n*⌁︙قائمه المنع ↫ ⤈\n • — — — — — — — — — •*\n'
+Filter = '\n*⌁︙قائمه المنع ↫ ⤈\n — — — — — — — — —*\n'
 for k,v in pairs(list) do  
 print(v)
 if v:match('photo:(.*)') then
@@ -10189,7 +10189,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'�
 end
 
 local list = Redis:smembers(Drox.."All:Command:List:Group")
-Command = "⌁︙قائمه الاوامر المضافه العامه ↫ ⤈\n• — — — — — — — — — •\n"
+Command = "⌁︙قائمه الاوامر المضافه العامه ↫ ⤈\n— — — — — — — — —\n"
 for k,v in pairs(list) do
 Commands = Redis:get(Drox.."All:Get:Reides:Commands:Group"..v)
 if Commands then 
@@ -10239,7 +10239,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'�
 end
 
 local list = Redis:smembers(Drox.."Command:List:Group"..msg.chat_id.."")
-Command = "⌁︙قائمه الاوامر المضافه ↫ ⤈\n• — — — — — — — — — •\n"
+Command = "⌁︙قائمه الاوامر المضافه ↫ ⤈\n— — — — — — — — —\n"
 for k,v in pairs(list) do
 Commands = Redis:get(Drox.."Get:Reides:Commands:Group"..msg.chat_id..":"..v)
 if Commands then 
@@ -10389,7 +10389,7 @@ end
 if Redis:get(Drox.."Status:AddMe"..msg.chat_id) then
 StatusAddme = '❬ ✓ ❭' else StatusAddme = '❬ ✗ ❭'
 end
-local protectionGroup = '\n*⌁︙اعدادات حمايه المجموعة\n • — — — — — — — — — •\n'
+local protectionGroup = '\n*⌁︙اعدادات حمايه المجموعة\n — — — — — — — — —\n'
 ..'\n⌁︙جلب الرابط ➤ '..Statuslink
 ..'\n⌁︙جلب الترحيب ➤ '..StatusWelcome
 ..'\n⌁︙الايدي ➤ '..StatusId
@@ -10518,8 +10518,8 @@ end
 if Get_Chat.permissions.can_send_polls then
 polls = '❬ ✓ ❭' else polls = '❬ ✗ ❭'
 end
-local permissions = '*\n⌁︙صلاحيات المجموعة :\n• — — — — — — — — — •'..'\n⌁︙ارسال الويب : '..web..'\n⌁︙تغيير معلومات المجموعة : '..info..'\n⌁︙اضافه مستخدمين : '..invite..'\n⌁︙تثبيت الرسائل : '..pin..'\n⌁︙ارسال الميديا : '..media..'\n⌁︙ارسال الرسائل : '..messges..'\n⌁︙اضافه • البوتات •'..other..'\n⌁︙ارسال استفتاء : '..polls..'*\n\n'
-local TextChat = '*\n⌁︙معلومات المجموعة :\n• — — — — — — — — — •'..' \n⌁︙عدد الادمنيه : ❬ '..Info_Chats.administrator_count..' ❭\n⌁︙عدد المحظورين : ❬ '..Info_Chats.banned_count..' ❭\n⌁︙عدد الاعضاء : ❬ '..Info_Chats.member_count..' ❭\n⌁︙عدد المقيديين : ❬ '..Info_Chats.restricted_count..' ❭\n⌁︙اسم المجموعة : ❬* ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ❭*'
+local permissions = '*\n⌁︙صلاحيات المجموعة :\n— — — — — — — — —'..'\n⌁︙ارسال الويب : '..web..'\n⌁︙تغيير معلومات المجموعة : '..info..'\n⌁︙اضافه مستخدمين : '..invite..'\n⌁︙تثبيت الرسائل : '..pin..'\n⌁︙ارسال الميديا : '..media..'\n⌁︙ارسال الرسائل : '..messges..'\n⌁︙اضافه • البوتات •'..other..'\n⌁︙ارسال استفتاء : '..polls..'*\n\n'
+local TextChat = '*\n⌁︙معلومات المجموعة :\n— — — — — — — — —'..' \n⌁︙عدد الادمنيه : ❬ '..Info_Chats.administrator_count..' ❭\n⌁︙عدد المحظورين : ❬ '..Info_Chats.banned_count..' ❭\n⌁︙عدد الاعضاء : ❬ '..Info_Chats.member_count..' ❭\n⌁︙عدد المقيديين : ❬ '..Info_Chats.restricted_count..' ❭\n⌁︙اسم المجموعة : ❬* ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ❭*'
 return LuaTele.sendText(msg.chat_id,msg.id, TextChat..permissions,"md",true)
 end
 if text == 'صلاحيات المجموعة' and ChCheck(msg) then
@@ -10589,7 +10589,7 @@ data = {
 }
 return LuaTele.sendText(msg.chat_id, msg.id, "⌁︙الصلاحيات - ", 'md', false, false, false, false, reply_markup)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if msg.Admin then
 if text == "تاك" then
 local Text = '*⌁︙اختر نوع التاك ↫ ⤈ 🔍*'
@@ -10621,7 +10621,7 @@ return LuaTele.sendText(msg.chat_id, msg.id, Text, 'md', true, false, false, fal
 end
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text ==("تحكم") and msg.reply_to_message_id ~= 0 and ChCheck(msg) then 
 if not msg.Admin then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(8)..' .\n').Warning,"md",true)    
@@ -10686,7 +10686,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 }}
 return LuaTele.sendText(msg.chat_id, msg.id, Text, 'md', true, false, false, false, reply_markup)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text ==("رفع") and msg.reply_to_message_id ~= 0 and ChCheck(msg) then 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.luatele == "error" then
@@ -10853,7 +10853,7 @@ elseif not msg.Admin then
 return LuaTele.sendText(msg.chat_id, msg.id, "⌁︙هذا الامر للادمنيه في البوت فما فوق", 'md', true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text ==("تنزيل") and msg.reply_to_message_id ~= 0 and ChCheck(msg) then 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.luatele == "error" then
@@ -11021,7 +11021,7 @@ return LuaTele.sendText(msg.chat_id, msg.id, "⌁︙هذا الامر للادم
 end
 end
 
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "مسح الرتب" and msg.Admin then
 local ListSecondSudo = Redis:scard(Drox.."muh:SecondSudo:")
 local ListSudoBot = Redis:scard(Drox.."muh:SudoBot:")
@@ -11035,9 +11035,9 @@ local listRainkBot = ListSecondSudo + ListSudoBot
 local listRainkGroups = ListBasicConstructor + ListConstructor + ListManagers + ListAdmins + ListVipMem
 local Text = [[
 ⌁︙اهلاً بك في قائمـة اوامر الرتب ↫ ⤈ 🪜
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙يمكنك مسح رتب المجموعـة من خلال الازرار اسفل ↫ ⤈ 
-• — — — — — — — — — •
+— — — — — — — — —
 ]] 
 
 if msg.muhammad then
@@ -11119,7 +11119,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 return LuaTele.sendText(msg.chat_id, msg.id, Text, 'md', true, false, false, false, reply_markup)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 
 if text and text:match("^حذف القوائم$") or text and text:match("^مسح القوائم$") then
 if not msg.BasicConstructor then
@@ -11181,7 +11181,7 @@ LuaTele.sendText(msg.chat_id, msg.id, "⌁︙لاتوجد قوائم هنا", 'm
 end 
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text and text:match("^حذف جميع الرتب$") or text and text:match("^مسح جميع الرتب$") or text and text:match("^تنزيل جميع الرتب$") then
 if not msg.BasicConstructor then
 return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙لمنشئ المجموعه فقط', 'md')
@@ -11247,7 +11247,7 @@ LuaTele.sendText(msg.chat_id, msg.id, "⌁︙لاتوجد رتب هنا", 'md')
 end 
 end 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'تنزيل الكل' and ChCheck(msg) and msg.reply_to_message_id ~= 0 then
 if not msg.Admin then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(8)..' .\n').Warning,"md",true)    
@@ -11838,14 +11838,14 @@ end
 LuaTele.deleteMessages(msg.chat_id,{[1]= msg.reply_to_message_id})
 LuaTele.deleteMessages(msg.chat_id,{[1]= msg.id})
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "التفاعل" and ChCheck(msg) then
 local EntryNumber = (Redis:get(Drox..'muh:EntryNumber'..msg.chat_id..':'..os.date('%d')) or 0)
 local ExitNumber = (Redis:get(Drox..'muh:ExitNumber'..msg.chat_id..':'..os.date('%d')) or 0)
 local MsgNumberDay = (Redis:get(Drox..'muh:MsgNumberDay'..msg.chat_id..':'..os.date('%d')) or 0)
 LuaTele.sendText(msg.chat_id,msg.id, "⌁︙انضمام الاعضاء اليوم ↫ *"..EntryNumber.."*\n⌁︙مغادرة الاعضاء اليوم ↫ *"..ExitNumber.."*\n⌁︙عدد الرسائل اليوم ↫ *"..MsgNumberDay.."*\n⌁︙نسبة التفاعل اليوم ↫ *"..math.random(40,100).."%*\n ✓","md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (text == ("هينه") or text == ("بعد هينه") or text == ("هينه بعد") or text == ("لك هينه") or text == ("هينها") or text == ("هينهه") or text == ("رزله") or text == ("رزلهه") or text == ("رزلها")) and msg.reply_to_message_id ~= 0 and ChCheck(msg) then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.luatele == "error" then
@@ -11949,7 +11949,7 @@ else
 LuaTele.sendText(msg.chat_id,msg.id, '⌁︙العضو غير موجود في المجموعه', 'md',true) 
 end 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == ("بوسه") or text == ("مصه") or text == ("بوسة") or text == ("بعد بوسه") or text == ("ضل بوس") or text == ("بوسه بعد") or text == ("بوسها") or text == ("بعد بوسها") or text == ("ضل بوس") or text == ("بوسها بعد") or text == ("بوسهه") and msg.reply_to_message_id ~= 0 and ChCheck(msg) then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.luatele == "error" then
@@ -12017,7 +12017,7 @@ LuaTele.sendText(msg.chat_id,msg.id,''..Drox[math.random(#Drox)]..'', 'md')
 local Drox = {"مواححح "..name.." افيش عافيههه😍🔥💗","امممووااهحح "..name.." شهلعسل🥺🍯💘","مواححح،"..name.."ءوفف اذوب🤤💗"} 
 LuaTele.sendText(msg.chat_id,msg.id,''..Drox[math.random(#Drox)]..'', 'md') 
 end 
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == ("صيحه") or text == ("صيحة") or text == ("صيحها") or text == ("صيحهه") or text == ("صيح") and msg.reply_to_message_id ~= 0 and ChCheck(msg) then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.luatele == "error" then
@@ -12086,7 +12086,7 @@ LuaTele.sendText(msg.chat_id,msg.id,''..Drox[math.random(#Drox)]..'', 'md')
 local Drox = {"تتعال "..name.." ححب محتاجيك🙂🍭","تعال يولل "..name.." استاذكك ايريدككك😒🔪","يمعوود "..name.." تعاال يريدوكك🤕♥️","تعال "..name.." لڪك ديصيحوك😐🖤"} 
 LuaTele.sendText(msg.chat_id,nil,''..Drox[math.random(#Drox)]..'', 'md') 
 end 
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 
 
 if text == 'تعين الايدي عام' and ChCheck(msg) or text == "تعين الايدي العام" and ChCheck(msg) or text == "تعيين الايدي العام" and ChCheck(msg) or text == "تعيين الايدي عام" and ChCheck(msg) or text == "تعيين كليشه الايدي عام" and ChCheck(msg) or text == "تعين كليشه الايدي عام" and ChCheck(msg) or text == "تعيين كليشة الايدي عام" and ChCheck(msg) or text == "تعين كليشة الايدي عام" and ChCheck(msg) then
@@ -12151,7 +12151,7 @@ end
 Redis:del(Drox.."Set:Id:Group"..msg.chat_id)
 return LuaTele.sendText(msg.chat_id,msg.id, '⌁︙تم ازالة كليشة الايدي ',"md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if msg.Manager then
 if text and text:match("^تغيير الايدي$") and ChCheck(msg) or text and text:match("^تغير الايدي$") and ChCheck(msg) then 
 local List = {
@@ -12206,7 +12206,7 @@ local List = {
 - 𓏬 𝐈𝐃 : #id 𓂅 .
 ]],
 [[
-.𖣂 𝙪𝙨𝙚𝙧𝙣𝙖𝙢𝙚 , #username  
+.𖣂 𝙪𝙨𝙚𝙧𝙣𝙖??𝙚 , #username  
 .𖣂 𝙨𝙩𝙖𝙨𝙩 , #stast  
 .𖣂 𝙡𝘿 , #id  
 .𖣂 𝙂𝙖𝙢𝙨 , #game 
@@ -12217,7 +12217,7 @@ local List = {
 ⌁︙𝐈𝐃 ↬ #id
 ⌁︙𝐒𝐓𝐀𝐒𝐓 ↬ #stast
 ⌁︙𝐌𝐀𝐒𝐆 ↬ #msgs
-⌁︙𝐆𝐀??𝐄 ↬ #game
+⌁︙𝐆𝐀𝐌𝐄 ↬ #game
 ]],
 [[
 ᯓ ??𝗦??𝗥𝗡𝗮𝗺𝗘 . #username 🇺🇸 ꙰
@@ -12240,9 +12240,9 @@ Redis:set(Drox.."Set:Id:Group"..msg.chat_id,Text_Rand)
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙تم تغير كليشة الايدي","md",true)  
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 --     kick Bot chat      --
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text and (text:match("^طرد (.*)$")) and msg.reply_to_message_id == 0 and ChCheck(msg) then
 local TextMsg = (text:match("^طرد (.*)$"))
 if TextMsg == 'البوتات' then
@@ -12269,7 +12269,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,"\n⌁︙عدد البوتات الم
 end
 end
 --     kick Bot chat      --
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text and (text:match("^مسح (.*)$") or text:match("^حذف (.*)$")) and msg.reply_to_message_id == 0 and ChCheck(msg) then
 local TextMsg = (text:match("^مسح (.*)$") or text:match("^حذف (.*)$"))
 if TextMsg == 'المطورين الثانوين' or TextMsg == 'المطورين الثانويين' then
@@ -12619,7 +12619,7 @@ end
 return LuaTele.sendText(msg.chat_id,msg.id,"\n*⌁︙تم طرد ( "..x.." ) حساب محذوف *","md",true)  
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 
 if text and (text =='حذف رد من متعدد' or text =='مسح رد من متعدد') and ChCheck(msg) then
 if Redis:get(Drox..'muh:Lock:Rd123'..msg.chat_id) then 
@@ -12715,7 +12715,7 @@ if not msg.Manager then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(7)..' .\n').Warning,"md",true)    
 end
 local redod = Redis:smembers(Drox..'muh:Manager:GpRedod'..msg.chat_id)
-MsgRep ='⌁︙قائمة الردود المتعدده ↫ ⤈ \n• — — — — — — — — — •\n'
+MsgRep ='⌁︙قائمة الردود المتعدده ↫ ⤈ \n— — — — — — — — —\n'
 for k,v in pairs(redod) do
 MsgRep = MsgRep..k..' - (`'..v..'`) • {*العدد ↫ '..#Redis:smembers(Drox..'muh:Text:GpTexts'..v..msg.chat_id)..'*}\n' 
 end
@@ -12804,7 +12804,7 @@ local Drox =  Redis:smembers(Drox..'muh:Text:GpTexts'..text..msg.chat_id)
 LuaTele.sendText(msg.chat_id,msg.id, '['..Drox[math.random(#Drox)]..']' ,"md",true)    
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == ("مسح الردود") and ChCheck(msg) or text == ("مسح ردود المدير") and ChCheck(msg) then
 if not msg.Manager then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(7)..' .\n').Warning,"md",true)    
@@ -12830,7 +12830,7 @@ if not msg.Manager then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(7)..' .\n').Warning,"md",true)    
 end
 local list = Redis:smembers(Drox.."List:Manager"..msg.chat_id.."")
-text = "⌁︙قائمه الردود ↫ ⤈\n• — — — — — — — — — •\n"
+text = "⌁︙قائمه الردود ↫ ⤈\n— — — — — — — — —\n"
 for k,v in pairs(list) do
 if Redis:get(Drox.."Add:Rd:Manager:Gif"..v..msg.chat_id) then
 db = "متحركه 🎭"
@@ -12914,9 +12914,9 @@ if text == ("الردود العامه") and ChCheck(msg) or text == ("ردود 
 if not msg.SecondSudo then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n').Warning,"md",true)    
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 local list = Redis:smembers(Drox.."List:Rd:Sudo")
-text = "\n📝︙قائمة الردود العامه ↫ ⤈\n• — — — — — — — — — •\n"
+text = "\n📝︙قائمة الردود العامه ↫ ⤈\n— — — — — — — — —\n"
 for k,v in pairs(list) do
 if Redis:get(Drox.."Add:Rd:Sudo:Gif"..v) then
 db = "متحركه 🎭"
@@ -12944,7 +12944,7 @@ text = "⌁︙لا توجد ردود للمطور"
 end
 return LuaTele.sendText(msg.chat_id,msg.id,"["..text.."]","md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 --set rd inline Manager--
 if text == ("مسح الردود الانلاين") then
 if not msg.Manager then
@@ -13011,14 +13011,14 @@ LuaTele.sendText(msg.chat_id,msg.id,[[
 ❨ ملف • ملصق • متحركه • صوره
 • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
 ⌁︙يمكنك اضافة الى النص ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙`#username` ↬ معرف المستخدم
 ⌁︙`#name` ↬ اسم المستخدم
 ⌁︙`#msgs` ↬ عدد الرسائل
 ⌁︙`#id` ↬ ايدي المستخدم
 ⌁︙`#stast` ↬ رتبة المستخدم
 ⌁︙`#edit` ↬ عدد السحكات
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ↫ ‹ الغاء ›
 ✓
 ]],"md",true, false, false, false, reply_markup)
@@ -13186,7 +13186,7 @@ if not msg.Manager then
 return LuaTele.sendText(msg.chat_id,msg.id,'\n*⌁︙هاذا الامر يخص '..Controller_Num(6)..' * ',"md",true)
 end
 local list = Redis:smembers(Drox.."List:Manager:inline"..msg.chat_id.."")
-text = "⌁︙قائمه الردود الانلاين ↫ ⤈\n• — — — — — — — — — •\n"
+text = "⌁︙قائمه الردود الانلاين ↫ ⤈\n— — — — — — — — —\n"
 for k,v in pairs(list) do
 if Redis:get(Drox.."Add:Rd:Manager:Gif:inline"..v..msg.chat_id) then
 db = "متحركه 🎭"
@@ -13215,7 +13215,7 @@ end
 return LuaTele.sendText(msg.chat_id,msg.id,"["..text.."]","md",true)
 end
 --end rd inline Manager--
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text== "اذاعه خاص" and ChCheck(msg) then 
 if not msg.SudoBot then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(3)..' .\n').Warning,"md",true)    
@@ -13229,7 +13229,7 @@ LuaTele.sendText(msg.chat_id,msg.id,[[
 ⌁︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ‹ الغاء ›
  ✓
 ]],"md",true)  
@@ -13249,7 +13249,7 @@ LuaTele.sendText(msg.chat_id,msg.id,[[
 ⌁︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ‹ الغاء ›
  ✓
 ]],"md",true)  
@@ -13269,7 +13269,7 @@ LuaTele.sendText(msg.chat_id,msg.id,[[
 ⌁︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ‹ الغاء ›
  ✓
 ]],"md",true)  
@@ -13346,7 +13346,7 @@ SilentGroup = 'مكتوم'
 else
 SilentGroup = 'غير مكتوم'
 end
-LuaTele.sendText(msg.chat_id,msg.id,"\n*⌁︙معلومات الكشف ↫ ⤈\n• — — — — — — — — — •"..'\n⌁︙الحظر العام ↫ '..BanAll..'\n⌁︙الكتم العام ↫ '..ktmall..'\n⌁︙الحظر ↫ '..BanGroup..'\n⌁︙الكتم ↫ '..SilentGroup..'\n⌁︙التقييد ↫ '..Restricted..'*\n✓',"md",true)  
+LuaTele.sendText(msg.chat_id,msg.id,"\n*⌁︙معلومات الكشف ↫ ⤈\n— — — — — — — — —"..'\n⌁︙الحظر العام ↫ '..BanAll..'\n⌁︙الكتم العام ↫ '..ktmall..'\n⌁︙الحظر ↫ '..BanGroup..'\n⌁︙الكتم ↫ '..SilentGroup..'\n⌁︙التقييد ↫ '..Restricted..'*\n✓',"md",true)  
 end
 if text and text:match('^كشف القيود @(%S+)$') and ChCheck(msg) then
 local UserName = text:match('^كشف القيود @(%S+)$')
@@ -13393,7 +13393,7 @@ SilentGroup = 'مكتوم'
 else
 SilentGroup = 'غير مكتوم'
 end
-LuaTele.sendText(msg.chat_id,msg.id,"\n*⌁︙معلومات الكشف ↫ ⤈\n• — — — — — — — — — •"..'\n⌁︙الحظر العام ↫ '..BanAll..'\n⌁︙الكتم العام ↫ '..ktmAll..'\n⌁︙الحظر ↫ '..BanGroup..'\n⌁︙الكتم ↫ '..SilentGroup..'\n⌁︙التقييد ↫ '..Restricted..'*\n✓',"md",true)  
+LuaTele.sendText(msg.chat_id,msg.id,"\n*⌁︙معلومات الكشف ↫ ⤈\n— — — — — — — — —"..'\n⌁︙الحظر العام ↫ '..BanAll..'\n⌁︙الكتم العام ↫ '..ktmAll..'\n⌁︙الحظر ↫ '..BanGroup..'\n⌁︙الكتم ↫ '..SilentGroup..'\n⌁︙التقييد ↫ '..Restricted..'*\n✓',"md",true)  
 end
 if text == 'رفع القيود' and ChCheck(msg) and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -13524,7 +13524,7 @@ end
 Redis:del(Drox..'Texting:DevDrox')
 return LuaTele.sendText(msg.chat_id,msg.id,'⌁︙تم حذف كليشه المطور',"md",true)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'صلاحياتي' then
 local StatusMember = LuaTele.getChatMember(msg.chat_id,msg.sender_id.user_id).status.luatele
 if (StatusMember == "chatMemberStatusCreator") then
@@ -13554,7 +13554,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✓ ❭' else promote = '❬ ✗ ❭'
 end
-local PermissionsUserr = '*\n⌁︙صلاحيات المستخدم ↫ ⤈\n• — — — — — — — — — •'..'\n⌁︙تغيير المعلومات ↫ '..change_info..'\n⌁︙تثبيت الرسائل ↫ '..pin_messages..'\n⌁︙اضافه مستخدمين ↫ '..invite_users..'\n⌁︙مسح الرسائل ↫ '..delete_messages..'\n⌁︙حظر المستخدمين ↫ '..restrict_members..'\n⌁︙اضافه المشرفين ↫ '..promote..'\n\n*'
+local PermissionsUserr = '*\n⌁︙صلاحيات المستخدم ↫ ⤈\n— — — — — — — — —'..'\n⌁︙تغيير المعلومات ↫ '..change_info..'\n⌁︙تثبيت الرسائل ↫ '..pin_messages..'\n⌁︙اضافه مستخدمين ↫ '..invite_users..'\n⌁︙مسح الرسائل ↫ '..delete_messages..'\n⌁︙حظر المستخدمين ↫ '..restrict_members..'\n⌁︙اضافه المشرفين ↫ '..promote..'\n\n*'
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙الصلاحيات ↫ مشرف المجموعه"..(PermissionsUserr or '') ,"md",true) 
 end
 end
@@ -13591,7 +13591,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✓ ❭' else promote = '❬ ✗ ❭'
 end
-local PermissionsUserr = '*\n⌁︙صلاحيات المستخدم ↫ ⤈\n• — — — — — — — — — •'..'\n⌁︙تغيير المعلومات ↫ '..change_info..'\n⌁︙تثبيت الرسائل ↫ '..pin_messages..'\n⌁︙اضافه مستخدمين ↫ '..invite_users..'\n⌁︙مسح الرسائل ↫ '..delete_messages..'\n⌁︙حظر المستخدمين ↫ '..restrict_members..'\n⌁︙اضافه المشرفين ↫ '..promote..'\n\n*'
+local PermissionsUserr = '*\n⌁︙صلاحيات المستخدم ↫ ⤈\n— — — — — — — — —'..'\n⌁︙تغيير المعلومات ↫ '..change_info..'\n⌁︙تثبيت الرسائل ↫ '..pin_messages..'\n⌁︙اضافه مستخدمين ↫ '..invite_users..'\n⌁︙مسح الرسائل ↫ '..delete_messages..'\n⌁︙حظر المستخدمين ↫ '..restrict_members..'\n⌁︙اضافه المشرفين ↫ '..promote..'\n\n*'
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙الصلاحيات ↫ مشرف المجموعه"..(PermissionsUserr or '') ,"md",true) 
 end
 end
@@ -13625,7 +13625,7 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✓ ❭' else promote = '❬ ✗ ❭'
 end
-local PermissionsUserr = '*\n⌁︙صلاحيات المستخدم ↫ ⤈\n• — — — — — — — — — •'..'\n⌁︙تغيير المعلومات ↫ '..change_info..'\n⌁︙تثبيت الرسائل ↫ '..pin_messages..'\n⌁︙اضافه مستخدمين ↫ '..invite_users..'\n⌁︙مسح الرسائل ↫ '..delete_messages..'\n⌁︙حظر المستخدمين ↫ '..restrict_members..'\n⌁︙اضافه المشرفين ↫ '..promote..'\n\n*'
+local PermissionsUserr = '*\n⌁︙صلاحيات المستخدم ↫ ⤈\n— — — — — — — — —'..'\n⌁︙تغيير المعلومات ↫ '..change_info..'\n⌁︙تثبيت الرسائل ↫ '..pin_messages..'\n⌁︙اضافه مستخدمين ↫ '..invite_users..'\n⌁︙مسح الرسائل ↫ '..delete_messages..'\n⌁︙حظر المستخدمين ↫ '..restrict_members..'\n⌁︙اضافه المشرفين ↫ '..promote..'\n\n*'
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙الصلاحيات ↫ مشرف المجموعه"..(PermissionsUserr or '') ,"md",true) 
 end
 end
@@ -13660,11 +13660,11 @@ end
 if GetMemberStatus.can_promote_members then
 promote = '❬ ✓ ❭' else promote = '❬ ✗ ❭'
 end
-local PermissionsUserr = '*\n⌁︙صلاحيات المستخدم ↫ ⤈\n• — — — — — — — — — •'..'\n⌁︙تغيير المعلومات ↫ '..change_info..'\n⌁︙تثبيت الرسائل ↫ '..pin_messages..'\n⌁︙اضافه مستخدمين ↫ '..invite_users..'\n⌁︙مسح الرسائل ↫ '..delete_messages..'\n⌁︙حظر المستخدمين ↫ '..restrict_members..'\n⌁︙اضافه المشرفين ↫ '..promote..'\n\n*'
+local PermissionsUserr = '*\n⌁︙صلاحيات المستخدم ↫ ⤈\n— — — — — — — — —'..'\n⌁︙تغيير المعلومات ↫ '..change_info..'\n⌁︙تثبيت الرسائل ↫ '..pin_messages..'\n⌁︙اضافه مستخدمين ↫ '..invite_users..'\n⌁︙مسح الرسائل ↫ '..delete_messages..'\n⌁︙حظر المستخدمين ↫ '..restrict_members..'\n⌁︙اضافه المشرفين ↫ '..promote..'\n\n*'
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙الصلاحيات ↫ مشرف المجموعه"..(PermissionsUserr or '') ,"md",true) 
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text =='رقمي' then
 local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 local nump = UserInfo.phone_number
@@ -13712,7 +13712,7 @@ MyNumber = "⌁︙رقمه ↫ ❨ `"..UserInfo.phone_number.."+` ❩"
 end
 return LuaTele.sendText(msg.chat_id, msg.id,MyNumber,'md',true)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text ==("جهاته") and msg.reply_to_message_id ~= 0 and ChCheck(msg) then 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.luatele == "error" then
@@ -13729,7 +13729,7 @@ local UserName = (text:match('^جهاته @(%S+)$') or text:match('^جهاتة @
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 LuaTele.sendText(msg.chat_id,msg.id,'⌁︙عدد جهاته المضافه هنا *~ '..(Redis:get(Drox.."Num:Add:Memp"..msg.chat_id..":"..UserId_Info.id) or 0)..'*',"md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "اسمي" and ChCheck(msg) or text == "↫  اسمي ⌁" and ChCheck(msg) then
 if Redis:get(Drox..'My:Name:Chat'..msg.chat_id) then 
 if Redis:get(Drox..'Warning:Chat'..msg.chat_id)  then
@@ -13789,7 +13789,7 @@ local text = text:gsub('firstname',(UserInfo.first_name or ''))
 local text = text:gsub('lastname',(UserInfo.last_name or ''))
 LuaTele.sendText(msg.chat_id, msg.id, text, 'html',true)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "معرفي" or text == "↫  معرفي ⌁" then
 local UserInfo = LuaTele.getUser(msg.sender_id.user_id)
 text ='⌁︙معرفك ↫ ❨ User ❩'
@@ -13819,7 +13819,7 @@ UserName = 'لا يوجد'
 end
 return LuaTele.sendText(msg.chat_id,msg.id,'⌁︙معرفه ↫ ❨ `'..UserName..'` ❩',"md",true) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "ايديي" or text == "↫ ايديي ⌁" then 
 LuaTele.sendText(msg.chat_id, msg.id,'⌁︙ايديك ↫ ❨ `'..msg.sender_id.user_id..'` ❩','md',true)
 end
@@ -13835,7 +13835,7 @@ local UserName = (text:match('^ايدييه @(%S+)$') or text:match('^ايديه
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 return LuaTele.sendText(msg.chat_id,msg.id,'⌁︙ايديه ↫ ❨ `'..UserId_Info.id..'` ❩',"md",true) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text ==("رسائله") and msg.reply_to_message_id ~= 0 and ChCheck(msg) or text ==("رسائلة") and msg.reply_to_message_id ~= 0 and ChCheck(msg) then 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.luatele == "error" then
@@ -13881,7 +13881,7 @@ local UserId_Info = LuaTele.searchPublicChat(UserName)
 Redis:del(Drox..'Num:Message:User'..msg.chat_id..':'..UserId_Info.id)
 LuaTele.sendText(msg.chat_id,msg.id,'⌁︙تم مسح جميع رسائله ',"md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text ==("تعديلاته") and msg.reply_to_message_id ~= 0 and ChCheck(msg) or text ==("سحكاته") and msg.reply_to_message_id ~= 0 and ChCheck(msg) then 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.luatele == "error" then
@@ -13898,7 +13898,7 @@ local UserName = (text:match('^تعديلاته @(%S+)$') or text:match('^سحك
 local UserId_Info = LuaTele.searchPublicChat(UserName)
 LuaTele.sendText(msg.chat_id,msg.id,'⌁︙عدد سحكاته هنا *~ '..(Redis:get(Drox..'Num:Message:Edit'..msg.chat_id..UserId_Info.id) or 0)..'*',"md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text ==("نقاطه") and msg.reply_to_message_id ~= 0 and ChCheck(msg) or text ==("نقاطة") and msg.reply_to_message_id ~= 0 and ChCheck(msg) then 
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 if Message_Reply.luatele == "error" then
@@ -13930,12 +13930,12 @@ else
 return LuaTele.sendText(msg.chat_id,msg.id, "⌁︙عدد النقاط التي ربحها *↫ "..Num.." *","md",true)  
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "ايدي المجموعة" or text == "ايدي المجموعه" then 
 return LuaTele.sendText(msg.chat_id, msg.id,"⌁︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id.."` ❩",'md',true)
 end
 --     Dev Bot chat      --
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (text == 'المطور' or text == 'مطور' or text =='↫  المطور ⌁') then
 local TextingDevDrox = Redis:get(Drox..'Texting:DevDrox')
 local photo = LuaTele.getUserProfilePhotos(Sudo_Id)
@@ -13949,7 +13949,7 @@ if TextingDevDrox then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ '..UserInfo.first_name..' ›', url = 't.me/'..UserSudo}, },{{text = '‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},},}}
 LuaTele.sendText(msg.chat_id,msg.id,TextingDevDrox,"md", true, false, false, false, reply_markup)  
 else
-local TextDev ="*⌁︙D𝐞𝐯 N𝐞𝐦𝐚 ↬* ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n*⌁︙D𝐞𝐯 U𝐬𝐞𝐫 ↬* [@"..UserInfo.username.."]\n*⌁︙D𝐞𝐯 I𝐝 ↬* ["..UserInfo.id.."](T.me/"..UserInfo.username..")\n*⌁︙D𝐞𝐯 B𝐢𝐨 ↬* ["..bio.."]\n• — — — — — — — — — •"
+local TextDev ="*⌁︙D𝐞𝐯 N𝐞𝐦𝐚 ↬* ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n*⌁︙D𝐞𝐯 U𝐬𝐞𝐫 ↬* [@"..UserInfo.username.."]\n*⌁︙D𝐞𝐯 I𝐝 ↬* ["..UserInfo.id.."](T.me/"..UserInfo.username..")\n*⌁︙D𝐞𝐯 B𝐢𝐨 ↬* ["..bio.."]\n— — — — — — — — —"
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ '..UserInfo.first_name..' ›', url = 't.me/'..UserSudo}, },{{text = '‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},},}}
 if photo and photo.total_count and photo.total_count > 0 then
 LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, TextDev, "md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup)
@@ -13983,10 +13983,10 @@ LinkGroup = "⌁︙رابط المجموعه ↫ ⤈\n❨ ["..LinkGp.result.."] 
 else
 LinkGroup = '⌁︙ليست لدي صلاحية الدعوه لهذه المجموعه !'
 end
-return LuaTele.sendText(Sudo_Id,0,"⌁︙هناك من بحاجه الى مساعده ↫ ⤈ \n• — — — — — — — — — •\n⌁︙الشخص ↫ "..Name.."\n⌁︙اسم المجموعه ↫ ["..NameChat.."]\n⌁︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id.."` ❩\n"..LinkGroup.."\n• — — — — — — — — — •\n⌁︙الوقت ↫ "..os.date("%I:%M%p").."\n⌁︙التاريخ ↫ "..os.date("%Y/%m/%d").."",'md',true)
+return LuaTele.sendText(Sudo_Id,0,"⌁︙هناك من بحاجه الى مساعده ↫ ⤈ \n— — — — — — — — —\n⌁︙الشخص ↫ "..Name.."\n⌁︙اسم المجموعه ↫ ["..NameChat.."]\n⌁︙ايدي المجموعه ↫ ⤈ \n❨ `"..msg.chat_id.."` ❩\n"..LinkGroup.."\n— — — — — — — — —\n⌁︙الوقت ↫ "..os.date("%I:%M%p").."\n⌁︙التاريخ ↫ "..os.date("%Y/%m/%d").."",'md',true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 ---الترجمه ----
 if Redis:get(Drox.."toen"..msg.sender_id.user_id) == "on" then
 gk = https.request('https://ahmed-yad.ml/api/google/translate.php?in=auto&out=en&t='..URL.escape(text))
@@ -14065,15 +14065,15 @@ ay = https.request('https://dev-ahmed.ml/api/calculator.php?q=Drox&w='..Text)
 t = "\n⌁︙تم حساب المعادلة "..Text..'='..ay
 LuaTele.sendText(msg_chat_id,msg_id,t,"html",true) 
 end 
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text and text:match("^برج (.*)$") then
 local Textbrj = text:match("^برج (.*)$")
 gk = io.popen('curl -s "https://apiabs.ml/brg.php?brg='..URL.escape(Textbrj)..'"'):read('*a')
 br = JSON.decode(gk)
-text = br.ok.abs:gsub( "⌁", "⌁" ):gsub( "┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉", "• — — — — — — — — — •" )
+text = br.ok.abs:gsub( "⌁", "⌁" ):gsub( "┉ ≈ ┉ ≈ ┉ ≈ ┉ ≈ ┉", "— — — — — — — — —" )
 LuaTele.sendText(msg.chat_id,msg.id, text,"md", true)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text =='القناة' or text =='قناة السورس' or text =='قناه السورس' or text =='قنات السورس' or text =='↫ قناة السورس ⌁' then 
 Text = [[
 ⌁︙[قناة السورس](https://t.me/DroxTeAm)
@@ -14084,7 +14084,7 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/DroxTeAm&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text =='قناة التحديثات' or text =="التحديثات" or text =='قناة تحديثات السورس' or text =='قناه تحديثات السورس' or text =='قنات تحديث السورس' or text =='قنات تحديثات السورس' or text =='↫ قناة التحديثات ⌁' then 
 Text = [[
 ⌁︙قناة تحديثات سورس دروكس
@@ -14098,21 +14098,21 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/DroxTeAm&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "مطور السورس" or text == "مطور دروكس" or text == "وين المطور السورس" or text == "مطور سورس" or text == "↫ مطور السورس ⌁" then 
 Text = "‹ *The developer of this source is* : [‹ - 𝖱𝖺𝗌𝗎𝗅 .𝖬𝗎𝗇𝗍𝖺ᴢ𝖺𝗋 .](https://t.me/uQuuu)."
 keyboard = {} 
 keyboard.inline_keyboard = {
-    {{text='',url="t.me/uQuuu"},},}
+    {{text='‹ - 𝖱𝖺𝗌𝗎𝗅 .𝖬𝗎𝗇𝗍𝖺ᴢ𝖺𝗋 .',url="t.me/uQuuu"},},}
 local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&photo=https://t.me/uQuuu&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "اوامر الزواج" and ChCheck(msg) then
     local text = [[
     ⌁︙اوامر الزواج كـ الاتي ↫ ⤈
-    • — — — — — — — — — •
+    — — — — — — — — —
     ⌁︙امر (زوجني او زوجوني) لزواجك من شخص عشوائي
     ⌁︙امر (تتزوجيني او ممكن نتزوج) لطلب زواج احداهن بالرد
     ⌁︙زوجي او زوجتي لاضهار زوجك .. 
@@ -14121,7 +14121,7 @@ if text == "اوامر الزواج" and ChCheck(msg) then
     ]]
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,text).muhammad,"md",true)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "زوجني" or text == "زوجوني" and ChCheck(msg) then
 if not Redis:get(Drox..'zwgnyy'..msg.chat_id) then 
 local Info_Chats = LuaTele.getSupergroupFullInfo(msg.chat_id)
@@ -14138,7 +14138,7 @@ type = 'inline',
 data = {
 {
 {text = '‹ موافق ›', data = msg.sender_id.user_id..'/yes_zw/'..member_id},
-{text = '‹ غير موافق ›', data = msg.sender_id.user_id..'/no_zw/'..member_id},
+{text = '‹ مو موافق ›', data = msg.sender_id.user_id..'/no_zw/'..member_id},
 },
 }
 }
@@ -14242,8 +14242,8 @@ Redis:del(Drox..msg.chat_id..zwg_id.."mtzwga:")
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙تم طلاكك من ["..zwg_name.."](tg://user?id="..zwg_id..")\n⌁︙شوفو منو راح ياخذ الفروخ بعدين\n ?","md")
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
-if text == "ثنائي اليوم" or text == "ث" and ChCheck(msg) and not Redis:get(Drox..'2nd:Chat'..msg.chat_id)  then
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
+if text == "ثنائي اليوم" and ChCheck(msg) and not Redis:get(Drox..'2nd:Chat'..msg.chat_id)  then
 local Info_Members = LuaTele.searchChatMembers(msg.chat_id, "*", 200)
 local List_Members = Info_Members.members
 local NumRand1 = math.random(1, #List_Members); 
@@ -14252,10 +14252,10 @@ local user1 = List_Members[NumRand1].member_id.user_id
 local user2 = List_Members[NumRand2].member_id.user_id
 local UserInfo = LuaTele.getUser(user1)
 local UserInfoo = LuaTele.getUser(user2)
-local listTow = "⌁︙ثنائي اليوم ↫ ⤈\n• — — — — — — — — — •\n ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..") + ["..UserInfoo.first_name.."](tg://user?id="..UserInfoo.id..")\n"
+local listTow = "⌁︙ثنائي اليوم ↫ ⤈\n— — — — — — — — —\n ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..") + ["..UserInfoo.first_name.."](tg://user?id="..UserInfoo.id..")\n"
 return LuaTele.sendText(msg.chat_id,msg.id,listTow,"md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text then
 local GetMsg = Redis:get(Drox..'Num:Message:User'..msg.chat_id..':'..msg.sender_id.user_id) 
 Redis:hset(Drox..':GroupUserCountMsg:'..msg.chat_id,msg.sender_id.user_id,GetMsg)
@@ -14282,7 +14282,7 @@ Count,Kount,i = 8 , 0 , 1
 for _ in pairs(GroupAllRtbaL) do Kount = Kount + 1 end
 table.sort(GroupAllRtbaL, function(a, b) return tonumber(a[1]) > tonumber(b[1]) end)
 if Count >= Kount then Count = Kount end
-Text = "⌁︙ترند افضل المتفاعلين ↫ ⤈ \n• — — — — — — — — — •\n"
+Text = "⌁︙ترند افضل المتفاعلين ↫ ⤈ \n— — — — — — — — —\n"
 for k,v in ipairs(GroupAllRtbaL) do
 if i <= Count then  Text = Text..i.." - ["..(GetAllNames[v[2]] or "خطأ بالأسـم").."](tg://user?id="..v[2]..")  *("..v[1]..")* 🌟 \n" end ; i=i+1
 end
@@ -14298,7 +14298,7 @@ Count,Kount,i = 8 , 0 , 1
 for _ in pairs(GroupAllRtbaL) do Kount = Kount + 1 end
 table.sort(GroupAllRtbaL, function(a, b) return tonumber(a[1]) > tonumber(b[1]) end)
 if Count >= Kount then Count = Kount end
-Text = "*⌁︙قائمه ترند الكروبات 📊. \n• — — — — — — — — — •*\n"
+Text = "*⌁︙قائمه ترند الكروبات 📊. \n— — — — — — — — —*\n"
 for k,v in pairs(GroupAllRtbaL) do
 if v[2] and v[2]:match("(-100%d+)") then
 local InfoChat = LuaTele.getChat(v[2])
@@ -14323,19 +14323,7 @@ if text and msg.chat_id then
 local GetMsg = Redis:incr(Drox..'Drox:MsgNumbergroups'..msg.chat_id) or 1
 Redis:hset(Drox..':GroupUserCountMsg:groups',msg.chat_id,GetMsg)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
-if text == 'المبرمج' or text == 'رسول' or text 'مبرمج السورس' then
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = '‹ مطـور السـورس ›', url = 't.me/uQuuu'}, 
-},
-}
-}
-return LuaTele.sendText(msg.chat_id,msg.id,"[‹ - 𝖱𝖺𝗌𝗎𝗅 .𝖬𝗎𝗇𝗍𝖺ᴢ𝖺𝗋 .](tg://user?id=1214622341)","md",true, false, false, true, reply_markup)
-end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "تحدي" then
 local Info_Members = LuaTele.searchChatMembers(msg.chat_id, "*", 200)
 local List = Info_Members.members
@@ -14349,7 +14337,7 @@ local Descriptioont = Textinggt[math.random(#Textinggt)]
 Text = "اتحداك\n"..Descriptioont.."↫ ["..tagname.."](tg://user?id="..Zozne.member_id.user_id..")"
 LuaTele.sendText(msg.chat_id,msg.id,Text,"md",true)
 end 
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'شخصيتي' or text == 'حددي شخصيتي' or text == 'حدد شخصيتي' then
 local texting = {"عنيده", 
 "متردده  ",
@@ -14386,12 +14374,12 @@ local msgg = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg.chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(news).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "منشن" or  text == "@" then
 local arr = {'⟨ @L¹ ممكن إغنيهَ لطيفة ⟩','⟨ @L² نتعرف بإلطف ⟩','⟨ @L³ ٱتصال لطيف ⟩','⟨ @L⁴ نزل صورتك وأنا إقيم من ٪١٠٠ ⟩','⟨ @L⁵ تعال أعترفلك بشي ⟩','⟨ @L⁶ همسة لطيفه ⟩','⟨ @L⁷ نروح للسينما ؟ ⟩','⟨ @L⁸ ٱتحداك تكلي احبك ⟩','⟨ @L⁹ تعال/ي نطمس  ⟩','⟨ @L¹⁰ نصعد إتصال وتشغل أغنية ع ذوقك ؟ ⟩','⟨ @L¹ شنو لونك إلمفضل ؟ ⟩','⟨ @L² اذا اتعارك تفزعلي ؟ ⟩','⟨ @L³ اعزمك بمطعم فخم تجي ؟ ⟩','⟨ @L⁴ تحبني بكد م إحبك ؟ ⟩','⟨ @L⁵ اهديلي شيء وهديلك ⟩','⟨ @L⁶ نزوج ونطفر منل تلي ؟ ⟩','⟨ @L⁷ تاك للي تحبة هنا  ⟩','⟨ @L⁸ تعال نشاهد فلم سوا ⟩','⟨ @L⁹ دزلي شيء يخليني إكلك شكراً ⟩','⟨ @L¹⁰ شكد صارلك بالتلي ⟩'}
 return LuaTele.sendText(msg.chat_id,msg.id,arr[math.random(#arr)],"md", true)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "نسبه الحب" or text == "نسبة الحب" and ChCheck(msg) then
 if Redis:get(Drox..'muh:Nsba:muh'..msg.chat_id) then 
 if Redis:get(Drox..'Warning:Chat'..msg.chat_id)  then
@@ -14400,7 +14388,7 @@ end
 return false
 end
 Redis:set(Drox..'LoveNsba:muh'..msg.chat_id..msg.sender_id.user_id,true) 
-return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسمين لحساب نسبة الحب بينهما كمثال ↫ رسول و مريم', 'md')
+return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسمين لحساب نسبة الحب بينهما كمثال ↫ رسول و توت', 'md')
 end
 if text and text ~= "نسبه الحب" and text ~= "نسبة الحب" and Redis:get(Drox..'LoveNsba:muh'..msg.chat_id..msg.sender_id.user_id) then
 if text and text =='الغاء' then 
@@ -14421,7 +14409,7 @@ end
 return false
 end
 Redis:set(Drox..'RyNsba:muh'..msg.chat_id..msg.sender_id.user_id,true)
-return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسمين لحساب نسبة الخيانه بينهما كمثال ↫ رسول و مريم', 'md')
+return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسمين لحساب نسبة الخيانه بينهما كمثال ↫ رسول و توت', 'md')
 end
 if text and text ~= "نسبه الخيانه" and text ~= "نسبة الخيانه" and text ~= "↫ نسبه الخيانه ⌁" and Redis:get(Drox..'RyNsba:muh'..msg.chat_id..msg.sender_id.user_id) then
 if text and text =='الغاء' then 
@@ -14442,7 +14430,7 @@ end
 return false
 end
 Redis:set(Drox..'JNsba:muh'..msg.chat_id..msg.sender_id.user_id,true) 
-return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسم الشخص لقياس نسبة جماله كمثال ↫ رسول او مريم', 'md')
+return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسم الشخص لقياس نسبة جماله كمثال ↫ رسول او توت', 'md')
 end
 if text and text ~= "نسبه الجمال" and text ~= "نسبة الجمال" and text ~= "↫ نسبه الجمال ⌁" and Redis:get(Drox..'JNsba:muh'..msg.chat_id..msg.sender_id.user_id) then
 if text and text =='الغاء' then 
@@ -14463,7 +14451,7 @@ end
 return false
 end
 Redis:set(Drox..'HataNsba:muh'..msg.chat_id..msg.sender_id.user_id,true) 
-return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسمين لحساب نسبة الكره بينهما كمثال ↫ رسول و مريم', 'md')
+return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسمين لحساب نسبة الكره بينهما كمثال ↫ رسول و توت', 'md')
 end
 if text and text ~= "نسبه الكره" and text ~= "نسبة الكره" and text ~= "↫ نسبه الكره ⌁" and Redis:get(Drox..'HataNsba:muh'..msg.chat_id..msg.sender_id.user_id) then
 if text and text =='الغاء' then 
@@ -14505,7 +14493,7 @@ end
 return false
 end
 Redis:set(Drox..'AnothaNsba:muh'..msg.chat_id..msg.sender_id.user_id,true) 
-return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسم الشخص لقياس نسبة انوثته كمثال ↫ مريم', 'md')
+return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسم الشخص لقياس نسبة انوثته كمثال ↫ توت', 'md')
 end
 if text and text ~= "نسبه الانوثه" and text ~= "نسبة الانوثه" and text ~= "نسبه انوثه" and text ~= "نسبة انوثه" and text ~= "↫ نسبه الانوثه ⌁" and Redis:get(Drox..'AnothaNsba:muh'..msg.chat_id..msg.sender_id.user_id) then
 if text and text =='الغاء' then 
@@ -14526,7 +14514,7 @@ end
 return false
 end
 Redis:set(Drox..'StupidNsba:muh'..msg.chat_id..msg.sender_id.user_id,true) 
-return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسم الشخص لقياس نسبة غبائه كمثال ↫ رسول او مريم', 'md')
+return LuaTele.sendText(msg.chat_id, msg.id, '⌁︙قم بارسل اسم الشخص لقياس نسبة غبائه كمثال ↫ رسول او توت', 'md')
 end
 if text and text ~= "نسبه الغباء" and text ~= "نسبة الغباء" and text ~= "↫ نسبه الغباء ⌁" and Redis:get(Drox..'StupidNsba:muh'..msg.chat_id..msg.sender_id.user_id) then
 if text and text =='الغاء' then 
@@ -14604,7 +14592,7 @@ local UserId = UserId_Info.id
 return LuaTele.sendText(msg.chat_id,msg.id,'['..getbio(UserId)..']',"md",true) 
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "مسح الميديا" and ChCheck(msg) then 
 if not msg.Manager then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(7)..' .\n').Warning,"md",true)    
@@ -14624,71 +14612,71 @@ if text == "عدد الميديا" and ChCheck(msg) then
 local list = Redis:smembers(Drox.."Drox:cleaner"..msg.chat_id)
 return LuaTele.sendText(msg.chat_id,msg.id,"عدد الميديا هو "..#list.."","md",true)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'اوامر التحشيش' and ChCheck(msg) then
 local Text = [[
 🤹🏻┇𝐟𝐮𝐧𝐧𝐲 𝐨𝐫𝐝𝐞𝐫𝐬.
-• — — — — — — — — — • 
+— — — — — — — — — 
 ⌁︙الاوامر التحشيش 🃏
-• — — — — — — — — — • 
+— — — — — — — — — 
 ⌁︙رفع + تنزيل ← الامࢪ ↓
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← مطي 
 • المطايه - المطاية
 • حذف - مسح المطايه
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← صخل
 • الصخوله - صخوله
 •  حذف - مسح الصخوله
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← جلب
 •  الجلاب - جلاب
 • حذف - مسح الحلاب
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← قرد 
 •  القروده - قروده
 • حذف - مسح القروده
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← بقره
 •  البقرات - الهوايش
 • حذف - مسح البقرات
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← ضلع
 •  الضلوع - ضلوعي
 • حذف - مسح الضلوع
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← ضلعه
 •  الضلعات - ضلعاتي
 • حذف - مسح الضلعات
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← طلي
 •  الطليان - طليان
 • حذف - مسح الطليان
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← زاحف 
 •  زواحف - الزواحف
 • حذف - مسح الزواحف
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← جريذي
 •  الجريذيه - جريذيه
 • حذف - مسح الجريذيه
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← الصاك
 •  الصاكين - صاكين
 • حذف - مسح الصاكين
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← الحاته
 •  الحاتات - حاتات
 • حذف - مسح الحاتات
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← متوحد
 • المتوحدين
 • حذف - مسح المتوحدين
-• — — — — — — — — — • 
+— — — — — — — — — 
 • رفع + تنزيل ← متوحده
 • المتوحدات
 • حذف - مسح المتوحدين
-• — — — — — — — — — • 
+— — — — — — — — — 
 ]]
 if not msg.Owner then
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
@@ -14707,7 +14695,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 return LuaTele.sendText(msg.chat_id, msg.id, Text, 'md', true, false, false, false, reply_markup)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'الاوامر' and ChCheck(msg) then
 if not msg.Admin then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(8)..' .\n').Warning,"md",true)    
@@ -14876,16 +14864,16 @@ HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
 Percentage=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
 UpTime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes"}'`
 echo '⌁︙نظام التشغيل ↫ ⤈\n`'"$LinuxVersion"'`' 
-echo '• — — — — — — — — — •\n⌁︙الذاكره العشوائيه ↫ ⤈\n`'"$MemoryUsage"'`'
-echo '• — — — — — — — — — •\n⌁︙وحدة التخزين ↫ ⤈\n`'"$HardDisk"'`'
-echo '• — — — — — — — — — •\n⌁︙المعالج ↫ ⤈\n`'"`grep -c processor /proc/cpuinfo`""Core ~ {$Percentage%} "'`'
-echo '• — — — — — — — — — •\n⌁︙الفولدر ↫ ⤈\n`'"]]..Folder..[["'`'
-echo '• — — — — — — — — — •\n⌁︙رقم اسكرين البوت ↫ ⤈\n`'"]]..ScreenBot()..[["'`'
-echo '• — — — — — — — — — •\n⌁︙مدة تشغيل السيرفر ↫ ⤈\n`'"$UpTime"'`'
+echo '— — — — — — — — —\n⌁︙الذاكره العشوائيه ↫ ⤈\n`'"$MemoryUsage"'`'
+echo '— — — — — — — — —\n⌁︙وحدة التخزين ↫ ⤈\n`'"$HardDisk"'`'
+echo '— — — — — — — — —\n⌁︙المعالج ↫ ⤈\n`'"`grep -c processor /proc/cpuinfo`""Core ~ {$Percentage%} "'`'
+echo '— — — — — — — — —\n⌁︙الفولدر ↫ ⤈\n`'"]]..Folder..[["'`'
+echo '— — — — — — — — —\n⌁︙رقم اسكرين البوت ↫ ⤈\n`'"]]..ScreenBot()..[["'`'
+echo '— — — — — — — — —\n⌁︙مدة تشغيل السيرفر ↫ ⤈\n`'"$UpTime"'`'
 ]]):read('*all')
 LuaTele.sendText(msg.chat_id,msg.id,ioserver,"md",true)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     -- 
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     -- 
 if text == 'تحديث' then
 if not msg.muhammad then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n').Warning,"md",true)    
@@ -14907,7 +14895,7 @@ data = {
 LuaTele.sendText(msg.chat_id,msg.id,Text,"md",true, false, false, false, reply_markup)
 dofile('Drox.lua')  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     -- 
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     -- 
 if text == "تحديث السورس" or text == "تحديث سورس" or text == "↫ تحديث السورس ⌁" then 
 if not msg.muhammad then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n').Warning,"md",true)    
@@ -14929,7 +14917,7 @@ data = {
 LuaTele.sendText(msg.chat_id,msg.id,Text,"md",true, false, false, false, reply_markup)
 dofile('Drox.lua')
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     -- 
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     -- 
 if text == "حذف البوت" then 
 if not msg.muhammad then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n').Warning,"md",true)    
@@ -14948,7 +14936,7 @@ LuaTele.sendText(msg.chat_id,msg.id,Text,"md",true, false, false, false, reply_m
 os.execute('cd /root && rm -fr '..Folder..' && kill screen '..Screen)
 os.exit()
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     -- 
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     -- 
 if text == "تغيير اسم البوت" and ChCheck(msg) then 
 if not msg.SecondSudo then 
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n').Warning,"md",true)    
@@ -14963,7 +14951,7 @@ end
 Redis:del(Drox.."Name:Bot") 
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙تم حذف اسم البوت ","md",true)   
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     -- 
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     -- 
 if text == (Redis:get(Drox.."Name:Bot") or "دروكس") then
 local NamesBot = (Redis:get(Drox.."Name:Bot") or "دروكس")
 local Drox = {"❤️‍🔥","🏌🏼","🦋","🍧","🥲","🍇","🥲♥️","♥️","🍧🍇",""} 
@@ -15677,7 +15665,7 @@ LuaTele.sendText(msg.chat_id,msg.id,"⌁︙عذراَ "..Drox.." ↬ ["..UserInf
 else
 Num = math.random(1,20)
 Redis:set(Drox.."Game:Estimate"..msg.chat_id..msg.sender_id.user_id,Num)  
-return LuaTele.sendText(msg.chat_id,msg.id,"\n⌁︙اهلا بك عزيزي في لعبة التخمين :\n• — — — — — — — — — •\n".."⌁︙ملاحظه لديك { 3 } محاولات فقط فكر قبل ارسال تخمينك \n\n".."⌁︙سيتم تخمين عدد ما بين ال {1 و 20} اذا تعتقد انك تستطيع الفوز جرب واللعب الان ؟ ","md",true)  
+return LuaTele.sendText(msg.chat_id,msg.id,"\n⌁︙اهلا بك عزيزي في لعبة التخمين :\n— — — — — — — — —\n".."⌁︙ملاحظه لديك { 3 } محاولات فقط فكر قبل ارسال تخمينك \n\n".."⌁︙سيتم تخمين عدد ما بين ال {1 و 20} اذا تعتقد انك تستطيع الفوز جرب واللعب الان ؟ ","md",true)  
 end
 end
 if text == "المختلف" and ChCheck(msg) then
@@ -15763,7 +15751,7 @@ if Redis:get(Drox.. "Bank"..msg.chat_id) then
 end
     local text = [[
     ⌁︙اوامر البنك كـ الاتي ↫ ⤈
-    • — — — — — — — — — •
+    — — — — — — — — —
     ⌁︙امر (انشاء حساب بنكي) وبعدها اتبع التعليمات
     ⌁︙امر (فلوسي) لعرض فلوسك 
     ⌁︙امر (فلوسه) بالرد لعرض فلوس المقصود
@@ -15781,7 +15769,7 @@ end
     ⌁︙امر (راتبي) حت تستلم راتبك كل 20 دقيقة
     ⌁︙امر (مسح حسابي البنكي) لحذف حسابك 
     ⌁︙وامر المطورين  ↫ ⤈
-    • — — — — — — — — — •
+    — — — — — — — — —
     ⌁︙امر (مسح لعبه البنك) لحذف جميع الحسابات
     ⌁︙امر (مسح حسابه) بالرد لحذف حساب
     ]]
@@ -16131,7 +16119,7 @@ if Redis:get(Drox.. "Bank"..msg.chat_id) then
     end
     return false
 end
-LuaTele.sendText(msg.chat_id,msg.id, "⌁︙استعمل الامر هكذا ↫ ⤈\n• — — — — — — — — — •\n(`مراهنه`) المبلغ\n ?","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "⌁︙استعمل الامر هكذا ↫ ⤈\n— — — — — — — — —\n(`مراهنه`) المبلغ\n ?","md",true)
 end
 
 if text and text:match('^مراهنه (.*)$') and ChCheck(msg) then
@@ -16234,7 +16222,7 @@ if Redis:get(Drox.. "Bank"..msg.chat_id) then
     end
     return false
 end
-LuaTele.sendText(msg.chat_id,msg.id, "⌁︙استعمل الامر هكذا ↫ ⤈\n• — — — — — — — — — •\n⌁︙(`استثمار`) المبلغ\n ?","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "⌁︙استعمل الامر هكذا ↫ ⤈\n— — — — — — — — —\n⌁︙(`استثمار`) المبلغ\n ?","md",true)
 end
 
 if text and text:match('^استثمار (.*)$') and ChCheck(msg) then
@@ -16324,7 +16312,7 @@ if Redis:get(Drox.. "Bank"..msg.chat_id) then
     end
     return false
 end
-LuaTele.sendText(msg.chat_id,msg.id, "⌁︙استعمل الامر هكذا ↫ ⤈\n• — — — — — — — — — •\n⌁︙(`حظ`) المبلغ\n ?","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "⌁︙استعمل الامر هكذا ↫ ⤈\n— — — — — — — — —\n⌁︙(`حظ`) المبلغ\n ?","md",true)
 end
 
 if text and text:match('^حظ (.*)$') and ChCheck(msg) then
@@ -16418,7 +16406,7 @@ if Redis:get(Drox.. "Bank"..msg.chat_id) then
     end
     return false
 end
-LuaTele.sendText(msg.chat_id,msg.id, "⌁︙استعمل الامر هكذا ↫ ⤈\n• — — — — — — — — — •\n⌁︙(`تحويل`) المبلغ\n ?","md",true)
+LuaTele.sendText(msg.chat_id,msg.id, "⌁︙استعمل الامر هكذا ↫ ⤈\n— — — — — — — — —\n⌁︙(`تحويل`) المبلغ\n ?","md",true)
 end
 
 if text and text:match('^تحويل (.*)$') and ChCheck(msg) then
@@ -16579,7 +16567,7 @@ local bank_users = Redis:smembers(Drox.."booob")
 if #bank_users == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد حسابات في البنك","md",true)
 end
-top_mony = "توب اغنى 20 شخص ↫ ⤈\n• — — — — — — — — — •\n"
+top_mony = "توب اغنى 20 شخص ↫ ⤈\n— — — — — — — — —\n"
 mony_list = {}
 for k,v in pairs(bank_users) do
 local mony = Redis:get(Drox.."boob"..v)
@@ -16633,7 +16621,7 @@ local ty_users = Redis:smembers(Drox.."zrfffid")
 if #ty_users == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد احد","md",true)
 end
-ty_anubis = "اكثر 20 شخص قفاص باكو فلوس ↫ ⤈\n• — — — — — — — — — •\n"
+ty_anubis = "اكثر 20 شخص قفاص باكو فلوس ↫ ⤈\n— — — — — — — — —\n"
 ty_list = {}
 for k,v in pairs(ty_users) do
 local mony = Redis:get(Drox.."zrfff"..v)
@@ -16933,7 +16921,7 @@ else
 return LuaTele.sendText(msg.chat_id,msg.id, "⌁︙عدد النقاط التي ربحتها *↫ "..Num.." *","md",true)  
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == 'ترتيب الاوامر' and ChCheck(msg) then
 if not msg.Manager then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(7)..' .\n').Warning,"md",true)    
@@ -16984,7 +16972,7 @@ Redis:set(Drox.."Get:Reides:Commands:Group"..msg.chat_id..":"..'تغ','تغيي�
 Redis:sadd(Drox.."Command:List:Group"..msg.chat_id,"تغ")
 return LuaTele.sendText(msg.chat_id,msg.id,[[
 ⌁︙تم ترتيب الاوامر بالشكل التالي ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙ايدي - ا .
 ⌁︙رفع مميز - م .
 ⌁︙رفع ادمن - اد .
@@ -17007,11 +16995,11 @@ return LuaTele.sendText(msg.chat_id,msg.id,[[
 ⌁︙غنيلي - غ .
 ⌁︙تغيير الايدي - تغ .
 ⌁︙مسح قائمه العام - # .
-• — — — — — — — — — •
+— — — — — — — — —
  ✓
 ]],"md")
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == "سمسمي" and ChCheck(msg) then 
 if not Redis:get(Drox..'smsme') then 
 if Redis:get(Drox..'Warning:Chat'..msg.chat_id)  then
@@ -17029,7 +17017,7 @@ if Redis:get(Drox.."smsme"..msg.chat_id) then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙الاستخدام سمسمي قم بوضع رد علئ البوت\n⌁︙ومن ثم تكلم مع البوت\n ?').muhammad,"md",true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Redis:get(Drox..'smsme') and Redis:get(Drox.."smsme"..msg.chat_id) then
 if text and msg.reply_to_message_id ~= 0 then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
@@ -17046,7 +17034,7 @@ LuaTele.sendText(msg.chat_id,msg.id,txx,"md")
 end
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Redis:get(Drox.."youtube"..msg.sender_id.user_id..msg.chat_id) == "mp3" then
 local UserInfo = LuaTele.getUser(Drox)
 Redis:del(Drox.."youtube"..msg.sender_id.user_id..msg.chat_id)
@@ -17116,7 +17104,7 @@ return LuaTele.sendText(msg.chat_id,msg.id, [[*
 ⌁︙اختر كيف تريد التحميل
 *]],"md",false, false, false, false, reply_markup)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text then
 if text:match("^all (.*)$") or text:match("^@all (.*)$") or text == "@all" or text == "all" then 
 local ttag = text:match("^all (.*)$") or text:match("^@all (.*)$") 
@@ -17214,16 +17202,16 @@ HardDisk=`df -lh | awk '{if ($6 == "/") { print $3"/"$2" ~ {"$5"}" }}'`
 Percentage=`top -b -n1 | grep "Cpu(s)" | awk '{print $2 + $4}'`
 UpTime=`uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^day/) {d=$6;h=$8;m=$9} else {h=$6;m=$7}}} {print d+0,"days,",h+0,"hours,",m+0,"minutes"}'`
 echo '⌁︙نظام التشغيل ↫ ⤈\n`'"$LinuxVersion"'`' 
-echo '• — — — — — — — — — •\n⌁︙الذاكره العشوائيه ↫ ⤈\n`'"$MemoryUsage"'`'
-echo '• — — — — — — — — — •\n⌁︙وحدة التخزين ↫ ⤈\n`'"$HardDisk"'`'
-echo '• — — — — — — — — — •\n⌁︙المعالج ↫ ⤈\n`'"`grep -c processor /proc/cpuinfo`""Core ~ {$Percentage%} "'`'
-echo '• — — — — — — — — — •\n⌁︙الدخول ↫ ⤈\n`'`whoami`'`'
-echo '• — — — — — — — — — •\n⌁︙مدة تشغيل السيرفر ↫ ⤈\n`'"$UpTime"'`'
-echo '• — — — — — — — — — •\n⌁︙رقم اسكرين البوت ↫ ⤈\n'..ScreenBot()
+echo '— — — — — — — — —\n⌁︙الذاكره العشوائيه ↫ ⤈\n`'"$MemoryUsage"'`'
+echo '— — — — — — — — —\n⌁︙وحدة التخزين ↫ ⤈\n`'"$HardDisk"'`'
+echo '— — — — — — — — —\n⌁︙المعالج ↫ ⤈\n`'"`grep -c processor /proc/cpuinfo`""Core ~ {$Percentage%} "'`'
+echo '— — — — — — — — —\n⌁︙الدخول ↫ ⤈\n`'`whoami`'`'
+echo '— — — — — — — — —\n⌁︙مدة تشغيل السيرفر ↫ ⤈\n`'"$UpTime"'`'
+echo '— — — — — — — — —\n⌁︙رقم اسكرين البوت ↫ ⤈\n'..ScreenBot()
 ]]):read('*all')
 LuaTele.sendText(msg.chat_id,msg.id,ioserver,"md",true)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text =='القناة' or text =='قناة السورس' or text =='قناه السورس' or text =='قنات السورس' or text =='↫ قناة السورس ⌁' then 
 Text = [[
 ⌁︙[قناة السورس](https://t.me/DroxTeAm)
@@ -17234,7 +17222,7 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/DroxTeAm&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text =='قناة التحديثات' or text =="التحديثات" or text =='قناة تحديثات السورس' or text =='قناه تحديثات السورس' or text =='قنات تحديث السورس' or text =='قنات تحديثات السورس' or text =='↫ قناة التحديثات ⌁' then 
 Text = [[
 ⌁︙قناة تحديثات سورس دروكس
@@ -17248,8 +17236,8 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id=' .. msg.chat_id .. '&photo=https://t.me/DroxTeAm&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
-if text == "مطور السورس" or text == "مطور دروكس" or text == "وين المطور السورس" or text == "مطور سورس" or text == "↫ مطور السورس ⌁" then 
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
+if text == "مطور السورس" or text == "مبرمج السورس" or text == "رسو" or text == "المبرمج" or text == "↫ مطور السورس ⌁" then 
 Text = "‹ *The developer of this source is* : [‹ - 𝖱𝖺𝗌𝗎𝗅 .𝖬𝗎𝗇𝗍𝖺ᴢ𝖺𝗋 .](https://t.me/uQuuu)."
 keyboard = {} 
 keyboard.inline_keyboard = {
@@ -17258,7 +17246,7 @@ local msg_id = msg.id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&photo=https://t.me/uQuuu&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard))
 return false
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if (text == 'المطور' or text == 'مطور' or text =='↫ المطور ⌁' or text =='↫ مطور البوت ⌁') then
 local TextingDevDrox = Redis:get(Drox..'Texting:DevDrox')
 if TextingDevDrox then 
@@ -17270,7 +17258,7 @@ for Name_User in string.gmatch(UserInfo.first_name, "[^%s]+" ) do
 end 
 if photo and photo.total_count and photo.total_count > 0 then
 local bio = getbio(Sudo_Id)
-local TextDev ="*⌁︙D𝐞𝐯 N𝐞𝐦𝐚 ↬* ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n*⌁︙D𝐞𝐯 U𝐬𝐞𝐫 ↬* [@"..UserInfo.username.."]\n*⌁︙D𝐞𝐯 I𝐝 ↬* ["..UserInfo.id.."](T.me/"..UserInfo.username..")\n*⌁︙D𝐞𝐯 B𝐢𝐨 ↬* ["..bio.."]\n• — — — — — — — — — •"
+local TextDev ="*⌁︙D𝐞𝐯 N𝐞𝐦𝐚 ↬* ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n*⌁︙D𝐞𝐯 U𝐬𝐞𝐫 ↬* [@"..UserInfo.username.."]\n*⌁︙D𝐞𝐯 I𝐝 ↬* ["..UserInfo.id.."](T.me/"..UserInfo.username..")\n*⌁︙D𝐞𝐯 B𝐢𝐨 ↬* ["..bio.."]\n— — — — — — — — —"
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ '..UserInfo.first_name..' ›', url = 't.me/'..UserSudo}, },{{text = '‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›', url = 't.me/DroxTeAm'},},}}
 LuaTele.sendPhoto(msg.chat_id, msg.id, photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id, TextDev, "md", true, nil, nil, nil, nil, nil, nil, nil, nil, reply_markup)
 return false
@@ -17283,10 +17271,10 @@ return false
 end
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 --     start chat Pv     --
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if text == '/start' or text == "↫ رجـوع ⌁" then
 Redis:sadd(Drox..'muh:Users',msg.sender_id.user_id)  
 if not msg.SecondSudo then
@@ -17346,7 +17334,7 @@ end
 if text and text:match("^(تعطيل ملف) (.*)(.lua)$") then
 local FileGet = {string.match(text, "^(تعطيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
-local GetJson, Res = https.request("https://raw.githubusercontent.com/ssm2121/Files_Drox/master/Files_Drox/"..FileName)
+local GetJson, Res = https.request("https://raw.githubusercontent.com/Rasul-Muntazar/Files_Drox/master/Files_Drox/"..FileName)
 if Res == 200 then
 os.execute("rm -fr Files_Drox/"..FileName)
 LuaTele.sendText(msg.chat_id, msg.id,"\nالملف ↫ ‹ "..FileName.." ›\nتم تعطيله وحذفه من البوت بنجاح") 
@@ -17358,7 +17346,7 @@ end
 if text and text:match("^(تفعيل ملف) (.*)(.lua)$") then
 local FileGet = {string.match(text, "^(تفعيل ملف) (.*)(.lua)$")}
 local FileName = FileGet[2]..'.lua'
-local GetJson, Res = https.request("https://raw.githubusercontent.com/ssm2121/Files_Drox/master/Files_Drox/"..FileName)
+local GetJson, Res = https.request("https://raw.githubusercontent.com/Rasul-Muntazar/Files_Drox/master/Files_Drox/"..FileName)
 if Res == 200 then
 local ChekAuto = io.open("Files_Drox/"..FileName,'w+')
 ChekAuto:write(GetJson)
@@ -17375,12 +17363,12 @@ if not msg.muhammad then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(1)..' .\n').Warning,"md",true)    
 end 
 local Sudo_Welcome = '⌁︙اهلا بك مجددا عزيزي المطور \n⌁︙اليك الازرار الخاصه المتجر الخاص لسورس دروكس فقط اضغط على الملف الذي تريد تفعيل او تعطيله'
-local Get_Files, res = https.request("https://raw.githubusercontent.com/ssm2121/Files_Drox/main/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/Rasul-Muntazar/Files_Drox/main/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files)
 if Get_info then
-local TextS = "\n⌁︙قائمة ملفات متجر سورس دروكس\n⌁︙الملفات المتوفره حاليا ↫ ⤈\n• — — — — — — — — — • \n"
-local TextE = "• — — — — — — — — — • \n⌁︙علامة ↫ (✔) تعني الملف مفعل\n⌁︙علامة ↫ (✖️) تعني الملف معطل\n"
+local TextS = "\n⌁︙قائمة ملفات متجر سورس دروكس\n⌁︙الملفات المتوفره حاليا ↫ ⤈\n— — — — — — — — — \n"
+local TextE = "— — — — — — — — — \n⌁︙علامة ↫ (✔) تعني الملف مفعل\n⌁︙علامة ↫ (✖️) تعني الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local CheckFileisFound = io.open("Files_Drox/"..name,"r")
@@ -17611,7 +17599,7 @@ data = {
 },}}
 return LuaTele.sendText(msg.chat_id,msg.id,'⌁︙اهلا بك مجددا عزيزي المطور \n⌁︙اليك الازرار الخاصه ببوتك المثبت علئ لسورس دروكس فقط اضغط على الامر الذي تريد تنفيذه', 'md', false, false, false, false, reply_markup)
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 --     end start chat Pv     --
 if text == '↫ تنظيف المشتركين  ⌁' and ChCheck(msg) then
 if not msg.SecondSudo then 
@@ -17723,7 +17711,7 @@ if not msg.SecondSudo then
 return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'⌁︙هذا الامر يخص ↫ '..Controller_Num(2)..' .\n').Warning,"md",true)    
 end
 
-LuaTele.sendText(msg.chat_id,msg.id,'*⌁︙عدد احصائيات البوت الكامله \n• — — — — — — — — — •\n⌁︙عدد المجموعات : '..(Redis:scard(Drox..'muh:Groups') or 0)..'\n⌁︙عدد المشتركين : '..(Redis:scard(Drox..'muh:Users') or 0)..'*',"md",true)  
+LuaTele.sendText(msg.chat_id,msg.id,'*⌁︙عدد احصائيات البوت الكامله \n— — — — — — — — —\n⌁︙عدد المجموعات : '..(Redis:scard(Drox..'muh:Groups') or 0)..'\n⌁︙عدد المشتركين : '..(Redis:scard(Drox..'muh:Users') or 0)..'*',"md",true)  
 end
 if text == '↫ تغيير كليشه المطور ⌁' and ChCheck(msg) then
 if not msg.muhammad then 
@@ -17767,7 +17755,7 @@ LuaTele.sendText(msg.chat_id,msg.id,[[
 ⌁︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ‹ الغاء ›
  ✓
 ]],"md",true)  
@@ -17784,7 +17772,7 @@ LuaTele.sendText(msg.chat_id,msg.id,[[
 ⌁︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ‹ الغاء ›
  ✓
 ]],"md",true)  
@@ -17800,7 +17788,7 @@ LuaTele.sendText(msg.chat_id,msg.id,[[
 ⌁︙ارسل لي سواء كان 
 ❨ ملف • ملصق • متحركه • صوره
  • فيديو • بصمه الفيديو • بصمه • صوت • رساله ❩
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙للخروج ارسل ‹ الغاء ›
  ✓
 ]],"md",true)  
@@ -17832,7 +17820,7 @@ return LuaTele.sendText(msg.chat_id,msg.id,Reply_Status(msg.sender_id.user_id,'�
 end
 
 local list = Redis:smembers(Drox.."List:Rd:Sudo")
-text = "\n📝︙قائمة الردود العامه ↫ ⤈\n• — — — — — — — — — •\n"
+text = "\n📝︙قائمة الردود العامه ↫ ⤈\n— — — — — — — — —\n"
 for k,v in pairs(list) do
 if Redis:get(Drox.."Add:Rd:Sudo:Gif"..v) then
 db = "متحركه 🎭"
@@ -17961,7 +17949,7 @@ end
 local Info_BanAllMembers = Redis:smembers(Drox.."BanAll:Groups") 
 local Info_KtmAllMembers = Redis:smembers(Drox.."ktmAll:Groups") 
 if #Info_BanAllMembers ~= 0 then 
-ListMembers = '\n*⌁︙قائمه المحظورين عام ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه المحظورين عام ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_BanAllMembers) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -17973,7 +17961,7 @@ else
 ListMembers = ""
 end
 if #Info_KtmAllMembers ~= 0 then 
-ListMembers = ListMembers..'\n*⌁︙قائمه المكتومين عام ↫ ⤈\n • — — — — — — — — — •*\n'
+ListMembers = ListMembers..'\n*⌁︙قائمه المكتومين عام ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(Info_KtmAllMembers) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -18004,7 +17992,7 @@ local Info_Members = Redis:smembers(Drox.."muh:SudoBot:")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه مطورين البوت ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه مطورين البوت ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -18027,7 +18015,7 @@ local Info_Members = Redis:smembers(Drox.."muh:SecondSudo:")
 if #Info_Members == 0 then
 return LuaTele.sendText(msg.chat_id,msg.id,"⌁︙لا يوجد مطورين حاليا , ","md",true)  
 end
-ListMembers = '\n*⌁︙قائمه مطورين البوت ↫ ⤈ \n • — — — — — — — — — •*\n'
+ListMembers = '\n*⌁︙قائمه مطورين البوت ↫ ⤈ \n — — — — — — — — —*\n'
 for k, v in pairs(Info_Members) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -18354,7 +18342,7 @@ if not Message_Edit.Admin and Message_Edit.sender_id.user_id ~= tonumber(Drox) t
 if Message_Edit.content.luatele == "messageContact" or Message_Edit.content.luatele == "messageVideoNote" or Message_Edit.content.luatele == "messageDocument" or Message_Edit.content.luatele == "messageAudio" or Message_Edit.content.luatele == "messageVideo" or Message_Edit.content.luatele == "messageVoiceNote" or Message_Edit.content.luatele == "messageAnimation" or Message_Edit.content.luatele == "messagePhoto" then
 if Redis:get(Drox.."Lock:edit"..data.chat_id) then
 if #monsha ~= 0 then 
-local ListMembers = '\n*⌁︙تعالو يالمالكين  ↫ ⤈\n• — — — — — — — — — •*\n'
+local ListMembers = '\n*⌁︙تعالو يالمالكين  ↫ ⤈\n— — — — — — — — —*\n'
 for k, v in pairs(monsha) do
 local UserInfo = LuaTele.getUser(v)
 if UserInfo and UserInfo.username and UserInfo.username ~= "" then
@@ -18363,7 +18351,7 @@ else
 ListMembers = ListMembers.."*"..k.." -* ["..v.."](tg://user?id="..v..")\n"
 end
 end
-local tecxt = ListMembers.."\n⌁︙مخرب يريد يفلش  ↫ ⤈\n• — — — — — — — — — •\n".."⌁︙المستخدم ↫ ["..names.." ](tg://user?id="..Message_Edit.sender_id.user_id..")"..
+local tecxt = ListMembers.."\n⌁︙مخرب يريد يفلش  ↫ ⤈\n— — — — — — — — —\n".."⌁︙المستخدم ↫ ["..names.." ](tg://user?id="..Message_Edit.sender_id.user_id..")"..
 "\n⌁︙قام بتعديل الميديا\n"
 LuaTele.sendText(data.chat_id,0,tecxt,"md")
 end
@@ -18724,7 +18712,7 @@ Redis:del(Drox.."chmembers")
 LuaTele.editMessageText(ChatId,msg_id,TextHelp, 'md', true, false, reply_markup)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('(%d+)/DelRainkBot') then
 local UserId = Text:match('(%d+)/DelRainkBot')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -18860,7 +18848,7 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {
 LuaTele.editMessageText(ChatId,msg_id,"⌁︙تم حذف المميزين ... ✓ ", 'md', true, false, reply_markup)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('(%d+)/Song') then
 local UserId = Text:match('(%d+)/Song')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -18871,7 +18859,7 @@ keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data=data.
 return https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. data.chat_id .. '&voice=https://t.me/AudioDrox/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..data.message_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/mp3:'..tonumber(data.sender_user_id)..'(.*)') then
 local muh = Text:match('/mp3:'..tonumber(data.sender_user_id)..'(.*)')
 muh = math.random(2,1167); 
@@ -18880,7 +18868,7 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/mp3:"..data.sender_user_id}},{{text="‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›",url="t.me/DroxTeAm"}}} 
 https.request("https://api.telegram.org/bot"..Token..'/sendAudio?chat_id=' .. data.chat_id .. '&audio=https://t.me/DroxMp3/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..data.message_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/memz:'..tonumber(data.sender_user_id)..'(.*)') then
 local muh = Text:match('/memz:'..tonumber(data.sender_user_id)..'(.*)')
 muh = math.random(3,1171); 
@@ -18889,7 +18877,7 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/memz:"..data.sender_user_id}},{{text="‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›",url="t.me/DroxTeAm"}}} 
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. data.chat_id .. '&voice=https://t.me/MemzDrox/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..data.message_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/gif:'..tonumber(data.sender_user_id)..'(.*)') then
 local muh = Text:match('/gif:'..tonumber(data.sender_user_id)..'(.*)')
 muh = math.random(4,143); 
@@ -18898,7 +18886,7 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/gif:"..data.sender_user_id}},{{text="‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›",url="t.me/DroxTeAm"}}} 
 https.request("https://api.telegram.org/bot"..Token..'/sendanimation?chat_id=' .. data.chat_id .. '&animation=https://t.me/AnimationDrox/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..data.message_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/remix:'..tonumber(data.sender_user_id)..'(.*)') then
 local muh = Text:match('/remix:'..tonumber(data.sender_user_id)..'(.*)')
 muh = math.random(3,442); 
@@ -18907,7 +18895,7 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/remix:"..data.sender_user_id}},{{text='‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›',url="t.me/DroxTeAm"}}} 
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. data.chat_id .. '&voice=https://t.me/RemixDrox/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..data.message_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/photo:'..tonumber(data.sender_user_id)..'(.*)') then
 local muh = Text:match('/photo:'..tonumber(data.sender_user_id)..'(.*)')
 muh = math.random(3,1146); 
@@ -18916,7 +18904,7 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/photo:"..data.sender_user_id}},{{text="‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›",url="t.me/DroxTeAm"}}} 
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. data.chat_id .. '&photo=https://t.me/PhotosDrox/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..data.message_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/anime:'..tonumber(data.sender_user_id)..'(.*)') then
 local muh = Text:match('/anime:'..tonumber(data.sender_user_id)..'(.*)')
 muh = math.random(3,1002); 
@@ -18925,7 +18913,7 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/anime:"..data.sender_user_id}},{{text="‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›",url="t.me/DroxTeAm"}}} 
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. data.chat_id .. '&photo=https://t.me/AnimesDrox/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..data.message_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/Movies:'..tonumber(data.sender_user_id)..'(.*)') then
 local muh = Text:match('/Movies:'..tonumber(data.sender_user_id)..'(.*)')
 muh = math.random(45,125); 
@@ -18934,7 +18922,7 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/Movies:"..data.sender_user_id}},{{text="‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›",url="t.me/DroxTeAm"}}} 
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. data.chat_id .. '&photo=https://t.me/MoviesDrox/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..data.message_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/series:'..tonumber(data.sender_user_id)..'(.*)') then
 local muh = Text:match('/series:'..tonumber(data.sender_user_id)..'(.*)')
 muh = math.random(2,54); 
@@ -18943,8 +18931,8 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/series:"..data.sender_user_id}},{{text="‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›",url="t.me/DroxTeAm"}}} 
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. data.chat_id .. '&photo=https://t.me/SeriesDrox/'..muh..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..data.message_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/sh3r:'..tonumber(data.sender_user_id)..'(.*)') then
 local muh = Text:match('/sh3r:'..tonumber(data.sender_user_id)..'(.*)')
 Num = math.random(2,140); 
@@ -18954,7 +18942,7 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text="‹ مره اخرى ›",callback_data="/sh3r:"..data.sender_user_id}},{{text="‹ 𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆 ›",url="t.me/DroxTeAm"}}} 
 https.request("https://api.telegram.org/bot"..Token..'/sendVoice?chat_id=' .. data.chat_id .. '&voice='..voice..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..data.message_id.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) 
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match(tonumber(data.sender_user_id)..':Mute:(.*)') then
 local UserId = Text:match(tonumber(data.sender_user_id)..':Mute:(.*)')
 local UserInfo = LuaTele.getUser(UserId)
@@ -18978,7 +18966,7 @@ Redis:srem(Drox.."SilentGroup:Group"..ChatId,UserInfo.id)
 return LuaTele.editMessageText(ChatId,msg_id,Reply_Status(UserInfo.id,"⌁︙تم الغاء كتمه في المجموعة  \n ✓").Reply,"md",true)  
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/CancelChannelVip:'..tonumber(data.sender_user_id)..'(.*)') then
 local UserId = Text:match('/CancelChannelVip:'..tonumber(data.sender_user_id)..'(.*)')
 Redis:del(Drox..'SetChannelVip'..data.sender_user_id)
@@ -19038,7 +19026,7 @@ data = {
 LuaTele.editMessageText(ChatId,msg_id,Text, 'md', true, false, reply_markup)
 return false
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/HideChannelVip:(.*)') then
 local UserId = Text:match('/HideChannelVip:(.*)')
 if tonumber(UserId) == tonumber(data.sender_user_id) then
@@ -19047,7 +19035,7 @@ else
 return LuaTele.answerCallbackQuery(data.id, "‹ عذرا الامر ليس لك ›", true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('(.*)/yes_z/(.*)') then
 local Devmuh = {Text:match('(.*)/yes_z/(.*)')}
 local zwga_id = Devmuh[1]
@@ -19094,7 +19082,7 @@ local no = {"⌁︙شجيبلك بعد وتزوج","⌁︙اتزوج يخوي ا
 return LuaTele.editMessageText(ChatId, msg_id,no[math.random(#no)],"md",false)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('(%d+)mute(%d+)') then
 local UserId = {Text:match('(%d+)mute(%d+)')}
 local replyy = tonumber(UserId[2])
@@ -19215,7 +19203,7 @@ local TextHelp = Reply_Status(replyy,"⌁︙تم الغاء تقييده في ا
 LuaTele.editMessageText(ChatId,msg_id,TextHelp, 'md', true, false, reply_markup)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match(tonumber(data.sender_user_id)..':Ban:(.*)') then
 local UserId = Text:match(tonumber(data.sender_user_id)..':Ban:(.*)')
 local UserInfo = LuaTele.getUser(UserId)
@@ -19264,7 +19252,7 @@ https.request('https://api.telegram.org/bot'..Token..'/unbanChatMember?chat_id='
 return LuaTele.editMessageText(ChatId,msg_id,Reply_Status(UserInfo.id,"⌁︙تم الغاء حظره من المجموعة  \n ✓").Reply,"md",true)  
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 
 if Text and Text:match(tonumber(data.sender_user_id)..':Tkeed:(.*)') then
 local UserId = Text:match(tonumber(data.sender_user_id)..':Tkeed:(.*)')
@@ -19308,7 +19296,7 @@ end
 LuaTele.setChatMemberStatus(ChatId,UserInfo.id,'restricted',{1,1,1,1,1,1,1,1})
 return LuaTele.editMessageText(ChatId,msg_id,Reply_Status(UserInfo.id,"⌁︙تم الغاء تقييده من المجموعة\n ✓").Reply,"md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 
 if Text and Text:match(tonumber(data.sender_user_id)..':SetList:(.*)') then
 local UserId = Text:match(tonumber(data.sender_user_id)..':SetList:(.*)')
@@ -19377,7 +19365,7 @@ elseif Redis:sismember(Drox.."muh:VipMem:"..ChatId,IdUser) then
 return LuaTele.editMessageText(ChatId, msg_id, "⌁︙هذا الامر للادمنيه في البوت فما فوق", 'md', true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match(tonumber(data.sender_user_id)..':SetMem:(.*)') then
 local UserId = Text:match(tonumber(data.sender_user_id)..':SetMem:(.*)')
 local UserInfo = LuaTele.getUser(UserId)
@@ -19483,7 +19471,7 @@ data = {
 LuaTele.editMessageText(ChatId,msg_id,txxt, 'md', true, false, reply_markup)
 return false
 end --uprinak
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match(tonumber(data.sender_user_id)..':RemList:(.*)') then
 local UserId = Text:match(tonumber(data.sender_user_id)..':RemList:(.*)')
 local UserInfo = LuaTele.getUser(UserId)
@@ -19551,7 +19539,7 @@ elseif Redis:sismember(Drox.."muh:VipMem:"..ChatId,IdUser) then
 return LuaTele.editMessageText(ChatId, msg_id, "⌁︙هذا الامر للادمنيه في البوت فما فوق", 'md', true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('(%d+)/mks') then
 local UserId = Text:match('(%d+)/mks')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -19624,7 +19612,7 @@ data = {
 LuaTele.editMessageText(chat_id,msg_id,baniusernamek, 'md', true, false, reply_markup)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match(tonumber(data.sender_user_id)..':RemMem:(.*)') then
 local UserId = Text:match(tonumber(data.sender_user_id)..':RemMem:(.*)')
 local UserInfo = LuaTele.getUser(UserId)
@@ -19731,7 +19719,7 @@ LuaTele.editMessageText(ChatId,msg_id,txxt, 'md', true, false, reply_markup)
 return false
 end -- discount rinak
 
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/TagAll:'..tonumber(data.sender_user_id)..'(.*)') then
 local UserId = Text:match('/TagAll:'..tonumber(data.sender_user_id)..'(.*)')
 LuaTele.deleteMessages(data.chat_id,{[1]= data.message_id})
@@ -19739,7 +19727,7 @@ local Tagall = 'TagAll:'..data.message_id..''
 local get = Redis:get(Drox.. ''..Tagall..'')
 local Info_Members = LuaTele.searchChatMembers(ChatId, "*", 200)
 local List_Members = Info_Members.members
-listall = '\n*⌁︙قائمه الاعضاء ↫ ⤈\n • — — — — — — — — — •*\n'
+listall = '\n*⌁︙قائمه الاعضاء ↫ ⤈\n — — — — — — — — —*\n'
 for k, v in pairs(List_Members) do
 local UserInfo = LuaTele.getUser(v.member_id.user_id)
 if UserInfo.username then
@@ -19750,7 +19738,7 @@ end
 end
 LuaTele.sendText(ChatId,get,listall,"md",true)  
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('(%d+)/sorty2') then
 local UserId = Text:match('(%d+)/sorty2')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -19881,11 +19869,11 @@ data = {
 }
 local TextHelp = [[
 ⌁︙اوامر الحمايه اتبع مايلي ...
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙قفل ، فتح ↫ الامر 
 ⌁︙تستطيع قفل حمايه كما يلي ...
 ⌁︙↫ { بالتقييد ، بالطرد ، بالكتم }
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙الروابط
 ⌁︙المعرف
 ⌁︙التاك
@@ -19895,7 +19883,7 @@ local TextHelp = [[
 ⌁︙المتحركه
 ⌁︙الملفات
 ⌁︙الصور
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙الماركداون
 ⌁︙البوتات
 ⌁︙التكرار
@@ -19905,7 +19893,7 @@ local TextHelp = [[
 ⌁︙الفيديو
 ⌁︙الانلاين
 ⌁︙الدردشه
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙التوجيه
 ⌁︙الاغاني
 ⌁︙الصوت
@@ -19939,7 +19927,7 @@ data = {
 }
 local TextHelp = [[
 ⌁︙اوامر ادمنية المجموعة ...
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙تحكم ↫ بالرد • بالمعرف  
 ⌁︙تحكم ↫ بالرد • بالمعرف • بالايدي
 ⌁︙رفع، تنزيل ↫ بالرد • بالمعرف • بالايدي
@@ -19949,13 +19937,13 @@ local TextHelp = [[
 ⌁︙الغاء كتم ، الغاء حظر ، الغاء تقييد
 ⌁︙منع ، الغاء منع 
 ⌁︙ترند ، المتفاعلين ، ثنائي اليوم
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙عرض القوائم كما يلي ...
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙المكتومين
 ⌁︙المميزين 
 ⌁︙قائمه المنع
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙تثبيت ، الغاء تثبيت
 ⌁︙الرابط ، الاعدادات
 ⌁︙الترحيب ، القوانين
@@ -19965,11 +19953,11 @@ local TextHelp = [[
 ⌁︙تعديلاتي ، نقاطي
 ⌁︙كشف البوتات
 ⌁︙مسح الرتب
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙وضع ، ضع ↫ الاوامر التاليه 
 ⌁︙اسم ، رابط ، صوره
 ⌁︙قوانين ، وصف ، ترحيب
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙حذف ، مسح ↫ الاوامر التاليه
 ⌁︙قائمه المنع ، المحظورين 
 ⌁︙المميزين ، المكتومين ، القوانين
@@ -20037,21 +20025,21 @@ data = {
 }
 local TextHelp = [[
 ⌁︙اوامر المدراء في المجموعة
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙رفع ، تنزيل ↫ ادمن
 ⌁︙الادمنيه 
 ⌁︙رفع، كشف ↫ القيود
 ⌁︙تنزيل الكل ↫ { بالرد ، بالمعرف }
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙لتغيير رد الرتب في البوت
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙تغيير رد ↫ {اسم الرتبه والنص} 
 ⌁︙المطورين • المنشئ الاساسي
 ⌁︙الالمنشئين •  الالمدراء •  الادمن
 ⌁︙الالمميزين •  العضو
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙تفعيل ، تعطيل ↫ الاوامر التاليه ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙الايدي ، الايدي بالصوره
 ⌁︙اسمي , زوجني , منع التفليش
 ⌁︙الردود العامه ، الردود
@@ -20064,7 +20052,7 @@ local TextHelp = [[
 ⌁︙مسلسل ، فلم ، غنيلي ، شعر
 ⌁︙انمي ، ريمكس ، الاغاني
 ⌁︙سمسمي ، ثنائي اليوم ، ترند
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙تغيير الايدي
 ⌁︙تعين ، مسح ↫ { الايدي }
 ⌁︙رفع الادمنيه ، مسح الادمنيه
@@ -20100,12 +20088,12 @@ data = {
 }
 local TextHelp = [[
 ⌁︙اوامر المنشئ الاساسي
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙رفع • تنزيل ↫ { منشئ }
 ⌁︙المنشئين • مسح المنشئين
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙اوامر المنشئ المجموعة
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙رفع • تنزيل ↫ { مدير }
 ⌁︙المدراء • مسح المدراء
 ⌁︙اضف رسائل ↫ { بالرد او الايدي }
@@ -20141,14 +20129,14 @@ data = {
 }
 local TextHelp = [[
 ⌁︙اوامر المطور الاساسي ↫ ⤈ 
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙حظر عام • كتم عام ، الغاء العام
 ⌁︙رفع • تنزيل ↫ { مطور ثانوي } 
 ⌁︙رفع • تنزيل ↫ { مطور } 
 ⌁︙قائمه العام ، مسح قائمه العام
 ⌁︙الثانويين ، مسح الثانويين
 ⌁︙المطورين ، مسح المطورين
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙اضف ، حذف ↫ { رد عام }
 ⌁︙اضف ، حذف ↫ { ترحيب عام }
 ⌁︙وضع ، حذف ↫ { كليشه المطور } 
@@ -20158,13 +20146,13 @@ local TextHelp = [[
 ⌁︙جلب نسخه احتياطيه • جلب نسخه الردود
 ⌁︙رفع بالرد ↫ النسخه الاحتياطيه
 ⌁︙رفع بالرد ↫ نسخه الردود
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙تفعيل ، تعطيل ↫ { الاوامر التاليه ⤈}
 ⌁︙البوت الخدمي ، المغادرة ، الاذاعه
 ⌁︙اليوتيوب عام ، سمسمي عام
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙اوامر المطور في البوت ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙تفعيل ، تعطيل ، الاحصائيات
 ⌁︙رفع، تنزيل ↫ { منشئ اساسي }
 ⌁︙مسح الاساسين ، المنشئين الاساسين 
@@ -20199,7 +20187,7 @@ data = {
 }
 local TextHelp = [[
 ⌁︙اوامر الاعضاء ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 • السورس • موقعي • رتبتي • معلوماتي 
 • رقمي • لقبي • نبذتي • صلاحياتي • غنيلي
 • ميمز • متحركه • صوره • ريمكس • فلم • مسلسل • انمي • شعر
@@ -20212,9 +20200,9 @@ local TextHelp = [[
 • نسبه الحب • نسبه الكره • نسبه الغباء 
 • نسبه الرجوله • نسبه الانوثه • التفاعل • ترجمه 
 • تتزوجيني • زوجني • طلكني • زوجي • زوجتي
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙اوامر الترفيه ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 • لقبه + بالرد • المعرف • الايدي
 • كول + الكلمه
 • زخرفه + اسمك
@@ -20235,7 +20223,7 @@ local TextHelp = [[
 • نقاطه ↫ بالرد • بالمعرف • بالايدي
 • معرفة ↫ بالرد  • بالايدي
 • ايديه ↫ بالرد • بالمعرف
-• — — — — — — — — — •
+— — — — — — — — —
 ]]
 LuaTele.editMessageText(ChatId,msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -20321,7 +20309,7 @@ data = {
 }
 local TextHelp = [[
 ⌁︙قائمه الالعاب البوت ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙لعبة المختلف » المختلف
 ⌁︙لعبة الامثله » امثله
 ⌁︙لعبة العكس » العكس
@@ -20335,7 +20323,7 @@ local TextHelp = [[
 ⌁︙لعبة الاسئلة »  الصراحه
 ⌁︙لعبة الاسئلة »  لو خيروك
 ⌁︙لعبة الاعلام والدول » اعلام
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙نقاطي ↫ لعرض عدد الارباح
 ⌁︙بيع نقاطي ↫ { العدد } ↫ لبيع كل نقطه مقابل {50} رساله
 ]]
@@ -20379,7 +20367,7 @@ local TextHelp = [[*
 ⌁︙م4  ↫ ‹ اوامـر الـمنشئـين ›
 ⌁︙م5  ↫ ‹ اوامـر الـمطـورين › 
 ⌁︙م6  ↫ ‹ اوامـر الاعضاء ›
- — — — — — — — — —
+— — — — — — — — —
 *]]
 LuaTele.editMessageText(ChatId,msg_id,TextHelp, 'md', true, false, reply_markup)
 end
@@ -21124,7 +21112,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(Sudo_Id,0,'*\n⌁︙تم تفعيل مجموعه جديده ↫ ⤈ *\n• — — — — — — — — — •\n⌁︙بواسطة ↫ ['..UserInfo.first_name..'](tg://user?id='..IdUser..') \n*⌁︙معلومات المجموعة ↫ ⤈ *\n⌁︙اسم المجموعه ↫ ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')\n⌁︙عدد الاعضاء ↫ '..Info_Chats.member_count..'\n⌁︙عدد الادمنيه ↫ '..Info_Chats.administrator_count..'\n⌁︙عدد المطرودين ↫ '..Info_Chats.banned_count..'\n⌁︙عدد المقيدين ↫ '..Info_Chats.restricted_count..'\n• — — — — — — — — — •\n⌁︙الوقت ↫ '..os.date('%I:%M%p')..'\n⌁︙التاريخ ↫ '..os.date('%Y/%m/%d')..'\n ✓',"md",true, false, false, false, reply_markup)
+LuaTele.sendText(Sudo_Id,0,'*\n⌁︙تم تفعيل مجموعه جديده ↫ ⤈ *\n— — — — — — — — —\n⌁︙بواسطة ↫ ['..UserInfo.first_name..'](tg://user?id='..IdUser..') \n*⌁︙معلومات المجموعة ↫ ⤈ *\n⌁︙اسم المجموعه ↫ ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')\n⌁︙عدد الاعضاء ↫ '..Info_Chats.member_count..'\n⌁︙عدد الادمنيه ↫ '..Info_Chats.administrator_count..'\n⌁︙عدد المطرودين ↫ '..Info_Chats.banned_count..'\n⌁︙عدد المقيدين ↫ '..Info_Chats.restricted_count..'\n— — — — — — — — —\n⌁︙الوقت ↫ '..os.date('%I:%M%p')..'\n⌁︙التاريخ ↫ '..os.date('%Y/%m/%d')..'\n ✓',"md",true, false, false, false, reply_markup)
 end
 local txxt = "<b>⌁︙المجموعة ↫ (<a href='"..Info_Chats.invite_link.invite_link.."'>"..Get_Chat.title.."</a>)  \n⌁︙تم تفعيل المجموعة ورفع المالك و ("..y..") من الادمنيه \n ✓</b>"
 local reply_markup = LuaTele.replyMarkup{
@@ -21277,7 +21265,7 @@ data = {
 },
 }
 }
-LuaTele.sendText(Sudo_Id,0,'*\n⌁︙تم تفعيل مجموعه جديده ↫ ⤈ *\n• — — — — — — — — — •\n⌁︙بواسطة ↫ ['..UserInfo.first_name..'](tg://user?id='..IdUser..') \n*⌁︙معلومات المجموعة ↫ ⤈ *\n⌁︙اسم المجموعه ↫ ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')\n⌁︙عدد الاعضاء ↫ '..Info_Chats.member_count..'\n⌁︙عدد الادمنيه ↫ '..Info_Chats.administrator_count..'\n⌁︙عدد المطرودين ↫ '..Info_Chats.banned_count..'\n⌁︙عدد المقيدين ↫ '..Info_Chats.restricted_count..'\n• — — — — — — — — — •\n⌁︙الوقت ↫ '..os.date('%I:%M%p')..'\n⌁︙التاريخ ↫ '..os.date('%Y/%m/%d')..'\n ✓',"md",true, false, false, false, reply_markup)
+LuaTele.sendText(Sudo_Id,0,'*\n⌁︙تم تفعيل مجموعه جديده ↫ ⤈ *\n— — — — — — — — —\n⌁︙بواسطة ↫ ['..UserInfo.first_name..'](tg://user?id='..IdUser..') \n*⌁︙معلومات المجموعة ↫ ⤈ *\n⌁︙اسم المجموعه ↫ ['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')\n⌁︙عدد الاعضاء ↫ '..Info_Chats.member_count..'\n⌁︙عدد الادمنيه ↫ '..Info_Chats.administrator_count..'\n⌁︙عدد المطرودين ↫ '..Info_Chats.banned_count..'\n⌁︙عدد المقيدين ↫ '..Info_Chats.restricted_count..'\n— — — — — — — — —\n⌁︙الوقت ↫ '..os.date('%I:%M%p')..'\n⌁︙التاريخ ↫ '..os.date('%Y/%m/%d')..'\n ✓',"md",true, false, false, false, reply_markup)
 end
 local txxt = "⌁︙تم تفعيل المجموعة و ترقيه {"..y.."} ادمنيه \n⌁︙تم ترقية المالك\n ✓ "
 local reply_markup = LuaTele.replyMarkup{
@@ -21352,7 +21340,7 @@ Redis:set(Drox.."Get:Reides:Commands:Group"..ChatId..":"..'تغ','تغيير ا�
 Redis:sadd(Drox.."Command:List:Group"..ChatId,"تغ")
 local txxt = [[
 ⌁︙تم ترتيب الاوامر بالشكل التالي ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙ايدي - ا .
 ⌁︙رفع مميز - م .
 ⌁︙رفع ادمن - اد .
@@ -21375,7 +21363,7 @@ local txxt = [[
 ⌁︙غنيلي - غ .
 ⌁︙تغيير الايدي - تغ .
 ⌁︙مسح قائمه العام - # .
-• — — — — — — — — — •
+— — — — — — — — —
  ✓
 ]]
 local reply_markup = LuaTele.replyMarkup{
@@ -21438,7 +21426,7 @@ Redis:set(Drox.."Get:Reides:Commands:Group"..ChatId..":"..'تغ','تغيير ا�
 Redis:sadd(Drox.."Command:List:Group"..ChatId,"تغ")
 local txxt = [[
 ⌁︙تم ترتيب الاوامر بالشكل التالي ↫ ⤈
-• — — — — — — — — — •
+— — — — — — — — —
 ⌁︙ايدي - ا .
 ⌁︙رفع مميز - م .
 ⌁︙رفع ادمن - اد .
@@ -21461,8 +21449,7 @@ local txxt = [[
 ⌁︙غنيلي - غ .
 ⌁︙تغيير الايدي - تغ .
 ⌁︙مسح قائمه العام - # .
-• — — — — — — — — — •
- ✓
+— — — — — — — — —
 ]]
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
@@ -21618,7 +21605,7 @@ if tonumber(IdUser) == tonumber(UserId[1]) then
 return GetAdminsSlahe(ChatId,UserId[1],UserId[2],msg_id)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('(%d+)/yeslev') then
 local UserId = Text:match('(%d+)/yeslev')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -21626,14 +21613,14 @@ LuaTele.editMessageText(ChatId,msg_id,"⌁︙تم مغادرة البوت من �
 local Left_Bot = LuaTele.leaveChat(ChatId)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('(%d+)/nolev') then
 local UserId = Text:match('(%d+)/nolev')
 if tonumber(IdUser) == tonumber(UserId) then
 LuaTele.editMessageText(ChatId,msg_id,"⌁︙تم الغاء مغادرة البوت\n ✓", 'md', true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/DelRed:'..tonumber(data.sender_user_id)..'(.*)') then
 local muhText = Text:match('/DelRed:'..tonumber(data.sender_user_id)..'(.*)')
 LuaTele.editMessageText(ChatId,msg_id,"⌁︙الكلمه ↫ "..muhText.." تم حذفها", 'lg', true)
@@ -21662,7 +21649,7 @@ else
 LuaTele.editMessageText(ChatId,msg_id,"⌁︙عذرا صلاحية الامر منتهيه !", 'md', true)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('(%d+)/cancelrdd') then
 local UserId = Text:match('(%d+)/cancelrdd')
 if tonumber(IdUser) == tonumber(UserId) then
@@ -21681,7 +21668,7 @@ Redis:del(Drox.."Set:On"..IdUser..":"..ChatId)
 LuaTele.editMessageText(ChatId,msg_id,"⌁︙تم الغاء اضافه رد بنجاح\n ✓", 'md', true, false, reply_markup)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('(%d+)/chengreplyg/(.*)') then
 local listYt = Text:match('(%d+)/chengreplyg/(.*)')
 local a = Text:match('^'..listYt..'/chengreplyg/(.*)$')
@@ -21700,7 +21687,7 @@ Redis:del(Drox.."Add:Rd:Manager:video_note"..a..ChatId)
 Redis:srem(Drox.."List:Manager"..ChatId, a)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('(%d+)/chengeRdAll/(.*)') then
 local listYt = Text:match('(%d+)/chengeRdAll/(.*)')
 local a = Text:match('^'..listYt..'/chengeRdAll/(.*)$')
@@ -21714,7 +21701,7 @@ end
 Redis:srem(Drox.."List:Rd:Sudo", a)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     --
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     --
 if Text and Text:match('/LeaveBotCmd:'..tonumber(data.sender_user_id)..'(.*)') then
 local UserId = Text:match('/LeaveBotCmd:'..tonumber(data.sender_user_id)..'(.*)')
 if Redis:get(Drox.."LeftBot") == "true" then
@@ -23105,7 +23092,7 @@ Redis:del(Drox.."SilentGroup:Group"..ChatId)
 LuaTele.editMessageText(ChatId,msg_id,"⌁︙تم مسح المكتومين", 'md', false)
 end
 end
---     𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑     -- 
+--     𝖣𝖱𝗈𝗑 𝖳𝖾𝖺𝗆     -- 
 end
 end
 luatele.run(CallBackLua)

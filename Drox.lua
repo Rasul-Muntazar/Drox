@@ -88,11 +88,6 @@ LuaTele = luatele.set_config{api_id=15496603,api_hash='e657719e1efe28a402585acdc
 function var(value)
 print(serpent.block(value, {comment=false}))   
 end 
-clock = os.clock
-function sleep(n)
-local t0 = clock()
-while clock()  t0 <= n do end
-end
 function download_to_file(url, file_path) 
 local respbody = {} 
 local options = { url = url, sink = ltn12.sink.table(respbody), redirect = true } 

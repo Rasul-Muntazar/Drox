@@ -522,7 +522,7 @@ local TextBot = '*↯︙انا بوت اسمي '..N..'\n↯︙وظيفتي حم�
 keyboard = {} 
 keyboard.inline_keyboard = {
 {
-{text = '‹ تفعيل ›', data = UserId..'/'..'activation'},
+{text = ' تفعيل ', callback_data = msg.sender_id.user_id..'/activation'..msg_chat_id},
 },
 {
 {text = ' . S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 .  ️', url = 't.me/DroxTeAm'},
@@ -5686,7 +5686,7 @@ if not Redis:get(TheDrox.."Drox:Status:distraction6"..msg_chat_id) then return L
 Abs = math.random(4,1167); 
 local Text ='↯︙تم اختيار الاغنيه لك'
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = msg.sender_id.user_id..'/Mp'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}
+keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = msg.sender_id.user_id..'/Mp'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱??𝗑 ›',url="t.me/DroxTeAm"}
 }
 }
 local msg_id = msg.id/2097152/0.5
@@ -8597,7 +8597,7 @@ if text == "حذف رد انلاين" then
   LuaTele.sendText(msg_chat_id,msg_id,'\n* ↯︙هاذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
   end
   if ChannelJoin(msg) == false then
-  local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/O_U_C'}, },}}
+  local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/DroxTeAm'}, },}}
   LuaTele.sendText(msg.chat_id,msg.id,'*\n ↯︙ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
   local reply_markup = LuaTele.replyMarkup{
@@ -8668,7 +8668,7 @@ if text == ("مسح الردود الانلاين") then
   LuaTele.sendText(msg_chat_id,msg_id,'\n*⌔ هاذا الامر يخص  '..Controller_Num(6)..' * ',"md",true)  
   end
   if ChannelJoin(msg) == false then
-  local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/O_U_C'}, },}}
+  local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = 't.me/DroxTeAm'}, },}}
   LuaTele.sendText(msg.chat_id,msg.id,'*\n⌔ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
   end
   local list = Redis:smembers(TheDrox.."List:Managers:inline"..msg_chat_id.."")
@@ -10253,6 +10253,98 @@ Text = "اتحداك\n"..Descriptioont.." ↤ ["..tagname.."](tg://user?id="..Zo
 return LuaTele.sendText(msg.chat_id,msg.id,Text,"md",true)
 end 
 --     Source Drox     --
+if text then
+if text:match('^انذار @(%S+)$') or text:match('^إنذار @(%S+)$') then
+if not msg.Admin then
+return send(msg_chat_id,msg_id,'\n* هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
+end
+local UserName = text:match('^انذار @(%S+)$') or text:match('^إنذار @(%S+)$')
+local UserId_Info = LuaTele.searchPublicChat(UserName)
+if not UserId_Info.id then
+return send(msg_chat_id,msg_id,"\n عذرآ لا يوجد حساب بهاذا المعرف ","md",true)  
+end
+if UserId_Info.type.is_channel == true then
+return send(msg_chat_id,msg_id,"\n عذرآ لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+end
+if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
+return send(msg_chat_id,msg_id,"\n عذرآ لا تستطيع استخدام معرف البوت ","md",true)  
+end
+local UserInfo = LuaTele.getUser(UserId_Info.id)
+local zz = Redis:get(TheDrox.."zz"..msg_chat_id..UserInfo.id)
+if not zz then
+Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"1")
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," تم اعطاءه انذار وتبقا له اثنين ").Reply,"md",true)  
+end
+if zz == "1" then
+Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"2")
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," تم اعطاءه انذارين وتبقا له انذار ").Reply,"md",true)  
+end
+if zz == "2" then
+Redis:del(TheDrox.."zz"..msg_chat_id..UserInfo.id)
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = ''كتم'', data = msg.sender_id.user_id..'mute'..UserInfo.id}, 
+},
+{
+{text = ''تقييد'', data = msg.sender_id.user_id..'kid'..UserInfo.id},  
+},
+{
+{text = ''حظر'', data = msg.sender_id.user_id..'ban'..UserInfo.id}, 
+},
+}
+}
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," اختار العقوبه الان ").Reply,"md",true, false, false, true, reply_markup)
+end
+end 
+end
+if text == "انذار" or text == "إنذار" then
+if msg.reply_to_message_id ~= 0 then
+if not msg.Admin then
+return send(msg_chat_id,msg_id,'\n* هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local Get_Chat = LuaTele.getChat(Redis:get(TheDrox..'Drox:ChanneliD:Join'))
+local NcH = (Redis:get(TheDrox.."Drox:CH:Bot") or Get_Chat.title)
+local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "↯︙عذراً لاتستطيع استخدام البوت !\n↯︙عليك الاشتراك في القناة اولاً :")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
+return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end 
+local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+local UserInfo = LuaTele.getUser(Message_Reply.sender_id.user_id)
+if StatusCanOrNotCan(msg_chat_id,UserInfo.id) then
+return send(msg_chat_id,msg_id,"\n* عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,UserInfo.id).." } *","md",true)  
+end
+local zz = Redis:get(TheDrox.."zz"..msg_chat_id..UserInfo.id)
+if not zz then
+Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"1")
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," تم اعطاءه انذار وتبقا له اثنين ").Reply,"md",true)  
+end
+if zz == "1" then
+Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"2")
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," تم اعطاءه انذارين وتبقا له انذار ").Reply,"md",true)  
+end
+if zz == "2" then
+Redis:del(TheDrox.."zz"..msg_chat_id..UserInfo.id)
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = ''كتم'', data = msg.sender_id.user_id..'mute'..UserInfo.id}, 
+},
+{
+{text = ''تقييد'', data = msg.sender_id.user_id..'kid'..UserInfo.id},  
+},
+{
+{text = ''حظر'', data = msg.sender_id.user_id..'ban'..UserInfo.id}, 
+},
+}
+}
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," اختر العقوبه الان").Reply,"md",true, false, false, true, reply_markup)
+end
+end
+end
+-- RsU --
 if text and text:match("^بيع مجوهراتي (%d+)$") then
 local NumGame = text:match("^بيع مجوهراتي (%d+)$") 
 if tonumber(NumGame) == tonumber(0) then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙لا استطيع البيع اقل من 1 *","md",true)  end

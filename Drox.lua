@@ -14246,7 +14246,7 @@ elseif msg.content.audio then
 LuaTele.sendAudio(Info_User, 0, msg.content.audio.audio.remote.id, '', "md") 
 elseif text then
 LuaTele.sendText(Info_User,0,text,"md",true) end 
-LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,'↯︙تم ارسال رسالتك اليه ').Reply,"md",true) end end end 
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,'↯︙تم ارسال رسالتك اليه ').Reply,"md",true) end end
 end --UserBot
 end -- File_Bot_Run
 

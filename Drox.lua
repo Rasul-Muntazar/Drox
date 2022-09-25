@@ -2328,95 +2328,6 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo="..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id.."&photo=".. URL.escape(news).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(data))
 end
 end
-if text:match('^انذار @(%S+)$') or text:match('^إنذار @(%S+)$') then
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*❍ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
-end
-local UserName = text:match('^انذار @(%S+)$') or text:match('^إنذار @(%S+)$')
-local UserId_Info = LuaTele.searchPublicChat(UserName)
-if not UserId_Info.id then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n❍ عذرآ لا يوجد حساب بهاذا المعرف ","md",true)  
-end
-if UserId_Info.type.is_channel == true then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n❍ عذرآ لا تستطيع استخدام معرف قناة او جروب ","md",true)  
-end
-if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n❍ عذرآ لا تستطيع استخدام معرف البوت ","md",true)  
-end
-local UserInfo = LuaTele.getUser(UserId_Info.id)
-local zz = Redis:get(TheDrox.."zz"..msg_chat_id..UserInfo.id)
-if not zz then
-Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"1")
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserInfo.id,"❍ تم اعطاءه انذار وتبقا له اثنين ").Reply,"md",true)  
-end
-if zz == "1" then
-Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"2")
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserInfo.id,"❍ تم اعطاءه انذارين وتبقا له انذار ").Reply,"md",true)  
-end
-if zz == "2" then
-Redis:del(TheDrox.."zz"..msg_chat_id..UserInfo.id)
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'كتم', data = msg.sender_id.user_id..'mute'..UserInfo.id}, 
-},
-{
-{text = 'تقييد', data = msg.sender_id.user_id..'kid'..UserInfo.id},  
-},
-{
-{text = 'حظر', data = msg.sender_id.user_id..'ban'..UserInfo.id}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserInfo.id,"❍ اختار العقوبه الان ").Reply,"md",true, false, false, true, reply_markup)
-end
-end 
-end
-if text == "انذار" or text == "إنذار" then
-if msg.reply_to_message_id ~= 0 then
-if not msg.Addictive then
-return LuaTele.sendText(msg_chat_id,msg_id,'\n*❍ هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
-end
-if ChannelJoin(msg) == false then
-local chinfo = Redis:get(TheDrox.."ch:admin")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
-return LuaTele.sendText(msg.chat_id,msg.id,'*\n❍ عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
-end
-local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-local UserInfo = LuaTele.getUser(Message_Reply.sender.user_id)
-if StatusCanOrNotCan(msg_chat_id,UserInfo.id) then
-return LuaTele.sendText(msg_chat_id,msg_id,"\n*❍ عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,UserInfo.id).." } *","md",true)  
-end
-local zz = Redis:get(TheDrox.."zz"..msg_chat_id..UserInfo.id)
-if not zz then
-Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"1")
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserInfo.id,"❍ تم اعطاءه انذار وتبقا له اثنين ").Reply,"md",true)  
-end
-if zz == "1" then
-Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"2")
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserInfo.id,"❍ تم اعطاءه انذارين وتبقا له انذار ").Reply,"md",true)  
-end
-if zz == "2" then
-Redis:del(TheDrox.."zz"..msg_chat_id..UserInfo.id)
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'حظر العضو : '..BanGroupz, data =msg.sender_id.user_id..'/statusban/'..UserId_Info.id},{text = 'كتم العضو : '..SilentGroupz, data =msg.sender_id.user_id..'/statusktm/'..UserId_Info.id},
-},
-{
-{text = 'تقييد', data = msg.sender_id.user_id..'kid'..UserInfo.id},  
-},
-{
-{text = 'حظر', data = msg.sender_id.user_id..'ban'..UserInfo.id}, 
-},
-}
-}
-return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserInfo.id,"❍ اختر العقوبه الان").Reply,"md",true, false, false, true, reply_markup)
-end
-end
-end
 if text and text:match('^تحكم @(%S+)$') then
 local UserName = text:match('^تحكم @(%S+)$') 
 if not msg.Addictive then
@@ -14246,7 +14157,7 @@ elseif msg.content.audio then
 LuaTele.sendAudio(Info_User, 0, msg.content.audio.audio.remote.id, '', "md") 
 elseif text then
 LuaTele.sendText(Info_User,0,text,"md",true) end 
-LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,'↯︙تم ارسال رسالتك اليه ').Reply,"md",true) end end
+LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(Info_User,'↯︙تم ارسال رسالتك اليه ').Reply,"md",true) end end end
 end --UserBot
 end -- File_Bot_Run
 

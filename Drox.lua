@@ -14528,7 +14528,127 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = IdUser..'/'.. 'Series'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}}}
 local msg_id = Msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ChatId .. '&photo=https://t.me/SeriesDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_prsjeview=true&reply_markup="..JSON.encode(keyboard)) end end
--- LaR
+--
+if Text and Text:match('(%d+)mute(%d+)') then
+local UserId = {Text:match('(%d+)mute(%d+)')}
+local replyy = tonumber(UserId[2])
+print(replyy)
+if tonumber(IdUser) == tonumber(UserId[1]) then
+Redis:sadd(TheDrox.."SilentGroup:Group"..ChatId,replyy) 
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'الغاء كتم', data = IdUser..'unmute'..replyy}, 
+},
+{
+{text = 'S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
+},
+}
+}
+local TextHelp = Reply_Status(replyy," تم كتمه في المجموعه  ").Reply
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+end
+if Text and Text:match('(%d+)unmute(%d+)') then
+local UserId = {Text:match('(%d+)unmute(%d+)')}
+local replyy = tonumber(UserId[2])
+print(replyy)
+if tonumber(IdUser) == tonumber(UserId[1]) then
+Redis:srem(TheDrox.."SilentGroup:Group"..ChatId,replyy) 
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = ' . S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
+},
+}
+}
+local TextHelp = Reply_Status(replyy," تم الغاء كتمه في المجموعه ").Reply
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+end
+if Text and Text:match('(%d+)ban(%d+)') then
+local UserId = {Text:match('(%d+)ban(%d+)')}
+local replyy = tonumber(UserId[2])
+print(replyy)
+if tonumber(IdUser) == tonumber(UserId[1]) then
+Redis:sadd(TheDrox.."BanGroup:Group"..ChatId,replyy) 
+LuaTele.setChatMemberStatus(ChatId,replyy,'banned',0)
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'الغاء حظر', data = IdUser..'unban'..replyy}, 
+},
+{
+{text = ' . S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
+},
+}
+}
+local TextHelp = Reply_Status(replyy," تم حظر من المجموعه  ").Reply
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+end
+if Text and Text:match('(%d+)unban(%d+)') then
+local UserId = {Text:match('(%d+)unban(%d+)')}
+local replyy = tonumber(UserId[2])
+print(replyy)
+if tonumber(IdUser) == tonumber(UserId[1]) then
+Redis:srem(TheDrox.."BanGroup:Group"..ChatId,replyy) 
+LuaTele.setChatMemberStatus(ChatId,replyy,'restricted',{1,1,1,1,1,1,1,1,1})
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = ' . S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
+},
+}
+}
+local TextHelp = Reply_Status(replyy," تم الغاء حظره من المجموعه ").Reply
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+end
+if Text and Text:match('(%d+)kid(%d+)') then
+local UserId = {Text:match('(%d+)kid(%d+)')}
+local replyy = tonumber(UserId[2])
+print(replyy)
+if tonumber(IdUser) == tonumber(UserId[1]) then
+LuaTele.setChatMemberStatus(ChatId,replyy,'restricted',{1,0,0,0,0,0,0,0,0})
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'الغاء تقييد', data = IdUser..'unkid'..replyy}, 
+},
+{
+{text = ' . S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
+},
+}
+}
+local TextHelp = Reply_Status(replyy," تم تقييده في المجموعه  ").Reply
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+end
+if Text and Text:match('(%d+)unkid(%d+)') then
+local UserId = {Text:match('(%d+)unkid(%d+)')}
+local replyy = tonumber(UserId[2])
+print(replyy)
+if tonumber(IdUser) == tonumber(UserId[1]) then
+LuaTele.setChatMemberStatus(ChatId,replyy,'restricted',{1,1,1,1,1,1,1,1})
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = ' . S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
+},
+}
+}
+local TextHelp = Reply_Status(replyy," تم الغاء تقييده في المجموعه ").Reply
+edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
+end
+end
+--
 if Text and Text:match('(%d+)/closerdControllerBot') then
 local UserId = Text:match('(%d+)/closerdControllerBot')
 if tonumber(IdUser) == tonumber(UserId) then

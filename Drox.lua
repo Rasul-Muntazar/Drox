@@ -5751,6 +5751,95 @@ local GetMsg = Redis:incr(TheDrox..'TheDrox:MsgNumbergroups'..msg.chat_id) or 1
 Redis:hset(TheDrox..':GroupUserCountMsg:groups',msg.chat_id,GetMsg)
 end
 --
+if text:match('^انذار @(%S+)$') or text:match('^إنذار @(%S+)$') then
+if not msg.Admin then
+return send(msg_chat_id,msg_id,'\n* هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
+end
+local UserName = text:match('^انذار @(%S+)$') or text:match('^إنذار @(%S+)$')
+local UserId_Info = LuaTele.searchPublicChat(UserName)
+if not UserId_Info.id then
+return send(msg_chat_id,msg_id,"\n عذرآ لا يوجد حساب بهاذا المعرف ","md",true)  
+end
+if UserId_Info.type.is_channel == true then
+return send(msg_chat_id,msg_id,"\n عذرآ لا تستطيع استخدام معرف قناة او كروب ","md",true)  
+end
+if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then
+return send(msg_chat_id,msg_id,"\n عذرآ لا تستطيع استخدام معرف البوت ","md",true)  
+end
+local UserInfo = LuaTele.getUser(UserId_Info.id)
+local zz = Redis:get(TheDrox.."zz"..msg_chat_id..UserInfo.id)
+if not zz then
+Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"1")
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," تم اعطاءه انذار وتبقا له اثنين ").Reply,"md",true)  
+end
+if zz == "1" then
+Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"2")
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," تم اعطاءه انذارين وتبقا له انذار ").Reply,"md",true)  
+end
+if zz == "2" then
+Redis:del(TheDrox.."zz"..msg_chat_id..UserInfo.id)
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'كتم', data = msg.sender_id.user_id..'mute'..UserInfo.id}, 
+},
+{
+{text = 'تقييد', data = msg.sender_id.user_id..'kid'..UserInfo.id},  
+},
+{
+{text = 'حظر', data = msg.sender_id.user_id..'ban'..UserInfo.id}, 
+},
+}
+}
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," اختار العقوبه الان ").Reply,"md",true, false, false, true, reply_markup)
+end
+end 
+end
+if text == "انذار" or text == "إنذار" then
+if msg.reply_to_message_id ~= 0 then
+if not msg.Admin then
+return send(msg_chat_id,msg_id,'\n* هذا الامر يخص  '..Controller_Num(7)..' * ',"md",true)  
+end
+if ChannelJoin(msg) == false then
+local chinfo = Redis:get(TheDrox.."ch:admin")
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'اضغط للاشتراك', url = chinfo}, },}}
+return send(msg.chat_id,msg.id,'*\n عليك الاشتراك في قناة البوت لاستخذام الاوامر*',"md",false, false, false, false, reply_markup)
+end
+local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+local UserInfo = LuaTele.getUser(Message_Reply.sender_id.user_id)
+if StatusCanOrNotCan(msg_chat_id,UserInfo.id) then
+return send(msg_chat_id,msg_id,"\n* عذرآ لا تستطيع استخدام الامر على { "..Controller(msg_chat_id,UserInfo.id).." } *","md",true)  
+end
+local zz = Redis:get(TheDrox.."zz"..msg_chat_id..UserInfo.id)
+if not zz then
+Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"1")
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," تم اعطاءه انذار وتبقا له اثنين ").Reply,"md",true)  
+end
+if zz == "1" then
+Redis:set(TheDrox.."zz"..msg_chat_id..UserInfo.id,"2")
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," تم اعطاءه انذارين وتبقا له انذار ").Reply,"md",true)  
+end
+if zz == "2" then
+Redis:del(TheDrox.."zz"..msg_chat_id..UserInfo.id)
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = 'كتم', data = msg.sender_id.user_id..'mute'..UserInfo.id}, 
+},
+{
+{text = 'تقييد', data = msg.sender_id.user_id..'kid'..UserInfo.id},  
+},
+{
+{text = 'حظر', data = msg.sender_id.user_id..'ban'..UserInfo.id}, 
+},
+}
+}
+return send(msg_chat_id,msg_id,Reply_Status(UserInfo.id," اختر العقوبه الان").Reply,"md",true, false, false, true, reply_markup)
+end
+end
+end
 if text == 'هاي' or text == 'هايي' then
 if not Redis:get(TheDrox.."Drox:Sasa:Jeka"..msg_chat_id) then
 return LuaTele.sendText(msg_chat_id,msg_id,"* *","md",true)  
@@ -14439,126 +14528,6 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = IdUser..'/'.. 'Series'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}}}
 local msg_id = Msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token..'/sendphoto?chat_id=' .. ChatId .. '&photo=https://t.me/SeriesDavid/'..Abs..'&caption=' .. URL.escape(Text).."&reply_to_message_id="..msg_id.."&parse_mode=markdown&disable_web_page_prsjeview=true&reply_markup="..JSON.encode(keyboard)) end end
---
-if Text and Text:match('(%d+)mute(%d+)') then
-local UserId = {Text:match('(%d+)mute(%d+)')}
-local replyy = tonumber(UserId[2])
-print(replyy)
-if tonumber(IdUser) == tonumber(UserId[1]) then
-Redis:sadd(TheDrox.."SilentGroup:Group"..ChatId,replyy) 
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'الغاء كتم', data = IdUser..'unmute'..replyy}, 
-},
-{
-{text = 'S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
-},
-}
-}
-local TextHelp = Reply_Status(replyy," تم كتمه في المجموعه  ").Reply
-edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
-end
-end
-if Text and Text:match('(%d+)unmute(%d+)') then
-local UserId = {Text:match('(%d+)unmute(%d+)')}
-local replyy = tonumber(UserId[2])
-print(replyy)
-if tonumber(IdUser) == tonumber(UserId[1]) then
-Redis:srem(TheDrox.."SilentGroup:Group"..ChatId,replyy) 
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = ' . S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
-},
-}
-}
-local TextHelp = Reply_Status(replyy," تم الغاء كتمه في المجموعه ").Reply
-edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
-end
-end
-if Text and Text:match('(%d+)ban(%d+)') then
-local UserId = {Text:match('(%d+)ban(%d+)')}
-local replyy = tonumber(UserId[2])
-print(replyy)
-if tonumber(IdUser) == tonumber(UserId[1]) then
-Redis:sadd(TheDrox.."BanGroup:Group"..ChatId,replyy) 
-LuaTele.setChatMemberStatus(ChatId,replyy,'banned',0)
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'الغاء حظر', data = IdUser..'unban'..replyy}, 
-},
-{
-{text = ' . S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
-},
-}
-}
-local TextHelp = Reply_Status(replyy," تم حظر من المجموعه  ").Reply
-edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
-end
-end
-if Text and Text:match('(%d+)unban(%d+)') then
-local UserId = {Text:match('(%d+)unban(%d+)')}
-local replyy = tonumber(UserId[2])
-print(replyy)
-if tonumber(IdUser) == tonumber(UserId[1]) then
-Redis:srem(TheDrox.."BanGroup:Group"..ChatId,replyy) 
-LuaTele.setChatMemberStatus(ChatId,replyy,'restricted',{1,1,1,1,1,1,1,1,1})
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = ' . S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
-},
-}
-}
-local TextHelp = Reply_Status(replyy," تم الغاء حظره من المجموعه ").Reply
-edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
-end
-end
-if Text and Text:match('(%d+)kid(%d+)') then
-local UserId = {Text:match('(%d+)kid(%d+)')}
-local replyy = tonumber(UserId[2])
-print(replyy)
-if tonumber(IdUser) == tonumber(UserId[1]) then
-LuaTele.setChatMemberStatus(ChatId,replyy,'restricted',{1,0,0,0,0,0,0,0,0})
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = 'الغاء تقييد', data = IdUser..'unkid'..replyy}, 
-},
-{
-{text = ' . S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
-},
-}
-}
-local TextHelp = Reply_Status(replyy," تم تقييده في المجموعه  ").Reply
-edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
-end
-end
-if Text and Text:match('(%d+)unkid(%d+)') then
-local UserId = {Text:match('(%d+)unkid(%d+)')}
-local replyy = tonumber(UserId[2])
-print(replyy)
-if tonumber(IdUser) == tonumber(UserId[1]) then
-LuaTele.setChatMemberStatus(ChatId,replyy,'restricted',{1,1,1,1,1,1,1,1})
-local reply_markup = LuaTele.replyMarkup{
-type = 'inline',
-data = {
-{
-{text = ' . S𝗈𝗋𝖼𝖾 𝖣𝖱𝗈𝗑', url = 't.me/DroxTeAm'}, 
-},
-}
-}
-local TextHelp = Reply_Status(replyy," تم الغاء تقييده في المجموعه ").Reply
-edit(ChatId,Msg_id,TextHelp, 'md', true, false, reply_markup)
-end
-end
 --
 if Text and Text:match('(%d+)/closerdControllerBot') then
 local UserId = Text:match('(%d+)/closerdControllerBot')

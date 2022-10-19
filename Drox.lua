@@ -9129,18 +9129,6 @@ keyboard = {}
 keyboard.inline_keyboard = {{{text = '‹ Source Channel ›', url = "https://t.me/DroxTeAm"}},{{text = '‹ Developer', url = "https://t.me/uQuuu"},{text = 'Tws 𝖣𝖱𝗈𝗑 ›', url = "https://t.me/Yv4bot"}},{{text = '‹ تـفآصيل. ›', url = "https://t.me/BB4BBB"}}}
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo=https://t.me/DroxTeAm&caption=".. URL.escape(tt).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) end
-if text == "تقييد لرتبه" or text == "تقيد لرتبه" and ChCheck(msg) then
-reply_markup = LuaTele.replyMarkup{
-type = 'inline',data = {
-{{text = "'منشى اساسي'" ,data="changeofvalidity_"..msg.sender_id.user_id.."_5"}},
-{{text = "'منشئ'" ,data="changeofvalidity_"..msg.sender_id.user_id.."_4"}},
-{{text = "'مدير'" ,data="changeofvalidity_"..msg.sender_id.user_id.."_3"}},
-{{text = "'ادمن'" ,data="changeofvalidity_"..msg.sender_id.user_id.."_2"}},
-{{text = "'مميز'" ,data="changeofvalidity_"..msg.sender_id.user_id.."_1"}},
-}
-}
-LuaTele.sendText(msg.chat_id,msg.id,"*⌁︙قم بأختيار الرتبه التي تريد تققيد محتوى لها .*","md", true, false, false, false, reply_markup)
-end
 if text == 'الاوامر' then
 if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n↯︙هذا الامر للادمنية واعلى فقط',"md",true)  end
 if ChannelJoin(msg) == false then

@@ -1667,10 +1667,17 @@ local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo=https://t.me/DroxTeAm&caption=".. URL.escape(tt).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) end
 if text == '‹ مبرمج السورس ›' or text == 'رسول' or text == 'رسو' or text == 'مطور السورس' or text == 'المبرمج' then
 local tt =[[
-↯︙[مبرمج السورس](https://t.me/uQuuu) .
+*↯︙Dev Drox* : @uQuuu
 ]]
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '‹ مبرمج السورس .', url = "https://t.me/uQuuu"}},}
+keyboard.inline_keyboard = {
+{
+{text = '- 𝖱𝖺𝗌𝗎𝗅 .𝖬𝗎𝗇𝗍𝖺ᴢ𝖺𝗋 .', url = "https://t.me/uQuuu"}
+},
+{
+{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url='https://t.me/DroxTeAm'},
+},
+}
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo=https://t.me/uQuuu&caption=".. URL.escape(tt).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) end
 if text == '‹ تحديثات السورس ›' or text == 'قناة التحديثات' or text == 'تحديثات السورس' then
@@ -5454,7 +5461,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الحظر ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+{text = '‹ الغاء حظره ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -5466,7 +5476,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الحظر ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+{text = '‹ الغاء حظره ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -5513,7 +5526,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الكتم ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+{text = '‹ الغاء كتمه ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -5524,7 +5540,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الكتم ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+{text = '‹ الغاء كتمه ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -5661,6 +5680,9 @@ data = {
 {
 {text = '‹ الغاء تقييده ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
 },
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
+},
 }
 }
 LuaTele.setChatMemberStatus(msg.chat_id,UserId_Info.id,'restricted',{1,0,0,0,0,0,0,0,0})
@@ -5705,7 +5727,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الحظر ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+{text = '‹ الغاء حظره ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -5717,7 +5742,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الحظر ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+{text = '‹ الغاء حظره ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId_Info.id},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -5835,7 +5863,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الحظر ›', data = msg.sender_id.user_id..'/unbanktmkid@'..Message_Reply.sender_id.user_id},
+{text = '‹ الغاء حظره ›', data = msg.sender_id.user_id..'/unbanktmkid@'..Message_Reply.sender_id.user_id},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -5883,7 +5914,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الكتم ›', data = msg.sender_id.user_id..'/unbanktmkid@'..Message_Reply.sender_id.user_id},
+{text = '‹ الغاء كتمه ›', data = msg.sender_id.user_id..'/unbanktmkid@'..Message_Reply.sender_id.user_id},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -5930,7 +5964,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء التقييد ›', data = msg.sender_id.user_id..'/unbanktmkid@'..Message_Reply.sender_id.user_id},
+{text = '‹ الغاء تقييده ›', data = msg.sender_id.user_id..'/unbanktmkid@'..Message_Reply.sender_id.user_id},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -5973,7 +6010,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الحظر ›', data = msg.sender_id.user_id..'/unbanktmkid@'..Message_Reply.sender_id.user_id},
+{text = '‹ الغاء حظره ›', data = msg.sender_id.user_id..'/unbanktmkid@'..Message_Reply.sender_id.user_id},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -6077,7 +6117,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الحظر ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId},
+{text = '‹ الغاء حظره ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -6124,7 +6167,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الكتم ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId},
+{text = '‹ الغاء كتمه ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -6171,6 +6217,9 @@ data = {
 {
 {text = '‹ الغاء تقييده ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId},
 },
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
+},
 }
 }
 LuaTele.setChatMemberStatus(msg.chat_id,UserId,'restricted',{1,0,0,0,0,0,0,0,0})
@@ -6210,7 +6259,10 @@ local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
 {
-{text = '‹ الغاء الحظر ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId},
+{text = '‹ الغاء حظره ›', data = msg.sender_id.user_id..'/unbanktmkid@'..UserId},
+},
+{
+{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'}
 },
 }
 }
@@ -6797,7 +6849,7 @@ return false end
 if text == "غنيلي" then
 if not Redis:get(TheDrox.."Drox:Status:distraction1"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"↯︙عذراً امر غنيلي معطل","md",true) end 
 Abs = math.random(2,1445); 
-local Text ='*↯︙تم اختيار المقطع الصوتي لك*'
+local Text ='↯︙تم اختيار المقطع الصوتي لك'
 keyboard = {} 
 keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = msg.sender_id.user_id..'/Song'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}
 }
@@ -6885,7 +6937,7 @@ if not Redis:get(TheDrox.."Drox:Status:distraction6"..msg_chat_id) then return L
 Abs = math.random(3,1445); 
 local Text ='↯︙تم اختيار الاغنيه لك'
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = msg.sender_id.user_id..'/Mp'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱??𝗑 ›',url="t.me/DroxTeAm"}
+keyboard.inline_keyboard = {{{text = '‹ مره اخرى ›', callback_data = msg.sender_id.user_id..'/Mp'}},{{text='‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›',url="t.me/DroxTeAm"}
 }
 }
 local msg_id = msg.id/2097152/0.5
@@ -9994,7 +10046,7 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "↯︙عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 local R = Redis:scard(TheDrox.."Drox:List:Rd:Sudo")
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ حذف الردود : '..R..' ›', data = msg.sender_id.user_id..'/RDs'},{text = '‹ عرض الردود : '..R..' ›', data = msg.sender_id.user_id..'/RRDs'},},{{text = '‹ اخفاء الاوامر ›', data =msg.sender_id.user_id..'/'.. 'delAmr'}},{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣??𝗈?? ›', url = 't.me/DroxTeAm'},},}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ حذف الردود : '..R..' ›', data = msg.sender_id.user_id..'/RDs'},{text = '‹ عرض الردود : '..R..' ›', data = msg.sender_id.user_id..'/RRDs'},},{{text = '‹ اخفاء الاوامر ›', data =msg.sender_id.user_id..'/'.. 'delAmr'}},{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm'},},}}
 return LuaTele.sendText(msg_chat_id, msg_id, "↯︙من خلال الازرار يمكن عرض وحذف الردود ↫ ⤈", 'md', false, false, false, false, reply_markup) end
 --
 if text == ("اوامر التسليه") then 
@@ -14114,7 +14166,7 @@ local ratpep = ballancee + 2500
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 2500 دولار 💰\nوظيفتك : نوم 🛌\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"اشعار ايداع "..neews.."\nالمبلغ : 2500 دولار ??\nوظيفتك : نوم 🛌\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "7" then
 local ratpep = ballancee + 2700
@@ -15772,7 +15824,7 @@ local TestText = "↯︙*Dev Name* :  ["..UserInfo.first_name.."](tg://user?id="
 keyboardd = {} 
 keyboardd.inline_keyboard = {
 {
-{text = '- 𝖱𝖺𝗌𝗎𝗅 .𝖬??𝗇𝗍𝖺ᴢ𝖺𝗋', url = "https://t.me/uQuuu"}
+{text = '- 𝖱𝖺𝗌𝗎𝗅 .𝖬𝗎𝗇𝗍𝖺ᴢ𝖺𝗋 .', url = "https://t.me/uQuuu"}
 },
 {
 {text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url='https://t.me/DroxTeAm'},

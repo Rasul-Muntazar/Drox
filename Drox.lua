@@ -2047,7 +2047,7 @@ else
 Status = 'العضو'
 end
 LuaTele.sendText(Sudo_Id,0,'\n↯︙تم تفعيل مجموعة جديده ↫ ⤈ \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n↯︙بواسطة ↫ '..LaR..'\n↯︙موقعه في المجموعة ↫ '..Status..'\n↯︙ايدي المجموعة ↫ ⤈\n❨ `'..msg_chat_id..'` ❩\n↯︙رابط المجموعة ↫ ⤈\n❨ '..Info_Chats.invite_link.invite_link..' ❩\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n↯︙الوقت ↫ '..os.date('%I:%M%p')..'\n↯︙التاريخ ↫ '..os.date('%Y/%m/%d')..'',"md",true) end
-local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ رفع الادمنيه ›', data = msg.sender_id.user_id..'/addAdmins@'..msg_chat_id},{text = '‹ تفعيل الحمايه ›', data =msg.sender_id.user_id..'/LockAllGroup@'..msg_chat_id},},{{text = '‹ الاوامر ›', data = msg.sender_id.user_id..'/'.. 'helpall'},},{{text = '‹ غادر ›', data = msg.sender_id.user_id..'/Yesbot'},{text = '‹ تعطيل ›', data =msg.sender_id.user_id..'/disable'},},{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm'},},}}
+local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm'},},}}
 Redis:sadd(TheDrox.."Drox:ChekBotAdd",msg_chat_id)
 Redis:set(TheDrox.."Drox:Status:BanId"..msg_chat_id,true) ;Redis:set(TheDrox.."Drox:Status:SetId"..msg_chat_id,true) 
 return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(msg.sender_id.user_id,'*↯︙تم تفعيل المجموعة ↫ ‹ *['..Get_Chat.title..']('..Info_Chats.invite_link.invite_link..')* ›*').unLock,'md', true, false, false, false, reply_markup) end end
@@ -8510,6 +8510,40 @@ if not Redis:get(TheDrox.."Drox:Status:remMe"..msg_chat_id) then return LuaTele.
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ الغاء ›', data = msg.sender_id.user_id..'/TkNo'},{text = '‹ تأكيد ›', data = msg.sender_id.user_id..'/TkYes'},},}}
 return LuaTele.sendText(msg_chat_id,msg_id,'↯︙هل انت متأكد من عملية تنزيلك !',"md",false, false, false, false, reply_markup) end
 --
+if text == 'شيكول'  then 
+if tonumber(msg.reply_to_message_id) > 0 then
+local result = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+if result.content.voice_note then 
+local mr = result.content.voice_note.voice.remote.id
+local File = json:decode(https.request('https://api.telegram.org/bot' .. Token .. '/getfile?file_id='..mr) ) 
+local voicee = 'https://api.telegram.org/file/bot'..Token..'/'..File.result.file_path
+local url = https.request("https://fastbotss.herokuapp.com/yt?vi="..voicee)
+local json = JSON.decode(url)
+if json and json.text then
+return LuaTele.sendText(msg.chat_id,msg.id,"↯︙يكول "..json.text)
+else
+return LuaTele.sendText(msg.chat_id,msg.id,"↯︙تعذر التعرف على الصوت")
+end
+end
+end
+end
+if text == '..json.text..'  then 
+local result = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
+if result.content.voice_note then 
+local mr = result.content.voice_note.voice.remote.id
+local File = json:decode(https.request('https://api.telegram.org/bot' .. Token .. '/getfile?file_id='..mr) ) 
+local voicee = 'https://api.telegram.org/file/bot'..Token..'/'..File.result.file_path
+local url = https.request("https://fastbotss.herokuapp.com/yt?vi="..voicee)
+local json = JSON.decode(url)
+if json and json.text then
+return LuaTele.sendText(msg.chat_id,msg.id,"↯︙يكول "..json.text)
+else
+return LuaTele.sendText(msg.chat_id,msg.id,"↯︙تعذر التعرف على الصوت")
+end
+end
+end
+end
+--
 if text == 'اطردني' or text == 'طردني' then
 if not Redis:get(TheDrox.."Drox:Status:KickMe"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"*↯︙امر اطردني تم تعطيله من قبل المدراء *","md",true)  end
 if msg.can_be_deleted_for_all_users == false then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذراً البوت ليس ادمن في المجموعة يرجى ترقيته وتفعيل الصلاحيات له *","md",true)  end
@@ -10659,6 +10693,12 @@ end
 if text == "شنو رئيك بهاي" or text == "شنو رئيك بهايي" or text == "شنو رائيك بهايي" or text == "شنو رائيك بهايي" then
 local texting = {"دور حلوين 🤕😹","جكمه وسخه عوفها ☹️😾","حقيره ومتكبره 😶😂","وووف فد حاته🤤😍","لك عوووع شهلذوق🤮😑","اهم شي الاخلاق🤧","اويلي زوجوني هيا😍","ام الكمل هاي شجابك عليها🤓","هااا كررشتت😳","طيح الله حظك وحظ رائيك😑","مفارغ الكم هسه😏","تعالني ورا 12 اجاوبك😉"}
 LuaTele.sendText(msg.chat_id,msg.id,"*"..texting[math.random(#texting)].."*","md", true)
+end
+if text == "التفاعل" then
+local EntryNumber = (Redis:get(TheDrox..'muh:EntryNumber'..msg.chat_id..':'..os.date('%d')) or 0)
+local ExitNumber = (Redis:get(TheDrox..'muh:ExitNumber'..msg.chat_id..':'..os.date('%d')) or 0)
+local MsgNumberDay = (Redis:get(TheDrox..'muh:MsgNumberDay'..msg.chat_id..':'..os.date('%d')) or 0)
+LuaTele.sendText(msg.chat_id,msg.id, "↯︙انضمام الاعضاء اليوم ↫ *"..EntryNumber.."*\n↯︙مغادرة الاعضاء اليوم ↫ *"..ExitNumber.."*\n↯︙عدد الرسائل اليوم ↫ *"..MsgNumberDay.."*\n↯︙نسبة التفاعل اليوم ↫ *"..math.random(40,100).."%*\n","md",true)  
 end
 if text and text:match('^اهداء @(%S+)$') then
 local UserName = text:match('^اهداء @(%S+)$') 
@@ -15115,6 +15155,43 @@ if text and Redis:get(TheDrox..msg.chat_id..msg.sender_id.user_id.."txtrtb") the
     Redis:setex(TheDrox..msg.chat_id..msg.sender_id.user_id.."txtrtb",180,true)
     return LuaTele.sendText(msg.chat_id,msg.id,Txtrtb,"md")
     end
+if text == 'الالعاب الاحترافيه' or text == 'الالعاب المتطوره' then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{{text = 'فلابي بيرد', url="https://t.me/awesomebot?game=FlappyBird"},{text = 'تحداني فالرياضيات',url="https://t.me/gamebot?game=MathBattle"}},   
+{{text = 'لعبه دراجات', url="https://t.me/gamee?game=MotoFX"},{text = 'سباق سيارات', url="https://t.me/gamee?game=F1Racer"}}, 
+{{text = 'تشابه', url="https://t.me/gamee?game=DiamondRows"},{text = 'كره القدم', url="https://t.me/gamee?game=FootballStar"}}, 
+{{text = 'ورق', url="https://t.me/gamee?game=Hexonix"},{text = 'لعبه 2048', url="https://t.me/awesomebot?game=g2048"}}, 
+{{text = 'المربعات', url="https://t.me/gamee?game=Squares"},{text = 'ATOMIC', url="https://t.me/gamee?game=AtomicDrop1"}}, 
+{{text = 'كورسايرس', url="https://t.me/gamebot?game=Corsairs"},{text = 'LumberJack', url="https://t.me/gamebot?game=LumberJack"}}, 
+{{text = 'ليتل بلاند', url="https://t.me/gamee?game=LittlePlane"},{text = 'RollerDisco', url="https://t.me/gamee?game=RollerDisco"}},  
+{{text = 'كره القدم 2', url="https://t.me/gamee?game=PocketWorldCup"},{text = 'جمع المياه', url="https://t.me/gamee?game=BlockBuster"}},  
+{{text = 'لا تجعلها تسقط', url="https://t.me/gamee?game=Touchdown"},{text = 'GravityNinja', url="https://t.me/gamee?game=GravityNinjaEmeraldCity"}},  
+{{text = 'أستروكات', url="https://t.me/gamee?game=Astrocat"},{text = 'Skipper', url="https://t.me/gamee?game=Skipper"}},  
+{{text = 'كأس العالم', url="https://t.me/gamee?game=PocketWorldCup"},{text = 'GeometryRun', url="https://t.me/gamee?game=GeometryRun"}},  
+{{text = 'Ten2One', url="https://t.me/gamee?game=Ten2One"},{text = 'NeonBlast2', url="https://t.me/gamee?game=NeonBlast2"}},  
+{{text = 'با', url="https://t.me/gamee?game=Paintio"},{text = 'onetwothree', url="https://t.me/gamee?game=onetwothree"}},  
+{{text = 'بريكستاكر', url="https://t.me/gamee?game=BrickStacker"},{text = 'StairMaster3D', url="https://t.me/gamee?game=StairMaster3D"}},  
+{{text = 'تحميلالفان', url="https://t.me/gamee?game=LoadTheVan"},{text = 'BasketBoyRush', url="https://t.me/gamee?game=BasketBoyRush"}},  
+{{text = 'الجاذبية نينجا21', url="https://t.me/gamee?game=GravityNinja21"},{text = 'MarsRover', url="https://t.me/gamee?game=MarsRover"}},  
+{{text = 'تحميلالفان', url="https://t.me/gamee?game=LoadTheVan"},{text = 'GroovySki', url="https://t.me/gamee?game=GroovySki"}},  
+{{text = 'الرسامت تيمز', url="https://t.me/gamee?game=PaintioTeams"},{text = 'KeepItUp', url="https://t.me/gamee?game=KeepItUp"}},  
+{{text = 'صن شاين سوليتير', url="https://t.me/gamee?game=SunshineSolitaire"},{text = 'Qubo', url="https://t.me/gamee?game=Qubo"}},  
+{{text = 'عقوبة مطلق النار2', url="https://t.me/gamee?game=PenaltyShooter2"},{text = 'Getaway', url="https://t.me/gamee?game=Getaway"}},  
+{{text = 'الرسامت تيمز', url="https://t.me/gamee?game=PaintioTeams"},{text = 'SpikyFish2', url="https://t.me/gamee?game=SpikyFish2"}},  
+{{text = 'جروفيسكي', url="https://t.me/gamee?game=GroovySki"},{text = 'KungFuInc', url="https://t.me/gamee?game=KungFuInc"}},  
+{{text = 'سبيس ترافلر', url="https://t.me/gamee?game=SpaceTraveler"},{text = 'RedAndBlue', url="https://t.me/gamee?game=RedAndBlue"}},  
+{{text = 'سكوداهوكي1 ', url="https://t.me/gamee?game=SkodaHockey1"},{text = 'SummerLove', url="https://t.me/gamee?game=SummerLove"}},  
+{{text = 'سمارتوبشارك', url="https://t.me/gamee?game=SmartUpShark"},{text = 'SpikyFish3', url="https://t.me/gamee?game=SpikyFish3"}},  
+{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 𝖣𝖱𝗈𝗑 ›', url = 't.me/DroxTeAm'}},
+{
+{text = '‹ اخفاء الامر ›', data =IdUser..'/'.. 'delAmr'}
+},
+}
+}
+LuaTele.sendText(msg.chat_id,msg.id,'*↯︙قائمة الالعاب الاحترافية*',"md", true, false, false, false, reply_markup)
+end
 if text == "ثنائي اليوم" or text == "ثنائي" then
 local Info_Members = LuaTele.searchChatMembers(msg.chat_id, "*", 200)
 local List_Members = Info_Members.members

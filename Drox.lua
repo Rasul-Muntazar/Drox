@@ -8527,22 +8527,6 @@ end
 end
 end
 end
-if text == '..json.text..'  then 
-local result = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
-if result.content.voice_note then 
-local mr = result.content.voice_note.voice.remote.id
-local File = json:decode(https.request('https://api.telegram.org/bot' .. Token .. '/getfile?file_id='..mr) ) 
-local voicee = 'https://api.telegram.org/file/bot'..Token..'/'..File.result.file_path
-local url = https.request("https://fastbotss.herokuapp.com/yt?vi="..voicee)
-local json = JSON.decode(url)
-if json and json.text then
-return LuaTele.sendText(msg.chat_id,msg.id,"↯︙يكول "..json.text)
-else
-return LuaTele.sendText(msg.chat_id,msg.id,"↯︙تعذر التعرف على الصوت")
-end
-end
-end
-end
 --
 if text == 'اطردني' or text == 'طردني' then
 if not Redis:get(TheDrox.."Drox:Status:KickMe"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"*↯︙امر اطردني تم تعطيله من قبل المدراء *","md",true)  end

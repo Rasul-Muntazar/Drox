@@ -2390,6 +2390,17 @@ else
 Name = ''
 end
 return LuaTele.sendText(msg_chat_id,msg_id,'\n↯︙اسمه ↫ ❨ '..Name..' ❩ ',"md",true)  end
+if text == 'نبذة' or text == 'نبذه' then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '‹ ذكر ›', data = msg.sender_id.user_id..'/bioold'},{text = '‹ انثى ›', data = msg.sender_id.user_id..'/biobnt'},
+},
+}
+}
+return LuaTele.sendText(msg_chat_id, msg_id, '↯︙اختر نبذه حسب جنسك ', 'md', false, false, false, false, reply_markup)
+end
 if text == 'اسمي' then
 if not msg.Managers then return LuaTele.sendText(msg_chat_id,msg_id,'\n↯︙هذه الميزة للادمنية واعلى فقط',"md",true)  end
 local UserInfo = LuaTele.getUser(msg.sender_id.user_id) 
@@ -12677,6 +12688,163 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ↯︙اهلا بك عزيزي اختر من الأسفل كيفية التحميل.
 *]],"md",false, false, false, false, reply_markup)
 end
+--
+if Text and Text:match('(%d+)/backbio') then
+local UserId = Text:match('(%d+)/backbio')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '‹ ذكر ›', data = IdUser..'/bioold'},{text = '‹ انثى ›', data = IdUser..'/biobnt'},
+},
+}
+}
+return LuaTele.editMessageText(ChatId,Msg_id,"اختر النبذه الي تريدها", 'md', true, false, reply_markup)
+end
+end
+if Text and Text:match('(%d+)/bioold') then
+local UserId = Text:match('(%d+)/bioold')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '‹  نبذه اخرى ›', data = UserId..'/bioold'},
+},
+{
+{text = '‹ عودة ›', data = UserId..'/backbio'},
+},
+}
+}
+local list = {
+"چنت احسك اهل مو واحد غريب .",
+
+"الرجولـۿ صعبـۿ جـداً على شـخص كُل فِكرۿ النـساء ..",
+
+"تشوفني انحني بس من اشد قيطان الحذاء",
+
+"هدوئي ليس تكبراً انما طبع أمتاز بهِ .",
+
+"التظاهر باللاشيء ، شيء عظيم ،🧡💧",
+
+"ٰاغلقو الابواب علموهمَ احترام الفرص .",
+
+"وأن كان بُعدك كـ بُعد نجمة سأحبّك .",
+
+"حيلي ؏ حيلك لو شفت التعب صابك🤍🤍!",
+
+"انتِ حكاية يستَحيل الانتِهَاء مِنهَا .",
+
+"ﺂﺂنـٰـٓﺂﺂ ولـِبـِٓلـﯝک ـﺂصحٓـٰﺂﺂب ㋡!!   ᴖ̈ ℡",
+
+"ﭑنا ﺣﻟﻣﮧﭑً ࢦࢦجميع ، لاڰنې ࢦآ ﭑحلم ب ﭑﺣﮧډ :",
+
+"ثكيلكم قيطان بحذائي ما اشده",
+
+"راسي ع السمة ورجلي بالارض",
+
+"ليس الاعمى لا يرى بل انتم لستم موجودين",
+
+"َانتَ للأبـد ،انتَ اللـي مابعـدك احّـد .",
+
+"سأكون هُنا من أجلك حتى النهاية .",
+
+"‏أندارلك من كل درب وعيونك تضيعني .",
+
+"ومازلتُ أقع أكثر في حُبك يوميًا .",
+
+"-’ ﺂݪحيـٱة ڝعبـۿۃ ݪڪـڼ ݪيـښټ ﻣښٺحـيݪۿۂ   𖤍ْ.",
+
+"أبتسمِ ولو بلغ الحزن بحراً .",
+
+"لسَست ﭑعمـَئ ولكن لاَيُهمنْيَ مـﭑ يَحدثْ ♥️",
+
+"• ﭑڪتفائي بنفسي حاجـهہ عـضيـٰمهہ .👼🏻💗",
+
+"قۆي وﺟميݪ ۆبڕيئ  🚶‍♀ᝰ",
+
+"سيٰئ جـٰداً ﻻ اطيٰق وﻻ اطـﺂﺂق "
+}
+local bioold = list[math.random(#list)]
+return LuaTele.editMessageText(ChatId,Msg_id,"["..bioold.."]", 'md', true, false, reply_markup)
+end
+elseif Text and Text:match('(%d+)/biobnt') then
+local UserId = Text:match('(%d+)/biobnt')
+if tonumber(IdUser) == tonumber(UserId) then
+local reply_markup = LuaTele.replyMarkup{
+type = 'inline',
+data = {
+{
+{text = '‹ نبذه اخرى ›', data = UserId..'/biobnt'},
+},
+{
+{text = '‹ عودة ›', data = UserId..'/backbio'},
+},
+}
+}
+local list = {
+"هوَ مُخْتْلف وَأنا اُحبُ اختِلافه .",
+
+"عش الحياه لنفسك ليس لأحد آخر ♡",
+
+"وردة نادرة مهما عصفت بـها الأيام لاتذبل🤍",
+
+"ݛقٖـيـقٖـٰهہ ة آڼۨـٰﭑ ڪۨہ فـٰرﭑاشـٰهۃ طـٰﭑئرهۃ  💘،",
+
+"•تددري بغغـيبتـڪڪ ششنوو صصـار ؟",
+
+"• ע زلـت تـඋـاول ولازلـت ﭑنتضر 🧸.💗🔗",
+
+"مُمنفردة عن ﭑلعالم ، مُختلفةة لا ﭑشبه آحد ،✨🎧 ء !",
+
+"مهۿما ﺂنترکڪت ـَﺂيـۧدي آِنيـِــٰﮧمـَٓو بحۧـَﺂﭼـٰ̲ه ـَﺂحـٰ̲د 🙂🚶‍♀",
+
+"ע ﺂﺂقـِٓبل بالهز͡يمهہ وأنّ ڪٓدتُ ﺂﺂسقُـ࣮ٓط",
+
+"هـادئه ڪِٰ ساعاتِ الليـل المتأخرهۃٓه 彡??",
+
+"﮼ﭑﻧﭑﭑ ﺳيئهـٰۃ ﯛﻣحد يـٰستـٰاهـٰل ﻟـٰطـٰفي  𖤍 #~",
+
+"ﭰويھﮧ وﻣمخيفه ڪضحڪه صداﻣم في ــألمحڪمه 🔥🙂",
+
+"- ‏خسـارة البعـض ، مڪسب لصحتـكك النفـسـيـہۦة☹️??✨",
+
+"• ‏୪ ټـَرآﭰـبنـِﯤ ۏإنټ ﺂبټعدټ ﺂِﻧﹷٰـٰا ‏୪ اټأﺛﺮ",
+
+"آذآ مكدڕت آسنَدک ـآطيَح ويآک ✨!",
+
+"- خخلاص ءنا ! مو مهمم ععد ءححد ♡",
+
+"ينتقدوني وبدقه 370HD يقلدوني",
+
+"ﭑنـٰآ لسټ مـﻼڪـٰاً ﭑﻧﭑ ڜيطۃٓﭑنهْہ ۛ بضمـۑْڔ ، 👸🏻💗",
+
+"⁞ ݥاِخِذۿُ خـۧﺂوۿ ععَـۧليَكم ᴖ̈💗",
+
+"ﻣڪټفيه ﺑﺣـاﻟـي ﯢﻣـاﻟي ٲﺣد ، 🖤🌈",
+
+"ﺎﻧﻧﭑ الجمـٰيـٰلهۃ ۉهـٰن ﺑﻘﭑيـٰﭑ ﺟﺟﻣﭑلي -💘.",
+
+"وهِيٓ هآي ﭑلمآيلوحَكك لآزم يشٓمر ععليكك🖤",
+
+"- ــِلا ، يعلِݥوڹ  ݥآبداخݪيِ ، ويتحدثوڹ  عني ،",
+
+"مـٰثل بـٓﯛشـِنڪـِٓي ڪلـڪـٰم تـٰرجفون منـٰي ᴖ̈ ℡",
+
+"قلدني ، لڪن بطريقهۂ جيده !",
+
+"ﻧﻘـٰﭑﭑشـٰي ڪلمـٓتيـٰن ﭑٱلثالثـٰهۃ بـٰﻟﯛڪك ، ♡☻ ،",
+
+"⊱#ۧﺂٌنـٰ̲ـيٌَ بـٰ̲زَۧﻭ୭ديٌَ ﺂٌٰرتـۖـٰ̲فـَع ݥـٰحـۖـٰ̲د يۧـعـَـُلينـۧي",
+
+"- ﻵ ﺗـۤحـﭑﯛل ﺗﯛﺻلي ﺂنـﺂ ﯛ ﺂلقـمهۂ ربـع ،!🤤💚"
+}
+local biobnt = list[math.random(#list)]
+return LuaTele.editMessageText(ChatId,Msg_id,"["..biobnt.."]", 'md', true, false, reply_markup)
+end
+end
+--
 if text == "زوجوني" or text == "زوجني" then
 if not Redis:get(TheDrox..'zwgnyy'..msg.chat_id) then 
 local Info_Chats = LuaTele.getSupergroupFullInfo(msg_chat_id)

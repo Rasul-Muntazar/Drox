@@ -10991,7 +10991,7 @@ data = {
 LuaTele.sendText(Sudo_Id,0,'*\n↯︙مرحباً عزيزي المطور \nشخص ما يحتاج مساعدتك\nــ ــ ــ ــ ــ ــ ــ ــ ــ \n↯︙اسمه : '..klajq..' \n↯︙ايديه : '..msg.sender_id.user_id..'\n↯︙يوزره : @'..basgk..'\n↯︙الوقت : '..os.date("%I:%M %p")..'\n↯︙التاريخ : '..os.date("%Y/%m/%d")..'*',"md",false, false, false, false, reply_markup)
 LuaTele.sendText(Sudo_Id,0,'*\n↯︙مرحباً عزيزي المطور \nشخص ما يحتاج مساعدتك\nــ ــ ــ ــ ــ ــ ــ ــ ــ \n↯︙اسمه : '..klajq..' \n↯︙ايديه : '..msg.sender_id.user_id..'\n↯︙يوزره : @'..basgk..'\n↯︙الوقت : '..os.date("%I:%M %p")..'\n↯︙التاريخ : '..os.date("%Y/%m/%d")..'*',"md",false, false, false, false, reply_markup)
 end
-if text == "كتل" or text == "كتله" or text == "قتل" then
+if text == "اكتله" or text == "كتله" or text == "قتل" then
 local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local ban = LuaTele.getUser(Message_Reply.sender_id.user_id)
 local bain = LuaTele.getUser(msg.sender_id.user_id)
@@ -11284,7 +11284,7 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "↯︙عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ الالعاب الاحترافية ›', data = msg.sender_id.user_id..'/degm'},},{{text = '‹ اخفاء › ', data =msg.sender_id.user_id..'/'.. 'delAmr'},},}}
-return LuaTele.sendText(msg_chat_id,msg_id,'↯︙قائمه الالعاب البوت ↫ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n↯︙لعبة المختلف ↫ المختلف\n↯︙لعبة الامثله ↫ امثله\n↯︙لعبة العكس ↫ العكس\n↯︙لعبة الحزوره ↫ حزوره\n↯︙لعبة المعاني ↫ معاني\n↯︙لعبة البات ↫ بات\n↯︙لعبة التخمين ↫ خمن\n↯︙لعبه الاسرع ↫ الاسرع\n↯︙لعبة السمايلات ↫ سمايلات\n↯︙لعبة كت تويت ↫ كت\n↯︙لعبة البنك ↫ بنك\n↯︙لعبة لو خيروك ↫ لوخيروك\n↯︙لعبة مشاهير ↫ بوب\n↯︙لعبة الصراحه ↫ صراحه\n↯︙لعبة الاعلام ↫ اعلام\n↯︙لعبة الكتابات ↫ كتابات\n↯︙لعبة النكت ↫ نكته\n↯︙لعبة التاكات ↫ تاكات\n↯︙لعبة الحروف ↫ حروف\n↯︙لعبة الارقام ↫ ارقام \n↯︙لعبة العواصم ↫ عواصم\n↯︙لعبة من سيربح المليون ↫ المليون\n↯︙حظي ↫ لعبة ربح او خساره\n↯︙عربي ↫ لعبة مفرد او جمع\n↯︙دين ↫ لعبة اسئله دينيه\n↯︙فكك ↫ لعبة تفكيك الحروف\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n↯︙مجوهراتي ↫ لعرض عدد الارباح\n↯︙بيع مجوهراتي + العدد ↫ لبيع المجوهرات كل مجوهره مقابل ‹ 50 › رساله',"md",false, false, false, false, reply_markup) end
+return LuaTele.sendText(msg_chat_id,msg_id,'↯︙قائمه الالعاب البوت ↫ ⤈\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n↯︙لعبة المختلف ↫ المختلف\n↯︙لعبة الامثله ↫ امثله\n↯︙لعبة العكس ↫ العكس\n↯︙لعبة الحزوره ↫ حزوره\n↯︙لعبة المعاني ↫ معاني\n↯︙لعبة البات ↫ بات\n↯︙لعبة التخمين ↫ خمن\n↯︙لعبه الاسرع ↫ الاسرع\n↯︙لعبة السمايلات ↫ سمايلات\n↯︙لعبة كت تويت ↫ كت\n↯︙لعبة البنك ↫ بنك\n↯︙لعبة لو خيروك ↫ لوخيروك\n↯︙لعبة مشاهير ↫ بوب\n↯︙لعبة الصراحه ↫ صراحه\n↯︙لعبة الاعلام ↫ اعلام\n↯︙لعبة الكتابات ↫ كتابات\n↯︙لعبة النكت ↫ نكته\n↯︙لعبة التاكات ↫ تاكات\n↯︙لعبة الحروف ↫ حروف\n↯︙لعبة الارقام ↫ ارقام \n↯︙لعبة العواصم ↫ عواصم\n↯︙لعبة اسئله منوعة ↫ اسئله\n↯︙لعبة من سيربح المليون ↫ المليون\n↯︙حظي ↫ لعبة ربح او خساره\n↯︙عربي ↫ لعبة مفرد او جمع\n↯︙دين ↫ لعبة اسئله دينيه\n↯︙فكك ↫ لعبة تفكيك الحروف\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n↯︙مجوهراتي ↫ لعرض عدد الارباح\n↯︙بيع مجوهراتي + العدد ↫ لبيع المجوهرات كل مجوهره مقابل ‹ 50 › رساله',"md",false, false, false, false, reply_markup) end
 if text == 'السيرفر' or text == 'سيرفر' or text == 'معلومات السيرفر'then 
 if not msg.ControllerBot then 
 return LuaTele.sendText(msg_chat_id,msg_id,'\n*↯︙ هاذا الامر يخص ⦗ '..Controller_Num(1)..' ⦘* ',"md",true)  
@@ -12076,6 +12076,373 @@ elseif RtList == "=" then
 StatusRt = "حظك معلك اليوم لا ربح ولا خساره"
 end
 return LuaTele.sendText(msg.chat_id,msg.id,"↯︙"..StatusRt,"md",true)  
+end
+if text == 'اسئله' or text == 'اسئلني' then   
+if not Redis:get(TheDrox.."Drox:Status:Games"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"*↯︙عذراً الالعاب معطلة*","md",true) end 
+t1 = [[
+ ↯︙ماهو اطول نهر في العالم
+ 
+1 - النيل  
+2 - الفرات 
+3 - نهر الكونغو
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t2 = [[
+ ↯︙ماعدد عظام الوجه؟
+ 
+1 - 15
+2 - 13
+3 - 14 
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t3 =[[
+↯︙كراسي بيضاء وجدران ورديه اذا اغلقته اصبح ظلام  فمن اكون؟
+
+1 - الفم 
+2 - الاذن
+3 - الثلاجه
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t4 =[[
+↯︙كم جزء تحتوي مسلسل وادي الذئاب؟
+
+1 - 7
+2 - 15
+3 - 11
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t5 =[[
+↯︙كم جزء يحتوي القران الكريم؟
+
+1 - 60
+2 - 70
+3 - 30 
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t6 =[[
+ ↯︙من هوه اغنى رئيس في العالم؟
+
+1 - ترامب
+2 - اوباما
+3 - بوتين  
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+
+t7 =[[
+↯︙من هوه مؤسس شركه ابل العالميه
+
+1 - لاري بايج 
+2 - بيا غايتز
+3 - ستيف جوبر
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t8 =[[
+↯︙ماهي عاصمه فرنسا؟
+
+1 - باريس 
+2 - لوين 
+3 - موسكو 
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t9 =[[
+↯︙ماعدد دول العربيه التي توجد في افريقيا
+
+1 - 10 
+2 - 17
+3 - 9
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t11 =[[
+↯︙ماهو الحيوان الذي يحمل 50 فوق وزنه؟
+
+1 -الفيل
+2 - النمل  
+3 - الثور
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t12 =[[
+↯︙ماذا يوجد بيني وبينك؟
+
+1 - الضل
+2 - الاخلاق
+3 -حرف الواو  
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t13 =[[
+↯︙ماهو الشيء النبات ينبت للانسان بلا بذر؟
+1 -الاضافر 
+2 - الاسنان
+3 - الشعر
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t14 =[[
+↯︙م̷ـــِْن هو اول الرسول الى الارض؟
+
+1 - ادم
+2 - نوح
+3 -ابراهيم 
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t15 =[[
+↯︙ما هو الشّيء الذي يستطيع المشي بدون أرجل والبكاء بدون أعين؟
+
+1 - سحاب
+2 - بئر
+3 - نهر
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t16 =[[
+↯︙ما الشيء الذي نمتلكه , لكنّ غيرنا يستعمله أكثر منّا؟
+
+1 - العمر
+2 - ساعه
+3 - الاسم
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t17 =[[
+↯︙اصفر اللون سارق عقول اهل الكون وحارمهم لذيذ النوم
+
+1 - نحاس
+2 - الليدر
+3 - ذهب
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t18 =[[
+↯︙في الليل ثلاثة لكنه في النهار واحده فما هو
+
+ 1 - حرف الباء
+ 2 - حرف الام 
+3 - حرف الراء
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t19 =[[
+↯︙على قدر اصل العزم تأتي؟
+
+1 - العزائم 
+2 - المكارم
+3 - المبائب
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+
+t20 =[[
+↯︙ماهي جمع كلمه انسه ؟
+
+1 - سيدات
+2 - انسات 
+3 - قوانص
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t21 =[[
+↯︙اله اتسعلمت قديما في الحروب؟
+
+1 - الصاروخ
+2 - المسدس
+3 - المنجنيق 
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t22 =[[
+↯︙تقع لبنان في قاره؟
+
+1 - افريقيا 
+2 - اسيا  
+3 - امركيا الشماليه
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+
+t23 =[[
+↯︙ماهو الحيوان الذي يلقب بملك الغابه؟
+
+1 -الفيل
+2 - الاسد 
+3 - النمر
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t24 =[[
+↯︙كم صفرا للمليون ؟
+
+1 - 4 
+2 - 3
+3 -6
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t25 =[[
+↯︙ما اسم صغير الحصان؟
+
+1 - مهر  
+2 - جرو
+3 - عجل
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t26 =[[
+↯︙ما الحيوان الذي ينام واحدى عينه مفتوحه؟
+
+1 - القرش
+2 - الدلفين 
+3 - الثعلب
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t27 = [[
+↯︙ماهي القاره التي تلقب بالقاره العجوز؟
+
+1 - امريكا الشماليه 
+2 - امريكا الجنوبيه
+3 - افريقيا 
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t28 =[[
+↯︙ما اسم المعدن الموجود فيي الحاله السائله
+
+1 - النحاس 
+2 - الحديد
+3 - الزئبق 
+ 
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t29 =[[
+↯︙ماهي عاصمه انجلترا؟
+
+1 - لندن  
+2 - لفرسول
+3 - تركيا
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t30 =[[
+↯︙ماهو الشئ الذي برأسه سبع فتحات
+
+1 - الهاتف
+2 - التلفاز
+3 - الانسان 
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t31 =[[
+↯︙ماهي عاصمه اليابان ؟
+
+1 - بانقول
+2 - نيو دلهي
+3 - طوكيو 
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+t32 =[[
+↯︙من هي زوجه الرسول الاكبر منه سنآ؟
+
+1 - حفضه
+2 - زينب 
+3 - خديجه 
+
+↯︙ارسل  الجواب الصحيح فقط
+]]
+TAHA = {t16,t17,t18,t19,t20,t21,t22,t23,t24,t25,t26,t27,t28,t29,t30,t31,t32,t1,t2,t3,t4,t5,t6,t7,t8,t9,t11,t12,t13,t14,t15}
+local SENDTEXT = TAHA[math.random(#TAHA)]
+if SENDTEXT:find('النيل') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'النيل') 
+elseif SENDTEXT:find('14') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'14') 
+elseif SENDTEXT:find('الفم') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'الفم') 
+elseif SENDTEXT:find('11') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'11') 
+elseif SENDTEXT:find('30') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'30') 
+elseif SENDTEXT:find('بوتين') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'بوتين') 
+elseif SENDTEXT:find('ستيف جوبر') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'ستيف جوبر') 
+elseif SENDTEXT:find('باريس') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'باريس') 
+elseif SENDTEXT:find('10') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'10') 
+elseif SENDTEXT:find('النمل') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'النمل') 
+elseif SENDTEXT:find('حرف الواو') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'حرف الواو') 
+elseif SENDTEXT:find('الشعر') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'الشعر') 
+elseif SENDTEXT:find('ابراهيم') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'ابراهيم') 
+elseif SENDTEXT:find('سحاب') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'سحاب') 
+elseif SENDTEXT:find('الاسم') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'الاسم') 
+elseif SENDTEXT:find('ذهب') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'ذهب') 
+elseif SENDTEXT:find('حرف الام') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'حرف الام') 
+elseif SENDTEXT:find('العزائم') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'العزائم') 
+elseif SENDTEXT:find('انسات') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'انسات') 
+elseif SENDTEXT:find('المنجنيق') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'المنجنيق') 
+elseif SENDTEXT:find('اسيا') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'اسيا') 
+elseif SENDTEXT:find('الاسد') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'الاسد') 
+elseif SENDTEXT:find('6') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'6') 
+elseif SENDTEXT:find('مهر') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'مهر') 
+elseif SENDTEXT:find('الدلفين') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'الدلفين') 
+elseif SENDTEXT:find('اوروبا') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'اوروبا') 
+elseif SENDTEXT:find('الزئبق') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'الزئبق') 
+elseif SENDTEXT:find('لندن') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'لندن') 
+elseif SENDTEXT:find('الانسان') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'الانسان') 
+elseif SENDTEXT:find('طوكيو') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'طوكيو') 
+elseif SENDTEXT:find('خديجه') then
+Redis:set(TheDrox.."GAME:CHER"..msg.chat_id,'خديجه') 
+end
+LuaTele.sendText(msg.chat_id,msg.id,SENDTEXT)     
+return false  
+end
+end
+if Redis:get(TheDrox.."GAME:CHER"..msg.chat_id) and (text == Redis:get(TheDrox.."GAME:CHER"..msg.chat_id)) then  
+if text then
+LuaTele.sendText(msg.chat_id,msg.id,'*↯︙احسنت اجابتك صحيحه *',"md")     
+Redis:incrby(TheDrox.."Num:Add:Games"..msg.chat_id..msg.sender_id.user_id, 1)  
+Redis:del(TheDrox.."GAME:CHER"..msg.chat_id)
+elseif text == 'الفيل' or text == 'الثور' or text == 'الحصان' or text == '7' or text == '9' or text == '8' or text == 'لوين' or text == 'موسكو' or text == 'مانكو' or text == '20' or text == '30' or text == '28' or text == 'ترامب' or text == 'اوباما' or text == 'كيم جونغ' or text == '50' or text == '70' or text == '40' or text == '7' or text == '3' or text == '10' or text == '4' or text == 'الاذن' or text == 'الثلاجه' or text == 'الغرفه' or text == '15' or text == '17' or text == '25' or text == 'الفرات' or text == 'نهر الكونغو' or text == 'المسيبي' or text == 'بيا بايج' or text == 'لاري بيج' or text == 'بيا مارك زوكيربرج' or text == 'الفيل' or text == 'النمر' or text == 'الفهد' or text == 'بانقول' or text == 'نيو دلهي' or text == 'بيكن' or text == 'الهاتف' or text == 'التلفاز' or text == 'المذياع' or text == 'لفرسول' or text == 'تركيا' or text == 'بغداد' or text == 'النحاس' or text == 'الحديد' or text == 'الفضه' or text == 'امريكا الشماليه' or text == 'امريكا الجنوبيه' or text == 'افريقيا' or text == 'القرش' or text == 'الثعلب' or text == 'الكلب' or text == 'للجرو' or text == 'العجل' or text == 'الحمار' or text == '3' or text == '5' or text == '6' or text == 'اوربا' or text == 'افريقيا' or text == 'امريكا الجنوبيه' or text == 'افريقيا' or text == 'امريكا الشماليه' or text == 'اوربا' or text == 'الصاروخ' or text == 'المسدس' or text == 'الطائرات' or text == 'سيدات' or text == 'قوانص' or text == 'عوانس' or text == 'المكارم' or text == 'المبائم' or text == 'المعازم' or text == 'حرف الغاء' or text == 'حرف الواو' or text == 'حرف النون' or text == 'نحاس' or text == 'الليدر' or text == 'حديد' or text == 'العمر' or text == 'ساعه' or text == 'الحذاء' or text == 'بئر' or text == 'نهر' or text == 'شلال' or text == 'ادم' or text == 'نوح' or text == 'عيسئ' or text == 'الاضافر' or text == 'الاسنان' or text == 'الدموع' or text == 'الاخلاق' or text == 'الضل' or text == 'حرف النون'  then
+local list = {'10' , 'براسي' , 'النمل' , '32' , 'بوتين' , '30' , '11' , 'الفم' , '14' , 'النيل' , 'ستيف جوبر' , 'خديجه' , 'الاسد' , 'طوكيو' , 'الانسان' , 'لندن' , 'الزئبق' , 'اورباالدولفين' , 'المهر' , '4' , 'اسيا' , 'اسيا' , 'المنجنيق' , 'انسات' , 'العزائم' , 'حرف الام' , 'ذهب' , 'الاسم' , 'سحاب' , 'ابراهيم' , 'الشعر' , 'حرف الواو'}
+for k, v in pairs(list) do 
+if text ~= v then
+Redis:del(TheDrox.."GAME:CHER"..msg.chat_id)
+LuaTele.sendText(msg.chat_id,msg.id,'↯︙اجابتك خاطئه للاسف ,')     
+return false  
+end
+end
 end
 if text == 'عربي' or text == 'العربي' then
 if not Redis:get(TheDrox.."Drox:Status:Games"..msg_chat_id) then return LuaTele.sendText(msg_chat_id,msg_id,"*↯︙عذراً الالعاب معطلة*","md",true) end 
@@ -14779,364 +15146,364 @@ local ratpep = ballancee + 3000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : كابتن كريم 🚙\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : كابتن كريم 🚙\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "2" then
 local ratpep = ballancee + 3500
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3500 دولار 💰\nوظيفتك : شرطي 👮🏻‍♂️\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3500 دولار 💰\nوظيفتك : شرطي 👮🏻‍♂️\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "3" then
 local ratpep = ballancee + 3500
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3500 دولار 💰\nوظيفتك : بياع حبوب 🍻\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3500 دولار 💰\nوظيفتك : بياع حبوب 🍻\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "4" then
 local ratpep = ballancee + 3000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : سواق تاكسي 🚕\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : سواق تاكسي 🚕\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "5" then
 local ratpep = ballancee + 5000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 5000 دولار 💰\nوظيفتك : قاضي 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 5000 دولار 💰\nوظيفتك : قاضي 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "6" then
 local ratpep = ballancee + 2500
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 2500 دولار ??\nوظيفتك : نوم 🛌\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 2500 دولار ??\nوظيفتك : نوم 🛌\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "7" then
 local ratpep = ballancee + 2700
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 2700 دولار 💰\nوظيفتك : مغني 🎤\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 2700 دولار 💰\nوظيفتك : مغني 🎤\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "8" then
 local ratpep = ballancee + 2900
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 2900 دولار 💰\nوظيفتك : كوفيره 💆\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 2900 دولار 💰\nوظيفتك : كوفيره 💆\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "9" then
 local ratpep = ballancee + 2500
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 2500 دولار 💰\nوظيفتك : ربة منزل 🤷\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 2500 دولار 💰\nوظيفتك : ربة منزل 🤷\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "10" then
 local ratpep = ballancee + 2900
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 2900 دولار 💰\nوظيفتك : مربيه اطفال 💁\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 2900 دولار 💰\nوظيفتك : مربيه اطفال 💁\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "11" then
 local ratpep = ballancee + 3700
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3700 دولار 💰\nوظيفتك : كهربائي 💡\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3700 دولار 💰\nوظيفتك : كهربائي 💡\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "12" then
 local ratpep = ballancee + 3600
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3600 دولار 💰\nوظيفتك : نجار ⛏\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3600 دولار 💰\nوظيفتك : نجار ⛏\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "13" then
 local ratpep = ballancee + 2400
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 2400 دولار 💰\nوظيفتك : متذوق طعام 🍕\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 2400 دولار 💰\nوظيفتك : متذوق طعام 🍕\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "14" then
 local ratpep = ballancee + 3000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : فلاح 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : فلاح 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "15" then
 local ratpep = ballancee + 5000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 5000 دولار 💰\nوظيفتك : كاشير بنده 🙋\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 5000 دولار 💰\nوظيفتك : كاشير بنده 🙋\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "16" then
 local ratpep = ballancee + 6000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 6000 دولار 💰\nوظيفتك : ممرض 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 6000 دولار 💰\nوظيفتك : ممرض 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "17" then
 local ratpep = ballancee + 3100
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3100 دولار 💰\nوظيفتك : مهرج 🤹\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3100 دولار 💰\nوظيفتك : مهرج 🤹\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "18" then
 local ratpep = ballancee + 3300
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3300 دولار 💰\nوظيفتك : عامل توصيل 🚴\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3300 دولار 💰\nوظيفتك : عامل توصيل 🚴\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "19" then
 local ratpep = ballancee + 4800
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 4800 دولار 💰\nوظيفتك : عسكري 👮\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 4800 دولار 💰\nوظيفتك : عسكري 👮\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "20" then
 local ratpep = ballancee + 6000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 6000 دولار 💰\nوظيفتك : مهندس 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 6000 دولار 💰\nوظيفتك : مهندس 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "21" then
 local ratpep = ballancee + 8000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 8000 دولار 💰\nوظيفتك : وزير 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 8000 دولار 💰\nوظيفتك : وزير 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "22" then
 local ratpep = ballancee + 5500
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 5500 دولار 💰\nوظيفتك : محامي ⚖️\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 5500 دولار 💰\nوظيفتك : محامي ⚖️\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "23" then
 local ratpep = ballancee + 5500
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 5500 دولار 💰\nوظيفتك : تاجر 💰\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 5500 دولار 💰\nوظيفتك : تاجر 💰\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "24" then
 local ratpep = ballancee + 7000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 7000 دولار 💰\nوظيفتك : دكتور 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 7000 دولار 💰\nوظيفتك : دكتور 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "25" then
 local ratpep = ballancee + 2600
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 2600 دولار 💰\nوظيفتك : حفار قبور ⚓\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 2600 دولار 💰\nوظيفتك : حفار قبور ⚓\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "26" then
 local ratpep = ballancee + 3000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : حلاق ✂\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : حلاق ✂\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "27" then
 local ratpep = ballancee + 5000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 5000 دولار 💰\nوظيفتك : إمام مسجد 📿\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 5000 دولار 💰\nوظيفتك : إمام مسجد 📿\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "28" then
 local ratpep = ballancee + 3000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : صياد 🎣\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : صياد 🎣\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "29" then
 local ratpep = ballancee + 2300
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 2300 دولار 💰\nوظيفتك : خياط 🧵\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 2300 دولار 💰\nوظيفتك : خياط 🧵\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "30" then
 local ratpep = ballancee + 7100
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 7100 دولار 💰\nوظيفتك : طيار 🛩\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 7100 دولار 💰\nوظيفتك : طيار 🛩\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "31" then
 local ratpep = ballancee + 5300
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 5300 دولار 💰\nوظيفتك : مودل 🕴\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 5300 دولار 💰\nوظيفتك : مودل 🕴\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "32" then
 local ratpep = ballancee + 10000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 10000 دولار 💰\nوظيفتك : ملك 👑\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 10000 دولار 💰\nوظيفتك : ملك 👑\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "33" then
 local ratpep = ballancee + 2700
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 2700 دولار 💰\nوظيفتك : سباك 🔧\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 2700 دولار 💰\nوظيفتك : سباك 🔧\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "34" then
 local ratpep = ballancee + 3900
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3900 دولار 💰\nوظيفتك : موزع 🗺\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3900 دولار 💰\nوظيفتك : موزع 🗺\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "35" then
 local ratpep = ballancee + 4100
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 4100 دولار 💰\nوظيفتك : سكيورتي 👮\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 4100 دولار 💰\nوظيفتك : سكيورتي 👮\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "36" then
 local ratpep = ballancee + 3500
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3500 دولار 💰\nوظيفتك : معلم شاورما 🌯\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3500 دولار 💰\nوظيفتك : معلم شاورما 🌯\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "37" then
 local ratpep = ballancee + 6700
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 6700 دولار 💰\nوظيفتك : دكتور ولاده 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 6700 دولار 💰\nوظيفتك : دكتور ولاده 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "38" then
 local ratpep = ballancee + 6600
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 6600 دولار 💰\nوظيفتك : مذيع 🗣\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 6600 دولار 💰\nوظيفتك : مذيع 🗣\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "39" then
 local ratpep = ballancee + 3400
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3400 دولار 💰\nوظيفتك : عامل مساج 💆\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3400 دولار 💰\nوظيفتك : عامل مساج 💆\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "40" then
 local ratpep = ballancee + 6300
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 6300 دولار 💰\nوظيفتك : ممثل 🤵\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 6300 دولار 💰\nوظيفتك : ممثل 🤵\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "41" then
 local ratpep = ballancee + 3000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : جزار 🥩\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : جزار 🥩\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "42" then
 local ratpep = ballancee + 7000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 7000 دولار 💰\nوظيفتك : مدير بنك 💳\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 7000 دولار 💰\nوظيفتك : مدير بنك 💳\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "43" then
 local ratpep = ballancee + 6000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 6000 دولار 💰\nوظيفتك : مبرمج 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 6000 دولار 💰\nوظيفتك : مبرمج 👨\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "44" then
 local ratpep = ballancee + 5000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 5000 دولار ??\nوظيفتك : رقاصه 💃\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 5000 دولار ??\nوظيفتك : رقاصه 💃\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "45" then
 local ratpep = ballancee + 4900
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 4900 دولار 💰\nوظيفتك : 👩🏼‍💻 صحفي\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 4900 دولار 💰\nوظيفتك : 👩🏼‍💻 صحفي\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "46" then
 local ratpep = ballancee + 5300
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 5300 دولار 💰\nوظيفتك : 🥷 حرامي\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 5300 دولار 💰\nوظيفتك : 🥷 حرامي\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "47" then
 local ratpep = ballancee + 6000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 6000 دولار 💰\nوظيفتك : 🔮 ساحر\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 6000 دولار 💰\nوظيفتك : 🔮 ساحر\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "48" then
 local ratpep = ballancee + 6500
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 6500 دولار 💰\nوظيفتك : ⚽ لاعب️\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 6500 دولار 💰\nوظيفتك : ⚽ لاعب️\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "49" then
 local ratpep = ballancee + 4000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 4000 دولار 💰\nوظيفتك : 🖼 مصور\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 4000 دولار 💰\nوظيفتك : 🖼 مصور\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "50" then
 local ratpep = ballancee + 3000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : ☎️ عامل مقسم\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3000 دولار 💰\nوظيفتك : ☎️ عامل مقسم\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "51" then
 local ratpep = ballancee + 3200
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 3200 دولار 💰\nوظيفتك : 📖 كاتب\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 3200 دولار 💰\nوظيفتك : 📖 كاتب\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 elseif Descriptioont == "52" then
 local ratpep = ballancee + 4000
 Redis:set("boob"..msg.sender_id.user_id , math.floor(ratpep))
 local ballancee = Redis:get("boob"..msg.sender_id.user_id) or 0
 local convert_mony = string.format("%.0f",ballancee)
-LuaTele.sendText(msg.chat_id,msg.id,"*اشعار ايداع* "..neews.."\nالمبلغ : 4000 دولار 💰\nوظيفتك : 🧪 مخبري\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
+LuaTele.sendText(msg.chat_id,msg.id,"*↯︙اشعار ايداع* "..neews.."\nالمبلغ : 4000 دولار 💰\nوظيفتك : 🧪 مخبري\nنوع العملية : اضافة راتب\nرصيدك الآن : "..convert_mony.." دولار 💰","md",true)
 Redis:setex("iiioo" .. msg.sender_id.user_id,600, true)
 end
 else
@@ -18538,27 +18905,28 @@ local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = 'او�
 local TextHelp = [[*
 ↯︙قائمه الالعاب البوت ↫ ⤈
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-↯︙لعبة المختلف ↫ المختلف
-↯︙لعبة الامثله ↫ امثله
-↯︙لعبة العكس ↫ العكس
-↯︙لعبة الحزوره ↫ حزوره
-↯︙لعبة المعاني ↫ معاني
-↯︙لعبة البات ↫ بات
-↯︙لعبة التخمين ↫ خمن
-↯︙لعبه الاسرع ↫ الاسرع
-↯︙لعبة السمايلات ↫ سمايلات
-↯︙لعبة كت تويت ↫ كت
-↯︙لعبة البنك ↫ بنك
-↯︙لعبة لو خيروك ↫ لوخيروك
-↯︙لعبة مشاهير ↫ بوب
-↯︙لعبة الصراحه ↫ صراحه
-↯︙لعبة الاعلام ↫ اعلام
-↯︙لعبة الكتابات ↫ كتابات
-↯︙لعبة النكت ↫ نكته
-↯︙لعبة التاكات ↫ تاكات
-↯︙لعبة الحروف ↫ حروف
-↯︙لعبة الارقام ↫ ارقام
-↯︙لعبة العواصم ↫ عواصم
+↯︙المختلف ↫ لعبة المنختلف
+↯︙امثله ↫ لعبة الامثله
+↯︙العكس ↫ لعبة العكس
+↯︙حزوره ↫ لعبة الحزوره
+↯︙معاني ↫ لعبة المعاني
+↯︙بات ↫ لعبة المحيبس
+↯︙خمن ↫ لعبة التخمين
+↯︙الاسرع↫ لعبة الاسرع
+↯︙سمايلات ↫ لعبة السمايلات
+↯︙كت↫ لعبة كت تويت
+↯︙بنك ↫ لعبة البنك
+↯︙لوخيروك ↫ لعبة لو خيروك
+↯︙بوب ↫ لعبة المشاهير
+↯︙صراحه ↫ لعبة الصراحه
+↯︙الاعلام ↫ لعبة الاعلام
+↯︙كتابات ↫ لعبة الكتابات
+↯︙نكته ↫ لعبة النكت
+↯︙تاكات ↫ لعبة تاكات
+↯︙حروف ↫ لعبة الحروف
+↯︙ارقام ↫ لعبة الارقام
+↯︙عواصم ↫ لعبة العواصم
+↯︙اسئله ↫ لعبة اسئله منوعة
 ↯︙حظي ↫ لعبة ربح او خساره
 ↯︙عربي ↫ لعبة مفرد او جمع
 ↯︙دين ↫ لعبة اسئله دينيه
@@ -20701,8 +21069,6 @@ LuaTele.editMessageText(ChatId,Msg_id,"↯︙تم مسح المكتومين با
 
 luatele.run(CallBackLua)
  
-
-
 
 
 

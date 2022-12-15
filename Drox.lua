@@ -6102,7 +6102,7 @@ local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then return LuaTele.sendText(msg_chat_id,msg_id,"\n↯︙عذراً تستطيع فقط استخدام الامر على المستخدمين ","md",true)  end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then return LuaTele.sendText(msg_chat_id,msg_id,"\n↯︙عذراً لا تستطيع استخدام الامر على البوت ","md",true)  end
-if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender_id.user_id) and not Distinguished then return LuaTele.sendText(msg_chat_id,msg_id,"\n↯︙عذراً لا تستطيع حظر ↫ ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." › ","md",true)  end
+if StatusSilent(msg_chat_id,Message_Reply.sender_id.user_id) then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذراً لا تستطيع حظر ↫ ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." › *","md",true)  end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
@@ -6203,7 +6203,7 @@ local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then return LuaTele.sendText(msg_chat_id,msg_id,"\n↯︙عذراً تستطيع فقط استخدام الامر على المستخدمين ","md",true)  end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then return LuaTele.sendText(msg_chat_id,msg_id,"\n↯︙عذراً لا تستطيع استخدام الامر على البوت ","md",true)  end
-if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender_id.user_id) and not Distinguished then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذراً لا تستطيع  ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." › *","md",true)  end
+if StatusSilent(msg_chat_id,Message_Reply.sender_id.user_id) then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذراً لا تستطيع تقييد ↫ ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." › *","md",true)  end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
@@ -6249,7 +6249,7 @@ local Message_Reply = LuaTele.getMessage(msg.chat_id, msg.reply_to_message_id)
 local UserInfo = LuaTele.getUser(Message_Reply.sender_id.user_id)
 if UserInfo.message == "Invalid user ID" then return LuaTele.sendText(msg_chat_id,msg_id,"\n↯︙عذراً تستطيع فقط استخدام الامر على المستخدمين ","md",true)  end
 if UserInfo and UserInfo.type and UserInfo.type.luatele == "userTypeBot" then return LuaTele.sendText(msg_chat_id,msg_id,"\n↯︙عذراً لا تستطيع استخدام الامر على البوت ","md",true)  end
-if StatusCanOrNotCan(msg_chat_id,Message_Reply.sender_id.user_id) and not Distinguished then return LuaTele.sendText(msg_chat_id,msg_id,"\n↯︙عذراً لا تستطيع طرد ↫ ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." › ","md",true)  end
+if StatusSilent(msg_chat_id,Message_Reply.sender_id.user_id) then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذراً لا تستطيع طرد ↫ ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." › *","md",true)  end
 local reply_markup = LuaTele.replyMarkup{
 type = 'inline',
 data = {
@@ -14291,28 +14291,28 @@ emoji ={
 "🥇" ,
 "🥈",
 "🥉",
-"4 ➙",
-"5 ➙",
-"6 ➙",
-"7 ➙",
-"8 ➙",
-"9 ➙",
-"10 ➙",
-"11 ➙",
-"12 ➙",
-"13 ➙",
-"14 ➙",
-"15 ➙",
-"16 ➙",
-"17 ➙",
-"18 ➙",
-"19 ➙",
-"20 ➙",
-"21 ➙",
-"22 ➙",
-"23 ➙",
-"24 ➙",
-"25 ➙"
+"4 ↬",
+"5 ↬",
+"6 ↬",
+"7 ↬",
+"8 ↬",
+"9 ↬",
+"10 ↬",
+"11 ↬",
+"12 ↬",
+"13 ↬",
+"14 ↬",
+"15 ↬",
+"16 ↬",
+"17 ↬",
+"18 ↬",
+"19 ↬",
+"20 ↬",
+"21 ↬",
+"22 ↬",
+"23 ↬",
+"24 ↬",
+"25 ↬"
 }
 for k,v in pairs(mony_list) do
 if num <= 25 then
@@ -14355,22 +14355,22 @@ emojii ={
 "🥇" ,
 "🥈",
 "🥉",
-"4 ➙",
-"5 ➙",
-"6 ➙",
-"7 ➙",
-"8 ➙",
-"9 ➙",
-"10 ➙",
-"11 ➙",
-"12 ➙",
-"13 ➙",
-"14 ➙",
-"15 ➙",
-"16 ➙",
-"17 ➙",
-"18 ➙",
-"19 ➙",
+"4 ↬",
+"5 ↬",
+"6 ↬",
+"7 ↬",
+"8 ↬",
+"9 ↬",
+"10 ↬",
+"11 ↬",
+"12 ↬",
+"13 ↬",
+"14 ↬",
+"15 ↬",
+"16 ↬",
+"17 ↬",
+"18 ↬",
+"19 ↬",
 "20)"
 }
 for k,v in pairs(ty_list) do

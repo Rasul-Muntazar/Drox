@@ -6638,7 +6638,7 @@ keyboardd.inline_keyboard = {{{text = UserInfo.first_name, url = "https://t.me/"
 local msg_id = msg.id/2097152/0.5 
 return https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "↯︙Owner Group\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n↯︙*Owner Name* :  ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n↯︙*Owner User* : [@"..UserInfo.username.."]\n↯︙*Owner iD* : "..UserInfo.id..""
+local TestText = "name :  ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\nuser : [@"..UserInfo.username.."]\nbio "..Bio..""
 local msg_id = msg.id/2097152/0.5 
 return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown") end end end end
 end
@@ -11176,7 +11176,7 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "↯︙عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = '‹ 1 › ', data = msg.sender_id.user_id..'/help1'}, {text = '‹ 2 › ', data = msg.sender_id.user_id..'/help2'},},{{text = '‹ 3 › ', data = msg.sender_id.user_id..'/help3'}, {text = '‹ 4 › ', data = msg.sender_id.user_id..'/help4'},},{{text = '‹ 5 › ', data = msg.sender_id.user_id..'/help5'},{text = '‹ 6 › ', data = msg.sender_id.user_id..'/help8'},},{{text = '‹ 7 › ', data = msg.sender_id.user_id..'/help7'},},{{text = 'العاب البوت', data = IdUser..'/help6'}},{{text = '‹ اخفاء الاوامر ›', data =IdUser..'/'.. 'delAmr'}},{{text = '‹ 𝖲𝗈𝗎𝗋𝖼𝖾 Naples ›', url = 't.me/UIIIIl'},},}}
-return LuaTele.sendText(msg_chat_id,msg_id, [[*
+return LuaTele.sendText(msg_chat_id,msg_id, [[
 ↯︙اهلا بك في قائمة الاوامر ↫ ⤈
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 ↯︙م1 ↫ اوامر الحمايه
@@ -11187,7 +11187,7 @@ return LuaTele.sendText(msg_chat_id,msg_id, [[*
 ↯︙م6 ↫ اوامر الاعضاء
 ↯︙م7 ↫ اوامر التسلية
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-*]],"md",false, false, false, false, reply_markup)
+]],"md",false, false, false, false, reply_markup)
 elseif text == 'مسح الرتب' then
 if not msg.Addictive then return LuaTele.sendText(msg_chat_id,msg_id,'\n↯︙هذا الامر المالكين واعلى فقط',"md",true)  end
 if ChannelJoin(msg) == false then

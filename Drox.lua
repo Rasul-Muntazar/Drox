@@ -6631,14 +6631,14 @@ local msg_id = msg.id/2097152/0.5
 return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(OwnText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown") end
 else
 if photo.total_count > 0 then
-local TestText = "↯︙*Owner Name* ↬  ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n↯︙*Owner User* ↬ [@"..UserInfo.username.."]\n↯︙*Owner iD* ↬ "..UserInfo.id..""
+local TestText = " name* :  ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n user : [@"..UserInfo.username.."]\n  iD : "..UserInfo.id..""
 keyboardd = {} 
 keyboardd.inline_keyboard = {{{text = UserInfo.first_name, url = "https://t.me/"..UserInfo.username..""}},
 }
 local msg_id = msg.id/2097152/0.5 
 return https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "name :  ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\nuser : [@"..UserInfo.username.."]\n iD : "..UserInfo.id..""
+local TestText = "↯︙Owner Group\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n↯︙*Owner Name* :  ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\n↯︙*Owner User* : [@"..UserInfo.username.."]\n↯︙*Owner iD* : "..UserInfo.id..""
 local msg_id = msg.id/2097152/0.5 
 return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown") end end end end
 end

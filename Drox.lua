@@ -11164,7 +11164,7 @@ Welcome To Source
 ↯︙[𝖲𝗈𝗎𝗋𝖼𝖾 Naples](https://t.me/UIIIIl) .
 ]]
 keyboard = {} 
-keyboard.inline_keyboard = {{{text = '‹ Source Channel ›', url = "https://t.me/UIIIIl"}},{{text = '‹ Developer', url = "https://t.me/X_RsU"},{text = 'Tws Naples ›', url = "https://t.me/Yv4bot"}},{{text = '‹ تـفآصيل. ›', url = "https://t.me/BB4BBB"}}}
+keyboard.inline_keyboard = {{{text = '‹ Source Channel ›', url = "https://t.me/UIIIIl"}},{{text = '‹ Developer', url = "https://t.me/X_RsU"},{text = 'Tws Naples ›', url = "https://t.me/Yv4bot"}},{{text = '‹ نابولي . ›', url = "https://t.me/UIIIIL"}}}
 local msgg = msg_id/2097152/0.5
 https.request("https://api.telegram.org/bot"..Token.."/sendphoto?chat_id=" .. msg_chat_id .. "&photo=https://t.me/UIIIIl&caption=".. URL.escape(tt).."&reply_to_message_id="..msgg.."&parse_mode=markdown&disable_web_page_preview=true&reply_markup="..JSON.encode(keyboard)) end
 if text == 'الاوامر' then

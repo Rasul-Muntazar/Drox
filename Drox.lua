@@ -6638,7 +6638,7 @@ keyboardd.inline_keyboard = {{{text = UserInfo.first_name, url = "https://t.me/"
 local msg_id = msg.id/2097152/0.5 
 return https.request("https://api.telegram.org/bot"..Token..'/sendPhoto?chat_id='..msg.chat_id..'&caption='..URL.escape(TestText)..'&photo='..photo.photos[1].sizes[#photo.photos[1].sizes].photo.remote.id..'&reply_to_message_id='..msg_id..'&parse_mode=markdown&disable_web_page_preview=true&reply_markup='..JSON.encode(keyboardd))
 else
-local TestText = "name :  ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\nuser : [@"..UserInfo.username.."]\nbio "..Bio..""
+local TestText = "name :  ["..UserInfo.first_name.."](tg://user?id="..UserInfo.id..")\nuser : [@"..UserInfo.username.."]\n iD : "..UserInfo.id..""
 local msg_id = msg.id/2097152/0.5 
 return https.request("https://api.telegram.org/bot"..Token..'/sendMessage?chat_id=' .. msg.chat_id .. '&text=' .. URL.escape(TestText).."&reply_to_message_id="..msg_id.."&parse_mode=markdown") end end end end
 end

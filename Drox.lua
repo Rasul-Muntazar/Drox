@@ -3801,7 +3801,7 @@ if tonumber(Message_Reply.sender_id.user_id) == tonumber(1214622341) then
 LuaTele.sendText(msg.chat_id,msg.id, 'كسمك ابن الكحبة هذا مبرمج السورس 🤬🖕 ', 'md',true)
 return false 
 end 
-if tonumber(Message_Reply.sender_id.user_id) == tonumber(6289479864) then 
+if tonumber(Message_Reply.sender_id.user_id) == tonumber(6116203894) then 
 LuaTele.sendText(msg.chat_id,msg.id, 'كسمك ابن الكحبة هذا مطور السورس 🤬🖕 ', 'md',true)
 return false 
 end  
@@ -3820,7 +3820,7 @@ if tonumber(Message_Reply.sender_id.user_id) == tonumber(1214622341) then
 LuaTele.sendText(msg.chat_id,msg.id, 'كسمك ابن الكحبة هذا مبرمج السورس 🤬🖕 ', 'md',true)
 return false 
 end  
-if tonumber(Message_Reply.sender_id.user_id) == tonumber(6289479864) then 
+if tonumber(Message_Reply.sender_id.user_id) == tonumber(6116203894) then 
 LuaTele.sendText(msg.chat_id,msg.id, 'كسمك ابن الكحبة هذا مطور السورس 🤬🖕 ', 'md',true)
 return false 
 end  
@@ -3839,7 +3839,7 @@ if tonumber(Message_Reply.sender_id.user_id) == tonumber(1214622341) then
 LuaTele.sendText(msg.chat_id,msg.id, 'كسمك ابن الكحبة هذا مبرمج السورس 🤬🖕 ', 'md',true)
 return false 
 end  
-if tonumber(Message_Reply.sender_id.user_id) == tonumber(6289479864) then 
+if tonumber(Message_Reply.sender_id.user_id) == tonumber(6116203894) then 
 LuaTele.sendText(msg.chat_id,msg.id, 'كسمك ابن الكحبة هذا مطور السورس 🤬🖕 ', 'md',true)
 return false 
 end  
@@ -3858,7 +3858,7 @@ if tonumber(Message_Reply.sender_id.user_id) == tonumber(1214622341) then
 LuaTele.sendText(msg.chat_id,msg.id, 'كسمك ابن الكحبة هذا مبرمج السورس 🤬🖕 ', 'md',true)
 return false 
 end  
-if tonumber(Message_Reply.sender_id.user_id) == tonumber(6289479864) then 
+if tonumber(Message_Reply.sender_id.user_id) == tonumber(6116203894) then 
 LuaTele.sendText(msg.chat_id,msg.id, 'كسمك ابن الكحبة هذا مطور السورس 🤬🖕 ', 'md',true)
 return false 
 end  
@@ -3877,7 +3877,7 @@ if tonumber(Message_Reply.sender_id.user_id) == tonumber(1214622341) then
 LuaTele.sendText(msg.chat_id,msg.id, 'كسمك ابن الكحبة هذا مبرمج السورس 🤬🖕 ', 'md',true)
 return false 
 end  
-if tonumber(Message_Reply.sender_id.user_id) == tonumber(6289479864) then 
+if tonumber(Message_Reply.sender_id.user_id) == tonumber(6116203894) then 
 LuaTele.sendText(msg.chat_id,msg.id, 'كسمك ابن الكحبة هذا مطور السورس 🤬🖕 ', 'md',true)
 return false 
 end  

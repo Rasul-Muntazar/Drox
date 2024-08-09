@@ -5575,6 +5575,7 @@ if UserName and UserName:match('(%S+)[Bb][Oo][Tt]') then return LuaTele.sendText
 if Controller(msg_chat_id,UserId_Info.id) == 'المطور الاساسي' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
 if Controller(msg_chat_id,UserId_Info.id) == 'المطور الاساسي' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
 if Controller(msg_chat_id,UserId_Info.id) == 'المطور الثانوي' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
+if Controller(msg_chat_id,UserId_Info.id) == 'مطور السورس' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
 if Controller(msg_chat_id,UserId_Info.id) == 'مبرمج السورس' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
 if Controller(msg_chat_id,UserId_Info.id) == 'مبرمج السورس' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
 if Controller(msg_chat_id,UserId_Info.id) == 'مبرمج السورس' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
@@ -5995,6 +5996,7 @@ if ban.message == "Invalid user ID" then return LuaTele.sendText(msg_chat_id,msg
 if ban and ban.type and ban.type.luatele == "userTypeBot" then return LuaTele.sendText(msg_chat_id,msg_id,"\n↯︙عذرا لا تستطيع استخدام الامر على البوت ","md",true)  end
 if Controller(msg_chat_id,Message_Reply.sender_id.user_id) == 'المطور الاساسي' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." ›*","md",true)  end
 if Controller(msg_chat_id,Message_Reply.sender_id.user_id) == 'المطور الثانوي' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." ›*","md",true)  end
+if Controller(msg_chat_id,Message_Reply.sender_id.user_id) == 'مطور السورس' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." ›*","md",true)  end
 if Controller(msg_chat_id,Message_Reply.sender_id.user_id) == 'مبرمج السورس' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." ›*","md",true)  end
 if Controller(msg_chat_id,Message_Reply.sender_id.user_id) == 'مبرمج السورس' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." ›*","md",true)  end
 if Controller(msg_chat_id,Message_Reply.sender_id.user_id) == 'مبرمج السورس' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,Message_Reply.sender_id.user_id).." ›*","md",true)  end
@@ -6232,6 +6234,9 @@ local NcHlink = (Redis:get(TheDrox.."Drox:CHlink:Bot") or "↯︙عذراً لا
 local reply_markup = LuaTele.replyMarkup{type = 'inline',data = {{{text = NcH, url = 't.me/'..Redis:get(TheDrox..'Drox:Channel:Join')},},}}
 return LuaTele.sendText(msg.chat_id,msg.id,NcHlink,"md",false, false, false, false, reply_markup) end
 local UserInfo = LuaTele.getUser(UserId)
+if UserId == "6116203894" then
+return LuaTele.sendText(msg_chat_id,msg_id,"*↯︙عذرآ لا تستطيع استخدام الامر على مبرمج السورس *","md",true)  
+end
 if UserId == "1214622341" then
 return LuaTele.sendText(msg_chat_id,msg_id,"*↯︙عذرآ لا تستطيع استخدام الامر على مبرمج السورس *","md",true)  
 end
@@ -16765,6 +16770,7 @@ if Controller(msg_chat_id,UserId_Info.id) == 'المطور الاساسي' then 
 if Controller(msg_chat_id,UserId_Info.id) == 'المطور الاساسي' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
 if Controller(msg_chat_id,UserId_Info.id) == 'المطور الثانوي' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
 if Controller(msg_chat_id,UserId_Info.id) == 'المطور' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
+if Controller(msg_chat_id,UserId_Info.id) == 'مطور السورس' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
 if Controller(msg_chat_id,UserId_Info.id) == 'مبرمج السورس' then return LuaTele.sendText(msg_chat_id,msg_id,"\n*↯︙عذرا لا تستطيع كتم عام ‹ "..Controller(msg_chat_id,UserId_Info.id).." ›*","md",true)  end
 if Redis:sismember(TheDrox.."Drox:ktmAll:Groups",UserId_Info.id) then return LuaTele.sendText(msg_chat_id,msg_id,Reply_Status(UserId_Info.id,"↯︙تم كتمه عام من المجموعات بالتأكيد ").Reply,"md",true)  
 else
